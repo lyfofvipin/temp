@@ -1,0 +1,19 @@
+Reliability :-
+              Probability of failure-free operation for a specific time period or for a given set of input conditions under a 
+              specific environment.
+              Masure of relibelety :-
+                    -> Time between successive failures,
+                    -> Number of failures per test interval of a given length
+                    -> Can estimate reliability, failure intensity, number of failures observed in next nintervals.
+        
+Software avilability :-
+        It used to ensure that systems are running and avilable most of the time. High avilability is a high persantage of time,
+        that the system is functioning high avilability software is majored by it's performence when a sub system fails,
+        it's abilety to resume service in a state all faults that affect avilability hardware,
+        software and configration can help engginer creates complex system arcetecture.
+
+Safety :-
+        The property of being accident-free for (embedded) software systems.
+        Software safety has evolved to be a parallel effort to the development of the software itself. The System Safety engineer,
+        is involved in each step of the software development process identifying which functions are critical to the safe functioning,
+        of the greater system and tracing those functions down into the software modules which support them. 
