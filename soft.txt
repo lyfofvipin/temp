@@ -17,3 +17,57 @@ Safety :-
         Software safety has evolved to be a parallel effort to the development of the software itself. The System Safety engineer,
         is involved in each step of the software development process identifying which functions are critical to the safe functioning,
         of the greater system and tracing those functions down into the software modules which support them. 
+
+
+
+
+
+
+
+
+
+Risk Management :- 
+                A risk is a possible unplaned event, It can be +ve or -ve in project management the sucess of our
+                projects dpends on our ability. since risks are the unpridictible part of the project it is importent 
+                for us to be able to controle them. 
+
+                It means the systemetic application of management policyes, procegers and prectices to the task of identefying,
+                Analysing, evaluating, truting and monitering risk. It is the process of identefying, Analysing and quentifying,
+                responding to them with a risk strategy and then controlling them. it must be done through out any project,
+                we must do it at the begining of the project, at the end of the project, many times during the project,
+
+                Basic staps in Risk Management :--
+
+                           |\                         |\                         |\                          |\
+        -------------------+ \     -------------------+ \     -------------------+ \      -------------------+ \
+        \  Risk               \    \  Risk               \    \    Risk             \     \    Risk             \
+        /  Identefication     /    /  Quantification     /    /    Responce         /     /    Controle         /
+        -------------------+ /     -------------------+ /     -------------------+ /      -------------------+ /
+                           |/                         |/                         |/                          |/
+
+                Risk Identefication :-- 
+                                        The first stap in risk management is identefying the risk that we will see in our project.
+                                        
+                                        The following point listed for identefying the risk :
+
+                                          --> Scope
+                                          --> Time
+                                          --> Cost
+                                          --> Resourses
+                                          --> Orgnijaction
+                                          --> Brain stroming Technique
+                                          --> Nominal Group Technique
+                                          --> Expert Interview
+
+                Risk Quantification : --
+                                        It is the process of evaluating the risk that have been identefyed and devloping the data that will be needed
+                                        for making decision it can be done from very early in the project until the very end. The objective of,
+                                        quantification is to establish a way of arranging the risk in the order of importese.
+                
+                Risk Responce :-- 
+                                They are the approch we can make to dealing with the risk we have idefier and quantifire, it is really based
+                                on risk tollrence. major strategy are avoidence, acceptence , transfer and mitigation.
+
+                Risk controle :--
+                                The main objective of risk management is to identify the top few risk item and then focus on them a 
+                                project manager can controle the risk with the good policy making.
