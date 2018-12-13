@@ -21,12 +21,17 @@ Safety :-
 
 Assesment :- 
              The Risk Management Assessment, or RMA, is the first step in developing a comprehensive risk management program.
-             The RMA identifies, analyzes, and reports on an organization’s material risk exposures. It provides a multi.                      dimensional view of risk, taking into account organization-wide enterprise risks and specific insurance-related exposures.
-             A typical Risk Management Assessment consists of five steps, they are: 
+             The RMA identifies, analyzes, and reports on an organization’s material risk exposures. It provides a multi.
+             dimensional view of risk, taking into account organization-wide enterprise risks and specific insurance-related
+             exposures. A typical Risk Management Assessment consists of five steps, they are: 
 
 
 Controle :-
-           Proper risk management and internal control help organizations understand the risks they are exposed to, put controls   in place to counter threats, and effectively pursue their objectives. They are therefore an important aspect of an organization’s governance, management, and operations. Professional accountants can and should play a leading role in helping their organizations achieve an integrated, organization-wide approach to risk management and internal control—which ultimately helps create, enhance, and protect stakeholder value.
+           Proper risk management and internal control help organizations understand the risks they are exposed to, 
+           put controls   in place to counter threats, and effectively pursue their objectives. They are therefore an 
+           important aspect of an organization’s governance, management, and operations. Professional accountants can and 
+           should play a leading role in helping their organizations achieve an integrated, organization-wide approach to 
+           risk management and internal control—which ultimately helps create, enhance, and protect stakeholder value.
 
 
 
