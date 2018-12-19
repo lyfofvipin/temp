@@ -23,7 +23,7 @@ Assesment :-
              The Risk Management Assessment, or RMA, is the first step in developing a comprehensive risk management program.
              The RMA identifies, analyzes, and reports on an organization’s material risk exposures. It provides a multi.
              dimensional view of risk, taking into account organization-wide enterprise risks and specific insurance-related
-             exposures. A typical Risk Management Assessment consists of five steps, they are: 
+             exposures. 
 
 
 Controle :-
