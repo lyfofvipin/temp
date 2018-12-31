@@ -1,0 +1,401 @@
+Pl/SQL Trigers :-
+        Statement lavel Ttigers :- 
+                It fired only for once for a DML Statement irrespetive of the number of rows affected by the Statement.
+                Example :-
+                        If you execute the following update command in student table Statement triger for update is executed, only
+                        for once. Statement lavel trigers are used to enforce rules that are not related to data they are default type 
+                        of trigers.
+
+        Raw lavel triger :- 
+                A raw triger is fired once for each raw that is affected by DML command.
+                Example :- 
+                        If an UPDATE command updates 100 raws then the raw lavel trigers is fired 100 times where as a statement lavel
+                        triger is fired once. Raw lavel trigers are used to check the validety of the data they are used to implement
+                        rules that can not be implemented by integrety constrens They are implemented by using the option for each raw
+                        in create triger statement.
+
+        Before triger :- 
+                while defining a triger you can spacefy wather the triger is to be fired before the command( Insert, Delet, Update) is
+                executed. They are comenly used to check the validety of the data before the action is performed.
+
+        After triger :- 
+                They are fired after the tegring action is completed.
+                Example :-
+                        After trigger are fired after the tegring action is completed.
+                        Example:-
+                                If after triger associated with insert command then it is fired after the raw inserted into the table.
+Authorization:- 
+
+        -> Read Authorization :-
+                It allow reading but not modefication of data.
+
+        -> Insert Authorization :-
+                It allow insertion of new data but not modefication of existing data.
+
+        -> Update Authorization :-
+                It allow modefication but not deletion of data.
+
+        -> Delete Authorization :-
+                It allow deletion of data.
+        
+        There are some other types of authorization :-
+
+                -> Index Authorization :-
+                        It allow the creation and deletion of index.
+
+                -> Resourses Authorization :-
+                        It allow the creation of new relaction.
+
+                -> Aultraction Authorization :-
+                        It allow the addiction and deletion of attributes in a relaction.
+
+                -> Drop Authorization :-
+                        It allow the deletion of relaction.
+
+
+Basic System of Oracel Database system :- 
+        -> Oracel Database strcture :-
+                It has 2 primary strcture:
+
+                        --> Physical strcture :--
+                                Refring to the actual stored data.
+                        --> Logical strcture :--
+                                coresponding to and extrect repersantion of the stored data which ruffly corespond to the Database.
+                        The Database contains following types of files:-
+
+                                ---> One or more data files
+                                ---> Two or more logs files
+                                ---> One or more controle files
+                                ---> Trce files
+        -> Oracel process :-
+                It creates server process to handel request from connected user process in a dedicated server configution a server 
+                process handl request for a single user process a more effecient alternative is ~multiprocess threaded server config.~
+                in which many user process share a small number of server process.
+                The background process are created for each instence of Oracel.
+
+        -> Oracel startup and shutdown :-
+                An Oracel Database is not avilable to user until the oracel server has been started up and the Database has been opened
+                starting a Database and making it avilable system requir the following steps :
+
+                        --> starting an instence of the Database
+                        --> Mounting a Database
+                        --> Opening a Database
+
+        The reverse of the above operaction will shutdown an oracel instences as follows:
+
+                        --> Closing an instence of the Database
+                        --> Dismounting a Database
+                        --> Shutdown a Database
+
+                        
+Aggrecate function in SQL :-
+
+                           -> Avg
+                           -> Count
+                           -> Min
+                           -> Max
+                           -> Sum
+        Avg :--
+                Calculate the avrage of a set of values.
+
+                Syntex ->
+                        SELECT AVG ( Colum_name ) FROM table_name WHERE condiction;
+        
+        Count:-- 
+                It returns the number of rows that match a specified critaria.
+
+                Syntex ->
+                        SELECT COUNT ( Colum_name ) FROM table_name WHERE condiction;
+
+        Min :--
+                Gets the minimum value in a set of values.
+
+                Syntex ->
+                        SELECT MIN ( Colum_name ) FROM table_name;
+
+        Max :-- 
+                Gets the maximum value in a set of values.
+
+                Syntex ->
+                        SELECT MAX ( Colum_name ) FROM table_name;
+
+        Sum :--
+                Gets the sum of a set of values.
+
+                Syntex ->
+                        SELECT SUM ( Colum_name ) FROM table_name WHERE condiction;
+        
+Example :- 
+        
+                    Employe
+        +-------------------------------+
+        | Id      | Name     |  Sailry  |
+        +-------------------------------+
+        | 101     | Yatender | 500      |
+        | 102     | Yogash   | 225      |
+        | 103     | Kanahiya | 20000    |
+        | 104     | Vipin    | 25000    |
+        +-------------------------------+
+
+        SELECT AVG( Sailry ) FROM Employe WHERE Sailry > 1500;
+
+        SELECT COUNT ( Sailry ) FROM Employe;
+
+        SELECT MIN ( Sailry ) FROM Employe;
+
+        SELECT MAX ( Sailry ) FROM Employe;
+
+        SELECT SUM ( Sailry ) FROM Employe;
+
+SQL Character Manipulaction Function :-
+
+        It accept character input and can return character output sql provides a number of diffrent character
+        data types which includes CHAR, VARCHAR, VARCHAR2, LENGTH, LOWER, UPPER, INITCAP, CONCAT, SUBSTR, INSTR, LPAD,
+        RPAD and TRIM.
+
+        LOWER :--
+
+                select lower('VIPIN');
+
+                +----------------+
+                | lower('VIPIN') |
+                +----------------+
+                | vipin          |
+                +----------------+
+
+        UPPER :--
+
+                select upper('vipin');
+
+                +----------------+
+                | upper('vipin') |
+                +----------------+
+                | VIPIN          |
+                +----------------+
+
+        INITCAP :--
+
+                select initcap('vipin');
+
+                +------------------+
+                | initcap('vipin') |
+                +------------------+
+                | Vipin            |
+                +------------------+
+
+        CONCAT :--
+
+                select concat('vipin',' yadav');
+
+                +--------------------------+
+                | concat('vipin',' yadav') |
+                +--------------------------+
+                | vipin yadav              |
+                +--------------------------+
+
+        LENGTH :--
+
+                select length('vipin');
+
+                +-----------------+
+                | length('vipin') |
+                +-----------------+
+                |               5 |
+                +-----------------+
+
+        SUBSTR :--
+
+                This function return a poection of a string from a given start point to end point.
+
+
+                select substr('Database Management System',9,7);
+
+                +------------------------------------------+
+                | substr('Database Management System',9,7) |
+                +------------------------------------------+
+                |  Manage                                  |
+                +------------------------------------------+
+
+        INSTR :--
+
+                This function return numeric posistion of a character or a string or a given string.
+
+
+                select instr('Database management system','management');
+
+                +--------------------------------------------------+
+                | instr('Database management system','management') |
+                +--------------------------------------------------+
+                |                                               10 |
+                +--------------------------------------------------+
+
+        LPAD :--
+
+                It Pad string from left, the actual string which is to be paded the length of the string after
+                padding.
+
+                select lpad('management',15,'+');
+
+                +---------------------------+
+                | lpad('management',15,'+') |
+                +---------------------------+
+                | +++++management           |
+                +---------------------------+
+
+        RPAD :--
+                It Pad string from right, the actual string which is to be paded the length of the string after
+                padding.
+
+                select rpad('management',15,'+');
+
+                +---------------------------+
+                | rpad('management',15,'+') |
+                +---------------------------+
+                | management+++++           |
+                +---------------------------+
+
+        TRIM :--
+
+                ->> Leading
+                        select trim(leading 'n' from 'naveen');
+
+                        +---------------------------------+
+                        | trim(leading 'n' from 'naveen') |
+                        +---------------------------------+
+                        | aveen                           |
+                        +---------------------------------+
+
+
+                ->> Trailing
+
+                        select trim(trailing 'n' from 'naveen');
+
+                        +----------------------------------+
+                        | trim(trailing 'n' from 'naveen') |
+                        +----------------------------------+
+                        | navee                            |
+                        +----------------------------------+
+
+                ->> Both
+
+                        select trim(both 'n' from 'naveen');
+
+                        +------------------------------+
+                        | trim(both 'n' from 'naveen') |
+                        +------------------------------+
+                        | avee                         |
+                        +------------------------------+
+
+
+Numaric Function :- 
+
+        ROUND, POWER, TRUNC, MOD, SIGN, SQRT.
+
+        ROUND :-- 
+
+                select round(23.44);
+
+                +--------------+
+                | round(23.44) |
+                +--------------+
+                |           23 |
+                +--------------+
+ 
+        POWER :--
+
+                select power(11,3);
+
+                +-------------+
+                | power(11,3) |
+                +-------------+
+                |        1331 |
+                +-------------+
+
+        TRUNC :-- 
+
+                select truncate(135.375,2);
+
+                +---------------------+
+                | truncate(135.375,2) |
+                +---------------------+
+                |              135.37 |
+                +---------------------+
+             
+        MOD :--
+
+                select mod(5,2);
+
+                +----------+
+                | mod(5,2) |
+                +----------+
+                |        1 |
+                +----------+
+
+        SIGN :-- 
+
+                select sign(-578);
+
+                +------------+
+                | sign(-578) |
+                +------------+
+                |         -1 |
+                +------------+
+
+                select sign(0);
+
+                +---------+
+                | sign(0) |
+                +---------+
+                |       0 |
+                +---------+
+
+
+        SQRT :--
+                
+                select sqrt(7);
+
+                +--------------------+
+                | sqrt(7)            |
+                +--------------------+
+                | 2.6457513110645907 |
+                +--------------------+
+
+Date Functions :- 
+        DATE, LAST_DAY, MONTHS_BETWEEN, NEXT_DAY, ADD_MONTHS, ROUND, TRUNC.
+                
+        CURRENT_DATE :--
+                It is used for show the system date.
+
+                select date();
+
+                +----------------+
+                | date()         |
+                +----------------+
+                | 2018-09-29     |
+                +----------------+
+
+        LAST_DAY :--
+
+                select last_day('2018-09-05');
+
+                +------------------------+
+                | last_day('2018-09-05') |
+                +------------------------+
+                | 2018-09-30             |
+                +------------------------+
+
+        MONTHS_BETWEEN :--
+                It return the full month between date1 and date2.
+
+        NEXT_DAY :--
+                It command return the next day from the CURRENT-DATE.
+
+        ADD_MONTHS :--
+                It return a date with a specified number of month added.
+
+
+
+
+
+
+
