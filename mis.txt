@@ -1,0 +1,141 @@
+Pitfall in management info. system :- 
+                                        It is a importent at all lavel in all orgnijaction
+a MIS is an approch a company uses when making varius busniss process it is a set of process,
+to collect importent informaction for making management designes there are some Pitfall can
+exist when using a MIS in a company.
+
+          -> Unemployment
+          -> Privency and Polocy
+          -> Cost of technology upgrades
+          -> Lack of job security
+          -> Domenante culture
+          -> Expensive
+          -> Training needs
+          -> Too much informaction
+          -> Mantinance
+          -> In efective
+
+
+Types of system :-
+                   -> Open system
+                   -> Close system
+                   -> Sub system Super system
+                   -> Permanent and Temprary system
+                   -> Natural and man made system
+                   -> Determenestic and probablic system
+                   -> Man made informaction system
+                   -> Physical or abstruct system
+
+                OPEN SYSTEM :-- 
+                                It receve input from the environment and some time return outputs to the environment,
+                                are called Open system, A system is said to be open If it's input varius outputs from,
+                                it's environment converts them into goods, services and waste matrials and then export,
+                                them into the environment.
+
+                CLOSE SYSTEM :--
+                                system that have shield boundrys and nither receve input nor produce outputs are called
+                                close system, they are independent of there environment close system are required for,
+                                stability and consistency where as open system are required as open uncertain condiction.
+
+                SUB AND SUPER SYSTEM :--
+                                        Each system is a part of a large system the buissness ferm is viwed as the system,
+                                        of total system when focus is on production , distrebuction of gole and sorce of,
+                                        profit and income, The total system consist of all the system , attrebutes and relactinship.
+                                        Sub system are the smaller system within a system Super system denotes extremly large and 
+                                        complex system.
+
+                PERMANENT AND TEMORARY SYSTEM :--
+                                                Permanent system is a time spend that is long relateve to the operaction of human.
+                                                Temprary system is one having a sort time spend.
+
+                Natural and man made system :--
+                                                system which is made by man is called man made system.
+                                                system which are in the environment made by nature are called Natural system.
+                
+                Determenestic and probablic system :--
+                                                       Determenestic system is one in which all even is perfectly pridectible, if we get the,
+                                                       descripction of the system state at a perticuler time the next stage can easely predicted,
+                                                       probablic system is one in which the accurence of system probablic can not be perfectly predicted.
+
+                Man made informaction system :--
+                                                It is genraly beleved that the informaction reduced uncertinety about a state or event,
+                                                an informaction system is the basic form of instrection between the user and the analyst,
+                                                it detrmienes the nature of the relactinship amount decision  maker's.
+
+                Physical and abstruct system :--
+                                                Physical system is tengible enteties that may be static or dynamic in nature.
+                                                Abstruct system is non Physical it is logic of Physical sitation.
+
+MAintenence :-
+    It ia nessesury to elemenate errors in the working system during it's working life system maintenence is perform for three reasions
+    -> To correct errors 
+    -> To keep system update 
+    -> To imrove the system
+
+    There are 2 types of MAintenence :-
+        --> Hardware maintenence :-
+            It includes computer maintenence includes computer hardware and it's pereferal as well as network maintenence it can take
+            place in 3 forms :-
+                ---> Preventive maintenence :-
+                    It is regarded and stitch in time that save from damages. It of hardware is a precautionary menager.
+
+                ---> Breakdown maintenence:-
+                    It undertaken when a machine Breakdown and stope working because of damage of any working when the machine fails because 
+                    of damaged part the part can be got repaired or a new part is instaled.
+                    
+                ---> Replacement maintenence :-
+                    It involves replasing the majer deviseis of hardware like keyboard,printer,mouse and other devices.
+        
+        --> software maintenence :-
+            It is more critical as compare to hardware there are many issues involves in software maintenence it covers a wild range of
+            activeties, including corrction of coding and degine errors, updating documaintation and test data and provide user support
+            many activeties clasifyed as software maintenence are actually enhencement.
+            It has following types :-
+                ---> Corrective :-
+                    It means repairing or making changes.
+
+                ---> Aductive :-
+                    It means changing the programs function.
+
+                ---> Perfactive :-
+                    It means enhencing the performence and modefying the program to responde to the user for softeare maintenence
+                    softeare re-engneering concept has been devloped.
+
+Decision making in MIS :- 
+    decision making is a process that result in the selection of a cource of it is a daily activety for any humanbeen efective and 
+    sucessfull design results in profit.
+    The following steps are used in design making :-
+        -> Identefication of the purpose of the design
+        -> Informaction gathreing
+        -> Principal for the jugung
+        -> Analyse the choices
+        -> Evelouction of alternative
+        -> Select the best alternative
+        -> Execute the design
+        -> Evaluates the result
+    
+
+                                Identefication of the purpose of the design
+                                                |
+                                                |
+                                        Informaction gathreing
+                                                |
+                                                |
+                                        Principal for the jugung
+                                                |
+                                                |
+                                        Analyse the choices
+                                                |
+                                                |
+                                        Evelouction of alternativ    
+                                                |
+                                                |
+                                        Select the best alternative
+                                                |
+                                                |
+                                        Execute the design
+                                                |
+                                                |
+                                        Evaluates the result
+
+    
