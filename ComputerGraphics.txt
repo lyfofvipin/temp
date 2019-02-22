@@ -1,0 +1,316 @@
+Introduction :-
+    CG is the field of visual computing where one utilised computers both to genrate visual image and to integrate or alter visual
+    information sampled from the real world.
+    This field can be diveded into sevral areas into real time 3D used in vedio games, vedio capture and vedio creation spcial
+    effects edditing for movies and telivision, image edditing and modeling devlopment in CG was first devloped by academic
+    intrest and government sponsership.
+
+Application Area of CG :-
+    -> Computer edit degine application (CAD)
+    -> Computer games
+    -> Computer annimation 
+    -> Geographical information system (GIS)
+    -> Education and training
+    -> Classroom demostration
+    -> Working model of any machienry
+    -> visualigation 
+    -> Comrcial application
+
+    -> Computer edit degine application (CAD) :-
+
+        It allow for simple degine of building, electronic circuit board, machinal system and engeenring degine in both 2D and 3D.
+        It save time and energy for example car manifecturing compney the manager wants to devlop.
+        
+        CAD can also be of diffrent form possible type can be.
+
+            --> Machinal degine
+            --> Arcitectural field
+            --> Electronic circuit degine
+            --> Arrow dynamic modeling and degine field
+    
+    -> Computer Games :-
+
+        CG is very usefull for devloping computer games such as PUBG, Pacman, Donkey Kong, Mario.
+        The early version of games are 2D grapgics but the latter versions have 3D objects.
+        annimation is a standerd component.
+
+    -> Computer Annimation :-
+        is the art of creating moving image via the use of computer it is a sub field of CG and annimation it created by 3D computer
+        grapgics.
+
+Video Display Device :-
+    The operation of most vedio devices based on standerd CRT 
+
+                                                          /|
+                                             /\          / |
+             Base                           /  \        /  |fosfours coated screen
+            +----+-------------------------+    +------+   |
+        ----|----+   +-+                  Electronic bean  |
+        ----|----+---+-+--------------------------------+  |
+        ----|----+   +-+                                 \ |
+        ----|----+   Electric gun                         \|
+  Connecter +----+------------------------+    +-------+   |
+     pins                                  \  /         \  |
+                                            \/           \ |
+                                magnetic coil             \|
+
+    There are 2 type of display 
+        -> Raster scan display 
+            The most coman type of grapgics moniter is the raster scan display based on TV technology in it the raster scan system
+            system the electronic beam is swep acrose the screen one raw at a time from top to bottom.
+
+        -> Randam scan display :
+            Here the electronic beam are directed only to the part of the screen where a picture is to be drown.
+    
+    Colour CRT Display :
+        A CRT display Colour picture by using a combination of fosfours that emmit diffrent Colour lite the 2 basic technique for
+        producing Colour display with a CRT are the
+
+            -> Beam pantration method
+                it for displaying method for displaying Colour picture has been used with Randam scan moniter 2 layers of fosfours
+                red and green are coated onto the inside of the CRT screen.
+
+                                                          /||
+                                             /\          / ||
+             Base                           /  \        /  ||fosfours coated screen
+            +----+-------------------------+    +------+   ||
+        ----|----+   +-+                  Electronic bean  ||
+        ----|----+---+-+--------------------------------+  ||
+        ----|----+   +-+                                 \ ||
+        ----|----+   Electric gun                         \||
+  Connecter +----+------------------------+    +-------+   ||
+     pins                                  \  /         \  ||
+                                            \/           \ ||
+                                magnetic coil             \||green
+                                                           Red
+
+            -> Shadow mask method
+                it used in raster scan system including Colour TV because they produce a varity of Colour then beam pantration
+
+                                 +-------+                     +--------+
+          B  --------------------| shado |---------------------|  R     |
+          G  --------------------|  mask |---------------------|  G     |
+          R  --------------------|       |---------------------|  B     |
+                                 +-------+                     +--------+
+
+GUI :-
+    It's an interface that allow user to intrect with diffrent electronic devices using icons and other visual indicaters the GUI 
+    were created because CLI were quit complicated and it was diffcult to learn all the commands in it
+
+                                             User
+                                              |
+                                              |
+                                             GUI
+                                              |
+                                              |
+                                       Display server 
+                                              |
+                                              |
+                                           Kernael
+                                              |
+                                              |
+                                           Hardware  
+
+GUI are used in many devices Computr, Mobiles, Smart phones, Mp3 players e.t.c element in GUI 
+    -> Windo
+    -> Menu
+    -> Icons
+    -> Controle 
+    -> Tabs
+
+    -> Windo
+        This is the element that display the information on the screen it is very easy to manipulate a windo it can be opened or
+        closed.with the click of an icon it can be moved to any area by dragging it in a multitasking environment multiple windose
+        can be open at the same time there are multiple types of windo in a such as contaner windo, browser windo, test terminal
+        windo, child window and message windo.
+
+    -> Menu
+        A menu contains a list of choises and it allow it user to select 1 from them a menu bar is displayed horigently acrose the
+        screen such as pull down menu.
+        Another type of menu is the context menue.
+    
+    -> Icons
+        Files, Programs, Web pages can be repersentid using a small picture in a GUI this picture is known as icon.
+
+    -> Controle
+        Information is an application can be directly need using the Graphical Controle element.
+
+    -> Tabs
+        A tab is associated with a view pin it usially contains a text level or a Graphical icon they are used in varius web 
+        browser such as internet explorer, Firefox, Safari, Opera, edge and Chrome.
+
+Raster scan system :-
+    It Employ sevral processing unit as CPU, Processer and Video controler.
+
+
+                                                                                                       /|
+                                                                                                      / |
+            +------- ---------+  +-------------------+       +-------------------+        +----------+  |
+            | CPU             |  |  system memory    |       |      Video        |        | Moniter     |
+            |                 |  |                   |       |       Controler   |------->|             |
+            +-----------------+  +-------------------+       +-------------------+        +----------+  |
+                          |               |                            |                              \ |
+                          |               |                            |                               \|
+                          |               |                            |
+            +---------------------------------------------------------------+
+            |                       System BUS                              |              
+            +---------------------------------------------------------------+
+                                        |
+                                        |
+                                  I/O devices    
+
+
+                                                                                                          /|
+                                                                                                         / |
+            +-----+  +-----------------+-------------------+       +-------------------+        +-------+  |
+            | CPU |  | system          | Frame             |       |   Video           |        | Moniter  |
+            |     |  | memory          |  Buffer           |------>|     Controler     |------->|          |
+            +-----+  +-----------------+-------------------+       +-------------------+        +-------+  |
+                          |                                                                              \ |
+                          |                                                                               \|
+                          |
+            +-----------------------------------------------------------+
+            |              system BUS                                   |
+            +-----------------------------------------------------------+   
+                                |
+                        Input Output Device      
+
+
+    -> Video contaner
+        The fixed area of the system memory is reserved for the frame buffer and the Video controler is given direct acces to the 
+        frame buffer memory, frame buffer location and the coresponding screen poition are refrenced in cartition cordinate.
+
+        +-------------------------------------------+
+        |   +-----------------------------------+   |
+        |   |                                   |   |
+        |   |     Y|                            |   |
+        |   |      |                            |   |
+        |   |      |                            |   |
+        |   |      |                            |   |
+        |   |      |                            |   |
+        |   |      +-------------------X        |   |
+        |   |                                   |   |
+        |   +-----------------------------------+   |
+        +-------------------------------------------+
+
+            The origen of cordinate system for identifying screen poition is usualy specified in the lower left 
+            corner.
+
+                                                                                                       /|
+                                                                                                      / |
+            +-----------------------+-------------------+       +-------------------+        +-------+  |
+            | Display processer     | Frame             |       |   Video           |        | Moniter  |
+            |      memory           |  Buffer           |------>|     Controler     |------->|          |
+            +-----------------------+-------------------+       +-------------------+        +-------+  |
+                          |                                                                           \ |
+                          |                                                                            \|
+                          |
+            +-------+    +--------------+         +--------------------+
+            |   CPU |    | Display      |         | system memory      |
+            |       |    |   processer  |         |                    |
+            +-------+    +--------------+         +--------------------+
+                |               |                           |
+            +-----------------------------------------------------------+
+            |              system BUS                                   |
+            +-----------------------------------------------------------+   
+                                |
+                        Input Output Device  
+
+
+Randam scan system :-
+    An application Programs is input and stored in the system memory along with a grapgics package grapgics commands in the appl-
+    -ication program are translated by the package into a display file stored in the system memory.
+
+            +-------+    +--------------+         +--------------------+
+            |   CPU |    | system memory|         | Display processing |
+            |       |    |              |         |                    |
+            +-------+    +--------------+         +--------------------+
+                |               |                           |
+            +-----------------------------------------------------------+
+            |              system BUS                                   |
+            +-----------------------------------------------------------+   
+                                |
+                        Input Output Device  
+
+    grapgics pattern are drown on a randam scan system by directing the electron beam along the component lines of the picture
+    lines are defined by the values for there cordinate and points and thise input cordinate values are converted into x and y
+    diflection voltag.
+
+Line Drowing algorithem :-
+
+
+    +
+    |
+    |
+ Y1 |-------+
+    |       |\
+    |       | \
+ Y2 |-------|--+
+    |       |  |
+    |       |  |
+    +--------------------------------+
+            X1  X2
+
+    The cartition slope intersept equation for a state line is 
+
+            +-------------+  
+            |  y = mx + b |
+            +-------------+
+    m = slope
+    b = intersept
+    
+    given that the 2 end points of a line segment are specified x1, y1 and x2, y2 then 
+        +-------------+
+        |     y2-y1   |
+        | m = -----   |
+        |     x2-x1   |
+        +-------------+
+
+        Δx = x2-x1 
+        Δy = y2-y1 
+
+             Δy
+        m = ----
+             Δx
+
+               Δy  
+        Δx =  ----
+               m 
+
+        Δy = m.Δx
+
+        These equation 6 & 7 make the bases for determining deflaction voltege in analog device for lines with slope magnitude
+        Δx can be set to a small horigental diflection voltege
+        Δy can be set to a small vertical diflection voltege
+        |m| < 1 if [ Δy < Δx ]
+        |m| > 1 if [ Δy > Δx ]
+        |m| = 1 if [ Δy = Δx ]
+
+DDA(Digital Difrential Analyser) :-
+    It's a scan convertion algorithem is the scan convertion algorithem based on calculating Δy and Δx. which sample the line at 
+    unit interwells in one cordinate and determine coresponding integer values nearest the line path suppose a line with +ve slope
+    if the slope is < or = to 1 then we sample at unit x interwells Δx = 1 then each sucessive y values as
+
+    Δx = 1
+    Yk+1 = Yk + m
+
+    subscript k take starting value from k=1, m can be any real number between 0 and 1 
+    for lines with a +ve slope > then 1 
+
+    Δy = 1
+    Xk+1 = Xk + 1/m
+
+    equation 1 and 2 based on the that the line are to be processed from left end point to the right end point. If the processes is
+    reversed so that the starting end point 
+
+    Δx = -1
+    Yk+1 = Yk - m
+
+    Δy = -1
+    Xk+1 = Xk - 1/m    
+
+    eq 3 and 4 can also be used to calculate pixal poition along a line with -ve slope the DDA algorithem is faster mathod for pixel
+    poition.
+
+Circle Genreting Algorithem :-
+        
