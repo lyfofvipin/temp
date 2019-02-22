@@ -1,0 +1,387 @@
+Firewalls :- 
+    It forms a barrior through which the traffic going in each direction must pass, it may be degined to oprate as a filter at the 
+    level of IP packets of may operate at a higher protocole layer.
+    They can be an effective means of protecting a local system or network of system form network based security threades.
+
+Firewalls degine Principle :-
+    -> LAN interconnecting PC's and terminal to each others. 
+    -> Enterprise wide network consisting of multiple geographically distrebuted network interconnected by a private MAN.
+    -> Internet connectivety in which the varius networks into the internet.
+
+Firewalls chracterstics :-
+    -> All traffic from inside to outside must pass.
+    -> Only authroised traffic by the local security policy will be allow to pass,
+       Varius type of firewall are used which implement varius type of security policys.
+    -> The firewall itself is immune to pnetration.
+
+Types of Firewalls :-
+    -> Packet filtring
+    -> Application level
+    -> circuit level
+
+    -> Packet filtring
+            A packet filtring router apply a set of rules to each incoming and outgoing IP packets and then forward or disgard the
+            packets.
+
+                                              +------------------------------------------------------------------------+
+                                              |                                                                        |
+    +-----------+                       +------------+                                                                 |
+    |           |                       |   packet   |                              +-------------------+              |
+    | internet  |-----------------------|   filtring |------------------------------|  Private Network  |              |
+    |           |                       |   router   |                              +-------------------+              |   
+    +-----------+                       +------------+                                                                 |
+                                              |                                                                        |
+                                              +------------------------------------------------------------------------+
+            --> Source IP addres
+            --> Destination IP addres
+            --> Source IP addres
+            --> Source and Destination transport level addres
+            --> IP Protocole field
+            --> Interface
+
+            --> Source IP addres
+                The IP addres of the system that orignate the IP Package.
+                ex:     192.178.1.1
+
+            --> Destination IP addres
+                The IP addres of the system the IP packet is triying to reach.
+                ex:    192.168.1.2
+
+            --> Source and Destination transport level addres
+                The transport level TCP/UDP port number which define application such as SNMP or Telnet.
+
+            --> IP Protocole field
+                It define the transport protocole
+
+            --> Interface
+                For a router with 3 or more ports which interface of the router with the package came from or with interface of the
+                router the packet is destinated for.
+
+
+    -> Application level
+            An application level getway also called proxy server acts as a relay of application level traffic.
+
+                                                           +-----------+
+                                                           |           |
+                                                           |   TELNET  |           
+                +-------------------+                      |           |                    +-------------------+
+                |                   |  Outside connection  |   FTP     | Inside connection  |                   |
+                |   Outside host    |----------------------|           |--------------------|   Inside Host     |
+                |                   |                      |   SMTP    |                    |                   |
+                +-------------------+                      |           |                    +-------------------+
+                                                           |   HTTP    |
+                                                           |           |
+                                                           +-----------+
+
+            The user contects the getway using a TCP/IP application such as Telnet, when the user responce and provides a valid user
+            ID and authentigation information the getway contects the information on the remote host.
+            Application level getway is more secure then packet filter.
+
+
+    -> circuit level 
+        
+                                                    +-----------+
+                                                    |           |
+                                                   OUT---+      IN           
+                +-------------------+               |    |      |             +-------------------+
+                |                   |               |    |      |             |                   |
+                |   Outside host    |---------------|    |      |-------------|   Inside Host     |
+                |                   |              OUT   |      IN            |                   |
+                +-------------------+               |    |      |             +-------------------+
+                                                    |    |      |
+                                                   OUT   +------IN
+                                                    |           |
+                                                    +-----------+
+
+            A third type of firewall is a circuit level getway this can be a stand alone system or it can be spcialied function performed by 
+            an application level getway for certain application a circuit level getway does not permit an N-N TCP connection.
+
+Bastion Host :- 
+    A bastion host is a system identified by the firewall admnistrater as a critical strong point in the network security the bastion
+    host serve as a plateform for an application level.or circuit level getway,
+    comman level of a bastion host are following -
+        -> The Bastion Host hardware plateform execute a secure version of it's OS making it a trusted system.
+        -> The servises that the network admnistrater consider asensial are installed on the bastion host this include proxy application
+           such as telnet, DNS, FTP, SMTP and user authentigation.
+        -> The bastion host may require addisnol authentigation before a user is allowed access to the proxy servises.
+        -> Each proxy is configured to support only a subset of the standerd application command set.
+        -> Each proxy is configured to allow access only to specific host system.
+        -> Each proxy maintain detailed audit information by login all traffic each connection and the duration of each connection the
+           audit log is an asensial tool for discovering and terminating intruder attacks.
+        -> Each proxy module is a very small software package designed for network security for example a Unix mail application may contain
+           20,000 line of code while a mail proxy may contain fewer then 1,000.
+        -> Each proxy independent of others proxy on the bastion host if there is a problem with the operation of any proxy.
+        -> A proxy genraly performed no disk access other then to read it initinal configuration file.
+        -> Each proxy runes a non-privillage user in a private and secure directry on the bastion host.
+
+Trojan Horse Defense :-
+
+             +------------------------------------------------------------------+
+             |                                                                  |
+    +---+    |                                           | BOB : RW |           |
+    |BOB|----|  +-----------+       +---------------+    +----------+           |
+    +---+    |  |           |       |               |        |                  |
+             |  | Program   |-------| "CPE170KS"    |--------+                  |
+             |  |           |       |               |                           |
+             |  +-----------+       +---------------+      ALIC : RW            |
+    +----+   |                                           | BOB : W  |           |
+    |ALIC|---|  +-----+-----+       +---------------+    +----------+           |
+    +----+   |  |     |  H  |       |     Back      |        |                  |
+             |  |     +-----|-------|    Pocket     |--------+                  |
+             |  |  Program  |       |     File      |                           |
+             |  +-----------+       +---------------+                           |
+             |                                                                  |
+             +------------------------------------------------------------------+
+
+                            Refrence Moniter
+                                 |
+             +-------------------+----------------------------------------------+
+             |                   |                                              |
+    +---+    |                   |                       | BOB : RW |           |
+    |BOB|----|  +-----------+    |  +---------------+    +----------+           |
+    +---+    |  |-----------|    |  |---------------|        |                  |
+             |  |-Program---|----+--|-"CPE170KS"----|--------+                  |
+             |  |-----------|    |  |---------------|                           |
+             |  +-----------+    |  +---------------+      ALIC : RW            |
+    +----+   |                   |                       | BOB : W  |           |
+    |ALIC|   |  +-----+-----+    |  +---------------+    +----------+           |
+    +----+   |  |     |  H  |    |  |     Back      |        |                  |
+             |  |     +-----|    |  |    Pocket     |--------+                  |
+             |  |  Program  |    |  |     File      |                           |
+             |  +-----------+    |  +---------------+                           |
+             |                   |                                              |
+             +-------------------+----------------------------------------------+
+                                 |   
+
+             +------------------------------------------------------------------+
+             |                                                                  |
+    +---+    |                                           | BOB : RW |           |
+    |BOB|-+  |  +-----------+       +---------------+    +----------+           |
+    +---+ |  |  |           |       |               |        |                  |
+          |  |  |  Program  |-------| "CPE170KS"    |--------+                  |
+          |  |  |           |       |               |                           |
+          |  |  +-----------+       +---------------+                           |
+          |  |                      |                                           |
+          +--+--+           +-------+                      ALIC : RW            |
+    +----+   |  |           |                            | BOB : W  |           |
+    |ALIC|   |  +-----+-----+       +---------------+    +----------+           |
+    +----+   |  |     |  H  |       |     Back      |        |                  |
+             |  |     +-----|-------|    Pocket     |--------+                  |
+             |  |  Program  |       |     File      |                           |
+             |  +-----------+       +---------------+                           |
+             |                                                                  |
+             +------------------------------------------------------------------+
+
+                            Refrence Moniter
+                                 |
+             +-------------------+----------------------------------------------+
+             |                   |                                              |
+    +---+    |                   |                       | BOB : RW |           |
+    |BOB|-+  |  +-----------+    |  +---------------+    +----------+           |
+    +---+ |  |  |           |    |  |---------------|        |                  |
+          |  |  |  Program  |    |  |-"CPE170KS"----|--------+                  |
+          |  |  |           |    |  |---------------|                           |
+          |  |  +-----------+    |  +---------------+                           |
+          |  |                   |  |                                           |
+          +--+--+           +----+--+                      ALIC : RW            |
+    +----+   |  |           |    |                       | BOB : W  |           |
+    |ALIC|   |  +-----+-----+    |  +---------------+    +----------+           |
+    +----+   |  |-----|  H  |    |  |     Back      |        |                  |
+             |  |-----+-----|----+--|    Pocket     |--------+                  |
+             |  |--Program--|    |  |     File      |                           |
+             |  +-----------+    |  +---------------+                           |
+             |                   |                                              |
+             +-------------------+----------------------------------------------+             
+                                 |
+
+    Trojan :-
+        It's a type of mallware that is either packeged along with a usefull piec of software otherwise infactionmay be done by 
+        online activity.
+        To secue against trojan horse attacks is the use of secure trusted operating system.
+        In this example a user named BOB intrects to a program with a data file containing the criticaly sencitive character string
+        "CPE170KS" user BOB has created the file with R/W permition provided only to program executing own it's bihalf.
+        The trojan horse attacks begines when a horsetile user named ALIC gains to the system and install both trojan horse program
+        and a private file to be used in the attack as a Back Pocket ALIC gives R/W permition to herself for this file and gives BOB
+        W only permition. The use of a secue OS in this security level are assined to subject at logon identifyed by the password
+        and ID.
+
+Viruses :-
+    A varius is a peace of software that can infect other program by modefying them the modifaction include a copy of the varius program
+    which can go on to infect other program.
+    Type of Viruses
+    -> Boot secter Virus
+        It infect a masterboot report and spreds when a system is booted from the disk containing the Virus.
+
+    -> Polymorfic Virus
+        A Virus that affects data type and function, it's a self encrupted virus 
+
+    -> Matamorfic Virus
+        it's type of virus that is capable of changing it's port and signature pattern with each itteration.
+
+    -> Memory resident Virus
+        It's a miscellaneous code that install in the Memory that infect future programes 
+
+    -> Parasitic Virus
+        It's most comman virus it atach itself to exicutable file and replicates.
+
+Threads :-
+    -> Miscellaneous programes
+        They are comenly use as mallware that brings harm to a computer system, they can be in the for of worms, trojans, back door,
+        logic and zombie.
+
+        --> Back door 
+        --> Logic boom
+        --> Trojan Horse
+        --> Zombie
+
+        --> Back door 
+            Known as trap door is a secrate entry point into a program that allow someone back door to gain access without going 
+            through the usiual security access prosidure.
+
+        --> Logic boom
+            One of the oldest type of program threades viruses is the logic boom, it's a code ambadded in the some program that is said
+            to explode when certain condition are mets.
+
+        --> Trojan Horse
+            It's a type of mallware that is either packeged along with a usefull piec of software otherwise infactionmay be done by 
+            online activity.
+
+        --> Zombie
+            It's a program that secretly takes over another internet attached computer and then use that computer to launch attacks
+            that are difficult to trace to the zombie creaters zombie are used in denile of servis attacks against targated web-
+            -site 
+
+Macro viruses :-
+    -> A macro is plateform indipendent it infact microsoft word document so any hardware plateform and OS that support word can be
+       infacted.
+    -> Macro viruse infact document not exicutable portion of code.
+    -> Macro viruse are easely sprades a very comman method is by E-Mail.
+    -> Macro viruse take advantages of a features found in word and other office application such as microsoft excel.
+    -> sucessive relese of word software provide increse protection against macro viruses for ex: microsoft offers an optional
+        macro virus protection tool that ditect supicius word files.
+
+E-mail Viruses :-
+    -> A more resent devlopment in Miscellaneous software is the e-mail viruses the first spredding e-mail viruses such as melissa
+       the mail viruses send itself to everyone in the mailing-list in the users e-mail package.
+    -> They does local damage the viruses uses the visual basic scripting language supported by the mail package.
+
+Worms :- 
+    a worm is a program that can replicates itself and send copyes from computer to computer acrose network connection.
+
+SET (Secure electronic tranjaction) :-
+    Set is an open encription and security specification degine to protect cradit card tranjaction on the internet the current 
+    version is SET V1, It's not itself an payment system it's a set of security protocole and formets that enable users to employe
+    the cradit card payment infrastructure, SET provide 3 servises.
+        -> Provide a secure communication chennal.
+        -> Ensure privecy Because the information is only avilable to partyes in a tranjaction.
+        -> Provide trust by the use of digitel certificate
+    
+SET Overview :-
+    SET specification list the following business requriment for secure payment processing with cradit cards over the internet and 
+    other network
+    -> Provide confidenciality of payment and ordering information 
+    -> Ensure the intigrety of all transmitid data
+    -> Provide authentigation that a card holder is a leagel user of a cradit card accaunt
+    -> Provide authentigation that a merchant can accept cradit card tranjaction
+    -> Ensure the use of the bach security practicies
+    -> Encrase inter operate ability among software and network providers
+    
+    +----+              +----+
+    |    |              |    |
+    +----+              +----+
+    Card holder         Merchant
+        \               /
+         \             /
+        +---------------+
+        |               |
+        |   Internet    |
+        |               |
+        +---------------+
+            |             \
+            |              \
+            |               \
+         +--------+          +-----------------+
+         |        |          | Payment Getway  |  
+         |        |          +-----------------+
+         +--------+
+         Certificate Authority
+               |
+               |
+               |
+              /|\ 
+             / | \
+            /  |  \
+    +------+   |   +--------+
+    |Issuer|   |   | Acquier| 
+    +------+   |   +--------+
+               |
+               +-----------------+
+               | Payment Getway  |
+               +-----------------+
+
+Digitel signature :-
+    They allow us to varefy the auther, date and time of signature authentigate the message content it also include authentigation
+    function for additional capiblity there are sevral reasions to implement digitel signature for communication
+    -> Authentigation
+    -> Intigrety
+    -> nonrepudiation
+    
+    +-----------+
+    |           |   +------------+
+    |   Data    |-->| 10110010   |
+    |           |   +------------+
+    +-----------+     Hash  |
+                            |
+        +-------+           |
+        | Certi |           |
+        | cate  |           |
+        |       |           |
+        +-------+           |
+            |               |
+            |            +-------+
+            |            |1110110|
+            |            +-------+   
+            |                  |
+            |                  |
+            +------------------+
+                    |
+                    |
+                    |
+                +------------+
+                | Digitally  |
+                | Signed     |
+                | data       |
+                +------------+    
+
+
+
+                                            +------------+
+                                            | Digitally  |
+                                            | Signed     |
+                                            | data       |
+                                            +------------+
+                                                 |
+                                                 |
+                                                 |
+                            +-----------------------------------------------+
+                            |                                               |
+                        +-------+                                           |
+                        |  Data |                                       +---------+                    
+                        +-------+                                       |1110110  |
+                            |                                           +---------+
+                            |                                                   |
+                            |                                                   | decrupting using signature public
+                            |                                                   |   Key
+                         +-----------+                                    +------------+    
+                         | 10110010  |  --------------------------------  | 10110010   |
+                         +-----------+                                    +------------+
+                            Hash                                                Hash
+
+Electonic mail security :-
+    -> PGP ( preety good privecy )
+        It's an encription program that provide cryptography privecy and authentigation for data communication, It's used for 
+        singing for encurpting and decrupting text, emails, files and directry to increse the securety of email communication
+        It's a populer program used to encrupt and decrupt over the internet as well as authentigate digitel signature and
+        encrupted stroed files PGP uses a variation of public key system in this system each user has an encription key that is 
+        public Known and a private key that is Known only to that user pretty good privicy can be used to authenticate digital 
+        certificate and encrypt / decrypt text , emails, files, directories, and whole disk partition. 
