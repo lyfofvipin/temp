@@ -1,0 +1,153 @@
+Introduction :-
+    A branch of compuer system with the study and creation of systerm form of inteligent system that learn new concept and task.
+
+Importence of AI :-
+    They are the meachens which are degined and programmed in such a manner that they think and act like a human.
+    It becomes the importent part of our daily life our life is changed by AI because this technology is used in a wide area of day
+    to day servises.
+    Thise technology reduse human efforts now in many induresties peoples are using this technology to devlop machines to perform 
+    the diffrent activity the introduction of AI bring the idea of error free world. this technology will introduce in all the
+    sectore to reduce human efforts and give accurate and faster result.
+
+AI and related field :-
+    AI used in enggenring 
+        -> Meachanical enggenring
+        -> Electrical enggenring
+        -> Psychologi
+        -> Robotics
+        -> Biology
+        -> Chemistry
+        -> Defence
+        -> Civil enggenring
+        -> Arrow space
+    
+Knowledge :-
+    The importent role that Knowledge play in building inteligent system is now widely accepted in AI, Knowledge can be defined as
+    the body of fact sand principle processed by human kind or the act, fact an state of knowing it have familiarty with language,
+    concept, procedures, ideas, abstraction, coustems, facts and assosiation.
+    The mening of Knowledge is closely related to the meaning of inteligense,
+    In biological organism Knowledge is lightly stored as complex structure of inter-connected nurones,
+    In computer Knowledge is also stored as symbolic structure but in the form of collection of magnetic spots and voltege states,
+    a comman way too repersent Knowledge external to a computer or a human is in the form of return language for example some facts
+    and relation repersented in printed english are
+        -> Joe is Tall
+        -> Bill hates Ytender
+
+Repersenation of Knowledge in AI :-
+
+                                        Mental images
+                                              |
+                                              |
+                                              |
+                                        Written test
+                                              |   
+                                              |
+                                              |
+                                        Character strings
+                                              |           
+                                              |
+                                              |
+                                        Binary numbers
+                                              |
+                                              |
+                                              |
+                                        Magnatic sport
+
+    Knowledge consist of facts, concept and rules it can be repersentid in diffrent forms as mental image, Written test, Character
+    strings, Binary numbers and Magnatic spots
+    Any choice of repersenation will depend on the type of problem to be solved 
+    ex: we wish to write a program to play simple card game using the standerd of 52 playing cards, We can repersent cardes in
+    diffrent ways the most importent way is to record(Clubs, dimond, hearts, spads) and face value (Ace, 2, 3, 4, 5, 6, 7, 8, 9, 10
+    Jack, Qeen, King) The qeen of hearts might be repersented as <qeen, hearts>. 
+    we could assine codes c6 for the 6 of Clubs numeric values.
+
+FOPL ( First order predicte logic ) :-
+    It was devloped by Sientiest as a means for formal reasing here natural language like english are translated into symbolic st-
+    -ures maid by pridactes, functions, variables, constant, quantefires and logic connectives. The symboles form the basic build-
+    -ing blocks for the Knowledge and their combination into valid structure is maid using the syntex rules of combination for ex-
+    -ample :
+        "All employe of the AI software compny are programers"
+        FOPL -> (∀x) AI-software-co-employe(x)--> programer(x)
+
+            ∀    = 'for all x'
+            -->  = 'for emplies' or 'then'
+
+            predicte = AI-software co-employe(x)
+            pridactes = programer(x)
+    It's very importent for AI for the logical and reasing process pro-positional Dictionary logic is a spcial case of FOPL.
+
+Syntex and Semaentics  for prp-positional Dictionary logic :-
+    Valid statement of sentence in PL are determined acording to the rules of pro-positional Dictionary syntex this syntex rule the combination
+    of basic building block such as pro-positional Dictionary such as pro-positional Dictionary and logic connectives, pro-
+    positional Dictionary are elementry atomic sentences some example of symple pro-positional Dictionary are
+    -> It's raining.
+    -> My car is painted silver.
+    -> Snow is white.
+    Compount pre-positional Dictionary are formed from atomic formulase using the logical connectives not, and, or,
+    The following are compound pro-positional Dictionary example 
+    -> It's raining and the wind is blowing.
+    -> The moon is made of white colores or it's not.
+    -> The sum of 10 and 20 is not 50.
+
+Features of FOPL :- 
+    -> More expressive and powerfull repersenation 
+    -> Allow us to repersent almost any english sentence    
+    -> Genraliation of pro-positional logic
+
+Syntex of Pro-positional Dictionary logic :-
+    The syntex of PL is defined as following
+    -> P&Q formulase the following are formulase
+        --> ~P
+        --> P V Q
+        --> P ∧ Q
+        --> P --> Q
+        --> P <--> Q
+    All formulase are gentated from a finight number of the above operation an example of a compound formula is
+    (P ∧ (Q V R) --> (Q --> S))
+    
+Semaentics :-
+    The Semaentics or meaning of a sentence is just the value true of false (T & F) could not be confuced with the symboles T & F
+    which can appier within a sentence .
+    Semaentics rules for statement
+
+            +-------------------+-------------------+-------------------+
+            | Rule Number       |   True statement  |   False statement |
+            +-------------------+-------------------+-------------------+
+            | 1                 |       T           |       F           |
+            | 2                 |      ~F           |      ~T           |
+            +-------------------+-------------------+-------------------+ 
+
+Property of statement :-
+    -> Satifiable
+    -> Contradiction
+    -> Valid
+    -> Equivalence
+    -> Logical consequences
+    
+    -> Some equivalence laws 
+        -> Idempotency
+            P v P = P   P or P
+            P ∧ P = P   P &  P
+
+        -> Associalivity
+            (P v Q) v R = P v (Q v R)
+            (P ∧ Q) ∧ R = P ∧ (Q ∧ R)
+
+        -> Commutaivity
+            (P v Q) = (Q v P)
+            (P ∧ Q) = (Q ∧ P)
+            P <--> Q = Q <--> P
+
+        -> Distribuivity
+            P ∧ (Q v R) = (p ∧ Q)v(P ∧ R)
+            P v (Q ∧ R) = (p v Q)∧(P v R)
+
+        -> De-morgans law
+            (P v Q) = ~P ∧ ~Q
+            (P ∧ Q) = ~P v ~Q
+
+        -> Condition elimination
+            P --> Q = ~P v Q
+
+        -> Bi- Conditional elimination
+            P <--> Q = (P --> Q)∧(Q --> P)
