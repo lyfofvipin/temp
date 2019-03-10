@@ -54,7 +54,6 @@ Video Display Device :-
                                             \/           \ |
                                 magnetic coil             \|
                                 
-                                Yogi
 
     There are 2 type of display 
         -> Raster scan display 
