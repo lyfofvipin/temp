@@ -53,7 +53,6 @@ Video Display Device :-
      pins                                  \  /         \  |
                                             \/           \ |
                                 magnetic coil             \|
-                                
 
     There are 2 type of display 
         -> Raster scan display 
@@ -148,7 +147,7 @@ Raster scan system :-
                                                                                                       / |
             +------- ---------+  +-------------------+       +-------------------+        +----------+  |
             | CPU             |  |  system memory    |       |      Video        |        | Moniter     |
-            |                 |  |                   |       |       Controler   |------->|             |
+            |                 |--|                   |-------|       Controler   |------->|             |
             +-----------------+  +-------------------+       +-------------------+        +----------+  |
                           |               |                            |                              \ |
                           |               |                            |                               \|
@@ -165,7 +164,7 @@ Raster scan system :-
                                                                                                          / |
             +-----+  +-----------------+-------------------+       +-------------------+        +-------+  |
             | CPU |  | system          | Frame             |       |   Video           |        | Moniter  |
-            |     |  | memory          |  Buffer           |------>|     Controler     |------->|          |
+            |     |--| memory          |  Buffer           |------>|     Controler     |------->|          |
             +-----+  +-----------------+-------------------+       +-------------------+        +-------+  |
                           |                                                                              \ |
                           |                                                                               \|
@@ -193,6 +192,7 @@ Raster scan system :-
         |   |...................................|   |
         |   +-----------------------------------+   |
         +-------------------------------------------+
+
             The origen of cordinate system for identifying screen poition is usualy specified in the lower left 
             corner.
 
@@ -221,11 +221,15 @@ Randam scan system :-
     An application Programs is input and stored in the system memory along with a grapgics package grapgics commands in the appl-
     -ication program are translated by the package into a display file stored in the system memory.
 
-            +-------+    +--------------+         +--------------------+
-            |   CPU |    | system memory|         | Display processing |
-            |       |    |              |         |                    |
-            +-------+    +--------------+         +--------------------+
-                |               |                           |
+                                                                              /|
+                                                                             / |
+            +----------+  +---------+   +---------------+        +----------+  |
+            | CPU      |  | system  |   |     Display   |        | Moniter  |  |
+            |          |--|  memory |---|    processer  |------->|          |  |
+            +----------+  +---------+   +---------------+        +----------+  |
+                |               |               |                            \ |
+                |               |               |                             \|
+                |               |               |            
             +-----------------------------------------------------------+
             |              system BUS                                   |
             +-----------------------------------------------------------+   
@@ -313,4 +317,15 @@ DDA(Digital Difrential Analyser) :-
     poition.
 
 Circle Genreting Algorithem :-
-        
+    Digram ==========   1
+    Circle is a frequently used component in picture and graphs a circle is defined as the st of point that are at a given distence
+    r from a center poition (Xc,Yc) 
+    In above figure un equal spacing shown in figure to remove un equal spacing using poler cordinate r and θ expressing the circle 
+    equation in paramatric poler form 
+    Digram =========   2
+    x = Xc + rcosθ
+    y = Yc + rsinθ
+    when a display genrated with this equation using a fixed anguler step size a circle is ploted with equaly spaced point th step
+    size choosen for θ depend on the application and the display device 
+    Digram =========   3
+    The shape of the circle is same in each quadrent
