@@ -372,3 +372,19 @@ Coordinate repersation :-
     and at last they are changed into DC ( device cordinate )
 
     MC ---> WC ---> NC ---> DC
+
+Graphics Functions :-
+    Output premitive :-
+        For Drowing picture ( points, line ...)
+
+    Attributes of output premitive :-
+        like length, width
+
+    Geomatric transformation :-
+        translate, rotate of any objects.
+
+    Viewing :-
+        changing camera view
+
+    Projection :-
+        displaying on the screen
