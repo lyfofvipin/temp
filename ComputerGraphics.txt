@@ -330,7 +330,48 @@ Circle Genreting Algorithem :-
     Digram =========   3
     The shape of the circle is same in each quadrent
 
+2-D Viewing :-
+    A world cordinate area selected for display is called a window 
+    Digram =========   4
+    An area on a display device to which a windo is mapped is called a view port the windo define where is to be displayed windo and
+    view ports are rectangle in standerd poition.
+    Digram =========   5
+    A Viewing transformation using standerd rectangles for the window and view port.
 
+Windo to view port cordinate transformation :-
+    Digram =========   6
+    Digram =========   7
+    
+Cleaping :-
+    --> point cleaping
+
+    --> line cleaping
+        A line cleaping procedure involves sevral parts we process line through the inside outside test by checking the line end points
+        a line with both end points inside all cliping bounderys such as the line from P1 to P2 is saved. a line with both end point
+        outside any one of the clip bounderys ( line P3 and P4 ) is outside the windo.
+
+        equation : for a line segment with end points (x1,y1) and (x2,y2) and one or both end points outside the cliping rectangle
+        the paramatric repersentation is following
+            u is a paramatr for 
+    
+    --> area cleaping (polygon cleaping)
+        to clip polygon we need to modefy the line cliping procedure a polygon boundery processed with a line cliper depending on the
+        oreantion of the polygon to the cliping windo. for polygon cliping we require an algorithem that will genrate one or more closed
+        areas the Output of a polygon cliper should be a sequance of vertics that define the cliped polygon bounderys.
+
+    --> curve cleaping
+        area with curved bounderys can be cliped with mathods.
+        It will involves non liner equation the bounding rectangle for a circle or other curve objects can be used first to test
+        for overlap with a rectangle clicp windo if the bounding rectangle for the objects is complicately inside the windo we save 
+        the object if the rectangle is outside the windo we disgard the object.
+
+    --> Text cleaping
+        there are several technique that can be used to provide text cliping in a graphics package.
+        The simplest method for processing character string relative to a windo boundery is to use all or none string cliping 
+        strategy shown in figure.
+        and alternative to rejecting entire character string that overlaps a windo boundery is to use the all or none character
+        cliping strategy.
+        a final method for handling text cliping is to click the components of indivisual character 
 
 
 
