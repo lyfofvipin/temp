@@ -365,4 +365,10 @@ Circle Genreting Algorithem :-
 ----------------------------------------------------------------------------------------------------------------------------------
 
 Coordinate repersation :-
-    
+    Most GUI package use cartition cordinate repersation where
+    objects are specified as MC ( modeling cordinates )
+    And then they are placed with WC ( world cordinate )
+    Then they converted into NC ( normalised device cordinate )
+    and at last they are changed into DC ( device cordinate )
+
+    MC ---> WC ---> NC ---> DC
