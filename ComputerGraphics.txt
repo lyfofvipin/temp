@@ -93,7 +93,7 @@ Video Display Device :-
           R  --------------------|       |---------------------|  B     |
                                  +-------+                     +--------+
 
-GUI :-
+GUI (Grsphical user interface ) :-
     It's an interface that allow user to intrect with diffrent electronic devices using icons and other visual indicaters the GUI 
     were created because CLI were quit complicated and it was diffcult to learn all the commands in it
 
