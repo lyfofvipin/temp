@@ -388,3 +388,20 @@ Graphics Functions :-
 
     Projection :-
         displaying on the screen
+
+Software Standerd :-
+    Rewritting of code not required
+    Follow rules
+    Follow GKS
+    Follow PHIGS
+
+    --> GKS
+        Follow all standerd and 
+        format 2D objects don't support 3-d
+
+    --> PHIGS ( Programmer's Hierarchical Interactive Graphics System )
+        Follow all standerd and 
+        format 2D objects
+        make 3D
+        Follow GKS
+        extension of PHIGS
