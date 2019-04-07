@@ -14,8 +14,8 @@ AI and related field :-
         -> Meachanical enggenring
         -> Electrical enggenring
         -> Psychologi
-        -> Robotics
         -> Biology
+        -> Robotics
         -> Chemistry
         -> Defence
         -> Civil enggenring
@@ -76,13 +76,14 @@ FOPL ( First order predicte logic ) :-
             pridactes = programer(x)
     It's very importent for AI for the logical and reasing process pro-positional Dictionary logic is a spcial case of FOPL.
 
-Syntex and Semaentics  for prp-positional Dictionary logic :-
+Syntex and Semaentics for prp-positional Dictionary logic :-
     Valid statement of sentence in PL are determined acording to the rules of pro-positional Dictionary syntex this syntex rule the combination
-    of basic building block such as pro-positional Dictionary such as pro-positional Dictionary and logic connectives, pro-
+    of basic building block such as pro-positional Dictionary and logic connectives, pro-
     positional Dictionary are elementry atomic sentences some example of symple pro-positional Dictionary are
     -> It's raining.
     -> My car is painted silver.
     -> Snow is white.
+
     Compount pre-positional Dictionary are formed from atomic formulase using the logical connectives not, and, or,
     The following are compound pro-positional Dictionary example 
     -> It's raining and the wind is blowing.
