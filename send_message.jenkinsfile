@@ -1,0 +1,34 @@
+properties([pipelineTriggers([[$class: 'CIBuildTrigger', 
+    noSquash: false, 
+    providerData: [$class: 'ActiveMQSubscriberProviderData', 
+    checks: [[
+    expectedValue: 'test-test2-*.*-[0-9][0-9]*.[0-9]*.el[0-9]',
+    field: 'nvr'
+    ]],
+    name: 'my_bus', 
+    overrides: [topic: "Consumer.rh-jenkins-ci-plugin.${UUID.randomUUID().toString()}.VirtualTopic."], 
+    selector: '',
+    timeout: null]]]),
+])
+
+params.each { k, v -> env[k] = v }
+
+
+pipeline{
+
+    agent { 
+        node 'master'
+    }
+    parameters{
+        string( name: 'CI_MESSAGE', defaultValue: '', description: 'ci')
+    }
+    stages{
+        stage('display'){
+            steps{
+                script{
+                    echo "Hello"
+                }
+            }
+        }
+    }
+}
