@@ -1,0 +1,9 @@
+[Unit]
+Description=This Service is to take care of all the report portal services if the System reboots for more check the Shell Scripts
+[Service]
+ExecStartPre=echo Starting steps to init Report Portal Services
+ExecStart=/root/test.sh
+ExecStartPost=echo Completed steps to init Report Portal Services
+ExecStop=echo Stopping the service to init the Report Portal Services
+ExecReload=echo Reloading the service to init the Report Portal Services
+[Install]

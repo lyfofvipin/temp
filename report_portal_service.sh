@@ -1,0 +1,27 @@
+MAVEN_REPO="https://repo1.maven.org/maven2/com/epam/reportportal"
+API_VERSION="5.3.5"
+UAT_VERSION="5.3.5"
+MIGRATIONS_VERSION="5.3.5"
+UI_VERSION="5.3.5"
+SERVICE_INDEX_VERSION="5.0.10"
+SERVICE_ANALYZER="5.3.5"
+SERVICE_API_JAVA_OPTS="-Xms1024m -Xmx2048m"
+SERVICE_UAT_JAVA_OPTS="-Xms512m -Xmx512m"
+RP_POSTGRES_USER=rpdbuser
+RP_POSTGRES_PASSWORD='rpdbuser123*'
+RP_RABBITMQ_USER=rpdbuser
+RP_RABBITMQ_PASSWORD='rpdbuser123*'
+
+cd /opt/traefik
+./traefik --configFile=traefik.toml 2>&1 &
+sleep 20
+cd /opt/reportportal/
+RP_SERVER_PORT=9000 LB_URL=http://localhost:8081 ./service-index 2>&1 &
+sleep 20
+RP_AMQP_HOST=localhost RP_AMQP_APIUSER=$RP_RABBITMQ_USER RP_AMQP_APIPASS=$RP_RABBITMQ_PASSWORD RP_AMQP_USER=$RP_RABBITMQ_USER RP_AMQP_PASS=$RP_RABBITMQ_PASSWORD RP_DB_USER=$RP_POSTGRES_USER RP_DB_PASS=$RP_POSTGRES_PASSWORD RP_DB_HOST=localhost java $SERVICE_API_JAVA_OPTS -jar service-api.jar 2>&1 &
+sleep 20
+RP_DB_HOST=localhost RP_DB_USER=$RP_POSTGRES_USER RP_DB_PASS=$RP_POSTGRES_PASSWORD java $SERVICE_UAT_JAVA_OPTS -jar service-uat.jar 2>&1 &
+sleep 20
+cd ui/ && RP_STATICS_PATH=../public RP_SERVER_PORT=3000 ./service-ui 2>&1 &
+sleep 20
+echo $?
