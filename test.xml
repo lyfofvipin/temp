@@ -1,0 +1,36 @@
+<testsuites>
+
+    <testsuite errors="0" failures="0" name="testsuite 1">
+		<testcase name="testcase 1 name">
+            <system-out> 
+                This is the log shown for the testcase.
+            </system-out>		
+        </testcase>
+	</testsuite>
+
+    <testsuite errors="0" failures="0" name="testsuite 2 nested">
+
+        <testsuite errors="0" failures="0" name="testsuite 2 nested part 1">
+            <testcase name="testcase 1 name">
+                <system-out> 
+                    This is the log shown for the testcase.
+                </system-out>		
+            </testcase>
+        </testsuite>
+
+        <testsuite errors="0" failures="0" name="testsuite 2 nested part 2">
+            <testcase name="testcase 1 name">
+                <system-out> 
+                    This is the log shown for the testcase.
+                </system-out>		
+            </testcase>
+        </testsuite>
+
+		<testcase name="testcase 1 name">
+            <system-out> 
+                This is the log shown for the testcase.
+            </system-out>		
+        </testcase>
+	</testsuite>
+
+</testsuites>
