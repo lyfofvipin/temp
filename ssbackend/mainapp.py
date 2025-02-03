@@ -1,5 +1,5 @@
 from flask import url_for , request
-from . import app , db, User , Post, Comment, Like, Message
+from . import app , db, User , Post, Comment, Like, Message, Followers, Followings
 
 def validate_user_info( get_msg = False ):
     username = request.args.get("username")
@@ -48,6 +48,8 @@ def profile(username):
         data = {
             "username" : user_data.username,
             "email" : user_data.email,
+            "followers" : user_data.followers,
+            "followings" : user_data.followings,
             "image" : user_data.image
         }
     else:
@@ -108,6 +110,24 @@ def like():
     else:
         return {"message": "User Not found."}
 
+@app.route('/api/follow', methods = ["POST"])
+def follow():
+    username = validate_user_info()
+    if username:
+        follow = Followers()
+        follow.username = username
+        follow.post_id = request.args.get("post_id")
+        if request.args.get("like_status") == "true":
+            follow.like_status = True
+        else:
+            follow.like_status = False
+        db.session.add(follow)
+        db.session.commit()
+        del follow
+        return {"message":"Liked."}
+    else:
+        return {"message": "User Not found."}
+
 @app.route('/api/get_comments/<int:post_id>', methods = ["GET"])
 def comments(post_id):
 
@@ -129,7 +149,7 @@ def comments(post_id):
 def likes(post_id):
     username = validate_user_info()
     if username:
-        db_info = Like.query.filter_by( id = post_id ).all()
+        db_info = Like.query.filter_by( post_id = post_id ).all()
         data = {
             "count": len(db_info),
             "usernames": [ x.username for x in db_info ],
@@ -142,7 +162,7 @@ def likes(post_id):
 def search(username):
     profile(username)
 
-@app.route('/delete/post/<int:post_id>', methods = ["POST"])
+@app.route('/delete/post/<int:post_id>', methods = ["DELETE"])
 def delete_post(post_id):
     username = validate_user_info()
     if username:
@@ -169,7 +189,7 @@ def post_update(post_id):
     else:
         return {"message": "User Not found."}
 
-@app.route('/delete/comment/<int:comment_id>', methods = ["POST"])
+@app.route('/delete/comment/<int:comment_id>', methods = ["DELETE"])
 def delete(comment_id):
     username = validate_user_info()
     if username:

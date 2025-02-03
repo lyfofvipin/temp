@@ -13,6 +13,8 @@ class User(db.Model):
     email = db.Column(db.String(50), unique=True, nullable=False)
     image = db.Column(db.String(50), nullable=False, default='default.jpg')
     password = db.Column(db.String(60), nullable=False)
+    followers = db.Column(db.Integer, nullable=False, default=0)
+    followings = db.Column(db.Integer, nullable=False, default=0)
     confirm_password = db.Column(db.String(60), nullable=False)
 
     def __repr__(self):
@@ -45,6 +47,22 @@ class Like(db.Model):
 
     def __repr__(self):
         return f"< id = {self.id}, username = {self.username}, post_id = {self.post_id} >"
+
+class Followers(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(50), nullable=False)
+    name_to_follow = db.Column(db.String(50), nullable=False)
+
+    def __repr__(self):
+        return f"< id = {self.id}, username = {self.username}, name_to_follow = {self.name_to_follow} >"
+
+class Followings(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(50), nullable=False)
+    name_to_follow = db.Column(db.String(50), nullable=False)
+
+    def __repr__(self):
+        return f"< id = {self.id}, username = {self.username}, name_to_follow = {self.name_to_follow} >"
 
 class Message(db.Model):
     id = db.Column(db.Integer, primary_key=True)
