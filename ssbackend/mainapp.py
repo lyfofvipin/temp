@@ -1,5 +1,5 @@
 from flask import url_for , request
-from . import app , db, User , Post, Comment, Like, Message, Followers, Followings
+from . import app , db, User , Post, Comment, Like, Message, Follow
 
 def validate_user_info( get_msg = False ):
     username = request.args.get("username")
@@ -48,8 +48,6 @@ def profile(username):
         data = {
             "username" : user_data.username,
             "email" : user_data.email,
-            "followers" : user_data.followers,
-            "followings" : user_data.followings,
             "image" : user_data.image
         }
     else:
@@ -110,24 +108,6 @@ def like():
     else:
         return {"message": "User Not found."}
 
-@app.route('/api/follow', methods = ["POST"])
-def follow():
-    username = validate_user_info()
-    if username:
-        follow = Followers()
-        follow.username = username
-        follow.post_id = request.args.get("post_id")
-        if request.args.get("like_status") == "true":
-            follow.like_status = True
-        else:
-            follow.like_status = False
-        db.session.add(follow)
-        db.session.commit()
-        del follow
-        return {"message":"Liked."}
-    else:
-        return {"message": "User Not found."}
-
 @app.route('/api/get_comments/<int:post_id>', methods = ["GET"])
 def comments(post_id):
 
@@ -162,7 +142,7 @@ def likes(post_id):
 def search(username):
     profile(username)
 
-@app.route('/delete/post/<int:post_id>', methods = ["DELETE"])
+@app.route('/api/delete/post/<int:post_id>', methods = ["DELETE"])
 def delete_post(post_id):
     username = validate_user_info()
     if username:
@@ -189,7 +169,7 @@ def post_update(post_id):
     else:
         return {"message": "User Not found."}
 
-@app.route('/delete/comment/<int:comment_id>', methods = ["DELETE"])
+@app.route('/api/delete/comment/<int:comment_id>', methods = ["DELETE"])
 def delete(comment_id):
     username = validate_user_info()
     if username:
@@ -202,7 +182,7 @@ def delete(comment_id):
     else:
         return {"message": "User Not found."}
 
-@app.route('/send/message/<receiver_username>', methods = ["POST"])
+@app.route('/api/send/message/<receiver_username>', methods = ["POST"])
 def message(receiver_username):
     username = validate_user_info()
     if username:
@@ -228,7 +208,7 @@ def message(receiver_username):
     else:
         return {"message": "Sender Not found."}
 
-@app.route('/load/messages/<receiver_username>', methods = ["GET"])
+@app.route('/api/load/messages/<receiver_username>', methods = ["GET"])
 def load_message(receiver_username):
     username = validate_user_info()
     if username:
@@ -243,3 +223,58 @@ def load_message(receiver_username):
             return {"message": "Receiver Not found."}
     else:
         return {"message": "Sender Not found."}
+
+@app.route('/api/follow/<username_to_follow>', methods = ["POST"])
+def follow_api(username_to_follow):
+    username = validate_user_info()
+    if username:
+        Follows = Follow()
+        username_to_follow_in_db = User.query.filter_by(username=username_to_follow).first()
+        if username_to_follow_in_db:
+            if username_to_follow == username_to_follow_in_db.username:
+                if username_to_follow != username:
+                    if Follow.query.filter_by(username=username, following=username_to_follow).first():
+                        data = { "message": "Already following this username." }
+                    else:
+                        Follows.username = username
+                        Follows.following = username_to_follow
+                        db.session.add(Follows)
+                        db.session.commit()
+                        del Follows
+                        data = {"message" : "Follow Successfully Done."}
+                else:
+                    data = {"message": "Seems like you are trying to follow yourself."}
+        else:
+            data = {"message" : "Username To Follow Not Found."}
+    else:
+        data = {"message": "User Not found."}
+
+    return data
+
+@app.route('/api/get_followings/', methods = ["GET"])
+def following():
+    username = validate_user_info()
+    if username:
+        db_info = Follow.query.filter_by(username=username).all()
+        data = {
+            "count": len(db_info),
+            "following_list": [ x.following for x in db_info ],
+        }
+    else:
+        data = {"message": "User Not found."}
+
+    return data
+
+@app.route('/api/get_followers/', methods = ["GET"])
+def followers():
+    username = validate_user_info()
+    if username:
+        db_info = Follow.query.filter_by(following=username).all()
+        data = {
+            "count": len(db_info),
+            "followers_list": [ x.username for x in db_info ],
+        }
+    else:
+        data = {"message": "User Not found."}
+
+    return data
