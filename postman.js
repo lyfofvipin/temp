@@ -27,3 +27,9 @@ pm.test('Schema is valid', function () {
     var jsonData = pm.response.json();
     pm.expect(tv4.validate(jsonData, schema)).to.be.true;
 });
+
+pm.test("Successful POST request", function () {
+    pm.expect(pm.response.code).to.be.oneOf([200, 202]);
+});
+
+
