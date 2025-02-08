@@ -1,5 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
 from flask import Flask
+import datetime
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.database'
@@ -14,6 +15,7 @@ class User(db.Model):
     image = db.Column(db.String(50), nullable=False, default='default.jpg')
     password = db.Column(db.String(60), nullable=False)
     confirm_password = db.Column(db.String(60), nullable=False)
+    last_activity = db.Column(db.DateTime(), default = datetime.datetime.now())
 
     def __repr__(self):
         return f"< id = {self.id}, username = {self.username} >"
@@ -24,6 +26,7 @@ class Post(db.Model):
     title = db.Column(db.String(100), nullable=False)
     content = db.Column(db.Text, nullable=True)
     image = db.Column(db.String(50), nullable=False, default='default.jpg')
+    last_activity = db.Column(db.DateTime(), default = datetime.datetime.now())
 
     def __repr__(self):
         return f"< id = {self.id}, username = {self.username}, title = {self.title} >"

@@ -1,5 +1,6 @@
 from flask import url_for , request
 from . import app , db, User , Post, Comment, Like, Message, Follow
+import datetime
 
 def validate_user_info( get_msg = False ):
     username = request.args.get("username")
@@ -17,6 +18,13 @@ def validate_user_info( get_msg = False ):
         return { "message": data[0] }
     else:
         return data[1]
+
+def update_post_activity( username, post_id ):
+    posts = Post.query.filter_by(username=username, id=post_id).first()
+    posts.last_activity = datetime.datetime.now()
+    db.session.add(posts)
+    db.session.commit()
+    del posts
 
 @app.route('/api/login', methods=["GET"])
 def login():
@@ -78,10 +86,12 @@ def post():
 def comment():
     username = validate_user_info()
     if username:
+        post_id = request.args.get("post_id")
         Comments = Comment()
         Comments.username = username
-        Comments.post_id = request.args.get("post_id")
+        Comments.post_id = post_id
         Comments.comment_content = request.args.get("comment_content")
+        update_post_activity(username, post_id)
         db.session.add(Comments)
         db.session.commit()
         del Comments
@@ -94,17 +104,23 @@ def comment():
 def like():
     username = validate_user_info()
     if username:
-        Likes = Like()
+        post_id = request.args.get("post_id")
+        Likes = Like.query.filter_by( username=username, post_id = post_id ).first()
+        if not Likes:
+            Likes = Like()
         Likes.username = username
-        Likes.post_id = request.args.get("post_id")
+        Likes.post_id = post_id
         if request.args.get("like_status") == "true":
             Likes.like_status = True
+            data = "Liked."
         else:
             Likes.like_status = False
+            data = "Disliked."
+        update_post_activity(username, post_id)
         db.session.add(Likes)
         db.session.commit()
         del Likes
-        return {"message":"Liked."}
+        return {"message":f"{data}"}
     else:
         return {"message": "User Not found."}
 
@@ -129,7 +145,7 @@ def comments(post_id):
 def likes(post_id):
     username = validate_user_info()
     if username:
-        db_info = Like.query.filter_by( post_id = post_id ).all()
+        db_info = Like.query.filter_by( post_id = post_id, like_status=True ).all()
         data = {
             "count": len(db_info),
             "usernames": [ x.username for x in db_info ],
@@ -191,6 +207,8 @@ def message(receiver_username):
             sender_username = username
             content = request.args.get("content")
             chat = Message.query.filter_by(sender_username=sender_username, receiver_username=receiver_username).first()
+            if not chat:
+                chat = Message.query.filter_by(sender_username=receiver_username, receiver_username=sender_username).first()
             if chat:
                 message = f"{chat.content}\n{sender_username}: {content}"
                 chat.content = message
@@ -277,4 +295,32 @@ def followers():
     else:
         data = {"message": "User Not found."}
 
+    return data
+
+@app.route('/api/home/', methods = ["GET"])
+def home_page_api():
+    username = validate_user_info()
+    data = {}
+    if username:
+        following = Follow.query.filter_by(username=username).all()
+        for x in following:
+            data[x.following] = [ ( y.id, y.title, y.content, y.image, {"likes": likes(y.id)}, {"comments": comments(y.id)} ) for y in Post.query.filter_by(username=x.following).all()]
+
+        posts = User.query.filter_by(username=username).first()
+        posts.last_activity = datetime.datetime.now()
+        db.session.add(posts)
+        db.session.commit()
+        del posts
+    else:
+        data = {"message": "User Not found."}
+    return data
+
+@app.route('/api/notification/', methods = ["GET"])
+def home_page_api():
+    username = validate_user_info()
+    data = {}
+    if username:
+        pass
+    else:
+        data = {"message": "User Not found."}
     return data
