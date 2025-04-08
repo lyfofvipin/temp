@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Home Page
+{% endblock %}
+
+{% block content %}
+    {% for x in data %}
+    <div style="color: rgb(255, 0, 255);">
+        {{ x.id }}
+    </div>
+    <div>
+        <a href='{{ url_for("post_detail", post_id=x.id) }}'>{{ x.title }}</a>
+    </div>
+    {% endfor %}
+    <img src='{{ url_for("static", filename="test.jpg") }}' style="height: 50%; width: 50%;" alt="image">
+{% endblock %}

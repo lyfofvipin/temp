@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Login Page
+{% endblock %}
+
+{% block content %}
+
+{% if message %}
+    
+    {{ message }}
+
+{% else %}
+
+<form action="", method="post">
+    <textarea name="username" id=""></textarea>
+    <textarea name="password" id=""></textarea>
+    <button>Submit</button>
+</form>
+
+{% endif %}
+
+{% endblock %}

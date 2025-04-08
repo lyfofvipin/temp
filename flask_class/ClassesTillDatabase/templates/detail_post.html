@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Post Detail
+{% endblock %}
+
+{% block content %}
+
+<div style="color: blue;">
+    {{ message }}
+</div>
+
+<div style="color: rgb(0, 255, 26); border: 2px solid rgb(217, 0, 255);">
+    {% for x in comment_list %}
+        {{ x.name }} <br>
+        {{ x.email }} <br>
+        {{ x.body }} <br>
+        <br>
+    {% endfor %}
+</div>
+
+{% endblock %}
