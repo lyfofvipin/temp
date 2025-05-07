@@ -210,3 +210,27 @@
 # thread.start()
 # print("Program complete.")
 
+
+# import sys
+
+# name = "Vipin"
+
+# stream = "Computer"
+
+# age = 25
+
+# try:
+#     argument = sys.argv[1]
+# except:
+#     print("No Argument given by user")
+#     exit(0)
+
+# match argument:
+#     case "name":
+#         print(name)
+    
+#     case "age":
+#         print(age)
+    
+#     case "stream":
+#         print(stream)
