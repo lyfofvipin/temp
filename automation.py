@@ -13,13 +13,13 @@ driver = webdriver.Firefox(options=firefox_options)
 
 try:
     # Opens Our Website
-    print("Opening Firefox and navigating to Google...")
-    driver.get("https://catalystprogrammers.in")
-    time.sleep(3)
-    driver.find_element(By.XPATH, "//a[text()='Courses']").click()
-    time.sleep(3)
-    driver.find_element(By.XPATH, "//a[text()='Enroll Now']").click()
-    time.sleep(3)
+    # print("Opening Firefox and navigating to Google...")
+    # driver.get("https://catalystprogrammers.in")
+    # time.sleep(3)
+    # driver.find_element(By.XPATH, "//a[text()='Courses']").click()
+    # time.sleep(3)
+    # driver.find_element(By.XPATH, "//a[text()='Enroll Now']").click()
+    # time.sleep(3)
 
     # Opens YouTube
     print("Opening Firefox and navigating to YouTube...")

@@ -1,0 +1,9 @@
+{
+    "name": "Bob",
+    "items": [
+        10,
+        20,
+        30
+    ],
+    "is_vip": false
+}
