@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Q&A Exam</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #667eea;
+            font-size: 18px;
+        }
+
+        .question-container {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .question-number {
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .question-text {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .option:hover {
+            border-color: #667eea;
+            background: #f0f4ff;
+        }
+
+        .option input[type="radio"] {
+            margin-right: 12px;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .option.selected {
+            border-color: #667eea;
+            background: #e8edff;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            font-weight: 600;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .results-container {
+            margin-top: 30px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .score {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .score.correct {
+            color: #28a745;
+        }
+
+        .score.incorrect {
+            color: #dc3545;
+        }
+
+        .result-item {
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            background: white;
+        }
+
+        .result-item.correct {
+            border-left: 4px solid #28a745;
+        }
+
+        .result-item.incorrect {
+            border-left: 4px solid #dc3545;
+        }
+
+        .result-question {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .result-answer {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .error {
+            color: #dc3545;
+            text-align: center;
+            padding: 20px;
+            background: #ffe6e6;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Python Q&A Exam</h1>
+        <p class="subtitle">Test your Python knowledge</p>
+        
+        <div id="loading" class="loading">Loading questions...</div>
+        <div id="exam-container" style="display: none;">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress"></div>
+            </div>
+            <div id="questions"></div>
+            <div class="button-container">
+                <button id="submit-btn" onclick="submitExam()">Submit Exam</button>
+            </div>
+        </div>
+        <div id="results" style="display: none;"></div>
+        <div id="error" class="error" style="display: none;"></div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:8000';
+        let questions = [];
+        let userAnswers = {};
+
+        // Load all questions when page loads
+        window.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const response = await fetch(`${API_BASE}/all_qn`);
+                if (!response.ok) throw new Error('Failed to fetch questions');
+                
+                questions = await response.json();
+                
+                // Load options for each question
+                await loadAllOptions();
+                
+                // Display questions
+                displayQuestions();
+                
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('exam-container').style.display = 'block';
+            } catch (error) {
+                showError('Failed to load questions: ' + error.message);
+            }
+        });
+
+        // Load options for all questions
+        async function loadAllOptions() {
+            for (let question of questions) {
+                try {
+                    const response = await fetch(`${API_BASE}/options/${question.id}`);
+                    if (response.ok) {
+                        question.options = await response.json();
+                    }
+                } catch (error) {
+                    console.error(`Failed to load options for question ${question.id}:`, error);
+                }
+            }
+        }
+
+        // Display all questions
+        function displayQuestions() {
+            const container = document.getElementById('questions');
+            container.innerHTML = '';
+
+            questions.forEach((q, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'question-container';
+                questionDiv.innerHTML = `
+                    <div class="question-number">Question ${index + 1} of ${questions.length}</div>
+                    <div class="question-text">${q.question}</div>
+                    <div class="options-container" id="options-${q.id}"></div>
+                `;
+
+                const optionsContainer = questionDiv.querySelector(`#options-${q.id}`);
+                if (q.options && q.options.length > 0) {
+                    q.options.forEach((option, optIndex) => {
+                        const optionDiv = document.createElement('div');
+                        optionDiv.className = 'option';
+                        optionDiv.innerHTML = `
+                            <input type="radio" name="q${q.id}" value="${option}" id="q${q.id}-opt${optIndex}">
+                            <label for="q${q.id}-opt${optIndex}">${option}</label>
+                        `;
+                        optionDiv.addEventListener('click', () => {
+                            document.getElementById(`q${q.id}-opt${optIndex}`).checked = true;
+                            userAnswers[q.id] = option;
+                            updateOptionStyles(q.id);
+                            updateProgress();
+                        });
+                        optionsContainer.appendChild(optionDiv);
+                    });
+                } else {
+                    optionsContainer.innerHTML = '<p style="color: #dc3545;">Options not available</p>';
+                }
+
+                container.appendChild(questionDiv);
+            });
+
+            updateProgress();
+        }
+
+        // Update option styles when selected
+        function updateOptionStyles(questionId) {
+            const options = document.querySelectorAll(`input[name="q${questionId}"]`);
+            options.forEach(radio => {
+                const optionDiv = radio.closest('.option');
+                if (radio.checked) {
+                    optionDiv.classList.add('selected');
+                } else {
+                    optionDiv.classList.remove('selected');
+                }
+            });
+        }
+
+        // Update progress bar
+        function updateProgress() {
+            const answered = Object.keys(userAnswers).length;
+            const total = questions.length;
+            const percentage = (answered / total) * 100;
+            document.getElementById('progress').style.width = `${percentage}%`;
+        }
+
+        // Submit exam and check answers
+        async function submitExam() {
+            const submitBtn = document.getElementById('submit-btn');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Checking answers...';
+
+            const results = [];
+            let correctCount = 0;
+
+            for (let question of questions) {
+                const userAnswer = userAnswers[question.id];
+                let isCorrect = false;
+
+                if (userAnswer) {
+                    try {
+                        const response = await fetch(`${API_BASE}/check_ans/${question.id}/${encodeURIComponent(userAnswer)}`);
+                        if (response.ok) {
+                            isCorrect = await response.json();
+                            if (isCorrect) correctCount++;
+                        }
+                    } catch (error) {
+                        console.error(`Failed to check answer for question ${question.id}:`, error);
+                    }
+                }
+
+                results.push({
+                    id: question.id,
+                    question: question.question,
+                    userAnswer: userAnswer || 'Not answered',
+                    isCorrect: isCorrect
+                });
+            }
+
+            displayResults(results, correctCount);
+        }
+
+        // Display results
+        function displayResults(results, correctCount) {
+            document.getElementById('exam-container').style.display = 'none';
+            const resultsContainer = document.getElementById('results');
+            resultsContainer.style.display = 'block';
+
+            const total = questions.length;
+            const percentage = Math.round((correctCount / total) * 100);
+            const scoreClass = percentage >= 70 ? 'correct' : 'incorrect';
+
+            let html = `
+                <div class="score ${scoreClass}">
+                    Score: ${correctCount} / ${total} (${percentage}%)
+                </div>
+            `;
+
+            results.forEach((result, index) => {
+                const resultClass = result.isCorrect ? 'correct' : 'incorrect';
+                const status = result.isCorrect ? '✓ Correct' : '✗ Incorrect';
+                
+                html += `
+                    <div class="result-item ${resultClass}">
+                        <div class="result-question">
+                            Question ${index + 1}: ${result.question}
+                        </div>
+                        <div class="result-answer">
+                            <strong>Your answer:</strong> ${result.userAnswer} 
+                            <span style="float: right; font-weight: bold;">${status}</span>
+                        </div>
+                    </div>
+                `;
+            });
+
+            html += `
+                <div class="button-container" style="margin-top: 20px;">
+                    <button onclick="location.reload()">Take Exam Again</button>
+                </div>
+            `;
+
+            resultsContainer.innerHTML = html;
+        }
+
+        // Show error message
+        function showError(message) {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('exam-container').style.display = 'none';
+            const errorDiv = document.getElementById('error');
+            errorDiv.textContent = message;
+            errorDiv.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
+

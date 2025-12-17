@@ -5,9 +5,7 @@
 # Creating Strings:
 
 #     Single Quote: 'hello'
-
 #     Double Quote: "hello"
-
 #     Triple Quote: '''hello''' or """hello""" (used for multi-line strings)
 
 

@@ -2,6 +2,7 @@
 # They are ordered, mutable (changeable) sequences of items. 
 # This means you can store a collection of items, the order in which you add them is preserved,
 # and you can modify them after they've been created.
+# In a List we separate data using , operator
 
 # What is a List?
 
@@ -12,8 +13,16 @@
 #     Mutable: You can change, add, or remove items after the list has been created.
 #     Heterogeneous: Lists can contain items of different data types (integers, strings, floats, even other lists or objects).
 
+# "0123456789"
+# numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-# abc = [ "Vipin", 25, "Jaipur", 302020, True, [ "Test", 43, [23242, [ 234234]] ] ]
+# numbers[0] = 90
+
+# print(numbers)
+
+abc = [ "Vipin", 25, "Jaipur", 302020, True, [ "Test", 43, [23242, [ 234234]] ] ]
+
+print( abc[-1] )
 
 # # print( abc[ 2: ] )
 

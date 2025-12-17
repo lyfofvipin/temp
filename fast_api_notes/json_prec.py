@@ -19,7 +19,7 @@
 #   }
 # }
 
-# The Python json Module 🐍
+# The Python json Module
 
 # The built-in json module in Python is used to convert data between native Python objects and JSON format.
 
@@ -71,3 +71,58 @@
 
 # print(loaded_data)
 # print(type(loaded_data))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import json
+
+def user():
+    with open("data_output.json") as f:
+        return json.load(f)
+    
+data = user()
+# data = {'name': 'Bob', 'items': [10, 20, 30], 'is_vip': False}
+
+data["name"] = "Rohit"
+
+print(data)
+# {'name': 'Rohit', 'items': [10, 20, 30], 'is_vip': False}
+
+data["items"] = ["Bag", "Laptop", "Mobile"]
+
+print(data)
+# {'name': 'Rohit', 'items': ["Bag", "Laptop", "Mobile"], 'is_vip': False}
+
+
+with open("update_data_output.json", "w") as file:
+    json.dump(data, file)
+

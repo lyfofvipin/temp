@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Voting Eligibility</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e6f0ff;
+            color: #003366;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border: 2px solid #0066cc;
+            border-radius: 8px;
+            padding: 20px 30px;
+            width: 300px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #0066cc;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+            border: 1px solid #0066cc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #004d99;
+        }
+
+        #result {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Check Voting Eligibility</h2>
+    <form action="http://localhost:8000/check_eligibility">
+        <input type="text" name="name" placeholder="Enter your Name" required />
+        <input type="number" name="age" placeholder="Enter your age" required />
+        <button type="submit">Check</button>
+    </form>
+    <div id="result"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,232 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the correct file extension for Python files?",
+      "options": ["py", "python", "pt", "pyt"],
+      "answer": "py"
+    },
+    {
+      "id": 2,
+      "question": "Which of the following is used to define a function in Python?",
+      "options": ["def", "function", "func", "define"],
+      "answer": "def"
+    },
+    {
+      "id": 3,
+      "question": "Which of the following is a mutable data type in Python?",
+      "options": ["list", "tuple", "string", "int"],
+      "answer": "list"
+    },
+    {
+      "id": 4,
+      "question": "What is the result of 3**2 in Python?",
+      "options": ["6", "9", "3", "8"],
+      "answer": "9"
+    },
+    {
+      "id": 5,
+      "question": "How do you create a set in Python?",
+      "options": ["{}", "[]", "()", "set()"],
+      "answer": "set()"
+    },
+    {
+      "id": 6,
+      "question": "What is the correct syntax to import a module in Python?",
+      "options": ["import module", "import module_name", "from module import", "import(module_name)"],
+      "answer": "import module_name"
+    },
+    {
+      "id": 7,
+      "question": "Which of the following is used to add an element to a list in Python?",
+      "options": ["add()", "append()", "insert()", "push()"],
+      "answer": "append()"
+    },
+    {
+      "id": 8,
+      "question": "Which of the following Python data types is immutable?",
+      "options": ["list", "dict", "tuple", "set"],
+      "answer": "tuple"
+    },
+    {
+      "id": 9,
+      "question": "What will be the output of 'Hello' + 'World' in Python?",
+      "options": ["Hello World", "HelloWorld", "Hello+World", "Error"],
+      "answer": "HelloWorld"
+    },
+    {
+      "id": 10,
+      "question": "What is the keyword used to exit a loop in Python?",
+      "options": ["exit", "break", "continue", "stop"],
+      "answer": "break"
+    },
+    {
+      "id": 11,
+      "question": "What does the 'len()' function do in Python?",
+      "options": ["Returns the length of an object", "Returns the index of an object", "Checks if an object is empty", "Returns the last item of an object"],
+      "answer": "Returns the length of an object"
+    },
+    {
+      "id": 12,
+      "question": "Which method can be used to remove whitespace from the beginning and end of a string in Python?",
+      "options": ["strip()", "trim()", "clean()", "remove()"],
+      "answer": "strip()"
+    },
+    {
+      "id": 13,
+      "question": "What will be the result of '2' + 2 in Python?",
+      "options": ["'22'", "4", "Error", "None"],
+      "answer": "Error"
+    },
+    {
+      "id": 14,
+      "question": "Which of the following is used for conditional statements in Python?",
+      "options": ["if", "when", "for", "switch"],
+      "answer": "if"
+    },
+    {
+      "id": 15,
+      "question": "Which operator is used for exponentiation in Python?",
+      "options": ["^", "**", "exp", "power"],
+      "answer": "**"
+    },
+    {
+      "id": 16,
+      "question": "How do you create a dictionary in Python?",
+      "options": ["{}", "[]", "()", "dict()"],
+      "answer": "{}"
+    },
+    {
+      "id": 17,
+      "question": "What is the result of 10//3 in Python?",
+      "options": ["3", "3.333", "4", "None"],
+      "answer": "3"
+    },
+    {
+      "id": 18,
+      "question": "Which of the following is used to define a class in Python?",
+      "options": ["class", "object", "define", "struct"],
+      "answer": "class"
+    },
+    {
+      "id": 19,
+      "question": "Which function is used to read input from the user in Python?",
+      "options": ["input()", "read()", "scan()", "get()"],
+      "answer": "input()"
+    },
+    {
+      "id": 20,
+      "question": "What is the purpose of the 'self' keyword in Python?",
+      "options": ["Refers to the current instance of the class", "Used to define a method", "To refer to the global scope", "Used to initialize variables"],
+      "answer": "Refers to the current instance of the class"
+    },
+    {
+      "id": 21,
+      "question": "How would you convert a string to an integer in Python?",
+      "options": ["int('5')", "str(5)", "toInt('5')", "float('5')"],
+      "answer": "int('5')"
+    },
+    {
+      "id": 22,
+      "question": "Which of the following will raise an error in Python?",
+      "options": ["[1, 2, 3][1]", "1 + 'a'", "'2' * 3", "5 > 2"],
+      "answer": "1 + 'a'"
+    },
+    {
+      "id": 23,
+      "question": "How would you check the type of a variable in Python?",
+      "options": ["type()", "var_type()", "is_type()", "check_type()"],
+      "answer": "type()"
+    },
+    {
+      "id": 24,
+      "question": "What is the result of 5 == 5 in Python?",
+      "options": ["True", "False", "None", "Error"],
+      "answer": "True"
+    },
+    {
+      "id": 25,
+      "question": "Which of the following is the correct syntax for a for loop in Python?",
+      "options": ["for i in range(5):", "for i = 0; i < 5; i++", "foreach i in range(5)", "loop i in range(5):"],
+      "answer": "for i in range(5):"
+    },
+    {
+      "id": 26,
+      "question": "What does the 'continue' statement do in Python?",
+      "options": ["Exits the loop", "Skips the current iteration", "Returns a value", "Breaks the loop"],
+      "answer": "Skips the current iteration"
+    },
+    {
+      "id": 27,
+      "question": "Which of the following is the correct way to write a comment in Python?",
+      "options": ["// This is a comment", "/* This is a comment */", "# This is a comment", "<-- This is a comment -->"],
+      "answer": "# This is a comment"
+    },
+    {
+      "id": 28,
+      "question": "What is the default value of a tuple in Python?",
+      "options": ["Immutable", "List", "Array", "Mutable"],
+      "answer": "Immutable"
+    },
+    {
+      "id": 29,
+      "question": "Which of the following functions is used to round a number in Python?",
+      "options": ["round()", "floor()", "ceil()", "truncate()"],
+      "answer": "round()"
+    },
+    {
+      "id": 30,
+      "question": "What will be the output of the following code: print('hello' * 2)?",
+      "options": ["hellohello", "hello 2", "hello * 2", "Error"],
+      "answer": "hellohello"
+    },
+    {
+      "id": 31,
+      "question": "Which of the following methods is used to remove an item from a list in Python?",
+      "options": ["pop()", "delete()", "remove()", "clear()"],
+      "answer": "remove()"
+    },
+    {
+      "id": 32,
+      "question": "Which of the following will raise an IndexError in Python?",
+      "options": ["list = [1, 2, 3]; list[2]", "list = [1, 2, 3]; list[3]", "list = [1, 2, 3]; list[-1]", "list = [1, 2, 3]; list[0]"],
+      "answer": "list = [1, 2, 3]; list[3]"
+    },
+    {
+      "id": 33,
+      "question": "What does the 'in' keyword do in Python?",
+      "options": ["Checks if an element is present in a sequence", "Creates a new variable", "Defines a function", "Loops through a sequence"],
+      "answer": "Checks if an element is present in a sequence"
+    },
+    {
+      "id": 34,
+      "question": "What will be the output of the expression 3 == 3 in Python?",
+      "options": ["True", "False", "None", "Error"],
+      "answer": "True"
+    },
+    {
+      "id": 35,
+      "question": "Which of the following can be used to handle exceptions in Python?",
+      "options": ["try/except", "error/handler", "catch/throw", "check/throw"],
+      "answer": "try/except"
+    },
+    {
+      "id": 36,
+      "question": "Which of the following will return the largest number from a list in Python?",
+      "options": ["max()", "largest()", "high()", "big()"],
+      "answer": "max()"
+    },
+    {
+      "id": 37,
+      "question": "What is the return type of the 'map()' function in Python?",
+      "options": ["map object", "list", "tuple", "dict"],
+      "answer": "map object"
+    },
+    {
+      "id": 38,
+      "question": "What is the function used to create an iterator in Python?",
+      "options": ["iter()", "iterator()", "create()", "loop()"],
+      "answer": "iter()"
+    }]
+}
+

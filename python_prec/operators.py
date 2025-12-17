@@ -1,18 +1,75 @@
-# number = int(input( "Enter your age: " ))
+# Arithmetic Operators
+
+# +  Add
+# -  Sub
+# *  Mul
+# /  Div
+# // Floor div
+# %  Modules
+# ** Exponential
+
+# a = 20
+# b = -20
+
+# print(  b * a )
+
+# BODMAS
+# print ( 2 * 2 + 2 / 2 )
 
 
+# print( "Hello " + "World" )
+# print( 3 * "Hello" )
+# print( "-" * 50.5 )
+
+
+# a = input("Enter A number: ") # "2"
+# b = input("Enter A number: ") # "3"
+
+# a = int(a) # 2
+# b = int(b) # 3
+
+# print( a + b )
+
+
+# Take 2 number from user and perform -, /, * on them.
+
+
+# Comparison Operators
+
+# These are used to compare two values.
+# > 	Greater than	a > b
+# <	Less than	a < b
+# ==	Equal to	a == b
+# >=	Greater than or equal to	a >= b
+# <=	Less than or equal to	a <= b
+# !=	Not equal to	a != b
+
+
+# Short Hand Operators, Assignment Operators
+
+# =     It help us in assigning any datatype to a variable
 # +=	Add and assign	a += 3
 # -=	Subtract and assign	a -= 2
 # *=	Multiply and assign	a *= 2
 # /=	Divide and assign	a /= 2
 # //=	Floor divide and assign	a //= 2
 # %=	Modulus and assign	a %= 3
-# **=	Exponentiate and assign	a *= 2
+# **=	Exponential and assign	a *= 2
+
+# b = 1
+# b **= 5
+# b += 10
+# b *= 10
+# b /= 10
+# b %= 10
+# print(b)
 
 
-#  + =
+
+#  +=
 # perform the math operation 80
 # assign the new value into the variable
+
 
 # a = 60
 # a += 20
@@ -128,23 +185,34 @@
 # print( a )
 
 
-# Comparison Operators
-
-# These are used to compare two values.
-# ==	Equal to	a == b
-# !=	Not equal to	a != b
-# > 	Greaterthan	a > b
-# <	Less than	a < b
-# >=	Greater than or equal to	a >= b
-# <=	Less than or equal to	a <= b
-
 
 # Logical Operators
+
 # Used to combine expressions:
 
 # and	Logical AND	a and b
 # or	Logical OR	a or b
 # not	Logical NOT	not a
+
+# or
+# -> Return False only if both the values are False
+# -> If both the values are true then it will pick the left one
+
+# Left  |  Right | Output
+# True    |  False | True
+# False   |  True  | True
+# True    |  True  | True
+# False   |  False | False
+
+# and
+# -> If any value is false It will return the false one
+# -> If both the values are true it will pick the right one
+
+# Left  |  Right | Output
+# True    |  False | False
+# False   |  True  | False
+# False   |  False | False
+# True    |  True  | True
 
 # number = 70
 
@@ -171,7 +239,6 @@
 # # a alag h
 # # b alag h
 
-
 # a = [ 1, 2 ]
 # b = [ 1, 2 ]
 
@@ -179,24 +246,44 @@
 
 # print ( a is b )
 
+# a = 9
+# b = 12
+# c = 3
 
-
-
-
-a = 9
-b = 12
-c = 3
-
-x = a - b / 3 + c * 2 - 1
+# x = a - b / 3 + c * 2 - 1
 # a - 4.0 + c * 2 -1
 # 11 -1
 # 10
 
-
-
-y = a - b / (3 + c) * (2 - 1)
+# y = a - b / (3 + c) * (2 - 1)
 
 # 7
 
 
 
+# l * w
+
+# l = int(input("Enter length of the rectangle: "))
+# w = int(input("Enter width of the rectangle: "))
+
+# area = l * w
+
+# print( "Area of rectangle is", l * w )
+
+# print( "Parameter of rectangle is", 2 * l * w )
+
+# 3.14*r2
+
+# radius = int(input("Entre radius: "))
+
+# print( "Area of a circle is ", 3.14* radius * radius )
+
+# milk_quantity = int( input("Enter number of thalli:  ") )
+# sugar_quantity = int( input("Enter number of suger packets:  ") )
+
+# milk_price = milk_quantity * 10
+# sugar_price = sugar_quantity * 20
+
+# print("Total amount is ", milk_price + sugar_price)
+
+# If-Else

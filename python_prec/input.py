@@ -1,4 +1,6 @@
-# name = input( "Enter Your Name: " )
+# x = input( "Enter Your Name: " )
+# print(x)
+# print( type(x) )
 
 # print( f"Good Afternoon {name}." )
 
