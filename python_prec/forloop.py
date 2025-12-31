@@ -1,5 +1,5 @@
 # A for loop allows you to execute a block of code repeatedly for each item in a sequence 
-# or any other iterable object. Think of it as telling Python, 
+# or any other iterable object. Think of it as telling Python,
 # "For every item in line get the samosa."
 # The for loop is incredibly versatile because it works with various Python data structures.
 
@@ -12,6 +12,7 @@
     # This code is indented
 
 # data = ["rahul", "rohit", "vikas"]
+
 # counter = 0
 # while counter < len(data):
 #     print(data[counter])
@@ -41,8 +42,7 @@
 
 # print("hello", end="\n")
 # word = "Python"
-# for x in word:
-#     print(x, end="-")
+# for x in word: print(x, end="-")
 
 # print()
 # print("hello")
@@ -72,5 +72,3 @@
 # for _ in range(0, 10, 2):
 #     print(_)
 
-
-a = 23

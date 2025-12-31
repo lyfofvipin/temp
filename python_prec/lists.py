@@ -102,7 +102,7 @@ list2 = [3, 4]
 
 # Methods:
 
-# -ve index values in index method auto do a +1 for ex incert(-1, "xyz") it will add the data to -2 index
+# -ve index values in index method auto do a +1 for ex insert(-1, "xyz") it will add the data to -2 index
 # if we give an invalid +ve index value then it will add the data in the end of the list
 # if we give an invalid -ve index then it will add the data in the 0 index
 # if we have multiple duplicate then the .remove method will only remove the fist accuracy

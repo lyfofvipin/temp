@@ -37,3 +37,12 @@ Why APIs are Essential:
     Integration: They allow third-party services (like Google Maps, Twitter, or PayPal) to be integrated directly into any application.
     Abstraction: They hide complexity. A developer doesn't need to know how a weather service collects its data; they only need to know how to call the weather API to get the result.
 
+
+CURD:
+
+C -> Create
+U -> Update
+R -> Read
+D -> Delete
+Put
+Patch

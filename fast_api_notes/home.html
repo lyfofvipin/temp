@@ -59,7 +59,13 @@
 
 <div class="container">
     <h2>Check Voting Eligibility</h2>
-    <form action="http://localhost:8000/check_eligibility">
+    <!-- <form action="http://localhost:8000/check_eligibility">
+        <input type="text" name="name" placeholder="Enter your Name" required />
+        <input type="number" name="age" placeholder="Enter your age" required />
+        <button type="submit">Check</button>
+    </form> -->
+
+    <form action="http://localhost:8000/check_eligibility_post" method="post">
         <input type="text" name="name" placeholder="Enter your Name" required />
         <input type="number" name="age" placeholder="Enter your age" required />
         <button type="submit">Check</button>

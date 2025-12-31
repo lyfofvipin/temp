@@ -137,7 +137,8 @@ my_string = "abcdefghijklmn"
 # split(): Splits the string into a list based on a delimiter (default is whitespace).
 
 # my_string = "my name is vipin"
-# print(my_string.split())  # Output: ['my', 'name', 'is', 'vipin']
+# print( my_string.split() )  # Output: ['my', 'name', 'is', 'vipin']
+# print(my_string)
 
 # my_string = "15/7/2025"
 # print(my_string.split("/"))  # Output: ['15', '7', '2025']
@@ -149,7 +150,7 @@ my_string = "abcdefghijklmn"
 # print(" ".join(words))  # Output: my name is vipin
 
 # words = ['15', '7', '2025']
-# print( "-".join(words) )
+# print( "/".join(words) )
 
 # find(substring): Returns the index of the first occurrence of a substring (or -1 if not found).
 

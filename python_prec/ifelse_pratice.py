@@ -42,23 +42,6 @@
 
 # score = int( input("Enter Your Score: ") )
 
-# # 90+ A
-# # 80+ B
-# # 70+ C
-# # 60+ D
-# # >60 F
-
-# if score >= 90:
-#  print("A")
-# elif score >= 80:
-#  print("B")
-# elif score >= 70:
-#  print("C")
-# elif score >= 60:
-#  print("D")
-# else:
-#  print("F")
-
 
 
 # Vowel or Consonant Checker
@@ -67,17 +50,6 @@
 # Simple Login System
 # Simulate a login system where the user enters a username and password. Print a success message if both are correct, otherwise print an error.
 
-
-# usnername = "admin"
-# password = "123"
-
-# user = input("Enter Your Username: ")
-# passw = input("Enter Your Username: ")
-
-# if user == usnername and passw == password:
-#     print("Login Success.")
-# else:
-#     print("Invalid Username Or Password.")
 
 # Number Comparison
 # Take two numbers as input from the user and compare them. Print whether the first is greater, the second is greater, or if they are equal.
@@ -94,28 +66,6 @@
 # else:
 #     print( f"{number3} Is Greater." )
 
-# Traffic Light Instructions
-# Ask the user to enter a traffic light color (red, yellow, or green). Print what action to take based on the color. If the color is invalid, print an error message.
-
-
-
-
-
-
-# month = int( input("Enter A month: ") )
-
-
-# if month == 2:
-#     print("29 Days")
-
-# elif month == 1 or month == 3 or month == 5 or month == 7 or month == 8 or month == 10 or month == 12:
-#     print("31 Days")
-
-# elif month == 4 or month == 6 or month == 9 or month == 11:
-#     print("30 Days")
-
-# else:
-#     print("Invalid Month.")
 
 
 # match month:

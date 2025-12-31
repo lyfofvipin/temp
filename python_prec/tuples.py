@@ -100,7 +100,7 @@ tuple2 = (3, 4)
 # # Attempting to change an element (will raise TypeError)
 # my_tuple[1] = "grape"
 
-# my_tuple_with_list = (1, [2, 3], 4)
+my_tuple_with_list = (1, [2, 3], 4)
 # print(f"Original tuple with list: {my_tuple_with_list}") # Output: Original tuple with list: (1, [2, 3], 4)
 
 # my_tuple_with_list[1].append(5) # Modifying the list INSIDE the tuple

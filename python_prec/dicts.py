@@ -4,17 +4,16 @@
 #     Unordered : Historically, dictionaries were unordered. From Python 3.7 onwards, dictionaries maintain insertion order.
 #     Mutable: You can add, remove, and modify key-value pairs after the dictionary has been created.
 #     Values can be anything: Values can be of any data type and can be duplicates.
+#     Keys: Keys are the unique data in a dict and any immutable datatype can be a key
 #     Mapping: Dictionaries are often referred to as "mappings" because they map keys to values.
 #     We use the : operator to separate the key and value
-
-
 
 
 # An empty dictionary
 # empty_dict = {} # dict()
 # print(empty_dict)
 
-# # # A dictionary with string keys and various values
+# # A dictionary with string keys and various values
 # person = { "name": "Alice", "age": 30, "city": "New York" }
 # person = {
 #     "name": "Alice",
@@ -22,6 +21,15 @@
 #     "city": "New York"
 # }
 # print(person)
+
+# data = {
+#     1: "Alice",
+#     2: 30,
+#     3: "New York",
+#     3: "test"
+# }
+# print(data)
+
 
 # # A dictionary with mixed key types (valid because all are immutable and unique)
 # mixed_keys_dict = {
@@ -42,11 +50,10 @@
 # )
 # print(student)
 
-
 # Accessing Values
 # a = {"name": "Alice", "age": 30, "city": "New York"}
 
-# print( a[ "city" ] )
+# print( a[ "age" ] )
 
 # a = {
 #     "name": "Alice",
@@ -58,11 +65,13 @@
 #     }
 # }
 
+# print(a["data1"]["data2"][-1][ "data3" ])
+# print( a.get("data1").get("data2")[-1].get("data3") )
 # print( a[ "data1" ][ "data2" ][-1]["data3"] )
 # print( a.get("agee") )
 
 # # Accessing with a default value
-# print( a.get("city", "Unknown") )
+# print( a.get("cityy", "Jaipur") )
 
 # Modifying Dictionaries
 # grades = {"math": 90, "science": 85}
@@ -75,10 +84,8 @@
 # Delete a key-value pair using del
 # del grades["science"]
 # print(grades) # Output: After del 'science': {'math': 92, 'history': 78}
-
 # a = [ 1, 2, 3]
 # del a[-1]
-# print(a)
 
 # Pop an item
 # popped_value = grades.pop("math")
@@ -98,6 +105,9 @@
 # popped_item_pair = grades.popitem()
 # print(f"Popped item pair: {popped_item_pair}, After popitem: {grades}")
 
+# LIFO -> Last in First Out
+# FIFO -> First In First Out
+
 # grades.clear()
 # print(grades)
 
@@ -113,7 +123,7 @@
 # print(len( profile ))
 
 # Membership (checks for key)
-# print('name' in profile)
+# print('age' in profile)
 # print('Bob' in profile)
 
 
@@ -121,8 +131,9 @@
 
 # d1 = {"a": 1, "b": 2}
 # d2 = {"b": 3, "c": 4}
-# # d1.update(d2)
-# # print(f"After update: {d1}") # Output: After update: {'a': 1, 'b': 3, 'c': 4}
+
+# d1.update(d2)
+# print(f"After update: {d1}") # Output: After update: {'a': 1, 'b': 3, 'c': 4}
 
 # d2.update(d1)
 # print(d2)
@@ -131,19 +142,16 @@
 # email = data.setdefault("email", "unknown@example.com")
 # print(data, email)
 
-
-# data = list(range(1, 51))
+# data = {}
 
 # counter = 0
-# while counter < len(data):
-#     data[counter] = "key" + str(data[counter])
+# while counter < 50:
+#     data[counter] = "key" + str(counter)
 #     counter += 1
 
 # print(data)
-# new_dict = dict.fromkeys(["key1", "key2", "key3"], 0)
-# print(new_dict)
 
-# new_dict = dict.fromkeys(data, 50)
+# new_dict = dict.fromkeys(["key1", "key2", "key3"], 0)
 # print(new_dict)
 
 # company = {
@@ -165,23 +173,18 @@
 # }
 
 # print( company["employees"]["101"]["name"] )
-
 # person = { "name": "Alice", "age": 30, "city": "New York" }
 
-# data = tuple(person.values())
 # data1 = tuple(person.keys())
+# data = tuple(person.values())
 # data2 = person.items()
-
 
 # print(data)
 # print(data1)
 # print(list(data2))
 
 # Intermediate Level: More Dictionary Manipulations & Concepts
-
-
 person = { "name": "Alice", "age": 30, "city": "New York" }
-
 
 # for x in person:
 #     print(x)
@@ -189,25 +192,31 @@ person = { "name": "Alice", "age": 30, "city": "New York" }
 # for x in person.values(): # for x in dict_values(['Alice', 30, 'New York']):
 #     print(x)
 
+# for x in person.items(): # for x in dict_items([('name', 'Alice'), ('age', 30), ('city', 'New York')]):
+#     print(x)
+
+# for x, y in person.items(): # for x in dict_items([('name', 'Alice'), ('age', 30), ('city', 'New York')]):
+#     print(x, y)
+
+# new_data = {}
+# for x, y in person.items():
+#     new_data[y] = x
+# print(new_data)
+
 # data = [('name', 'Alice', 1), ('age', 30, 2), ('city', 'New York', 3)]
 
 # for x, y, z in data:
 #     print( f"x is {x} and y is {y} and z in {z}")
 
 
-# for x, y in person.items():
-#     print( f"x is {x} and y is {y}")
-
-
 # From a list of (key, value) tuples
-# countries = dict([("USA", "Washington"), ("France", "Paris")])
-# print(f"Countries dictionary (dict() with list of tuples): {countries}") # Output: Countries dictionary (dict() with list of tuples): {'USA': 'Washington', 'France': 'Paris'}
-
+# a = [("USA", "Washington"), ("France", "Paris")]
+# countries = dict(a)
+# print(countries)
 
 
 # enumerate() for Index and Value
 # When you need both the index and the value of items while iterating, enumerate() is very helpful. It returns pairs of (index, item).
-
 
 # fruits = ["apple", "banana", "cherry"]
 
@@ -217,7 +226,6 @@ person = { "name": "Alice", "age": 30, "city": "New York" }
 
 # for x, y in data:
 #     print(x, y)
-
 
 
 a = ["a", "b", "c", "d", "e"]

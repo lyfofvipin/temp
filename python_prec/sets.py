@@ -9,9 +9,9 @@
 # Heterogeneous: Sets can contain elements of different data types, but all elements must be hashable 
 # (e.g., numbers, strings, tuples, but not lists or dictionaries).
 
-# # Creating an empty set
+# Creating an empty set
 # empty_set = set()
-# print(f"Empty set: {empty_set}, type: {type(empty_set)}") # Output: Empty set: set(), type: <class 'set'>
+# print(empty_set, type(empty_set))
 
 # Creating a set from a list (duplicates are automatically removed)
 # numbers_list = [1, 2, 3, 2, 4, 1, 5]
@@ -36,6 +36,10 @@
 
 # my_set = {1, 2, 3}
 # print(f"Original set: {my_set}")
+
+# Add and Update method works separately in a way that add can only insert immutable data types
+# update method can expend the datatype and add it also it can add mutable datatypes.
+# remove method will give an error if we pass it a element which does not exist and discard will not
 
 # my_set.add(4)
 # print(f"After add(4): {my_set}") # Output: After add(4): {1, 2, 3, 4}
@@ -86,20 +90,27 @@
 # print(f"Is 3 in my_set? {3 in my_set}")     # Output: Is 3 in my_set? True
 # print(f"Is 6 not in my_set? {6 not in my_set}") # Output: Is 6 not in my_set? True
 
-set_a = {1, 2, 3, 4}
-set_b = {3, 4, 5, 6}
+# set_a = {1, 2, 3, 4}
+# set_b = {3, 4, 5, 6}
 
-# # Union
+# # Union Add both the sets
 # union_set = set_a | set_b
 # print(f"Union (set_a | set_b): {union_set}") # Output: Union (set_a | set_b): {1, 2, 3, 4, 5, 6}
 # print(f"Union (set_a.union(set_b)): {set_a.union(set_b)}")
 
-# Intersection
+# symmetric_difference
+# It is same as Union but it will not count the element that comes in both the sets
+# a = {1,2,3}
+# b = {3,4,5}
+# a.symmetric_difference(b)
+# {1, 2, 4, 5}
+
+# # Intersection
 # intersection_set = set_b & set_a
 # print(f"Intersection (set_a & set_b): {intersection_set}") # Output: Intersection (set_a & set_b): {3, 4}
 # print(f"Intersection (set_a.intersection(set_b)): {set_a.intersection(set_b)}")
 
-# Difference (elements in A but not in B)
+# # Difference (elements in A but not in B)
 # difference_ab = set_a - set_b
 # print(f"Difference (set_a - set_b): {difference_ab}") # Output: Difference (set_a - set_b): {1, 2}
 # print(f"Difference (set_a.difference(set_b)): {set_a.difference(set_b)}")
@@ -129,7 +140,7 @@ set_b = {3, 4, 5, 6}
 
 # Create a frozenset
 # In frozenset You Can not add, update, remove, pop, discard
-
-# fs = frozenset([1, 2, 3])
+# fs = frozenset([1, 2, 3, 1, 1, 2, 3])
 # fs2 = frozenset([1, 2, 3])
 # print(type(fs)) # Output: Frozenset: frozenset({1, 2, 3})
+
