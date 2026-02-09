@@ -19,7 +19,7 @@
 #   }
 # }
 
-# The Python json Module
+# The Python json Module 🐍
 
 # The built-in json module in Python is used to convert data between native Python objects and JSON format.
 
@@ -39,9 +39,6 @@
 #     "is_vip": False
 # }
 
-# str_wala_json = str(python_data)
-# print(str_wala_json)
-
 # json_string = json.dumps(python_data)
 # print(json_string)
 # print(type(json_string))
@@ -52,7 +49,7 @@
 
 # Decoding:
 
-# json.loads()	Load String: Converts a JSON-formatted string into a Python Dict.
+# json.loads()	Load String: Converts a JSON-formatted string into a Python object.
 # Receiving and processing a response from an API.
 # json.load()	Load File: Reads data directly from an open file and converts it into a Python object.
 # Reading saved configuration or data files.
@@ -71,58 +68,3 @@
 
 # print(loaded_data)
 # print(type(loaded_data))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-import json
-
-def user():
-    with open("data_output.json") as f:
-        return json.load(f)
-    
-data = user()
-# data = {'name': 'Bob', 'items': [10, 20, 30], 'is_vip': False}
-
-data["name"] = "Rohit"
-
-print(data)
-# {'name': 'Rohit', 'items': [10, 20, 30], 'is_vip': False}
-
-data["items"] = ["Bag", "Laptop", "Mobile"]
-
-print(data)
-# {'name': 'Rohit', 'items': ["Bag", "Laptop", "Mobile"], 'is_vip': False}
-
-
-with open("update_data_output.json", "w") as file:
-    json.dump(data, file)
-

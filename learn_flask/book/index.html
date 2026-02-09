@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vipin | Personal Diary</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="desk">
+        <div class="book">
+            <div class="page" id="page-content">
+                <div class="page-content">
+                    <article>
+                        <h2 id="post-title"></h2>
+                        <div id="post-body"></div>
+                        <button class="nav-btn" onclick="closePost()">← Back to Index</button>
+                    </article>
+                </div>
+            </div>
+
+            <div class="page" id="page-index">
+                <div class="page-content">
+                    <h3 class="index-header">Table of Contents</h3>
+                    <div class="diary-list">
+                        <div class="entry">
+                            <span>01.</span>
+                            <a href="#" onclick="openPost('c-intro')">Introduction to C</a>
+                        </div>
+                        <div class="entry">
+                            <span>02.</span>
+                            <a href="#" onclick="openPost('py-intro')">Introduction to Python</a>
+                        </div>
+                    </div>
+                    <button class="nav-btn" onclick="closeBook()">Close Journal</button>
+                </div>
+            </div>
+
+            <div class="page cover" id="page-cover">
+                <div class="cover-design">
+                    <h1>VIPIN</h1>
+                    <div class="line"></div>
+                    <p>Learning Journal</p>
+                    <button class="open-btn" onclick="openBook()">Open</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

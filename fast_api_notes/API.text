@@ -31,18 +31,9 @@ While APIs exist everywhere (like Python's built-in functions), when people talk
 
     Stateless: Each request from the client to the server contains all the information needed to understand the request. The server doesn't need to save any past client interaction history between requests.
 
-Why APIs are Essential:
+Why APIs are Essential
 
     Microservices: APIs allow complex applications to be broken into smaller, independent services (microservices) that communicate seamlessly.
     Integration: They allow third-party services (like Google Maps, Twitter, or PayPal) to be integrated directly into any application.
     Abstraction: They hide complexity. A developer doesn't need to know how a weather service collects its data; they only need to know how to call the weather API to get the result.
 
-
-CURD:
-
-C -> Create
-U -> Update
-R -> Read
-D -> Delete
-Put
-Patch

@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600&family=EB+Garamond:wght@400;500&display=swap');
+
+:root {
+    --paper: #fdfaf3;
+    --ink: #2c2c2c;
+    --accent: #8c7851;
+    --gold: #c5a059;
+    --cover: #3e2723;
+}
+
+body {
+    margin: 0;
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'EB Garamond', serif;
+}
+
+.desk { perspective: 2000px; width: 100%; display: flex; justify-content: center; }
+
+.book {
+    width: 90%;
+    max-width: 450px;
+    height: 70vh;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0; left: 0;
+    background: var(--paper) url('https://www.transparenttextures.com/patterns/cream-paper.png');
+    padding: 40px;
+    box-sizing: border-box;
+    border-radius: 5px 20px 20px 5px;
+    transform-origin: left center;
+    transition: transform 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+    backface-visibility: hidden;
+    box-shadow: 2px 2px 15px rgba(0,0,0,0.3);
+    overflow-y: auto;
+}
+
+/* Custom Scrollbar */
+.page::-webkit-scrollbar { width: 4px; }
+.page::-webkit-scrollbar-thumb { background: var(--accent); }
+
+/* Cover specific */
+.cover {
+    background: var(--cover);
+    color: var(--gold);
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 8px solid #2e1b18;
+}
+
+.cover-design { border: 1px solid var(--gold); padding: 40px; text-align: center; width: 100%; }
+.line { height: 1px; background: var(--gold); margin: 20px auto; width: 50px; }
+
+/* Flip State */
+.flipped { 
+    transform: rotateY(-160deg); 
+    pointer-events: none; /* Crucial: allows clicking items underneath */
+}
+
+/* Index & Content Layering */
+#page-index { z-index: 2; }
+#page-content { z-index: 1; }
+
+.entry { margin: 15px 0; font-size: 1.2rem; display: flex; gap: 10px; }
+.entry a { color: var(--ink); text-decoration: none; border-bottom: 1px solid transparent; }
+.entry a:hover { color: var(--accent); border-bottom: 1px solid var(--accent); }
+
+.nav-btn, .open-btn {
+    background: none; border: 1px solid var(--accent); color: var(--accent);
+    padding: 8px 15px; cursor: pointer; margin-top: 20px; font-family: inherit;
+}
+.open-btn { color: var(--gold); border-color: var(--gold); }

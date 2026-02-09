@@ -5,5 +5,8 @@
         20,
         30
     ],
-    "is_vip": false
+    "is_vip": false,
+    "is_admin": false,
+    "role": "admin",
+    "dummy": null
 }

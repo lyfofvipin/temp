@@ -21,14 +21,14 @@ try:
     # driver.find_element(By.XPATH, "//a[text()='Enroll Now']").click()
     # time.sleep(3)
 
-    # Opens YouTube
-    print("Opening Firefox and navigating to YouTube...")
-    driver.get("https://www.youtube.com/@lyfofvipin_tech")
-    time.sleep(3)
-    driver.find_element(By.XPATH, "//div[text()='Live']").click()
-    time.sleep(3)
-    driver.find_element(By.XPATH, "//div[text()='Playlists']").click()
-    time.sleep(10)
+    # # Opens YouTube
+    # print("Opening Firefox and navigating to YouTube...")
+    # driver.get("https://www.youtube.com/@lyfofvipin_tech")
+    # time.sleep(3)
+    # driver.find_element(By.XPATH, "//div[text()='Live']").click()
+    # time.sleep(3)
+    # driver.find_element(By.XPATH, "//div[text()='Playlists']").click()
+    # time.sleep(10)
 finally:
     print("Closing browser...")
     driver.quit()

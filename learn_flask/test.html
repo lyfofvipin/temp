@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vipin | Personal Diary</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --paper-color: #fdfaf3;
+            --ink-color: #2c2c2c;
+            --accent-color: #8c7851;
+            --border-color: rgba(0,0,0,0.08);
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #e5e5e5; /* Desk background */
+            font-family: 'EB Garamond', serif;
+            color: var(--ink-color);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* The Book Container */
+        .book-container {
+            background-color: var(--paper-color);
+            background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png');
+            width: 90%;
+            max-width: 800px;
+            min-height: 90vh;
+            margin: 40px 20px;
+            padding: 60px 80px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15), 0 1px 2px rgba(0,0,0,0.1);
+            position: relative;
+            transition: transform 0.6s ease-in-out, opacity 0.4s;
+        }
+
+        /* Binding detail */
+        .book-container::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 30px;
+            background: linear-gradient(to right, rgba(0,0,0,0.05) 0%, transparent 100%);
+            border-left: 1px solid rgba(0,0,0,0.05);
+        }
+
+        /* Transitions */
+        .hidden { display: none; }
+        .fade-out { opacity: 0; transform: translateY(10px); }
+        .fade-in { opacity: 1; transform: translateY(0); }
+
+        /* Typography */
+        header { text-align: center; margin-bottom: 60px; }
+        h1 { font-family: 'Crimson Pro', serif; font-size: 3rem; margin: 0; font-weight: 400; letter-spacing: 2px; }
+        .subtitle { font-style: italic; color: var(--accent-color); font-size: 1.2rem; margin-top: 5px; }
+
+        /* Index Section */
+        .index-title { border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-bottom: 30px; font-variant: small-caps; letter-spacing: 1px; }
+        .index-item { margin-bottom: 25px; }
+        .category-name { font-weight: 600; font-size: 1.4rem; cursor: pointer; display: block; margin-bottom: 10px; }
+        
+        .posts-list { list-style: none; padding-left: 20px; border-left: 1px solid var(--border-color); }
+        .posts-list li { margin: 8px 0; }
+        .post-link { text-decoration: none; color: var(--ink-color); font-size: 1.1rem; border-bottom: 1px solid transparent; transition: 0.3s; cursor: pointer; }
+        .post-link:hover { border-bottom: 1px solid var(--accent-color); color: var(--accent-color); }
+
+        /* Post Page */
+        .post-content { line-height: 1.8; font-size: 1.2rem; }
+        .post-content h2 { font-size: 2.2rem; margin-bottom: 30px; font-weight: 400; }
+        .back-btn { display: inline-block; margin-top: 50px; cursor: pointer; font-style: italic; color: var(--accent-color); text-decoration: none; border: 1px solid var(--accent-color); padding: 5px 15px; border-radius: 20px; transition: 0.3s; }
+        .back-btn:hover { background: var(--accent-color); color: white; }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .book-container { padding: 40px 30px; margin: 15px 10px; }
+            h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="book-container" id="book-body">
+        
+        <div id="index-page">
+            <header>
+                <h1>Vipin</h1>
+                <p class="subtitle">Personal Diary / Learning Journal</p>
+            </header>
+
+            <h3 class="index-title">Table of Contents</h3>
+            
+            <div class="index-item">
+                <span class="category-name">I. C Programming</span>
+                <ul class="posts-list">
+                    <li><a class="post-link" onclick="openPost('c-intro')">Introduction to C</a></li>
+                </ul>
+            </div>
+
+            <div class="index-item">
+                <span class="category-name">II. Python</span>
+                <ul class="posts-list">
+                    <li><a class="post-link" onclick="openPost('py-intro')">Introduction to Python</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="post-page" class="hidden">
+            <article class="post-content">
+                <h2 id="post-title">Post Title</h2>
+                <div id="post-body">
+                    </div>
+                <a class="back-btn" onclick="showIndex()">← Return to Index</a>
+            </article>
+        </div>
+
+    </div>
+
+    <script>
+        const content = {
+            'c-intro': {
+                title: "Introduction to C",
+                body: "<p>The C programming language is a procedural language. It was initially developed by Dennis Ritchie in the year 1972. It was mainly developed as a system programming language to write operating systems...</p><p>Today, it remains one of the most widely used programming languages, serving as the foundation for modern computing.</p>"
+            },
+            'py-intro': {
+                title: "Introduction to Python",
+                body: "<p>Python is an interpreted, high-level and general-purpose programming language. Created by Guido van Rossum and first released in 1991, Python's design philosophy emphasizes code readability...</p><p>It is often described as a 'batteries included' language due to its comprehensive standard library.</p>"
+            }
+        };
+
+        function openPost(postId) {
+            const page = content[postId];
+            const book = document.getElementById('book-body');
+            
+            book.classList.add('fade-out');
+            
+            setTimeout(() => {
+                document.getElementById('index-page').classList.add('hidden');
+                document.getElementById('post-page').classList.remove('hidden');
+                
+                document.getElementById('post-title').innerText = page.title;
+                document.getElementById('post-body').innerHTML = page.body;
+                
+                book.classList.remove('fade-out');
+                window.scrollTo(0,0);
+            }, 400);
+        }
+
+        function showIndex() {
+            const book = document.getElementById('book-body');
+            book.classList.add('fade-out');
+            
+            setTimeout(() => {
+                document.getElementById('post-page').classList.add('hidden');
+                document.getElementById('index-page').classList.remove('hidden');
+                book.classList.remove('fade-out');
+                window.scrollTo(0,0);
+            }, 400);
+        }
+    </script>
+</body>
+</html>
