@@ -13,7 +13,7 @@
 # empty_tuple = ()
 # print(f"Empty tuple: {empty_tuple}") # Output: Empty tuple: ()
 
-# # A tuple of integers
+# # # A tuple of integers
 # numbers = (1, 2, 3, 4, 5)
 # print(f"Tuple of numbers: {numbers}") # Output: Tuple of numbers: (1, 2, 3, 4, 5)
 
@@ -22,7 +22,7 @@
 # print(f"Tuple of fruits: {fruits}") # Output: Tuple of fruits: ('apple', 'banana', 'cherry')
 
 # # A tuple with mixed data types
-# mixed_tuple = ("hello", 123, 3.14, False)
+# mixed_tuple = ("hello", 123, 3.14, False, (23, 243, ["sf"]))
 # print(f"Mixed tuple: {mixed_tuple}") # Output: Mixed tuple: ('hello', 123, 3.14, False)
 
 
@@ -31,6 +31,7 @@
 # # print(f"Nested tuple: {nested_tuple}") # Output: Nested tuple: (1, [2, 3], 4)
 # nested_tuple[1][0] = 4
 # nested_tuple[1][1] = 5
+# nested_tuple[1].append([1,2,3,4,5,5])
 # print(nested_tuple)
 
 # Important: A single-element tuple requires a trailing comma!
@@ -43,10 +44,13 @@
 # print(f"Not a tuple: {not_a_tuple}, type: {type(not_a_tuple)}")
 # Output: Not a tuple: 5, type: <class 'int'>
 
-# # Creating a tuple without parentheses (tuple packing)
+# Creating a tuple without parentheses (tuple packing)
+
 # packed_tuple = "a", 10, True
-# print(f"Packed tuple: {packed_tuple}, type: {type(packed_tuple)}")
-# # Output: Packed tuple: ('a', 10, True), type: <class 'tuple'>
+# print(packed_tuple)
+
+# a, b, c = 10, 20, 30
+# print(a, b, c)
 
 # my_tuple = ("a", "b", "c", "d", "e")
 
@@ -131,9 +135,9 @@ my_tuple_with_list = (1, [2, 3], 4)
 # print(f"After swap: a={a}, b={b}") # Output: After swap: a=20, b=10
 
 # Unpacking with * (star operator) for arbitrary remaining elements (Python 3+)
-# coordinates = (1, 2, 3, 4, 5)
-# # x, y, *rest, z = coordinates
-# # print(f"x={x}, y={y}, rest={rest}, z={z}") # Output: x=1, y=2, rest=[3, 4, 5]
+# coordinates = (1, 2, 3, 4, 5, 7, 8, 9, 10)
+# a, b, *c, d, e = coordinates
+# print(a, b, c, d)
 
 # first, *middle, last = coordinates
 # print(f"first={first}, middle={middle}, last={last}") # Output: first=1, middle=[2, 3, 4], last=5
@@ -148,7 +152,10 @@ my_tuple_with_list = (1, [2, 3], 4)
 # print(f"Tuple to list: {my_list_from_tuple}, type: {type(my_list_from_tuple)}") # Output: Tuple to list: ['a', 'b', 'c'], type: <class 'list'>
 
 
-# my_tuple = (1, 2, 3, 2, 4, 2)
+my_tuple = (1, 2, 3, 2, 4, 2)
 
 # print(f"Count of 2: {my_tuple.count(2)}") # Output: Count of 2: 3
-# print(f"Index of 4: {my_tuple.index(2, 2)}") # Output: Index of 4: 4
+# print(f"Index of 2: {my_tuple.index(2, 2)}") # Output: Index of 2: 2
+
+
+# print(dir( () ))

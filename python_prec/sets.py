@@ -8,13 +8,17 @@
 # Unique Elements: Every element in a set must be unique. Duplicates are automatically discarded.
 # Heterogeneous: Sets can contain elements of different data types, but all elements must be hashable 
 # (e.g., numbers, strings, tuples, but not lists or dictionaries).
+# While 1 and True are the same thing
 
 # Creating an empty set
 # empty_set = set()
 # print(empty_set, type(empty_set))
 
+# a = { 1, 2, 3, 4, 5, 6, 1, 2, "Vipin", "vipin" }
+# print(a)
+
 # Creating a set from a list (duplicates are automatically removed)
-# numbers_list = [1, 2, 3, 2, 4, 1, 5]
+# numbers_list = "vipin"
 # my_set = set(numbers_list)
 # print(f"Set from list (duplicates removed): {my_set}") # Output: Set from list (duplicates removed): {1, 2, 3, 4, 5} (order may vary)
 
@@ -27,7 +31,7 @@
 # dummy = {"x", "t", "a", "A", "X", "T"}
 # print(dummy)
 
-# sorted_data = sorted(dummy)
+# sorted_data = sorted("sdfgsdfgshfshgs", reverse=True)
 # print(sorted_data)
 
 # Set with mixed data types (all elements must be hashable)
@@ -53,17 +57,21 @@
 # my_set.update("abcdefg") # 2 is ignored, 5 and 6 are added
 # print(f"{my_set}") # Output: {1, 2, 3, 'a', 'c', 'g', 'f', 'd', 'e', 'b'}
 
+# my_set.add({7,8})
+# print(my_set)
+
 # my_set.update({7, 8}) # Can update from another set
 # print(f"After update({7, 8}): {my_set}") # Output: After update({7, 8}): {1, 2, 3, 4, 5, 6, 7, 8}
 
 
-# my_set = {10, 20, 30, 40, 50}
+my_set = {10, 20, 30, 40, 50}
+
 # print(f"Original set: {my_set}")
 
-# my_set.remove(30)
+# my_set.remove(20)
 # print(f"{my_set}") # Output: After remove(30): {10, 20, 40, 50} (order may vary)
 
-# my_set.discard(10)
+# my_set.discard(90)
 # print(f"After discard(20): {my_set}") # Output: After discard(20): {10, 40, 50} (order may vary)
 
 # pop method in list take an argument but in set there are no argument required
@@ -102,16 +110,19 @@
 # It is same as Union but it will not count the element that comes in both the sets
 # a = {1,2,3}
 # b = {3,4,5}
-# a.symmetric_difference(b)
-# {1, 2, 4, 5}
+# print(a.symmetric_difference(b))
+# # {1, 2, 4, 5}
 
 # # Intersection
 # intersection_set = set_b & set_a
 # print(f"Intersection (set_a & set_b): {intersection_set}") # Output: Intersection (set_a & set_b): {3, 4}
 # print(f"Intersection (set_a.intersection(set_b)): {set_a.intersection(set_b)}")
 
+set_a = {1, 2, 3, 4}
+set_b = {3, 4, 5, 6}
+
 # # Difference (elements in A but not in B)
-# difference_ab = set_a - set_b
+# difference_ab = set_b - set_a
 # print(f"Difference (set_a - set_b): {difference_ab}") # Output: Difference (set_a - set_b): {1, 2}
 # print(f"Difference (set_a.difference(set_b)): {set_a.difference(set_b)}")
 
@@ -119,9 +130,9 @@
 # difference_ba = set_b - set_a
 # print(f"Difference (set_b - set_a): {difference_ba}") # Output: Difference (set_b - set_a): {5, 6}
 
-# set1 = {1, 2, 3}
-# set2 = {1, 2, 3, 4, 5}
-# set3 = {4, 5, 6}
+set1 = {1, 2, 3}
+set2 = {1, 2, 3, 4, 5}
+set3 = {4, 5, 6}
 
 # Is set1 a subset of set2?
 # print(f"Is {set1} subset of {set2}? {set1.issubset(set2)}") # Output: True
@@ -140,7 +151,17 @@
 
 # Create a frozenset
 # In frozenset You Can not add, update, remove, pop, discard
-# fs = frozenset([1, 2, 3, 1, 1, 2, 3])
-# fs2 = frozenset([1, 2, 3])
+fs = frozenset([1, 2, 3, 1, 1, 2, 3])
+fs2 = frozenset([1, 2, 3])
 # print(type(fs)) # Output: Frozenset: frozenset({1, 2, 3})
 
+
+| Feature                  | List                | Tuple             | Set             | Frozenset     | String         |
+| ------------------------ | ------------------- | ----------------- | --------------- | ------------- | -------------- |
+| **Syntax**               | `[ ]`               | `( )`             | `{ }`           | `frozenset()` | `' '` or `" "` |
+| **Ordered**              | ✅ Yes               | ✅ Yes             | ❌ No            | ❌ No          | ✅ Yes          |
+| **Mutable** (can change) | ✅ Yes               | ❌ No              | ✅ Yes           | ❌ No          | ❌ No           |
+| **Duplicates allowed**   | ✅ Yes               | ✅ Yes             | ❌ No            | ❌ No          | ✅ Yes          |
+| **Indexing possible**    | ✅ Yes               | ✅ Yes             | ❌ No            | ❌ No          | ✅ Yes          |
+| **Elements type**        | Any                 | Any               | Only hashable   | Only hashable | Characters     |
+| **Use case**             | Dynamic collections | Fixed collections | Unique elements | Immutable set | Text data      |

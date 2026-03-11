@@ -1,13 +1,11 @@
 # A string in Python is a sequence of characters enclosed in quotes. You can define a string using either single quotes 
 # (' ') or double quotes (" "), or even triple quotes (''' ''' or """ """) for multi-line strings.
 
-
 # Creating Strings:
 
 #     Single Quote: 'hello'
 #     Double Quote: "hello"
 #     Triple Quote: '''hello''' or """hello""" (used for multi-line strings)
-
 
 # String Operations:
 
@@ -24,12 +22,13 @@
 # result = str1 * 3
 # print(result)  # Output: HelloHelloHello
 
-
+# https://img.favpng.com/23/15/3/hard-drives-disk-storage-disk-sector-solid-state-drive-logical-disk-png-favpng-8D3uYsTJXFhxS9vGC1BAvw3km.jpg
 # Indexing: Each character in a string has an index. The index starts at 0 for the first character.
-# To access these values we use `[]` operator.
+# To access these values of a string using the index values we use `[]` operator.
 
-# my_string = "Hello"
-# print(my_string[0])  # Output: H
+# my_string = "Hello World"
+
+# print(my_string[-3])  # Output: H
 # print(my_string[-1])  # Output: o (Negative index starts from the end)
 # print(my_string[50]) #IndexError: string index out of range
 
@@ -38,24 +37,49 @@
 # For slicing we use `:` operator in side `[]`
 # if we enter wrong index it won't give any error but can lead to blank output 
 
+# always start should be less then < the end
+# [ : ] -> It will show complete String
+# [ start : ] -> It will start the slicing from the start index and will print the complete string
+# [ : end ] -> It will start printing the string from 0 index and till end - 1
+# [ start : end ] -> It will start printing the string from the start index and till the end - 1.
+
+# [from:to-1:in_what_order]
+
 # my_string = "Hello"
-# [from:to:in_what_order]
-# where_to cuts by -1
 
-# print( my_string[ 1: ] ) # ello
-
-# print(my_string[ 1:4 ])  # Output: ell (Extracts from index 1 to 3)
-# print(my_string[ :3 ])   # Output: Hel (Extracts from index 0 to 2)
+# print( my_string[ 1: ] )
+# print(my_string[ 1:4 ]) 
+# print(my_string[ :3 ])  
 
 # my_string = "0123456789"
 
-# print(my_string[ 1:10:3 ])   # Output: 147
-# print(my_string[ -8:-1 ])   # Output: 2345678
-# print(my_string[ -8::-1 ])   # Output: 210
+# print(my_string[ 2:3 ])
+# print(my_string[ -8:-1 ])
+
+
+# [ start : end : difference ]
+
+# [ :: ] -> Cut the string from 0 to end by diff of one
+# [ :: 1 ] -> Cut the string from 0 to end by diff of one
+# [ :: 2 ] -> Cut the string from 0 to end by diff of two
+# [ :: -1 ] -> If difference is -v it will start the slicing from the last
+# [ start : end : diff ] -> This will start slicing from start index and go till end - 1 with a diff of diff
+
+my_string = "0123456789"
+
+# print( my_string [ -9 : -2 : 2 ]  )
+
+print( my_string [ -9 : -2 : 2 ]  )
+
+
+# my_string = "Lhis Is A Test String"
+#            0123456789
+# print( my_string[ :: 3 ] ) 
+
 # print(my_string[ -5:1:-1 ])   # Output: 5432
 # print(my_string[ -5:-1:-1 ])   # Output: <blank>
 
-my_string = "abcdefghijklmn"
+# my_string = "abcdefghijklmn"
 # print(my_string[ ::-1 ])   # Output: nmlkjihgfedcba
 # print(my_string[ ::-3 ])   # Output: nkheb
 # print(my_string[ :: ])   # Output: nkheb
@@ -89,7 +113,7 @@ my_string = "abcdefghijklmn"
 
 # lower(): Converts the string to lowercase.
 
-# my_string = "HELLO"
+# my_string = "heLLO"
 # print(my_string.lower())  # Output: hello
 
 # strip(): Removes leading and trailing whitespaces ( " ", "\n").
@@ -157,7 +181,10 @@ my_string = "abcdefghijklmn"
 # my_string = "Hello World"
 # print(my_string.find("o"))  # Output: 4
 
+# "hello my name is vipin".find(" ", 6)
+
 # count(substring): Counts occurrences of a substring in the string.
+
 
 # my_string = "Hello World, Hello Python"
 # print(my_string.count("Hello"))  # Output: 2
@@ -260,3 +287,29 @@ my_string = "abcdefghijklmn"
 # str1[0] = "H"  # This will raise an error: TypeError: 'str' object does not support item assignment
 
 
+# Formatted String
+name = "Vipin"
+age = 26
+add = "Jaipur"
+
+# My name is Vipin, Age is 26 and Address is Jaipur.
+
+# print(f"My name is {name}, Age is {age} and add is {add}")
+
+# print( "My Name is {}, Age is {} and add is {}".format(name, age, add) )
+
+
+
+# a = "2324242g4.90"
+
+# i = 0
+
+# if a.count(".") == 1:
+#     while i < len(a):
+#         if a[i] in "1234567890.":
+#             pass
+#         else:
+#             print(False)
+#         i += 1
+# else:
+#     print(False)

@@ -20,6 +20,36 @@
 # Write	'w'	Opens the file for writing. Creates the file if it doesn't exist or overwrites it if it does.
 # Append 'a' Opens the file for writing. Creates the file if it doesn't exist or adds to the end of the file if it does.
 
+
+# with open("/home/vipikuma/test.png", "rb") as a:
+#     photo = a.read()
+
+# with open("/home/vipikuma/test1.png", "wb") as a:
+#     a.write(photo)
+
+# file_to_copy = input("Enter Your file name you want to copy: ")
+# file_to_paste = input("Enter the new filename: ")
+
+# with open(file_to_copy) as a:
+#     data = a.read()
+
+# with open(file_to_paste, "w") as a:
+#     a.write(data)
+
+with open("vipin.text") as a:
+    data = a.read()
+
+countre_space = 0
+countre_new_line = 0
+for x in data:
+    if x == "\n":
+        countre_new_line += 1
+
+    if x == " ":
+        countre_space += 1
+
+print(countre_space, countre_new_line)
+
 # Open a file named 'example.txt' in write mode
 
 # /home/vipikuma/classes/python_afternoon_batch/folder2/dummy.tt -> Absolute Path

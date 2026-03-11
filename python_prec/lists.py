@@ -14,6 +14,7 @@
 #     Heterogeneous: Lists can contain items of different data types (integers, strings, floats, even other lists or objects).
 
 # "0123456789"
+
 # numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 # numbers[0] = 90
@@ -22,22 +23,27 @@
 
 abc = [ "Vipin", 25, "Jaipur", 302020, True, [ "Test", 43, [23242, [ 234234]] ] ]
 
-print( abc[-1] )
+# abc[1] = [ 23, 24, 53, False ]
 
+# print(abc[0][0])
 # # print( abc[ 2: ] )
 
-# # print( "abc[ 0 ]"[ 0 ] )
-# # print( abc[ 0 ][ 0 ].lower() )
+# print( "abc[ 0 ]"[ 0 ] )
+# print( abc[ 0 ][ 0 ].lower() )
 
-# # print(abc[5][2][1][0])
+# print(abc[5][2][1][0])
 
-# # Reference Variable
-# a = [ "sdf", 1, 4, 5 ,6  ]
+# Reference Variable
 
+# a = 34
 # b = a
+# print(a, b)
+# a = 23
+# print(a, b)
 
+# a = [ "sdf", 1, 4, 5 ,6  ]
+# b = a
 # b[0] = "Vipin"
-
 # print( a, b )
 
 
@@ -79,9 +85,9 @@ print( abc[-1] )
 # Operations
 
 list1 = [1, 2]
-list2 = [3, 4]
+# list2 = [3, 4]
 
-# Concatenation
+# # Concatenation
 # combined_list = list1 + list2 # [ 1, 2] + [3, 4] = [ 1, 2, 3 ,4 ]
 # print(f"Concatenated list: {combined_list}") # Output: Concatenated list: [1, 2, 3, 4]
 
@@ -94,10 +100,17 @@ list2 = [3, 4]
 # print(f"Is 5 not in list2? {5 not in list2}") # Output: Is 5 not in list2? True
 
 # a = [ 1, 2, 3 , [ 4, 5 ] ]
+
 # print( 5 in a )
-# print( [4, 5 ] in a )
-# print( 1 in a[-1] )
 # print( 5 in a[-1] )
+# print( [4, 5 ] in a )
+
+
+# Identity operator
+
+# a = [1, 2]
+# b = [1, 2]
+# print(a is b)
 
 
 # Methods:
@@ -108,20 +121,20 @@ list2 = [3, 4]
 # if we have multiple duplicate then the .remove method will only remove the fist accuracy
 
 
-# my_list = ["apple", "banana", "cherry", "banana"]
+# my_list = ["apple", "banana", "cherry", "banana", [1, 2]]
 
 # Append
 # my_list.append("date")
-# print(f"After append: {my_list}") # Output: After append: ['apple', 'banana', 'cherry', 'date']
+# print(my_list) # Output: After append: ['apple', 'banana', 'cherry', 'date']
 
 # Insert
-# my_list.insert(1, "grape") # Insert 'grape' at index 1
+# my_list.insert(-1, "grape") # Insert 'grape' at index 1
 # print(f"After insert: {my_list}") # Output: After insert: ['apple', 'grape', 'banana', 'cherry', 'date']
 
 # my_list.insert( -1, "mango")
 # print(my_list)
 
-# my_list.insert( -50, "guava")
+# my_list.insert( 50, "guava")
 # print(my_list)
 
 
@@ -129,10 +142,13 @@ list2 = [3, 4]
 # my_list.remove("banana")
 # print(f"After remove: {my_list}") # Output: After remove: ['apple', 'grape', 'cherry', 'date']
 
+# del my_list[-1]
+# print(f"After remove: {my_list}") # Output: After remove: ['apple', 'grape', 'cherry', 'date']
+
+
 # my_list = ["apple", "banana", "cherry", "banana"]
-# Pop (last item)
-# my_list.pop( 1 )
- 
+# # Pop (last item)
+# my_list.pop( 0 )
 # print(my_list)
 
 # print(f"Popped item (last): {popped_item}, List: {my_list}") # Output: Popped item (last): date, List: ['apple', 'grape', 'cherry']
@@ -140,14 +156,18 @@ list2 = [3, 4]
 
 # my_list = ["apple", "banana", "cherry", "banana"]
 
-# # Pop (at index)
+# print(my_list.pop())
+# print(my_list)
+
+# Pop (at index)
 # popped_item_at_index = my_list.pop(0)
 # print(f"Popped item (index 1): {popped_item_at_index}, List: {my_list}") # Output: Popped item (index 1): grape, List: ['apple', 'cherry']
 
-numbers = [5, 2, 8, 1, 9, 11]
+# numbers = [5, 2, 8, 1, 9, 11]
 
-# # Using .sort() (in-place)
-# numbers.sort( reverse = True )
+# # # Using .sort() (in-place)
+# numbers.sort()
+# print(numbers)
 
 # print(numbers) 
 # [11, 9, 8, 5, 2, 1]
@@ -171,13 +191,15 @@ numbers = [5, 2, 8, 1, 9, 11]
 # print(f"Reverse sorted in-place: {numbers}") # Output: Reverse sorted in-place: [9, 8, 5, 2, 1]
 
 
-my_list = [1, 2, 3, 2, 4, 2]
+# my_list = [1, 2, 3, 2, 4, 2]
 
 # print(f"Count of 2: {my_list.count(2)}") # Output: Count of 2: 3
 # print(f"Count of 67: {my_list.count(67)}") # Output: Index of 4: 4
 
 # my_list = ["apple", "banana", "cherry", "banana"]
 # number_of_banana = my_list.count("banana")
+# print(number_of_banana)
+
 # counter = 1
 # while counter <= number_of_banana:
 #     my_list.remove("banana")
@@ -185,8 +207,7 @@ my_list = [1, 2, 3, 2, 4, 2]
 # print(my_list)
 
 # Index
-
-# print(my_list.index(4)) # Output: 4
+# print(my_list.index(2)) # Output: 4
 # print(f"Index of 1: {my_list.index(1)}") # Output: Index of 1: 0
 # print(f"Index of 2: {my_list.index(2)}") # Output: Index of 2: 1
 # print(f"Index of 2: {my_list.index(2, 2)}") # Output: Index of 2: 1
@@ -195,30 +216,41 @@ my_list = [1, 2, 3, 2, 4, 2]
 # new_items = [5, 6]
 # new_list = [1, 2]
 
-# new_items = new_items + new_list
+# # new_items = new_items + new_list
 
 # new_items.extend( new_list )
 # print(new_items)
 
 # my_list = [ 1, 2 ,3, 34, "saa", "abc", "xyz" ]
 
-# print( my_list[ :: -1 ] )
-# print(my_list)
+# # print( my_list[ :: -1 ] )
+# # print(my_list)
 
 # my_list.reverse()
 # print(my_list)
 
 
 # a = [ 1, 2 ,3, 34, "saa", "abc", "xyz" ]
-# # b = a.copy()
 
-# # b.pop()
+# b = a.copy()
+# b.append(342)
+# print(a)
+# print(b)
+# i = 0
 
-# # print(a)
-# # print(b)
+# while i < len(a):
+#     print(a)
+#     print(i)
+#     del a[i]
+#     i+= 1
+# print(a)
+
+# for x in a:
+#     a.remove(x)
+
+# a = [ 1, 2 ,3, 34, "saa", "abc", "xyz" ]
 
 # a.clear() # a = []
-
 # print(a)
 
 # counter = 1
@@ -235,3 +267,18 @@ my_list = [1, 2, 3, 2, 4, 2]
 
 # print(sum)
 # print(number_list)
+
+
+# "".join()
+# "".split()
+
+# a = "my-name-is-vipin"
+# b = a.split("-")
+
+# print(b)
+
+# a = ['my', 'name', 'is', 'vipin']
+
+# b = "------".join(a)
+
+# print(b)

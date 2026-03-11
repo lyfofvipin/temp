@@ -11,7 +11,8 @@
 #  * High. All results are held in memory simultaneously.
 
 # Generator Function	
-#  * It calculates one number, pauses execution using yield, and returns that number. When asked for the next number, it resumes exactly where it left off. 
+#  * It calculates one number, pauses execution using yield, and returns that number. When asked for the next number, 
+# it resumes exactly where it left off. 
 #  * Low. Only one result is held in memory at any given time.
 
 # The Magic of yield

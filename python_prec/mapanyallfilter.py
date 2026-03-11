@@ -4,19 +4,40 @@
 #     Takes one or more functions as arguments.
 #     Returns a function as its result.
 
-# This is a fundamental concept in functional programming. Instead of passing data to a function, you pass an action or a behavior (another function) that the higher-order function should perform.
+# This is a fundamental concept in functional programming. Instead of 
+# passing data to a function, you pass an action or a behavior (another function)
+# that the higher-order function should perform.
 
 # typing stricttyping
 
 # def div( a : int , b: int ) -> int:
 #     return a/b
 
+def div( a , b ) :
+    return a/b
+
+# def sub( a , b ) :
+#     return a-b
+
+# def sum( a , b ) :
+#     return a+b
+
+# def mul( a , b ) :
+#     return a*b
+
+
+# def calculator( a, b, c ):
+#     return a( b, c )
+
+# print( calculator( div, 5, 3 ) )
+
+
 # def i_can_call_anyone( a, b = 0, c = 1 ):
 #     print(a(b, c))
 
 # i_can_call_anyone(div, 10, 5)
 
-# map() 🗺️
+# map()
 
 # The map() function is a powerful higher-order function 
 # that applies a given function to every item of an iterable (like a list) 
@@ -35,12 +56,17 @@
 
 # numbers = [1, 2, 3, 4, 5]
 
-# # print( [ x*x for x in numbers ] )
+# for x in numbers:
+#     print(square(x))
 
-# # Using map() to apply the square function to each number
+# print( [ x*x for x in numbers ] )
+
+# Using map() to apply the square function to each number
 # squared_numbers = map(square, numbers)
+
 # result = list(squared_numbers)
 # print(result)
+
 
 # def is_even(a):
 #     if a % 2 == 0:
@@ -49,8 +75,17 @@
 #         return False
 
 # numbers = [1, 2, 3, 4, 5]
-# # print( [ is_even(x) for x in numbers ] )
+
+# # # print( [ is_even(x) for x in numbers ] )
 # print(  list(map(is_even, numbers)))
+
+# lambda x: x.upper()
+# def to_upper(x):
+#     return x.upper()
+
+# a = "hello my name is vipin."
+
+# print(list( map( to_upper, a ) ))
 
 
 # The filter() function is another higher-order function used to 
@@ -69,8 +104,8 @@
 
 # Let's say you have a list of numbers and you only want to keep the even numbers.
 
-# def is_even(x):
-#     return x % 2 == 0
+def is_even(x):
+    return x % 2 == 0
 
 # numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
@@ -78,9 +113,22 @@
 # result = list(even_numbers)
 # print(result)
 
+def is_pos(a):
+    if a >= 0:
+        return True
+    else:
+        return False
+
+# lambda x: True if a >= 0 else False
+
+# a = [ 23, -3, 43, -34, 54, -654, 656, 56 ,5, -56 ]
+
+# print( list( filter( is_pos, a ) ) )
+
+
 # print( list( filter(is_even, range(1, 101)) ) )
 
-# any() and all() 💡
+# any() and all()
 
 # These are two built-in higher-order functions that are very useful for checking conditions across an entire iterable. They take a single iterable as an argument and return a single boolean value.
 
@@ -136,3 +184,14 @@
 # print( reduce( add, range(1,101) ) )
 
 # print( reduce( lambda a, b : a * b , range(1, 101) ) )
+
+
+
+
+# def test():
+
+#     return dir
+
+# new_func = test()
+
+# print( dir( "" )  )

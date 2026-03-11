@@ -1,5 +1,5 @@
 
-# age = 16
+age = 16
 
 # if age >= 18 :
 #     print("Yes You Can Vote.")

@@ -10,10 +10,6 @@
 # print( div( 10, 20 ) )
 # print( a )
 
-# import cal as calculator
-# print( calculator.mul( 7, 3 ) )
-
-
 # When you use import, Python looks for the module in a list of directories called the Python Path. 
 # This path is stored in the sys.path list.
 # import sys
@@ -57,6 +53,19 @@
 # os
 # datetime
 
-import os
-# print( os.uname() )
-print(os.listdir())
+# import os
+# # print( os.uname() )
+# print(os.listdir())
+
+
+# import classes
+
+# a = classes.SocialMedia()
+
+# print(a.CEO)
+
+
+import requests
+
+a = requests.get("https://lyfofvipin.github.io/")
+print(a.content.decode("UTF-8"))
