@@ -1,27 +1,7 @@
-from flask import Flask, render_template, request, url_for
-from flask_sqlalchemy import SQLAlchemy
-
-app = Flask(__name__)
-
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///users_profile.db"
-
-database = SQLAlchemy(app)
-
-class User(database.Model):
-
-    id = database.Column( database.Integer, primary_key = True )
-    username = database.Column( database.String(10), unique=True, nullable=False )
-    email = database.Column( database.String(100), unique=True, nullable=False )
-    password = database.Column( database.String(30), nullable=False )
-    name = database.Column( database.String(200) )
-    profile_photo = database.Column( database.String(200), default = "static/profile_pics/dafault.png" )
-
-    def __repr__(self):
-        return f"<{self.id}, {self.name}, {self.username}>"
-
-
-with app.app_context():
-    database.create_all()
+from . import app, render_template, request, url_for
+from .models import User, database
+from flask_login import login_required, current_user
+import bcrypt
 
 
 @app.route("/register")
@@ -37,12 +17,11 @@ def validate_data():
     image = request.files.get("photo")
 
     if all((username, password, email)):
-
         data_to_dump = User(
             name = name,
             email = email,
             username = username,
-            password = password
+            password = bcrypt.hashpw(password.encode(), bcrypt.gensalt())
         )
         if image:
             photo_path = "profile_pics/" + username + ".png"
@@ -57,9 +36,14 @@ def validate_data():
         return "You did not pass all the required values.", 409
 
 @app.route("/get_user_by_id/<int:id>")
+@login_required
 def get_user_by_id(id):
     
     user_info = User.query.get(id)
+
+    if str(user_info.id) != current_user.get_id():
+        return "You are not allowed to see anyone else profile."
+
     return render_template(
         "profile.html",
         name=user_info.name,
@@ -69,11 +53,16 @@ def get_user_by_id(id):
     )
 
 @app.route("/get_user_by_username/<username>")
+@login_required
 def get_user_by_username(username):
     
     user_info = User.query.filter_by( username=username ).all()
     if user_info:
         user_info=user_info[0]
+
+        if str(user_info.id) != current_user.get_id():
+            return "You are not allowed to see anyone else profile."
+
         return render_template(
             "profile.html",
             name=user_info.name,
@@ -86,11 +75,17 @@ def get_user_by_username(username):
 
 
 @app.route("/delete_user_by_username/<username>")
+@login_required
 def delete_user_by_username(username):
     
     user_info = User.query.filter_by( username=username ).all()
     if user_info:
         user_info=user_info[0]
+
+        if str(user_info.id) != current_user.get_id():
+            return "You are not allowed to see anyone else profile."
+
+
         database.session.delete(user_info)
         database.session.commit()
         return "User deleted done."
@@ -99,11 +94,16 @@ def delete_user_by_username(username):
 
 
 @app.route("/update_user_by_username/<username>", methods=["POST"])
+@login_required
 def update_user_by_username(username):
     
     user_info = User.query.filter_by(username = username).all()
     if user_info:
         user_info = user_info[0]
+
+        if str(user_info.id) != current_user.get_id():
+            return "You are not allowed to see anyone else profile."
+
         
         form_password = request.form.get("password")
         if form_password:
@@ -142,3 +142,7 @@ def update_user_by_username(username):
         return "User Updated Done."
     else:
         return "User Not Found", 409
+
+@app.route("/dummy")
+def dummy_func():
+    return f"{current_user.is_authenticated}"

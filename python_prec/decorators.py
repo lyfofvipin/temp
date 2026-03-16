@@ -9,12 +9,27 @@
 # Before introducing the decorator syntax you must understand that in Python, functions are "first-class objects," meaning they can:
 # Be assigned to variables:
 
+# def sub(a, b):
+#     print(a + b)
+
+# def cal(func, a, b):
+#     func(a,b)
+
+# cal( sub, 4,5)
 
 # def greet():
-#     return "Hello!"
+#     print("Hello!")
+
+# def greet_with_name( func ):
+#     name = input("Enter Your Name: ")
+#     greet()
+#     print(name)
+
+# # greet()
+# greet_with_name(greet)
 
 # say_hello = greet # Assign the function object itself
-# print(say_hello()) # Output: Hello!
+# print(greet()) # Output: Hello!
 
 # Be defined inside another function:
 
@@ -23,14 +38,21 @@
 #     def b ():
 #         print("B")
 #     b()
-
 # a()
-    
+
+
+# def test():
+#     a = 4
+#     return a
+
+# print(test())
+
 
 # def outer_function(msg):
 #     def inner_function():
 #         print(msg)
 #     return inner_function
+
 
 # # greeting is now the 'inner_function' object
 # greeting = outer_function("Welcome!")
@@ -54,24 +76,37 @@
 # def func1(func):
 #     def wrapper():
 #         print(f"Starting ---")
-#         result = func()
+#         func()
 #         print(f"Finishing ---")
-#         return result
 #     return wrapper
 
-
 # @func1
-# def func2():
+# def test():
 #     print("test")
 
+# a = func1(test)
+# a()
+# func1(test)()
 
-# @func1
-# def func3():
-#     print("test1")
+# test()
 
 
-# func2()
-# func3()
+# def dec( func ):
+
+#     def inner( a, b ):
+#         if a > b:
+#             func( a, b )
+#         else:
+#             func( b, a )
+#     return inner
+
+# @dec
+# def sub( a, b ):
+#     print( a - b)
+
+# sub(12, 10)
+
+
 
 
 

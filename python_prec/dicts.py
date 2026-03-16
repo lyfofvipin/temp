@@ -9,12 +9,16 @@
 #     We use the : operator to separate the key and value
 
 
+# a = {  "name": "Berlin", "age": 26, "city": "Berlin"  }
+
+
 # An empty dictionary
 # empty_dict = {} # dict()
 # print(empty_dict)
 
 # # A dictionary with string keys and various values
 # person = { "name": "Alice", "age": 30, "city": "New York" }
+
 # person = {
 #     "name": "Alice",
 #     "age": 30,
@@ -41,7 +45,7 @@
 # print(mixed_keys_dict)
 
 
-# # Creating a dictionary using the dict() constructor 
+# Creating a dictionary using the dict() constructor 
 # Note If you are using the dict method you can only pass the strings as key
 # student = dict(
 #     name="Charlie",
@@ -51,9 +55,9 @@
 # print(student)
 
 # Accessing Values
-# a = {"name": "Alice", "age": 30, "city": "New York"}
+# a = {"name": "Berlin", "age": 30, "city": "Berlin"}
 
-# print( a[ "age" ] )
+# print( a[ "name" ] )
 
 # a = {
 #     "name": "Alice",
@@ -70,11 +74,11 @@
 # print( a[ "data1" ][ "data2" ][-1]["data3"] )
 # print( a.get("agee") )
 
-# # Accessing with a default value
+# Accessing with a default value
 # print( a.get("cityy", "Jaipur") )
 
 # Modifying Dictionaries
-# grades = {"math": 90, "science": 85}
+grades = {"math": 90, "science": 85}
 # print(grades)
 # grades["history"] = 78
 # print(grades)
@@ -84,15 +88,13 @@
 # Delete a key-value pair using del
 # del grades["science"]
 # print(grades) # Output: After del 'science': {'math': 92, 'history': 78}
-# a = [ 1, 2, 3]
-# del a[-1]
 
-# Pop an item
+# # Pop an item
 # popped_value = grades.pop("math")
 # print(popped_value)
 # print(grades)
 
-# # Pop a non-existent item with a default
+# Pop a non-existent item with a default
 # missing_value = grades.pop("english", "Not found")
 # print(missing_value) # Output: Popped missing: Not found, After pop missing: {'math': 92}
 
@@ -102,13 +104,10 @@
 # grades["music"] = 88
 # print(f"Before popitem: {grades}")
 # popped_item_pair = grades.popitem()
-# popped_item_pair = grades.popitem()
+# # popped_item_pair = grades.popitem()
 # print(f"Popped item pair: {popped_item_pair}, After popitem: {grades}")
 
-# LIFO -> Last in First Out
-# FIFO -> First In First Out
-
-# grades.clear()
+# grades.clear() # grades = {}
 # print(grades)
 
 # Basic Dictionary Operations
@@ -129,8 +128,8 @@
 
 # Dictionary Methods
 
-# d1 = {"a": 1, "b": 2}
-# d2 = {"b": 3, "c": 4}
+d1 = {"a": 1, "b": 2}
+d2 = {"b": 3, "c": 4}
 
 # d1.update(d2)
 # print(f"After update: {d1}") # Output: After update: {'a': 1, 'b': 3, 'c': 4}
@@ -139,20 +138,14 @@
 # print(d2)
 
 # data = {"name": "Alice"}
+
+# data["mail"] = "asdfasfdas"
 # email = data.setdefault("email", "unknown@example.com")
 # print(data, email)
 
-# data = {}
-
-# counter = 0
-# while counter < 50:
-#     data[counter] = "key" + str(counter)
-#     counter += 1
-
-# print(data)
-
-# new_dict = dict.fromkeys(["key1", "key2", "key3"], 0)
+# new_dict = dict.fromkeys(["key1", "key2", "key3"], 1)
 # print(new_dict)
+
 
 # company = {
 #     "CEO": {
@@ -173,10 +166,12 @@
 # }
 
 # print( company["employees"]["101"]["name"] )
-# person = { "name": "Alice", "age": 30, "city": "New York" }
 
-# data1 = tuple(person.keys())
-# data = tuple(person.values())
+
+
+# person = { "name": "Alice", "age": 30, "city": "New York" }
+# data1 = list(person.keys())
+# data = person.values()
 # data2 = person.items()
 
 # print(data)
@@ -185,6 +180,8 @@
 
 # Intermediate Level: More Dictionary Manipulations & Concepts
 person = { "name": "Alice", "age": 30, "city": "New York" }
+
+# print(person.items())
 
 # for x in person:
 #     print(x)
@@ -203,10 +200,10 @@ person = { "name": "Alice", "age": 30, "city": "New York" }
 #     new_data[y] = x
 # print(new_data)
 
-# data = [('name', 'Alice', 1), ('age', 30, 2), ('city', 'New York', 3)]
+# data = [('name', 'Alice'), ('age', 30), ('city', 'New York')]
 
-# for x, y, z in data:
-#     print( f"x is {x} and y is {y} and z in {z}")
+# a = dict(data)
+# print(a)
 
 
 # From a list of (key, value) tuples

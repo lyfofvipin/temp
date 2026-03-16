@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Div</title>
+</head>
+<body>
+
+    {% if number % 5 == 0 and number % 3 == 0 %}
+        <div> The number is divided by both 5 and 3. </div>
+    {% elif number % 5 == 0 %}
+        <div> The number is divided by Only 5. </div>
+    {% elif number % 3 == 0 %}
+        <div> The number is divided by Only 3. </div>
+    {% endif %}
+
+</body>
+</html>

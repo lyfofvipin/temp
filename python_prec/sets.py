@@ -156,12 +156,12 @@ fs2 = frozenset([1, 2, 3])
 # print(type(fs)) # Output: Frozenset: frozenset({1, 2, 3})
 
 
-| Feature                  | List                | Tuple             | Set             | Frozenset     | String         |
-| ------------------------ | ------------------- | ----------------- | --------------- | ------------- | -------------- |
-| **Syntax**               | `[ ]`               | `( )`             | `{ }`           | `frozenset()` | `' '` or `" "` |
-| **Ordered**              | ✅ Yes               | ✅ Yes             | ❌ No            | ❌ No          | ✅ Yes          |
-| **Mutable** (can change) | ✅ Yes               | ❌ No              | ✅ Yes           | ❌ No          | ❌ No           |
-| **Duplicates allowed**   | ✅ Yes               | ✅ Yes             | ❌ No            | ❌ No          | ✅ Yes          |
-| **Indexing possible**    | ✅ Yes               | ✅ Yes             | ❌ No            | ❌ No          | ✅ Yes          |
-| **Elements type**        | Any                 | Any               | Only hashable   | Only hashable | Characters     |
-| **Use case**             | Dynamic collections | Fixed collections | Unique elements | Immutable set | Text data      |
+# | Feature                  | List                | Tuple             | Set             | Frozenset     | String         |
+# | ------------------------ | ------------------- | ----------------- | --------------- | ------------- | -------------- |
+# | **Syntax**               | `[ ]`               | `( )`             | `{ }`           | `frozenset()` | `' '` or `" "` |
+# | **Ordered**              | ✅ Yes               | ✅ Yes             | ❌ No            | ❌ No          | ✅ Yes          |
+# | **Mutable** (can change) | ✅ Yes               | ❌ No              | ✅ Yes           | ❌ No          | ❌ No           |
+# | **Duplicates allowed**   | ✅ Yes               | ✅ Yes             | ❌ No            | ❌ No          | ✅ Yes          |
+# | **Indexing possible**    | ✅ Yes               | ✅ Yes             | ❌ No            | ❌ No          | ✅ Yes          |
+# | **Elements type**        | Any                 | Any               | Only hashable   | Only hashable | Characters     |
+# | **Use case**             | Dynamic collections | Fixed collections | Unique elements | Immutable set | Text data      |

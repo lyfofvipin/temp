@@ -40,6 +40,9 @@
 # Print Function 2nd argument
 # end="\n" is the default value of the end argument
 
+# print( "hello", end="" )
+# print(" world.")
+
 # print("hello", end="\n")
 # word = "Python"
 # for x in word: print(x, end="-")
@@ -48,11 +51,13 @@
 # print("hello")
 
 
-# d) Using range() for Numerical Iteration:
+# Using range() for Numerical Iteration:
 # The range() function generates a sequence of numbers, which is very common for loops that need to run a specific number of times or iterate through indices.
 #     range(stop): Generates numbers from 0 up to (but not including) stop.
 #     range(start, stop): Generates numbers from start up to (but not including) stop.
 #     range(start, stop, gap): Generates numbers from start up to (but not including) stop, incrementing by step.
+
+# print( list(range( 1, 90, 2 )) )
 
 # data = list( range(1, 100, 2) )
 # print( data )
@@ -63,8 +68,8 @@
 
 # Loop 5 times (0 to 4)
 
-# for i in range(5):
-#     print(i)
+# for i in range(1, 51):
+#     print(i, end=" ")
 
 # for num in range(1, 6):
 #     print(num)

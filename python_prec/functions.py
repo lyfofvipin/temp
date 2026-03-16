@@ -14,7 +14,28 @@
     # Inbuilt Functions
     # Custom Functions
 
-# Defining and Calling a Function
+# Inbuilt Functions
+
+# a = [ 1, 2, 3, 4, 5, 56, 67, -78, 324, 23 ]
+# sum()
+# print(sum( a ))
+
+# min()
+# print( min(a) )
+
+# max()
+# print( max(a) )
+
+# zip()
+# a = [ 1, 2 ,3 ]
+# b = [ 4, 5 ,6 ]
+# c = [ "a", "b" ,"c" ]
+# d = [ "p", "q" , "r" ]
+
+# print( tuple(zip( a, b )) )
+
+# for a, b, c, d in zip(a, b, c, d):
+#     print( f" A = {a}, B = {b}, C = {c} and D = {d} " )
 
 # Every function has two main parts: the definition and the call.
 
@@ -27,6 +48,8 @@
 # def function_name():
 #     print("Hello from inside the function!")
 
+# function_name()
+
 # a = 23
 # b = 24
 # print(a + b)
@@ -35,10 +58,6 @@
 #     print("hi I am the function.")
 #     print("hi I am the function.")
 #     print("hi I am the function.")
-
-
-# my_function()
-
 
 # def: A keyword that tells Python you're defining a new function.
 # my_function: A name you choose for your function. It should be descriptive and follow Python's naming conventions (lowercase with underscores).
@@ -67,19 +86,20 @@
 # Example:
 
 # # 'name' is a parameter
-# def greet_person( name ):
+# def greet_person( name ):    
 #     print(name.upper())
+
 
 # greet_person( "Vipin" )
 
 # Doc Strings
 # def cap_str( name ):
 
-#     """
-#     This Function takes a string and it print it's Upper Case
-#     """
+    # """
+    # This Function takes a string and it print it's Upper Case
+    # """
 
-#     print(name.upper())
+    # print(name.upper())
 
 # cap_str( "Rohit"  )
 
@@ -95,20 +115,20 @@
 # def calculate_sum(num1, num2):
 #     total = num1 + num2
 #     print(f"The sum is: {total}")
-    
 
-# # calculate_sum(10, 5)
 # calculate_sum(20, 30)
+# calculate_sum( "Hello", " World!" )
 
-# Output:
-# The sum is: 15
-# The sum is: 50
+# def test(a,b,c):
+
+#     print( f"a: {a}, b:{b}, c:{c}" )
+
+# test( 30, 20 ,10 )
 
 # Positional and Keyword Arguments
 # You can call a function in different ways based on how you pass arguments.
 # Positional Arguments
 # The arguments are matched to parameters based on their position or order. This is the method we've used so far.
-
 # Example:
 
 # def display_info(name, age):
@@ -125,23 +145,33 @@
 # def display_info(name, age, city, collage, number):
 #     print(f"Name: {name}, Age: {age}, {city}, {collage}, {number}")
 
-# # display_info("Diana", 30, "Jaipur", "ABC", "8755934")
+
+# display_info("Diana", 30, "Jaipur", "ABC", "8755934")
 # display_info( number="865294", city="Jaipur", collage="XYZ", age=30, name="Vipin" )
 
+# Mix of Positional and Keyword Arguments
+# display_info( "Vipin", 45, collage="Test", number=23232235, city="sdfsdaf" )
+# display_info( collage="Test", number=23232235, city="sdfsdaf", "Vipin", 45 )
+# display_info( name="vipin", 34, "Jaipur", "tets", 42424 )
+
+
 # Default Arguments
-# You can provide a default value for a parameter. If an argument for that parameter is not passed during the function call, the default value will be used. This makes the parameter optional.
+# You can provide a default value for a parameter. If an argument for that parameter is not passed during 
+# the function call, the default value will be used. This makes the parameter optional.
 
 # Example:
-# def greet_with_default(name, message="Hello"):
+# def greet_with_default(name , message="Hello"):
 #     print(f"{name}, {message}!")
 
 # greet_with_default("Eve") # No message argument provided, so "Hello" is used
+# greet_with_default("Eve", "Good Afternoon") # No message argument provided, so "Hello" is used
 # greet_with_default("Frank", "Good morning") # A new message is provided, overriding the default
 
 
 # def display_info(name, age, course, city="Jaipur", collage="ABC", number=66543):
 #     print(f"Name: {name}, Age: {age}, {city}, {collage}, {number}, {course}")
 
+# # display_info("vipin", age=23, course="BCA")
 # display_info("vipin", age=23, course="BCA")
 
 # Variable-Length Arguments (*args and **kwargs)
@@ -151,62 +181,25 @@
 
 # Example:
 
+# def add( a, b  ):
+#     print(a + b)
+
+# add(3, 2)
+
 # def calculate_average(*numbers):
 #     print(f"The average is: {numbers}")
 
-# # calculate_average(10, 20)
+# calculate_average()
+# calculate_average(10, 20)
 # calculate_average(10, 20, 30, 40, 56, 46, 64, 46, "sdfhsadf", True, ["34r"], {"a": 243266})
 
-# def mix_func( a, c, *b ):
+# def mix_func( a, c, *b, d ):
 #     print(a)
 #     print(b)
 #     print(c)
+#     print(d)
 
-# mix_func(23, 10, 20, 30, 40, 56, 46, 64, 46 )
-
-
-# Scope Of Variable in Functions
-
-# a = 20
-# print(a)
-
-# def set_a():
-#     a = 34
-#     print(a)
-
-# set_a()
-# print(a)
-
-# a = 20
-# print(a)
-
-# def set_a():
-#     global a
-#     a = 34
-
-# set_a()
-# print(a)
-
-
-# Using Seq data types with functions
-
-# a = 10
-# def test( data ):
-#     data = data + 10
-#     print(data)
-
-# test( a )
-# print(a)
-
-# a = [1, 2, 3, 4, 5, 6]
-
-# def test( data ):
-#     data.append( 7 )
-#     print(data)
-
-# test( a )
-# print(a)
-
+# mix_func(23, 10, 20, 30, 40, 56, 46, 64, 46, d=2567 )
 
 # **kwargs (Keyword Arguments)
 
@@ -221,15 +214,86 @@
 # show_profile(name="Grace", age=28, city="London")
 
 
+# Scope Of Variable in Functions
+
+# a = 20
+# print(a)
+
+# def set_a():
+#     a = 34
+#     print(a)
+
+# set_a()
+# print(a)
+
+
+# def test():
+#     a = 23
+#     b = 234
+
+# test()
+# print(a, b)
+
+
+
+# a = 23
+# def test():
+#     print(a)
+# test()
+
+
+# a = 20
+# b = 20
+# print(a, b)
+
+# def set_a():
+#     global a, b
+#     a = 34
+#     b = 23
+
+# set_a()
+# print(a, b)
+
+
+# Using Seq data types with functions
+
+# a = [1,3,4]
+# b = a 
+# a,b -> same list 
+
+# a = {1,3,4}
+# b = a 
+# a,b -> same set 
+
+# a = 10
+# def test( data ):
+#     data = data + 10
+#     print(data)
+
+# test( a )
+# print(a)
+
+
+
+# a = [1, 2, 3, 4, 5, 6]
+# def test( data ):
+#     data.append( 7 )
+#     print(data)
+
+# test( a )
+# print(a)
+
+
 # The return Statement (Output) 
 
-# So far, Our functions have only printed results to the console. To get a value back from a function so you can use it later in your program, you use the return keyword.
-# When a return statement is executed, the function immediately stops, and the value specified after return is sent back to where the function was called.
+# So far, Our functions have only printed results to the console. To get a value back from a function 
+# so you can use it later in your program, you use the return keyword.
+# When a return statement is executed, the function immediately stops, and the value specified after return
+# is sent back to where the function was called.
 
 # Example:
 
 # def chota_bacha( item ):
-#     print( "Eat Chips" )
 #     return item
 
 # b = chota_bacha( "Chips" )
@@ -273,7 +337,7 @@
 #             return True
 #     return False
 
-# print(divide_checker( 6 ))
+# print(divide_checker( 7 ))
 
 # def smallest_deviser( number ):
 #     for x in range(2, number):
@@ -281,7 +345,7 @@
 #             return x
 #     return number
 
-# print(smallest_deviser( 25 ))
+# print(smallest_deviser( 7 ))
 
 # def add_pos_num():
 #     add = 0
@@ -294,6 +358,8 @@
 
 # a = add_pos_num()
 # print(a)
+
+
 
 
 # Lambda Functions

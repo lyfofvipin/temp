@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if title %}
+        <title>My Blog | {{ title }}</title>
+    {% else %}
+        <title>My Blog</title>
+    {% endif %}
+</head>
+<body>
+    <h1>Home Page</h1>
+    <div class="container" >
+        <p>This is a personal blogging website.</p>
+    </div>
+    {% with all_messages = get_flashed_messages() %}
+        {% if all_messages %}
+            {% for x in all_messages %}
+                {{ x }} <br>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+</body>
+</html>
