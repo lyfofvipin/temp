@@ -13,13 +13,23 @@
 #     Mutable: You can change, add, or remove items after the list has been created.
 #     Heterogeneous: Lists can contain items of different data types (integers, strings, floats, even other lists or objects).
 
-# "0123456789"
+# a = "0123456789"
 
-# numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+# numbers = [ 23, 34 ,45 ,56 ,67 ,68 ,78 ]
+# print( numbers[-4] )
 
-# numbers[0] = 90
+# number = [12.23, 34, 54.45, 34,234.34]
+# print(number)
 
-# print(numbers)
+# data = [ 23, 234.3, True, "vipin", False, [1,2,3] ]
+# Data manipulation in list
+# data[0] = 90
+# print(data)
+
+
+# a = [ 10, 20, True, "india", False, [1,2,3] ]
+# # Data manipulation in list
+# print( a[-1][2] )
 
 abc = [ "Vipin", 25, "Jaipur", 302020, True, [ "Test", 43, [23242, [ 234234]] ] ]
 

@@ -1,0 +1,1 @@
+This folder is to keep all the files of Flask batch we started on march 18 2026.

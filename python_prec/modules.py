@@ -1,15 +1,3 @@
-# import folder1.cal as cal
-
-# print( cal.add( 10, 20 ) )
-# print( cal.a )
-
-# from folder1.cal import *
-# print( add( 10, 20 ) )
-# print( mul( 10, 20 ) )
-# print( sub( 10, 20 ) )
-# print( div( 10, 20 ) )
-# print( a )
-
 # When you use import, Python looks for the module in a list of directories called the Python Path. 
 # This path is stored in the sys.path list.
 # import sys
@@ -64,8 +52,20 @@
 
 # print(a.CEO)
 
+# import folder1.cal as cal
 
-import requests
+# print( cal.add( 10, 20 ) )
+# print( cal.a )
 
-a = requests.get("https://lyfofvipin.github.io/")
-print(a.content.decode("UTF-8"))
+# from folder1.cal import *
+# print( add( 10, 20 ) )
+# print( mul( 10, 20 ) )
+# print( sub( 10, 20 ) )
+# print( div( 10, 20 ) )
+# print( a )
+
+
+# import requests
+
+# a = requests.get("https://lyfofvipin.github.io/")
+# print(a.content.decode("UTF-8"))
