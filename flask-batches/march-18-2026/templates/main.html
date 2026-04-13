@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Flask App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px 0;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        .container {
+            margin-top: 50px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/signup">signup</a>
+        <a href="/profile">Profile</a>
+        <a href="/about">About</a>
+        <a href="/blog">Blog</a>
+    </nav>
+</header>
+
+<body>
+    {% block body %}
+    {% endblock %}
+</body>
+
+</body>
+</html>
