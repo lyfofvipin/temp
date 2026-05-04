@@ -1,0 +1,14 @@
+[
+    {
+        "name": "file-server-backup",
+        "email": "safd@asd.com",
+        "password": "1234",
+        "confirm_password": "1234"
+    },
+    {
+        "name": "ssadsa",
+        "email": "sadfa@sadfas.com",
+        "password": "1234",
+        "confirm_password": "1234"
+    }
+]

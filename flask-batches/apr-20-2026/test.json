@@ -1,0 +1,37 @@
+[
+  {
+    "fullname": "Aarav Sharma",
+    "email": "aarav.sharma@example.com",
+    "username": "aarav123",
+    "password": "password123",
+    "confirm_password": "password123"
+  },
+  {
+    "fullname": "Priya Verma",
+    "email": "priya.verma@example.com",
+    "username": "priya_v",
+    "password": "mypassword",
+    "confirm_password": "mypassword"
+  },
+  {
+    "fullname": "Rohan Mehta",
+    "email": "rohan.mehta@example.com",
+    "username": "rohan_mehta",
+    "password": "rohan@2024",
+    "confirm_password": "rohan@2024"
+  },
+  {
+    "fullname": "Sneha Gupta",
+    "email": "sneha.gupta@example.com",
+    "username": "sneha_g",
+    "password": "snehaPass1",
+    "confirm_password": "snehaPass1"
+  },
+  {
+    "fullname": "Karan Patel",
+    "email": "karan.patel@example.com",
+    "username": "karan_p",
+    "password": "karanSecure",
+    "confirm_password": "karanSecure"
+  }
+]

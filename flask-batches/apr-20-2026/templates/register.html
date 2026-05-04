@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Register | MyFlaskApp</title>
+{% endblock %}
+
+{% block content %}
+
+<section style="max-width: 400px; margin: 3rem auto; background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+    
+    <h2 style="text-align:center; margin-bottom: 1.5rem; color: var(--primary);">
+        Create Account
+    </h2>
+
+    <form method="GET" action="/register">
+        
+        <div style="margin-bottom: 1rem;">
+            <label>Full Name</label><br>
+            <input type="text" name="name" required 
+                   style="width:100%; padding:0.6rem; margin-top:0.3rem; border:1px solid #ddd; border-radius:6px;">
+        </div>
+
+        <div style="margin-bottom: 1rem;">
+            <label>Email</label><br>
+            <input type="email" name="email" required 
+                   style="width:100%; padding:0.6rem; margin-top:0.3rem; border:1px solid #ddd; border-radius:6px;">
+        </div>
+
+        <div style="margin-bottom: 1rem;">
+            <label>Password</label><br>
+            <input type="password" name="password" required 
+                   style="width:100%; padding:0.6rem; margin-top:0.3rem; border:1px solid #ddd; border-radius:6px;">
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+            <label>Confirm Password</label><br>
+            <input type="password" name="confirm_password" required 
+                   style="width:100%; padding:0.6rem; margin-top:0.3rem; border:1px solid #ddd; border-radius:6px;">
+        </div>
+
+        <button type="submit" 
+                style="width:100%; padding:0.75rem; background: var(--primary); color:white; border:none; border-radius:8px; font-weight:bold; cursor:pointer;">
+            Register
+        </button>
+
+    </form>
+
+    <p style="text-align:center; margin-top:1rem; color: var(--muted);">
+        Already have an account? <a href="/login" style="color: var(--primary);">Login</a>
+    </p>
+
+</section>
+
+{% endblock %}
