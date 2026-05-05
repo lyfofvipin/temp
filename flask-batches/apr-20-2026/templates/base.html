@@ -113,6 +113,44 @@
             padding: 2rem;
             color: var(--muted);
         }
+        .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    background: #f5f7fa;
+}
+
+.hero h2 {
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: #333;
+}
+
+.profile-card {
+    width: 320px;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 10px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.profile-card p {
+    margin: 8px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.profile-card strong {
+    color: #222;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
     </style>
 </head>
 <body>
@@ -127,6 +165,8 @@
         <a href="/login">Login</a>
         <a href="/register">Register</a>
         <a href="/search">Search</a>
+        <a href="/list_students">List Students</a>
+        <a href="/update_student">Update Student</a>
     </nav>
 </header>
 

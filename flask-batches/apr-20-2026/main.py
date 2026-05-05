@@ -76,3 +76,35 @@ def search():
         return render_template("search_collage.html", fe_data = data)
 
     return render_template("search_collage.html")
+
+@app.route("/list_students")
+def list_students():
+    data = Users.query.all()
+    return render_template("list_students.html", fe_data = data)
+
+@app.route("/update_student/<int:student_id>", methods=["GET", 'POST'])
+def update_student(student_id):
+
+    data = Users.query.filter( Users.id == student_id ).first()
+    if not data:
+        return f"Student Not Found with id: {student_id}."
+
+    if request.method == "POST":
+
+        if request.form.get("name"):
+            data.name = request.form.get("name")
+
+        if request.form.get("email"):
+            data.email = request.form.get("email")
+
+        if request.form.get("password"):
+            data.password = request.form.get("password")
+
+        if request.form.get("collage"):
+            data.collage = request.form.get("collage")
+
+        db.session.add(data)
+        db.session.commit()
+        return "User Updated Successfully."
+
+    return render_template("update_student.html", student_id = student_id)
