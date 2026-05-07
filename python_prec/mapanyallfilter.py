@@ -8,13 +8,39 @@
 # passing data to a function, you pass an action or a behavior (another function)
 # that the higher-order function should perform.
 
+# def simple():
+#     return "I am a func"
+
+# def simple1():
+#     return "I am a func simple 1"
+
+# def caller(x):
+#     print( x() )
+
+# caller( simple )
+# caller( simple1 )
+
+# def main_fun():
+
+#     def add( a, b ):
+#         return a + b
+
+#     def sub( a, b ):
+#         return a - b
+
+#     return add
+
+# data = main_fun()
+
+# print(data(1, 2))
+
 # typing stricttyping
 
 # def div( a : int , b: int ) -> int:
 #     return a/b
 
-def div( a , b ) :
-    return a/b
+# def div( a , b ) :
+#     return a/b
 
 # def sub( a , b ) :
 #     return a-b
@@ -29,7 +55,7 @@ def div( a , b ) :
 # def calculator( a, b, c ):
 #     return a( b, c )
 
-# print( calculator( div, 5, 3 ) )
+# print( calculator( mul, 10, 2 ) )
 
 
 # def i_can_call_anyone( a, b = 0, c = 1 ):
@@ -67,6 +93,11 @@ def div( a , b ) :
 # result = list(squared_numbers)
 # print(result)
 
+# print(
+#     list(
+#         map( lambda x: x*x, numbers )
+#     )
+# )
 
 # def is_even(a):
 #     if a % 2 == 0:
@@ -76,7 +107,7 @@ def div( a , b ) :
 
 # numbers = [1, 2, 3, 4, 5]
 
-# # # print( [ is_even(x) for x in numbers ] )
+# print( [ is_even(x) for x in numbers ] )
 # print(  list(map(is_even, numbers)))
 
 # lambda x: x.upper()
@@ -85,7 +116,7 @@ def div( a , b ) :
 
 # a = "hello my name is vipin."
 
-# print(list( map( to_upper, a ) ))
+# print(list( map( lambda x: x.upper(), a.split() ) ))
 
 
 # The filter() function is another higher-order function used to 
@@ -104,22 +135,23 @@ def div( a , b ) :
 
 # Let's say you have a list of numbers and you only want to keep the even numbers.
 
-def is_even(x):
-    return x % 2 == 0
+# def is_even(x):
+#     return x % 2 == 0
 
 # numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-# even_numbers = filter(is_even, numbers)
+# # even_numbers = filter(is_even, numbers)
+# even_numbers = filter( lambda x : x % 2 == 0, numbers )
 # result = list(even_numbers)
 # print(result)
 
-def is_pos(a):
-    if a >= 0:
-        return True
-    else:
-        return False
+# def is_pos(a):
+#     if a >= 0:
+#         return True
+#     else:
+#         return False
 
-# lambda x: True if a >= 0 else False
+# # lambda x: True if x >= 0 else False
 
 # a = [ 23, -3, 43, -34, 54, -654, 656, 56 ,5, -56 ]
 

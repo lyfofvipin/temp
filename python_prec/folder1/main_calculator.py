@@ -4,5 +4,10 @@
 # from cal import *
 # print(mul(23, 2))
 
-import cal
-print( cal.add(23, 23) )
+# import cal
+# print( cal.add(23, 23) )
+
+# as
+
+# import cal as my_calculator_file
+# my_calculator_file.add()

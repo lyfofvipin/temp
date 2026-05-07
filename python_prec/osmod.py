@@ -1,21 +1,20 @@
-# import os
+import os
 
-# # files = os.listdir()
+# a = os.listdir()
+# os.path
 
-# # for x in files:
-# #     if os.path.isfile(x):
-# #         print(x)
+# for x in a:
+#     if os.path.isfile(x):
+#         print(x)
 
-# # print(os.path.exists("/home/vipikuma/Downloadsss"))
+# print(os.path.exists("/home/vipikuma/my_data/temp/python_prec"))
 
-# # print(os.path.isdir("/home/vipikuma/classes/python_afternoon_batch/break.py"))
-
-
-# # Task:
-# # Terminal:
-#     # * if user type ls it will list all the files of the dir
-#     # * if user type lsfolder it will list all the folders only
-#     # * if user type lsfiles it will list all the files only
+# Task:
+# Terminal:
+    # * if user type ls it will list all the files of the dir
+    # * if user type lsfolder it will list all the folders only
+    # * if user type lsfiles it will list all the files only
+    # * if user type stop stop the terminal
 
 # while True:
 #     command  = input("-->")
@@ -31,22 +30,35 @@
 #         for x in data:
 #             if os.path.isfile(x):
 #                 print(x)
-#     elif command == "stop":
+#     elif command == "exit":
 #         break
 #     else:
 #         print("invalid command")
 
-# # import sys
+# import sys
 
-# # print(sys.argv)
+# def buy_stocks():
+#     print('Buy stocks')
+
+# def sell_stocks():
+#     print('Sell stocks')
+
+# buy_stocks()
+# sell_stocks()
+
+operation = sys.argv[1]
+
+if operation == "buy":
+    buy_stocks()
+elif operation == "sell":
+    sell_stocks()
 
 
-
-# # ls,
-# # lsfolder,
-# # lsfiles
-# # stop
-# # invalid command
+# ls,
+# lsfolder,
+# lsfiles
+# stop
+# invalid command
 
 # sticks = 21
 

@@ -171,14 +171,22 @@
 # a = "i live in india."
 # print( a.replace( "in", "++") )
 
+# a = input("Enter Your Sentence: ")
+# number_of_spaces = a.count(" ")
+# print(number_of_spaces + 1)
+
 # split(): Splits the string into a list based on a delimiter (default is whitespace).
 
 # my_string = "my name is vipin"
 # print( my_string.split() ) 
+
 # print(my_string)
 
 # my_string = "15/7/2025"
-# print(my_string.split("/")) 
+# print(my_string.split("/"))
+
+# my_string = "hello-this-is-a-str"
+# print(my_string.split("is"))
 
 # join(iterable): Joins elements of an iterable (like a list) into a single string, with a specified separator.
 

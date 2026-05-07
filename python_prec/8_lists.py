@@ -18,6 +18,8 @@
 # numbers = [ 23, 34 ,45 ,56 ,67 ,68 ,78 ]
 # print( numbers[-4] )
 
+# print([ 23, 34 ,45 ,56 ,67 ,68 ,78 ][-2])
+
 # number = [12.23, 34, 54.45, 34,234.34]
 # print(number)
 
@@ -31,17 +33,27 @@
 # # Data manipulation in list
 # print( a[-1][2] )
 
-abc = [ "Vipin", 25, "Jaipur", 302020, True, [ "Test", 43, [23242, [ 234234]] ] ]
+# abc = [ "Vipin", 25, "Jaipur", 302020, True, [ "Test", 43, [23242, [ 234234]] ] ]
 
-# abc[1] = [ 23, 24, 53, False ]
+# abc = [ "Vipin",
+#        25,
+#        "Jaipur",
+#        302020,
+#        True,
+#        [ "Test", 43, [23242, [ 234234 ]] ] 
+#     ]
 
-# print(abc[0][0])
-# # print( abc[ 2: ] )
+# print(abc[-1])
 
-# print( "abc[ 0 ]"[ 0 ] )
-# print( abc[ 0 ][ 0 ].lower() )
+# a = [ [ [ [ 123 ] ] ] ]
+# [ [ [ 123 ] ] ]
+# [ [ 123 ] ]
+# [ 123 ]
+# 123
 
-# print(abc[5][2][1][0])
+# print(a[0][0][0][0] )
+
+
 
 # Reference Variable
 
@@ -53,61 +65,67 @@ abc = [ "Vipin", 25, "Jaipur", 302020, True, [ "Test", 43, [23242, [ 234234]] ] 
 
 # a = [ "sdf", 1, 4, 5 ,6  ]
 # b = a
+# print( a, b )
 # b[0] = "Vipin"
 # print( a, b )
-
 
 # numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 # # Get elements from index 2 up to (but not including) index 6
-# print(f"Slice [2:6]: {numbers[2:6]}")   # Output: Slice [2:6]: [2, 3, 4, 5]
+# print(f"Slice [2:6]: {numbers[2:6]}")   
 
 # # Get elements from the beginning up to index 5
-# print(f"Slice [:5]: {numbers[:5]}")    # Output: Slice [:5]: [0, 1, 2, 3, 4]
+# print(f"Slice [:5]: {numbers[:5]}")    
 
-# # Get elements from index 7 to the end
-# print(f"Slice [7:]: {numbers[7:]}")    # Output: Slice [7:]: [7, 8, 9]
+# Get elements from index 7 to the end
+# print(f"Slice [7:]: {numbers[7:]}")    
 
 # # Get a copy of the entire list
-# print(f"Full slice [:]: {numbers[:]}") # Output: Full slice [:]: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+# print(f"Slice [:]: {numbers[:]}") 
 
 # # Get every second element
-# print(f"Slice [::2]: {numbers[::2]}")  # Output: Slice [::2]: [0, 2, 4, 6, 8]
+# print(f"Slice [::2]: {numbers[::4]}")  
 
 # # Reverse the list using slicing
-# print(f"Reversed slice [::-1]: {numbers[::-1]}") # Output: Reversed slice [::-1]: [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+# print(f"Reversed slice [::-1]: {numbers[::-1]}") 
 
+# print(f"Slice [1:8:2]: {numbers[-8:-1:2]}")  
+
+# numbers = [123, 34, 5, 23, 5, 23, 566, 88, 98]
+# print(numbers[-3: -8 : -2])
 
 # my_list = ["apple", "banana", "cherry", "date"]
+# print(my_list[1][2:4])
 
 # Change a single element
 # my_list[1] = "grape"
-# print(f"Modified single element: {my_list}") # Output: Modified single element: ['apple', 'grape', 'cherry', 'date']
+# print(f"Modified single element: {my_list}") 
 
 # Change a slice of elements
-# my_list[ 0:2 ] = ["apricot", "blueberry"]
-# print(f"Modified slice: {my_list}") # Output: Modified slice: ['apricot', 'blueberry', 'cherry', 'date']
+# my_list[ 0:2 ] = ["mango", "blueberry"]
+# print(f"Modified slice: {my_list}") 
 
 # Replace a slice with more or fewer elements (length can change)
-# my_list[2:4] = ["elderberry", "fig", "guava"]
-# print(f"Replaced slice with different length: {my_list}") # Output: Replaced slice with different length: ['apricot', 'blueberry', 'elderberry', 'fig', 'guava']
+# my_list[2:4] = ["mango", "orange", "guava"]
+# print(f"Replaced slice with different length: {my_list}") 
 
 # Operations
 
-list1 = [1, 2]
+# list1 = [1, 2]
 # list2 = [3, 4]
 
-# # Concatenation
-# combined_list = list1 + list2 # [ 1, 2] + [3, 4] = [ 1, 2, 3 ,4 ]
-# print(f"Concatenated list: {combined_list}") # Output: Concatenated list: [1, 2, 3, 4]
+# Concatenation
+# combined_list = list1 + list2 
+# print(f"Concatenated list: {combined_list}") 
 
-# # Repetition
+
+# Repetition
 # repeated_list = list1 * 3
-# print(f"Repeated list: {repeated_list}") # Output: Repeated list: [1, 2, 1, 2, 1, 2]
+# print(f"Repeated list: {repeated_list}") 
 
 # Membership
-# print(f"Is 2 in list1? {2 in list1}")     # Output: Is 2 in list1? True
-# print(f"Is 5 not in list2? {5 not in list2}") # Output: Is 5 not in list2? True
+# print(f"Is 2 in list1? {2 in list1}")     
+# print(f"Is 5 not in list2? {5 not in list2}")
 
 # a = [ 1, 2, 3 , [ 4, 5 ] ]
 
@@ -119,8 +137,8 @@ list1 = [1, 2]
 # Identity operator
 
 # a = [1, 2]
-# b = [1, 2]
-# print(a is b)
+# b = a
+# print(a is not b)
 
 
 # Methods:
@@ -128,18 +146,20 @@ list1 = [1, 2]
 # -ve index values in index method auto do a +1 for ex insert(-1, "xyz") it will add the data to -2 index
 # if we give an invalid +ve index value then it will add the data in the end of the list
 # if we give an invalid -ve index then it will add the data in the 0 index
+
 # if we have multiple duplicate then the .remove method will only remove the fist accuracy
 
 
-# my_list = ["apple", "banana", "cherry", "banana", [1, 2]]
+# my_list = ["apple", "banana", "cherry", "banana", 123, [1, 2]]
+
 
 # Append
 # my_list.append("date")
-# print(my_list) # Output: After append: ['apple', 'banana', 'cherry', 'date']
+# print(my_list)
 
 # Insert
-# my_list.insert(-1, "grape") # Insert 'grape' at index 1
-# print(f"After insert: {my_list}") # Output: After insert: ['apple', 'grape', 'banana', 'cherry', 'date']
+# my_list.insert(23, "grape") # Insert 'grape' at index 1
+# print(f"After insert: {my_list}") 
 
 # my_list.insert( -1, "mango")
 # print(my_list)
@@ -148,20 +168,19 @@ list1 = [1, 2]
 # print(my_list)
 
 
-# # Remove
-# my_list.remove("banana")
-# print(f"After remove: {my_list}") # Output: After remove: ['apple', 'grape', 'cherry', 'date']
+# Remove
+# my_list.remove([1, 2])
+# print(f"After remove: {my_list}") 
 
 # del my_list[-1]
-# print(f"After remove: {my_list}") # Output: After remove: ['apple', 'grape', 'cherry', 'date']
+# print(f"After remove: {my_list}") 
 
-
-# my_list = ["apple", "banana", "cherry", "banana"]
+my_list = ["apple", "banana", "cherry", "banana"]
 # # Pop (last item)
 # my_list.pop( 0 )
 # print(my_list)
 
-# print(f"Popped item (last): {popped_item}, List: {my_list}") # Output: Popped item (last): date, List: ['apple', 'grape', 'cherry']
+# print(f"Popped item (last): {popped_item}, List: {my_list}") 
 
 
 # my_list = ["apple", "banana", "cherry", "banana"]
@@ -169,42 +188,46 @@ list1 = [1, 2]
 # print(my_list.pop())
 # print(my_list)
 
+# a = "vipin"
+# print(a.upper())
+# print(a)
+
+
 # Pop (at index)
 # popped_item_at_index = my_list.pop(0)
-# print(f"Popped item (index 1): {popped_item_at_index}, List: {my_list}") # Output: Popped item (index 1): grape, List: ['apple', 'cherry']
+# print(f"Popped item (index 1): {popped_item_at_index}, List: {my_list}") 
 
-# numbers = [5, 2, 8, 1, 9, 11]
+numbers = [5, 2, 8, 1, 9, 11]
 
 # # # Using .sort() (in-place)
-# numbers.sort()
+# numbers.sort( reverse=True )
 # print(numbers)
 
 # print(numbers) 
 # [11, 9, 8, 5, 2, 1]
 
-
 # # Sorting a list of strings
 # words = ["banana", "vipia", "apple", "cherry", "vipin"]
 # words.sort( reverse=True )
-# print(f"Sorted words: {words}") # Output: Sorted words: ['apple', 'banana', 'cherry']
+# print(f"Sorted words: {words}") 
 
 # Using sorted() (returns new list)
 # new_sorted_list = sorted(numbers, reverse=True)
-# print(f"New sorted list: {new_sorted_list}") # Output: New sorted list: [1, 2, 5, 8, 9]
-# print(f"Original numbers after sorted(): {numbers}") # Output: Original numbers after sorted(): [5, 2, 8, 1, 9]
+# print(f"New sorted list: {new_sorted_list}") 
+# print(f"Original numbers after sorted(): {numbers}") 
 
 # sorted_list = sorted("sjhfygr4ikpok093jf09")
 # print("".join(sorted_list))
 
 # Reverse sort
 # numbers.sort(reverse=True)
-# print(f"Reverse sorted in-place: {numbers}") # Output: Reverse sorted in-place: [9, 8, 5, 2, 1]
+# print(f"Reverse sorted in-place: {numbers}") 
 
 
 # my_list = [1, 2, 3, 2, 4, 2]
 
-# print(f"Count of 2: {my_list.count(2)}") # Output: Count of 2: 3
-# print(f"Count of 67: {my_list.count(67)}") # Output: Index of 4: 4
+# print(f"Count of 2: {my_list.count(2)}") 
+# print(f"Count of 67: {my_list.count(67)}") 
 
 # my_list = ["apple", "banana", "cherry", "banana"]
 # number_of_banana = my_list.count("banana")
@@ -217,19 +240,17 @@ list1 = [1, 2]
 # print(my_list)
 
 # Index
-# print(my_list.index(2)) # Output: 4
-# print(f"Index of 1: {my_list.index(1)}") # Output: Index of 1: 0
-# print(f"Index of 2: {my_list.index(2)}") # Output: Index of 2: 1
-# print(f"Index of 2: {my_list.index(2, 2)}") # Output: Index of 2: 1
+# print(my_list.index(2)) 
+# print(f"Index of 1: {my_list.index(1)}") 
+# print(f"Index of 2: {my_list.index(2)}") 
+# print(f"Index of 2: {my_list.index(2, 2)}") 
 
 
-# new_items = [5, 6]
-# new_list = [1, 2]
+# a = [5, 6]
+# b = [1, 2]
 
-# # new_items = new_items + new_list
-
-# new_items.extend( new_list )
-# print(new_items)
+# a.append(b)
+# print(a)
 
 # my_list = [ 1, 2 ,3, 34, "saa", "abc", "xyz" ]
 
@@ -280,11 +301,6 @@ list1 = [1, 2]
 
 
 # "".join()
-# "".split()
-
-# a = "my-name-is-vipin"
-# b = a.split("-")
-
 # print(b)
 
 # a = ['my', 'name', 'is', 'vipin']
@@ -292,3 +308,4 @@ list1 = [1, 2]
 # b = "------".join(a)
 
 # print(b)
+

@@ -9,25 +9,25 @@
 #     We use the : operator to separate the key and value
 
 
-# a = {  "name": "Berlin", "age": 26, "city": "Berlin"  }
-
+# a = {  "name": "Rohit", "age": 20, "mob": "77644832", "city": "Jaipur"  }
+# print( a )
 
 # An empty dictionary
-# empty_dict = {} # dict()
-# print(empty_dict)
+# empty_dict = {}
+# print( type(empty_dict) )
 
 # # A dictionary with string keys and various values
-# person = { "name": "Alice", "age": 30, "city": "New York" }
+# person = { "name": "Mohan", "age": 30, "city": "New York" }
 
 # person = {
-#     "name": "Alice",
+#     "name": "Mohan",
 #     "age": 30,
 #     "city": "New York"
 # }
 # print(person)
 
 # data = {
-#     1: "Alice",
+#     1: "Mohan",
 #     2: 30,
 #     3: "New York",
 #     3: "test"
@@ -44,7 +44,6 @@
 # }
 # print(mixed_keys_dict)
 
-
 # Creating a dictionary using the dict() constructor 
 # Note If you are using the dict method you can only pass the strings as key
 # student = dict(
@@ -55,48 +54,75 @@
 # print(student)
 
 # Accessing Values
-# a = {"name": "Berlin", "age": 30, "city": "Berlin"}
+# a = {"name": "Berlin", "age": 30, "city": "Berlin", "roll_number": 30}
+# print( a[ "roll_number" ] )
 
-# print( a[ "name" ] )
+# a = [ 1, [ 2, 3] ]
+# print(a[1][0])
 
-# a = {
-#     "name": "Alice",
-#     "age": 30,
-#     "city": "New York",
-#     "data1": { 
-#         "level": "Advanced",
-#         "data2": [ 1, 2, 3, 4, 5, { "data3": "dummy_value" } ]
-#     }
-# }
+a = {
+    "name": "Mohan",
+    "age": 30,
+    "city": "New York",
+    "data1": { 
+        "level": "Advanced",
+        "data2": [ 1, 2, 3, 4, 5, { "data3": "dummy_value" } ]
+    }
+}
 
+# print(a["data1"])
+# print(a["data1"]["data2"])
+# print(a["data1"]["data2"][-1])
 # print(a["data1"]["data2"][-1][ "data3" ])
-# print( a.get("data1").get("data2")[-1].get("data3") )
-# print( a[ "data1" ][ "data2" ][-1]["data3"] )
-# print( a.get("agee") )
+# print( a["data1"]["data3"] )
+
+# Get Method
+
+# print( a.get( "mobile" ) )
 
 # Accessing with a default value
 # print( a.get("cityy", "Jaipur") )
+# print( a.get("data1").get("data2")[-1].get("data3") )
 
 # Modifying Dictionaries
-grades = {"math": 90, "science": 85}
+# grades = {"math": 90, "science": 85}
 # print(grades)
+# print( grades["history"] )
 # grades["history"] = 78
 # print(grades)
 # grades["math"] = 40
 # print(grades)
 
+
+# How to delete a variable / values in python
+
+# a = 34
+# print(a)
+# del a
+# print(a)
+
+# a = [ 1, 2, 3, 4, 5, 6 ]
+# del a[3]
+# print(a)
+
+# a = "Hello"
+# del a[0]
+# print(a)
+
 # Delete a key-value pair using del
 # del grades["science"]
-# print(grades) # Output: After del 'science': {'math': 92, 'history': 78}
+# print(grades)
 
-# # Pop an item
+# grades = {"math": 90, "science": 85}
+
+# Pop an item
 # popped_value = grades.pop("math")
 # print(popped_value)
 # print(grades)
 
 # Pop a non-existent item with a default
 # missing_value = grades.pop("english", "Not found")
-# print(missing_value) # Output: Popped missing: Not found, After pop missing: {'math': 92}
+# print(missing_value)
 
 # Pop an arbitrary item (Python 3.7+ is last inserted)
 # grades = {"math": 90, "science": 85}
@@ -107,7 +133,8 @@ grades = {"math": 90, "science": 85}
 # # popped_item_pair = grades.popitem()
 # print(f"Popped item pair: {popped_item_pair}, After popitem: {grades}")
 
-# grades.clear() # grades = {}
+# grades.clear()
+# grades = {}
 # print(grades)
 
 # Basic Dictionary Operations
@@ -120,6 +147,7 @@ grades = {"math": 90, "science": 85}
 
 # Length
 # print(len( profile ))
+# print(profile["gender"])
 
 # Membership (checks for key)
 # print('age' in profile)
@@ -127,23 +155,26 @@ grades = {"math": 90, "science": 85}
 
 
 # Dictionary Methods
-
-d1 = {"a": 1, "b": 2}
-d2 = {"b": 3, "c": 4}
+# d1 = {"a": 1, "b": 2}
+# d2 = {"b": 3, "c": 4}
 
 # d1.update(d2)
-# print(f"After update: {d1}") # Output: After update: {'a': 1, 'b': 3, 'c': 4}
+# print(f"After update: {d1}")
 
 # d2.update(d1)
 # print(d2)
 
-# data = {"name": "Alice"}
+# print( d1 + d2 )
+
+# data = {"name": "Mohan"}
 
 # data["mail"] = "asdfasfdas"
-# email = data.setdefault("email", "unknown@example.com")
-# print(data, email)
+# print(data)
 
-# new_dict = dict.fromkeys(["key1", "key2", "key3"], 1)
+# email = data.setdefault("email", "unknown@example.com")
+# print(data)
+
+# new_dict = dict.fromkeys("abcdeghijk", [1,2])
 # print(new_dict)
 
 
@@ -154,45 +185,50 @@ d2 = {"b": 3, "c": 4}
 #     },
 #     "employees": {
 #         "101": {
-#             "name": "Alice",
+#             "name": "Priyanka",
 #             "role": "Engineer"
 #         },
 #         "102": {
-#             "name": "Bob",
+#             "name": "Priya",
 #             "role": "Designer"
 #         }
 #     },
 #     "departments": ["HR", "Engineering", "Design"]
 # }
 
-# print( company["employees"]["101"]["name"] )
+# print( company.get("employees").get("102").get("name", 20) )
 
 
 
-# person = { "name": "Alice", "age": 30, "city": "New York" }
+# person = { "name": "Mohan", "age": 30, "city": "New York" }
+
+# print( person.keys() )
+# print( person.values() )
+# print( person.items() )
+
 # data1 = list(person.keys())
 # data = person.values()
 # data2 = person.items()
-
+# print(data2)
 # print(data)
 # print(data1)
 # print(list(data2))
 
 # Intermediate Level: More Dictionary Manipulations & Concepts
-person = { "name": "Alice", "age": 30, "city": "New York" }
+person = { "name": "Mohan", "age": 30, "city": "New York" }
+# [('name', 'Mohan'), ('age', 30), ('city', 'New York')]
 
 # print(person.items())
-
 # for x in person:
+#     print( x, person[x] )
+
+# for x in person.values(): # for x in dict_values(['Mohan', 30, 'New York']):
 #     print(x)
 
-# for x in person.values(): # for x in dict_values(['Alice', 30, 'New York']):
+# for x in person.items(): # for x in dict_items([('name', 'Mohan'), ('age', 30), ('city', 'New York')]):
 #     print(x)
 
-# for x in person.items(): # for x in dict_items([('name', 'Alice'), ('age', 30), ('city', 'New York')]):
-#     print(x)
-
-# for x, y in person.items(): # for x in dict_items([('name', 'Alice'), ('age', 30), ('city', 'New York')]):
+# for x, y in person.items(): # for x in dict_items([('name', 'Mohan'), ('age', 30), ('city', 'New York')]):
 #     print(x, y)
 
 # new_data = {}
@@ -200,7 +236,7 @@ person = { "name": "Alice", "age": 30, "city": "New York" }
 #     new_data[y] = x
 # print(new_data)
 
-# data = [('name', 'Alice'), ('age', 30), ('city', 'New York')]
+# data = [('name', 'Mohan'), ('age', 30), ('city', 'New York')]
 
 # a = dict(data)
 # print(a)
@@ -225,37 +261,13 @@ person = { "name": "Alice", "age": 30, "city": "New York" }
 #     print(x, y)
 
 
-a = ["a", "b", "c", "d", "e"]
-b = ["p", "q", "r", "s"]
-c = {}
-
-
-# zip() for Parallel Iteration
-
-# The zip() function allows you to iterate over multiple iterables in parallel, pairing up corresponding elements. It stops when the shortest iterable is exhausted.
-
-# names = ["Alice", "Bob", "Charlie", "Vipin"]
-# ages = [30, 24, 35]
-# cities = ["NY", "LA"]
-
-# data = zip( names, ages, cities )
-# print(data)
-
-# for x in data:
-#     print(x)
-
-# for x, y in zip(a, b):
-#     c[x] = y
-# print(c)
-
-# for name, age, city in zip(names, ages, cities):
-#     print(f"{name} is {age} years old and lives in {city}.")
-
-
+# a = ["a", "b", "c", "d", "e"]
+# b = ["p", "q", "r", "s"]
+# c = {}
 
 # Nested for Loops
 # You can place a for loop inside another for loop. The inner loop will complete all its iterations for each single iteration of the outer loop. This is commonly used for working with 2D data structures (like matrices) or generating combinations.
-    
+
 # a = {
 #     "number": [ 1, 2, 3, 4, 5, 6, 7, 8 ],
 #     "float": [ 1.1, 2.2, 3.3, 4.4, 5.0, 6.0, 7.0, 8.0],

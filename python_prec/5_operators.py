@@ -4,9 +4,15 @@
 # -  Sub
 # *  Mul
 # /  Div
-# // Floor div
 # %  Modules
+# // Floor div
 # ** Exponential
+
+# a = 5
+# b = 2
+
+# print( 49 ** 100 )
+
 
 # a = 20
 # b = -20

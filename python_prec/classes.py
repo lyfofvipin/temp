@@ -14,23 +14,31 @@
 #     # Class body (attributes and methods)
 #     pass # 'pass' is a placeholder for an empty class
 
-
-# def bark():
-#         print("Woof!")
-
 # class SocialMedia:   
 
 #     CEO = "Mark"
 
-#     def like():
+#     def like(self):
 #         print("Liked")
 
-#     def comment():
+#     def comment(self):
 #         print("Commented")
 
-# # bark()
-# # Dog.bark()
+# facebook = SocialMedia()
 
+# print( facebook.CEO )
+# facebook.like()
+
+# twitter = SocialMedia()
+# twitter.CEO = "Elon Musk"
+
+# print(facebook.CEO)
+# print(twitter.CEO)
+
+# def test():
+#     print("test")
+
+# test()
 
 
 # # Creating Objects (Instances) from a Class
@@ -41,7 +49,7 @@
 # LinkedIn = SocialMedia()
 # Twitter = SocialMedia()
 # LinkedIn.CEO = "Ryan"
-# Twitter.CEO = "Alan"
+# Twitter.CEO = "Elon Musk"
 
 # print( Insta.CEO )
 # print( LinkedIn.CEO )
@@ -50,32 +58,31 @@
 # class car:
 
 #     color = "Black"
-#     brand = "Royals Roy"
+#     brand = "Rolls Royce"
 #     milage = "3mph"
 
 #     def engin(self):
 #         print("RR Engin.")
-    
+
 #     def drive(self):
 #         print("Driving")
 
-#     def Honk(self):
+#     def honk(self):
 #         print("Peeeeeeeeeeeeeeeeee")
 
 
 # a = car()
 # b = car()
 
-# print(a)
-# print(b)
+# # print(a.brand)
+# # print(b.brand)
 
 # b.brand = "Honda"
 # b.milage = "25mph"
 
 # print(a.brand)
 # print(b.brand)
-# print(a.Honk())
-
+# a.honk()
 
 # Attributes (The "What It Is")
 # Attributes are the data or properties associated with an object.
@@ -91,31 +98,29 @@
 
 # class Dog:
 
-#     species = "JS"
+#     # species = "GS"
 
-#     def __init__(self):
+#     def __init__(self, abc):
 #         print("Bhaiya Object Ban gaya h.")
-#         self.b = 44
-
-#     def bark(self):
-#         print(self.b)
-#         self.c = 23
-#         print(f"says woof!")
 
 #     def eat(self):
-#         print(self.c)
+#         print(self.abc)
 #         print(f"hungry right now.")
 
-# a = Dog()
-# a.bark()
+#     def bark(self):
+#         print(f"says woof!")
+#         self.abc = 23
+
+# a = Dog(455)
 # a.eat()
+# a.bark()
+
 # print(dir(Dog))
 
-
 # class Dog:
-#     species = "JS"
+#     species = "GS"
 
-#     def __init__(self, name, age):
+#     def __init__(self, name="tom", age=2):
 #         self.dog_name = name
 #         self.age = age
 #         self.is_hungry = True
@@ -129,17 +134,17 @@
 #             self.is_hungry = False
 #         else:
 #             print(f"{self.dog_name} is not hungry right now.")
+#             self.is_hungry = True
 
-# my_dog = Dog("tommy", 3)
-# my_dog.bark()
-# my_dog.eat()
-# my_dog.eat()
+# my_dog = Dog()
+# # my_dog.eat()
 
-# your_dog = Dog("puffy", 3)
-# your_dog.bark()
+# your_dog = Dog("tuffy", 3)
+# # your_dog.bark()
 # your_dog.eat()
 
 
+# print(my_dog.species, your_dog.species, third_dog.species)
 
 # Access instance attributes
 # print(f"My dog's name is {my_dog.name} and he is {my_dog.age} years old.")
@@ -193,7 +198,7 @@
 # It's important to distinguish between two types of attributes:
 
 #     Instance Attributes: These belong to a specific object. They are defined inside __init__() using self.. 
-#       Each object has its own unique copy of these attributes.
+#     Each object has its own unique copy of these attributes.
 #     Class Attributes: These belong to the class itself and are shared by all objects of that class. 
 #   They are defined directly within the class body but outside any method.
 
@@ -205,37 +210,60 @@
 #         self.name = name
 
 # milk = GST(name="Saras")
-# bread = GST(name="Kanha")
+# bread = GST(name="Amul")
 
 # print(f"{milk.name} has {milk.TAX_RATE} rate.")
 # print(f"{bread.name} has {bread.TAX_RATE} rate.")
-
-# bread.TAX_RATE = 5
-
-# # print(f"{milk.name} has {milk.TAX_RATE} rate.")
-# # print(f"{bread.name} has {bread.TAX_RATE} rate.")
-
 
 # GST.TAX_RATE = 5
 
 # print(f"{milk.name} has {milk.TAX_RATE} rate.")
 # print(f"{bread.name} has {bread.TAX_RATE} rate.")
 
-
-# class a:
-
-#     def __init__(self):
-#         pass
-
-#     def test1(self):
-#         print("hi")
-
-#     def test(self):
-#         print("hi")
+# Methods: Class vs. Instance
 
 
-# b = a()
-# a.test()
+class a:
+
+    def __init__(self):
+        pass
+
+    def test1():
+        print("hi")
+
+    def test(self):
+        print("hi")
+
 # a.test1()
 
-print("Hello i am classes.py")
+class BankAccount:
+
+    BANK_NAME = "SBI"
+
+    def __init__(self, name, mob, age, dob, balance):
+        self.name = name
+        self.mob = mob
+        self.age = age
+        self.dob = dob
+        self.balance = balance
+
+    def show_info(self):
+        print( self.name,
+            self.mob,
+            self.age,
+            self.balance)
+        
+    def deposit(self, amount):
+        if amount < 0:
+            print("Invalid Amount")
+            exit(1)
+        self.balance += amount
+    
+    def withdraw(self, amount):
+        if amount > self.balance:
+            print("Invalid Amount")
+            exit(1)
+        self.balance -= amount
+
+vipin = BankAccount("Vipin", 232424243, 23, "23454", 500)
+

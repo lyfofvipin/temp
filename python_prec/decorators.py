@@ -1,4 +1,4 @@
-# Decorators are an advanced, powerful, and fun topic. They represent a very elegant application of functions in Python.
+# Decorators are an advanced, powerful, and it's not a fun topic. They represent a very elegant application of functions in Python.
 
 # Understanding Decorators
 
@@ -25,7 +25,7 @@
 #     greet()
 #     print(name)
 
-# # greet()
+# greet()
 # greet_with_name(greet)
 
 # say_hello = greet # Assign the function object itself
@@ -38,14 +38,8 @@
 #     def b ():
 #         print("B")
 #     b()
+
 # a()
-
-
-# def test():
-#     a = 4
-#     return a
-
-# print(test())
 
 
 # def outer_function(msg):
@@ -67,9 +61,10 @@
 # def func2(x): # It has to be a function
 
 #     print("Starting ... ")
-#     x()
 #     print("Ending ... ")
+#     x()
 
+# func1()
 # func2(func1)
 
 
@@ -80,9 +75,11 @@
 #         print(f"Finishing ---")
 #     return wrapper
 
+
 # @func1
 # def test():
 #     print("test")
+
 
 # a = func1(test)
 # a()
@@ -104,10 +101,7 @@
 # def sub( a, b ):
 #     print( a - b)
 
-# sub(12, 10)
-
-
-
+# sub(10, 12)
 
 
 # def func1(func):
@@ -119,12 +113,10 @@
 #     return wrapper
 
 # @func1
-# def func2(a):
+# def func2(*a):
 #     print(a)
 
-# func2("Vipin")
-
-
+# func2("Vipin", 3, 34 ,46 ,56 ,34 )
 
 # def func1(func):
 #     def wrapper(*args, **kwargs):
@@ -135,10 +127,10 @@
 #     return wrapper
 
 # @func1
-# def func2(a):
-#     print(a)
+# def func2(*a, **b):
+#     print(a, b)
 
-# func2("Vipin")
+# func2("Vipin", 34, name="vipin")
 
 # def changecase(func):
 #   def myinner():

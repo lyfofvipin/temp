@@ -7,6 +7,10 @@
 
 # The open() Function
 
+# name = input("Enter Your Name: ")
+# age = input("Enter Your age: ")
+# number = input("Enter Your number: ")
+
 # The first step to working with any file is to open it.
 # You do this using the built-in open() function. 
 # It returns a file object, which is what you'll use to read or write data.
@@ -20,6 +24,50 @@
 # Write	'w'	Opens the file for writing. Creates the file if it doesn't exist or overwrites it if it does.
 # Append 'a' Opens the file for writing. Creates the file if it doesn't exist or adds to the end of the file if it does.
 
+# a = open("test.text")
+# print(a.readable())
+# a.close()
+
+
+# with open("test.text") as a:
+#     print(a.readable())
+#     a.read()
+
+# data = [ "line1\n", "line2\n", "line3\n" ]
+
+# a = open("test.text", "a")
+
+# # print(a.write(data))
+# a.writelines(data)
+
+# a.close()
+
+
+# a = open("/home/vipikuma/abcd_video.mp4", "ab")
+
+# print(a.read())
+
+# a.close()
+
+# a = open("test.text", "w+")
+
+# a.write("sadjasudhfiusahfdiusafd")
+
+# print(a.readable())
+# print(a.writable())
+
+# a.close()
+
+# with open("/home/vipikuma/abcd_video.mkv") as video_file:
+#     print(video_file.readable())
+
+
+
+
+
+
+# file_data = xyz.readline()
+# print(file_data)
 
 # with open("/home/vipikuma/test.png", "rb") as a:
 #     photo = a.read()
@@ -36,20 +84,21 @@
 # with open(file_to_paste, "w") as a:
 #     a.write(data)
 
-with open("vipin.text") as a:
-    data = a.read()
+# with open("test.text") as a:
+#     data = a.read()
 
-countre_space = 0
-countre_new_line = 0
-for x in data:
-    if x == "\n":
-        countre_new_line += 1
+# countre_space = 0
+# countre_new_line = 0
+# for x in data:
+#     if x == "\n":
+#         countre_new_line += 1
 
-    if x == " ":
-        countre_space += 1
+#     if x == " ":
+#         countre_space += 1
 
-print(countre_space, countre_new_line)
+# print(countre_space, countre_new_line)
 
+# print(len(data))
 # Open a file named 'example.txt' in write mode
 
 # /home/vipikuma/classes/python_afternoon_batch/folder2/dummy.tt -> Absolute Path
@@ -111,6 +160,10 @@ print(countre_space, countre_new_line)
 # with open("/home/vipikuma/Pictures/pics/PXL_20231127_192054699.NIGHT.jpg", "+wb") as x :
 #     # x.writelines([ f"{str(x)}\n" for x in range(50, 61) ])
 #     print(x.read())
+
+# with open("test.text") as f:
+#     content = f.read()
+#     print(f.newlines)
 
 # r
 # w

@@ -1,6 +1,4 @@
-print( "Hello's Worl\"d." )
-
-
+# print( "she\aher" )
 
 # Escape Sequence	Description	Example Output
 # \n	New line	Hello\nWorld → Hello

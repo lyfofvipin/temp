@@ -9,7 +9,6 @@
 #     Reusable: You can call the same function multiple times without rewriting the code.
 #     Easier to read and debug: If something goes wrong, you know exactly which "machine" to check.
 
-
 # Type Of Functions:
     # Inbuilt Functions
     # Custom Functions
@@ -17,6 +16,7 @@
 # Inbuilt Functions
 
 # a = [ 1, 2, 3, 4, 5, 56, 67, -78, 324, 23 ]
+
 # sum()
 # print(sum( a ))
 
@@ -25,17 +25,6 @@
 
 # max()
 # print( max(a) )
-
-# zip()
-# a = [ 1, 2 ,3 ]
-# b = [ 4, 5 ,6 ]
-# c = [ "a", "b" ,"c" ]
-# d = [ "p", "q" , "r" ]
-
-# print( tuple(zip( a, b )) )
-
-# for a, b, c, d in zip(a, b, c, d):
-#     print( f" A = {a}, B = {b}, C = {c} and D = {d} " )
 
 # Every function has two main parts: the definition and the call.
 
@@ -49,6 +38,24 @@
 #     print("Hello from inside the function!")
 
 # function_name()
+
+# def my_func():
+#     print("I am line 1")
+#     print("I am line 2")
+#     print("I am line 3")
+#     print("I am line 4")
+#     print("I am line 5")
+
+# my_func()
+
+# def my_func():
+#     print("I am line 1 of 2nd func")
+#     print("I am line 1 of 2nd func")
+#     print("I am line 1 of 2nd func")
+#     print("I am line 1 of 2nd func")
+#     print("I am line 1 of 2nd func")
+
+# my_func()
 
 # a = 23
 # b = 24
@@ -73,8 +80,36 @@
 
 # greet()
 
-# Output:
-# Welcome to Python functions!
+# def add():
+#     a = int(input("Enter A Number: "))
+#     b = int(input("Enter A Number: "))
+
+#     print( a + b )
+
+# add()
+
+# write a function that take a number from keyboard and tell if it's odd or even
+
+# def odd_even_checker():
+#     a = int(input("Enter A Number: "))
+#     if a % 2 == 0:
+#         print("Even")
+#     else:
+#         print("Odd")
+
+# odd_even_checker()
+
+# Make a program with a function that check a number is divided by 3
+
+# def div_checker_by_3():
+#     a = int(input("Enter A Number: "))
+
+#     if a % 3 == 0:
+#         print("Yes it's divisible by 3")
+#     else:
+#         print("No it's not divisible by 3")
+
+# div_checker_by_3()
 
 # Parameters and Arguments (Inputs)
 
@@ -85,21 +120,43 @@
 
 # Example:
 
-# # 'name' is a parameter
-# def greet_person( name ):    
-#     print(name.upper())
+# def greet():
+#     print(f"Hello, how are you?")
+# greet()
+
+# def greet( a, b ):
+#     print(f"Hello, how are you?")
+
+# greet( 1, 2 )
 
 
-# greet_person( "Vipin" )
+# def add( a, b, c, d, e, f ):
+#     print(a, b, c, d, e, f)
+
+# add(12, 24, 56, 24, 54, 90)
+
+
+# def greet( name ):
+#     print( f"Hello {name}, How are you?" )
+
+# greet("Ajay")
+
+# def odd_even_checker( number ):
+#     if number % 2 == 0:
+#         print("Even")
+#     else:
+#         print("Odd")
+
+# a = int(input("Enter A Number: "))
+# odd_even_checker(a)
+
 
 # Doc Strings
 # def cap_str( name ):
 
-    # """
-    # This Function takes a string and it print it's Upper Case
-    # """
+#     "This is our function to test the document string."
 
-    # print(name.upper())
+#     print(name.upper())
 
 # cap_str( "Rohit"  )
 
@@ -127,6 +184,7 @@
 
 # Positional and Keyword Arguments
 # You can call a function in different ways based on how you pass arguments.
+
 # Positional Arguments
 # The arguments are matched to parameters based on their position or order. This is the method we've used so far.
 # Example:
@@ -134,7 +192,7 @@
 # def display_info(name, age):
 #     print(f"Name: {name}, Age: {age}")
 
-# # Order matters here!
+# Order matters here!
 # display_info("Charlie", 25) # "Charlie" is assigned to 'name', 25 to 'age'
 
 # Keyword Arguments
@@ -147,13 +205,17 @@
 
 
 # display_info("Diana", 30, "Jaipur", "ABC", "8755934")
-# display_info( number="865294", city="Jaipur", collage="XYZ", age=30, name="Vipin" )
+# display_info( number="8867755432", city="Jaipur", age=30, name="Diana", collage="XYZ" )
 
 # Mix of Positional and Keyword Arguments
 # display_info( "Vipin", 45, collage="Test", number=23232235, city="sdfsdaf" )
 # display_info( collage="Test", number=23232235, city="sdfsdaf", "Vipin", 45 )
 # display_info( name="vipin", 34, "Jaipur", "tets", 42424 )
 
+# def greet( name ):
+#     print( f"Hello {name}, How are you?" )
+
+# greet()
 
 # Default Arguments
 # You can provide a default value for a parameter. If an argument for that parameter is not passed during 
@@ -171,7 +233,6 @@
 # def display_info(name, age, course, city="Jaipur", collage="ABC", number=66543):
 #     print(f"Name: {name}, Age: {age}, {city}, {collage}, {number}, {course}")
 
-# # display_info("vipin", age=23, course="BCA")
 # display_info("vipin", age=23, course="BCA")
 
 # Variable-Length Arguments (*args and **kwargs)
@@ -360,6 +421,13 @@
 # print(a)
 
 
+# Function Objects
+
+# def add( a, b):
+#     return a + b
+# # print(add(2, 3))
+# addison = add
+# print(addison(1, 3))
 
 
 # Lambda Functions
@@ -382,18 +450,29 @@
 # lambda a, b: a+b
 # add = lambda a, b: a + b
 
-# print( add( 2, 3 ) )
+# print( add )
 
 
 # command = "print('hello world')"
-
 # eval(command)
 
 # expression = input("Enter your Exp: ")
 # print(eval(expression))
 
-# file = open("tets.py")
+# file = open("github.com")
+# file.close()
 # data = file.read()
 # eval(data)
+
+# callable() Function
+
+# class test:
+    
+#     def tes(self):
+#         pass
+
+# a = test()
+
+# print( callable( a.tes ) )
 
 

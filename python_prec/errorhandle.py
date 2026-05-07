@@ -13,28 +13,40 @@
 #     The program then looks for an except block that matches the type of exception that occurred.
 #     The code inside the matching except block is executed.
 
+# try:
+#     number = int(input("Enter A number: "))
+# except:
+#     print("Please Enter Only Integers.")
 
 # a = input("Enter Number 1: ")
 # b = input("Enter Number 2: ")
 
 # try:
-#     print("test1")
 #     print(a*b)
-#     print("test2")
 # except:
 #     print("There is an error from our side we are working on fixing it.")
 
+# a = int(input("Enter A number: "))
+# b = int(input("Enter A number: "))
+
+# if b == 0:
+#     print("You Can not divide any number by 0.")
+#     exit(0)
+
+# print( a / b)
 # try:
-#     a = int(input("Enter Number 1: "))
 # except:
-#     print("Please try again with Numbers Only")
-#     exit()
+#     print("You Can not divide any number by 0.")
+
+# print('calculation complete.')
 
 # try:
+#     a = int(input("Enter Number 1: "))
 #     b = int(input("Enter Number 2: "))
-# except:
-#     print("Please try again with Numbers Only")
-#     exit()
+#     print( a / b )
+# except ZeroDivisionError or TypeError:
+#     print("please enter only digit.")
+
 
 # try:
 #     print(a/b)
@@ -112,17 +124,21 @@
 
 
 # try:
-#     file = open("hw.txt", "r")
-#     content = file.read()
-# except FileNotFoundError:
-#     print("The file was not found.")
+#     a = int(input("Enter A number: "))
+# except:
+#     print("Type conversion error.")
 # else:
-#     print("File read successfully!")
-#     print(content)
+#     print("No error")
 # finally:
-#     if 'file' in locals():  # Check if the file variable exists
-#         file.close()
-#     print("File operation finished.")
+#     print("I will run at all cost.")
+"""
+this is a test file.
+"""
+
+# for x in range(5):
+#     print(x)
+# else:
+#     print("asdfs")
 
 # a = ""
 # b = "sadfsfd"
@@ -139,13 +155,17 @@
 # flow if a condition is not met. You can do this using the raise keyword.
 # This is useful for validating user input or ensuring data integrity.
 
-# age = 23
+# age = 16
 
 # if age >= 18:
 #     print("Yes you can vote.")
 # else:
 #     raise ValueError("No you can not vote.")
 
+# raise IndexError("Bhaiya y number list m h he nahi.")
+
+# a = Exception("Test", "Hello I am test error")
+# raise a
 
 # Here, we manually raise a ValueError if the age is invalid. The try...except 
 # block can then catch this exception and handle it gracefully.
@@ -160,18 +180,7 @@
 #     finally:
 #         return 2
 
-# # print(test())
-
-# test(a, b, c, d, e, f)
-
-# test(
-#     a,
-#     b,
-#     c,
-#     d,
-#     e,
-#     f
-# )
+# print(test())
 
 # with open('/path/to/some/file/you/want/to/read') as file_1, \
 #     open('/path/to/some/file/being/written', 'w') as file_2, \
