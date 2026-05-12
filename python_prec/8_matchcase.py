@@ -37,7 +37,7 @@
 #         ---
 #         ---
 
-char = input("Enter only 1 character: ")
+# char = input("Enter only 1 character: ")
 
 
 # match char:
@@ -54,14 +54,6 @@ char = input("Enter only 1 character: ")
 #         print("Vowel")
 #     case _:
 #         print("Consonant")
-
-
-# match char in "aeiouAEIOU":
-
-#     case True:
-#         print("It's a Vowel")
-#     case False:
-#         print("It's a Consonant")
 
 
 # number = int(input("Enter A Number: "))
@@ -116,16 +108,6 @@ char = input("Enter only 1 character: ")
 #     case _:
 #         print("No cold drink.")
 
-
-# a = int(input("enter a number"))
-
-# match a % 2:
-#     case 0:
-#         print("Even")
-#     case 1:
-#         print("Odd")
-
-
 # match month:
 
 #     case 1:
@@ -154,17 +136,3 @@ char = input("Enter only 1 character: ")
 #         print("31 Days")
 #     case _:
 #         print("Invalid Month")
-
-
-# Homework:
-
-# number1
-# number2
-# operator
-
-# a = int(input("Number 1:"))
-# b = int(input("Number 2:"))
-# c = input("Enter Operator:")
-
-# elif, if else match case
-

@@ -22,11 +22,18 @@
 # BODMAS
 # print ( 2 * 2 + 2 / 2 )
 
+# a = "Hello"
+# b = "world"
+
+# print( a + b )
 
 # print( "Hello " + "World" )
-# print( 3 * "Hello" )
-# print( "-" * 50.5 )
 
+# *
+
+# print("Hello" * 5)
+# print( 3 * "Hello" )
+# print( "-" * 50 )
 
 # a = input("Enter A number: ") # "2"
 # b = input("Enter A number: ") # "3"
@@ -50,9 +57,7 @@
 # <=	Less than or equal to	a <= b
 # !=	Not equal to	a != b
 
-
 # Short Hand Operators, Assignment Operators
-
 # =     It help us in assigning any datatype to a variable
 # +=	Add and assign	a += 3
 # -=	Subtract and assign	a -= 2
@@ -61,6 +66,21 @@
 # //=	Floor divide and assign	a //= 2
 # %=	Modulus and assign	a %= 3
 # **=	Exponential and assign	a *= 2
+
+# a = 34
+
+# a += 6
+# print(a)
+
+# a -= 5
+# print(a)
+
+# a /= 5
+# print(a)
+
+# a *= 1
+# print(a)
+
 
 # b = 1
 # b **= 5
@@ -195,6 +215,7 @@
 # or
 # -> Return False only if both the values are False
 # -> If both the values are true then it will pick the left one
+# -> If all values are false it will select the right most
 
 # Left  |  Right | Output
 # True    |  False | True
@@ -215,7 +236,6 @@
 # number = 70
 
 # print( True )
-
 
 
 # Membership Operators

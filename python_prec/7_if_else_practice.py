@@ -24,6 +24,7 @@
 
 # 6. Simple Login System
 # This program simulates a simple login system. The user is asked to input a username and password. If both match the preset correct username and password, the program prints a success message. Otherwise, it prints an error message.
+# Let's say correct username is admin and password is admin123
 
 # 7. Number Comparison
 # This program asks the user to input three numbers and compares them. It prints which of the three numbers is the largest.
@@ -37,7 +38,6 @@
 # 9. Take a number from keyboard and if number is divided by 3 print divided by 3
 # if number is divided by 5 it should print divided by 5
 # or if number divided by both 3 and 5 it should print by 5 and 3
-
 
 # a = int(input("Enter Your Age: "))
 

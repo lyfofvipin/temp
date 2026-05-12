@@ -1,20 +1,20 @@
-
-age = 16
+# age = 8
 
 # if age >= 18 :
-#     print("Yes You Can Vote.")
+#   print("Yes You Can Vote.")
+#   print("Yes You Can Vote.")
+
 # else:
-#     print("No You Can Not Vote.")
+#  print("No You Can Not Vote.")
 
 
-# number = 0
+# number = 243
 
 # if number > 0:
 #     print("It's +ve")
 
 # elif number < 0 :
 #     print("It's -ve")
-
 # else:
 #     print("It's 0.")
 
@@ -36,7 +36,7 @@ age = 16
 
 
 
-# a = "A"
+# a = "E"
 
 # if a in "aeiouAEIOU":
 #     print("Yes")
@@ -44,7 +44,7 @@ age = 16
 #     print("No")
 
 
-# a = 9
+# a = 25
 
 # if a < 50 and a > 10:
 #     print("yes")
@@ -81,9 +81,4 @@ age = 16
 #     print("It's a -ve Number")
 # else:
 #     print("It's a 0")
-
-
-
-
-
 

@@ -2,8 +2,28 @@
 
 #     A variable names can not have any character then underscore _.
 #     A variable names can not start with an numeric value
-#     Variable names in Python are case sensitive ( variable name system and System are not same ).
 #     It should not be a keyword of python.
+#     Variable names in Python are case sensitive ( variable name system and System are not same ).
+
+# a = "vipin"
+# a=34.34
+# a=34
+# print(a)
+
+# a = False
+# print(a)
+
+# a = 23
+# b = 34.34
+# c = "voipi"
+# d = True
+# print( a, b , c, d )
+
+# print( 34, "\n", 354.34, "\n", "wqerqw\n", True )
+
+# print("1,\n2,\n3,\n")
+
+# name = "Vipin"
 
 # a = 45
 # print( "hello", a )

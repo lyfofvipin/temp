@@ -4,19 +4,29 @@
 # the month’s sale is 2%. The input will be number of cameras sold and 
 # total price of the cameras.
 
+# num_of_cam = int( input("Enter Number Of Cameras: ") )
 
-# numb_cam = int ( input("Enter Number of Cam You have Sale :- ") )
-# month_sale = int ( input("Enter Your Monthly Sale :- ") )
+# comm = num_of_cam * 200
 
-# basic = 1500
-# commission = numb_cam * 200
-# bonus = (2 * month_sale) / 100
+# bonus = ((1500 + comm)*2)/100
 
+# total = 1500 + comm + bonus
 
-# print( basic + commission + bonus )
+# print( f"Comm: {comm}, bonus, {bonus} and total: {total}" )
 
 
-# # print( "Basic is ", basic)
-# # print( "Comm is ", commission)
 
-# print( f"Basic is {basic}, Comm is {commission}, Bonus is {bonus} and Total is {basic + commission + bonus}" )
+# number1 = int(input("Enter Number 1: "))
+# number2 = int(input("Enter Number 1: "))
+# number3 = int(input("Enter Number 1: "))
+
+# if number1 > number2:
+#     if number1 > number3:
+#         print(number1)
+#     else:
+#         print(number3)
+# else:
+#     if number2 > number3:
+#         print(number2)
+#     else:
+#         print(number3)

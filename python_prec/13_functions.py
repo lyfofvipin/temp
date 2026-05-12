@@ -200,8 +200,8 @@
 
 # Example:
 
-# def display_info(name, age, city, collage, number):
-#     print(f"Name: {name}, Age: {age}, {city}, {collage}, {number}")
+def display_info(name, age, city, collage, number):
+    print(f"Name: {name}, Age: {age}, {city}, {collage}, {number}")
 
 
 # display_info("Diana", 30, "Jaipur", "ABC", "8755934")
@@ -254,13 +254,22 @@
 # calculate_average(10, 20)
 # calculate_average(10, 20, 30, 40, 56, 46, 64, 46, "sdfhsadf", True, ["34r"], {"a": 243266})
 
-# def mix_func( a, c, *b, d ):
+# def mix_func( a, c, b, *d ):
 #     print(a)
 #     print(b)
 #     print(c)
 #     print(d)
 
-# mix_func(23, 10, 20, 30, 40, 56, 46, 64, 46, d=2567 )
+# mix_func(23, 10, 20, 30, 40, 56, 46, 64, 46)
+
+
+# def test( p, q, *r ):
+#     print(p)
+#     print(q)
+#     print(r)
+
+# test( "jaipur", "alwar", "delhi", "mumbai", "pune" )
+
 
 # **kwargs (Keyword Arguments)
 
@@ -269,10 +278,16 @@
 
 # Example:
 
+# def test( a, b, c, d, e ):
+#     print(a, b, c, d, e)
+
+# test( a= 1, b= 2, c =3, d=4, e = 5, f = 6 )
+
 # def show_profile(**user_info):
 #     print(user_info)
 
 # show_profile(name="Grace", age=28, city="London")
+# show_profile( a = 1, b = 2, c = 3, d = 4, e = 5 )
 
 
 # Scope Of Variable in Functions
@@ -287,7 +302,6 @@
 # set_a()
 # print(a)
 
-
 # def test():
 #     a = 23
 #     b = 234
@@ -295,13 +309,10 @@
 # test()
 # print(a, b)
 
-
-
 # a = 23
 # def test():
 #     print(a)
 # test()
-
 
 # a = 20
 # b = 20
@@ -319,7 +330,7 @@
 # Using Seq data types with functions
 
 # a = [1,3,4]
-# b = a 
+# b = a
 # a,b -> same list 
 
 # a = {1,3,4}
@@ -334,9 +345,8 @@
 # test( a )
 # print(a)
 
-
-
 # a = [1, 2, 3, 4, 5, 6]
+
 # def test( data ):
 #     data.append( 7 )
 #     print(data)
