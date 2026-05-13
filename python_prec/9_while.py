@@ -1,25 +1,24 @@
-
-# while "False":
+# while 24:
 #     print("Hello World1!")
 #     print("Hello World2!")
 #     print("Hello World3!")
 
-# counter = 10
+# counter = 5
 
-# while counter >= 1:
+# while counter >= 0:
 #     print(counter)
 #     counter = counter - 1
 
 # Iteration
 
 # counter = 2
-# while counter <= 50:
+# while counter <= 10:
 #     print(counter)
 #     counter = counter + 2
 
 
 # counter = 5
-# while counter <= 50:
+# while counter <= 30:
 #     print(counter)
 #     counter = counter + 5
 
@@ -32,11 +31,24 @@
 # even numbers from 50 - 80
 # 13
 # keyboard input and print it's table
+
+# counter = 1
+
+# while counter <=5:
+#     print( "*" * counter )
+#     counter += 1
+
 # *
 # **
 # ***
 # ****
 # *****
+
+# counter = 5
+
+# while counter >= 1:
+#     print( str(counter) * counter )
+#     counter -= 1
 
 # 55555
 # 4444
@@ -50,27 +62,17 @@
 # **
 # *
 
+# counter = 1
+# sum = 1
+
+# while counter <= 5:
+#     sum = sum * counter
+#     counter = counter + 1
+
 # Take 5 ints from user and show there sum
 # Take 5 ints from user and show there multiply
 # Give me sum of all the numbers from 1 to 5:
 # Give me multiply of all the numbers from 1 to 5:
-
-
-
-# counter = 1
-
-# while counter <= 5:
-
-#     print( "*" * counter )
-#     counter += 1
-
-# counter = 5
-
-# while counter != 0:
-
-#     print(str(counter) * counter)
-#     counter -= 1
-
 
 # counter = 1
 # sum = 0
