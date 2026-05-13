@@ -200,9 +200,8 @@
 
 # Example:
 
-def display_info(name, age, city, collage, number):
-    print(f"Name: {name}, Age: {age}, {city}, {collage}, {number}")
-
+# def display_info(name, age, city, collage, number):
+#     print(f"Name: {name}, Age: {age}, {city}, {collage}, {number}")
 
 # display_info("Diana", 30, "Jaipur", "ABC", "8755934")
 # display_info( number="8867755432", city="Jaipur", age=30, name="Diana", collage="XYZ" )
@@ -357,18 +356,17 @@ def display_info(name, age, city, collage, number):
 
 # The return Statement (Output) 
 
-# So far, Our functions have only printed results to the console. To get a value back from a function 
+# So far, Our functions have only printed results to the console. To get a value back from a function
 # so you can use it later in your program, you use the return keyword.
 # When a return statement is executed, the function immediately stops, and the value specified after return
 # is sent back to where the function was called.
 
 # Example:
 
-# def chota_bacha( item ):
-#     return item
+# def square( number ):
+#     return number * number
 
-# b = chota_bacha( "Chips" )
-# print(b)
+# print( square(5) )
 
 # a = "test"
 # b = a.upper()
@@ -376,14 +374,15 @@ def display_info(name, age, city, collage, number):
 # print(a)
 
 # a = [1, 3, 5, 1, 4, 2]
-# b = a.sort()
+# b = a.reverse()
 # print(b)
 # print(a)
 
-# def test( a ):
-#     return a
+# def test( ):
+#     return [23, 324, 35]
 
-# print( test( 10 ) )
+# a = test()
+# print(a)
 
 
 # def square( a ):
@@ -400,7 +399,7 @@ def display_info(name, age, city, collage, number):
 
 # print(test( 7, 3 ))
 
-#Note: If a function doesn't have a return statement, it implicitly returns the special value None.
+#Note: If a function doesn't have a return statement, it implicitly returns the value None.
 
 # def divide_checker( number ):
 #     for x in range(2, number):
@@ -416,7 +415,7 @@ def display_info(name, age, city, collage, number):
 #             return x
 #     return number
 
-# print(smallest_deviser( 7 ))
+# print(smallest_deviser( 35 ))
 
 # def add_pos_num():
 #     add = 0

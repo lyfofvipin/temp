@@ -29,7 +29,6 @@
 # -50 -1
 # odd numbers from 10 - 20
 # even numbers from 50 - 80
-# 13
 # keyboard input and print it's table
 
 # counter = 1

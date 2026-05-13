@@ -1,5 +1,11 @@
 # str - > int 
 
+# a = "3249"
+# print( type(a) )
+# a = int(a)
+# print( type(a) )
+
+
 # a = "324.9"
 # print( type(a) )
 # a = int(a)
@@ -14,7 +20,7 @@
 # print( type(a) )
 
 
-# a = input('Enter A Number: ')
+# a = input('Enter A Number: ') # 12.3
 # print(type(a))
 # a = int(a)
 # print(type(a))
@@ -29,6 +35,7 @@
 
 
 # int -> float
+
 # a = 34
 # print(type(a))
 # a = float(a)

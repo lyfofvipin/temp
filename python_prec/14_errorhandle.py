@@ -13,28 +13,25 @@
 #     The program then looks for an except block that matches the type of exception that occurred.
 #     The code inside the matching except block is executed.
 
+
 # try:
 #     number = int(input("Enter A number: "))
 # except:
 #     print("Please Enter Only Integers.")
 
-# a = input("Enter Number 1: ")
-# b = input("Enter Number 2: ")
 
 # try:
+#     a = int(input("Enter Number 1: "))
+#     b = int(input("Enter Number 2: "))
 #     print(a*b)
 # except:
 #     print("There is an error from our side we are working on fixing it.")
 
-# a = int(input("Enter A number: "))
-# b = int(input("Enter A number: "))
+# a = int(input("Enter A number: ")) # 34
+# b = int(input("Enter A number: ")) # 0
 
-# if b == 0:
-#     print("You Can not divide any number by 0.")
-#     exit(0)
-
-# print( a / b)
 # try:
+#     print( a / b)
 # except:
 #     print("You Can not divide any number by 0.")
 
@@ -44,14 +41,8 @@
 #     a = int(input("Enter Number 1: "))
 #     b = int(input("Enter Number 2: "))
 #     print( a / b )
-# except ZeroDivisionError or TypeError:
-#     print("please enter only digit.")
-
-
-# try:
-#     print(a/b)
-# except:
-#     print("Please enter anything other then 0.")
+# except ZeroDivisionError:
+#     print("You Can not divide any number by 0.")
 
 # try:
 #     a = int(input("Enter Number 1: "))
@@ -93,17 +84,16 @@
 # You can handle multiple exceptions in a single except block using a tuple.
 
 
-# try:
-#     my_list = [0, 1]
-#     user_input = int(input("Enter an index: "))
-#     print(my_list[user_input])
-# except (IndexError, ValueError) as e:
-#     print(f"An error occurred: {e}")
+try:
+    my_list = [0, 1]
+    user_input = int(input("Enter an index: "))
+    print(my_list[user_input])
+except (IndexError, ValueError) as e:
+    print(f"Error Found: {e}")
 
 
 # Using as e allows you to access the exception object and print its message,
 #  which can be useful for debugging.
-
 
 # You can also use a generic except block without specifying an exception.
 # This will catch any exception that occurs. While this is useful as a final catch-all, it can hide bugs, so it's generally best to handle specific exceptions first.
