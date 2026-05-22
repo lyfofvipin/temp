@@ -298,12 +298,6 @@
 #     print( f"{number3} Is Greater." )
 
 
-
-
-
-
-
-
 # number = int(input("Enter A number: "))
 
 # if number > 0 :

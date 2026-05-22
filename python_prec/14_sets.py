@@ -7,33 +7,34 @@
 # Mutable: You can add or remove elements after the set has been created.
 # Unique Elements: Every element in a set must be unique. Duplicates are automatically discarded.
 # Heterogeneous: Sets can contain elements of different data types, but all elements must be hashable 
-# (e.g., numbers, strings, tuples, but not lists or dictionaries).
+# (e.g., numbers, strings, tuples, float but not lists or dictionaries).
 # While 1 and True are the same thing
+# While 0 and False are the same thing
 
 # Creating an empty set
 # empty_set = set()
 # print(empty_set, type(empty_set))
 
-# a = { 1, 2, 3, 4, 5, 6, 1, 2, "Vipin", "vipin" }
+# a = { 1, 2, 3, 4, 5, 6, 1, 2, "Vipin", "vipin", True, 0, False }
 # print(a)
 
 # Creating a set from a list (duplicates are automatically removed)
-# numbers_list = "vipin"
+# numbers_list = "Rajasthan"
 # my_set = set(numbers_list)
-# print(f"Set from list (duplicates removed): {my_set}") # 
+# print(f"Set from list (duplicates removed): {my_set}")
 
 # my_set = set((1, 3, 4, 5, 1, 4))
 # print(my_set)
 
 # Creating a set directly with curly braces
-# fruits = {"apple", "banana", "cherry", "Banana", 1, 3, 4, 5, 1}
-# print(f"Set of fruits: {fruits}") # 
+# fruits = {"apple", "banana", "cherry", "banana", 1, 3, 4, 5, 1}
+# print(f"Set of fruits: {fruits}")
 # dummy = {"x", "t", "a", "A", "X", "T"}
 # print(dummy)
 
 # Set with mixed data types (all elements must be hashable)
 # mixed_set = {1, "hello", (1, 2), 3.14, (1, 2)} # Tuple is hashable
-# print(f"Mixed set: {mixed_set}") # 
+# print(f"Mixed set: {mixed_set}")
 
 # my_set = {1, 2, 3}
 # print(f"Original set: {my_set}")
@@ -42,14 +43,16 @@
 # update method can expend the datatype and add it also it can add mutable datatypes.
 # remove method will give an error if we pass it a element which does not exist and discard will not
 
-# my_set.add(4)
-# print(f"After add(4): {my_set}") # 
+# my_set.add((1,2))
+# print(f"After add(4): {my_set}")
 
 # my_set.add(2) # 2 is already in the set, no change
-# print(f"After add(2): {my_set}") # 
+# print(f"After add(2): {my_set}")
 
-# my_set.update([1, 2, 3, 4, 5, 6]) # 2 is ignored, 5 and 6 are added
+# my_set.update((1, 2, 3, 4, 5, 6)) # 2 is ignored, 5 and 6 are added
 # print(f"{my_set}")
+
+# my_set = {1 ,2 ,3}
 
 # my_set.add("abcdefg")
 # print(f"{my_set}") 
@@ -60,11 +63,10 @@
 # my_set.update({7, 8}) # Can update from another set
 # print(f"After update({7, 8}): {my_set}") # 
 
-
 # my_set = {10, 20, 30, 40, 50}
 # print(f"Original set: {my_set}")
 
-# my_set.remove(20)
+# my_set.remove(90)
 # print(f"{my_set}")
 
 # my_set.discard(20)
@@ -97,20 +99,14 @@
 # set_a = {1, 2, 3, 4}
 # set_b = {3, 4, 5, 6}
 
-# new_set = set_b.union(set_a)
-# new_set = set_a | set_b
-
+# new_set = set_a.union(set_b)
+# new_set = set_a | set_b # Pipe Operator
 # print( new_set)
 
-# Union Add both the sets
-# union_set = set_a | set_b
-# print(f"Union (set_a | set_b): {union_set}") # 
-# print(f"Union (set_a.union(set_b)): {set_a.union(set_b)}")
-
 # Intersection
+# print(f"Intersection (set_a.intersection(set_b)): {set_a.intersection(set_b)}")
 # intersection_set = set_b & set_a
 # print(f"Intersection (set_a & set_b): {intersection_set}") # 
-# print(f"Intersection (set_a.intersection(set_b)): {set_a.intersection(set_b)}")
 
 # set_a = {1, 2, 3, 4}
 # set_b = {3, 4, 5, 6}
@@ -118,11 +114,7 @@
 # # Difference (elements in A but not in B)
 # difference_ab = set_b - set_a
 # print(f"Difference (set_a - set_b): {difference_ab}") # 
-# print(f"Difference (set_a.difference(set_b)): {set_a.difference(set_b)}")
-
-# Difference (elements in B but not in A)
-# difference_ba = set_b - set_a
-# print(f"Difference (set_b - set_a): {difference_ba}") # 
+# print(f"Difference (set_a.difference(set_b)): {set_b.difference(set_a)}")
 
 # symmetric_difference
 # It is same as Union but it will not count the element that comes in both the sets
@@ -130,6 +122,8 @@
 # b = {3,4,5}
 
 # print( a, b, a.symmetric_difference(b) )
+# print( set_b.symmetric_difference(set_a) )
+
 # set1 = {1, 2, 3}
 # set2 = {1, 2, 3, 4, 5}
 # set3 = {4, 5, 6}
@@ -150,7 +144,6 @@
 # Are set1 and set2 disjoint?
 # print(f"Are {set1} and {set2} disjoint? {set1.isdisjoint(set2)}") 
 
-
 # Create a frozenset
 # In frozenset You Can not add, update, remove, pop, discard
 # fs = frozenset([1, 2, 3, 1, 1, 2, 3])
@@ -159,15 +152,13 @@
 # a = 43
 # b = 456
 
-# print(dir())
+# print( dir() )
 
 # print( __name__ )
 
 # print(ns.pop())
 # fs2 = frozenset([1, 2, 3])
 # print(type(fs)) 
-
-
 
 # | Feature                  | List                | Tuple             | Set             | Frozenset     | String         |
 # | ------------------------ | ------------------- | ----------------- | --------------- | ------------- | -------------- |

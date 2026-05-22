@@ -34,7 +34,6 @@
 # a[-1][-1] = 78
 # print(a)
 
-
 # abc = [ "Vipin", 25, "Jaipur", 302020, True, [ "Test", 43, [23242, [ 234234]] ] ]
 
 # abc = [ "Vipin",
@@ -54,8 +53,6 @@
 # 123
 
 # print(a[0][0][0][0] )
-
-
 
 # Reference Variable
 
@@ -96,7 +93,7 @@
 # numbers = [123, 34, 5, 23, 5, 23, 566, 88, 98]
 # print(numbers[-3: -8 : -2])
 
-my_list = ["apple", "banana", "cherry", "date"]
+# my_list = ["apple", "banana", "cherry", "date"]
 # print(my_list[1][2:4])
 
 # Change a single element
@@ -116,8 +113,8 @@ my_list = ["apple", "banana", "cherry", "date"]
 
 # Operations
 
-# list1 = [1, 2]
-# list2 = [3, 4]
+# list1 = [8, 2, "abc"]
+# list2 = [3, 4, "xyz"]
 
 # Concatenation
 # combined_list = list1 + list2 
@@ -126,6 +123,16 @@ my_list = ["apple", "banana", "cherry", "date"]
 # Repetition
 # repeated_list = list1 * 3
 # print(f"Repeated list: {repeated_list}") 
+
+# Comparison
+
+# list1 = [18, 2, "abc"]
+# list2 = [18, 4, "abc"]
+
+# print( list1 > list2 )
+# print( list1 < list2 )
+# print( list1 == list2 )
+
 
 # Membership
 # print(f"Is 2 in list1? {2 in list1}")     
@@ -139,11 +146,9 @@ my_list = ["apple", "banana", "cherry", "date"]
 
 
 # Identity operator
-
 # a = [1, 2]
-# b = a
-# print(a is not b)
-
+# b = [1 ,2]
+# print(a is b)
 
 # Methods:
 # Insert
@@ -161,11 +166,18 @@ my_list = ["apple", "banana", "cherry", "date"]
 # print(my_list)
 
 # Insert
-# my_list.insert(-345, "grape")
+# my_list.insert(-40, "grape")
 # print(f"After insert: {my_list}") 
 
 # my_list.insert( -2, "mango")
 # print(my_list)
+
+# a = [ 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+# print(a)
+# a.extend([ 1,2,3,4 ])
+
+# print(a)
 
 # Remove
 # my_list.remove("apple")
@@ -187,7 +199,6 @@ my_list = ["apple", "banana", "cherry", "date"]
 
 # print(f"Popped item (last): {popped_item}, List: {my_list}") 
 
-
 # my_list = ["apple", "banana", "cherry", "banana"]
 
 # print(my_list.pop())
@@ -196,7 +207,6 @@ my_list = ["apple", "banana", "cherry", "date"]
 # a = "vipin"
 # print(a.upper())
 # print(a)
-
 
 # Pop (at index)
 # popped_item_at_index = my_list.pop(0)
@@ -318,6 +328,15 @@ my_list = ["apple", "banana", "cherry", "date"]
 
 # print( "In".join( a ) )
 
-
 # a = "ABCDEFGH"
 # print( "-".join(a) )
+
+
+
+# Type Conversion
+
+# a = (1,2,3,4,5)
+# a = "Jaipur"
+# a = list(a)
+
+# print(a)

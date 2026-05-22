@@ -62,3 +62,9 @@
 # a = bool(a)
 # print(a)
 # print( type(a) )
+
+
+# a = "-45"
+# print(float(a))
+# print( a )
+# print( type(a) )

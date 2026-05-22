@@ -1,9 +1,9 @@
 # The name of a variable can be composed of letters, digits and the underscores.
 
-#     A variable names can not have any character then underscore _.
-#     A variable names can not start with an numeric value
-#     It should not be a keyword of python.
-#     Variable names in Python are case sensitive ( variable name system and System are not same ).
+# A variable names can not have any character then underscore _.
+# A variable names can not start with an numeric value
+# It should not be a keyword of python.
+# Variable names in Python are case sensitive ( variable name system and System are not same ).
 
 # a = "vipin"
 # a=34.34
@@ -19,11 +19,24 @@
 # d = True
 # print( a, b , c, d )
 
+# a = "Jaipur"
+# print( f"Hello {a}" )
+
+# print( a \n b \n c \n d )
+
+# Formatted String / FString
+
+# print( a,'\n',b,'\n',c,'\n',d )
+# print(f"{a}\n{b}\n{c}\n{d}")
+
+
 # print( 34, "\n", 354.34, "\n", "wqerqw\n", True )
 
 # print("1,\n2,\n3,\n")
 
 # name = "Vipin"
+
+# _ = 45
 
 # a = 45
 # print( "hello", a )
@@ -46,6 +59,3 @@
 # # print( f"Value of a is {a} and Value of b is {b}." )
 
 # print( type( a ) )
-
-
-

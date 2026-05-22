@@ -17,7 +17,7 @@
 # numbers = (1, 2, 3, 4, 5)
 # print(f"Tuple of numbers: {numbers}") 
 
-# # A tuple of strings
+# A tuple of strings
 # fruits = ("apple", "banana", "cherry")
 # print(f"Tuple of fruits: {fruits}") 
 
@@ -33,7 +33,6 @@
 # nested_tuple[1][0] = 4
 # nested_tuple[1][1] = 5
 # print(nested_tuple)
-
 
 # Important: A single-element tuple requires a trailing comma!
 # Without it, Python treats it as just the item itself, not a tuple.
@@ -102,12 +101,14 @@
 # repeated_tuple = tuple1 * 3
 # print(f"Repeated tuple: {repeated_tuple}") 
 
-# # Membership
+# print( tuple1 < tuple2 )
+
+# Membership
 # print(f"Is 2 in tuple1? {2 in tuple1}")     
 # print(f"Is 5 not in tuple2? {5 not in tuple2}") 
 
 
-my_tuple = ("apple", "banana", "cherry")
+# my_tuple = ("apple", "banana", "cherry")
 
 # Attempting to change an element (will raise TypeError)
 # my_tuple[1] = "grape"
@@ -119,6 +120,15 @@ my_tuple = ("apple", "banana", "cherry")
 # print(f"Modified tuple with list: {my_tuple_with_list}") 
 # This is allowed because you are not changing the tuple itself (i.e., you're not reassigning index 1 to a different object).
 # You are changing the *contents* of the list object that index 1 points to.
+
+# a = 5
+# b = 10
+
+# c = a
+
+# a = b
+# b = c
+# print( a, b )
 
 # Swapping variables easily using tuple unpacking
 # a = 10
@@ -133,7 +143,7 @@ my_tuple = ("apple", "banana", "cherry")
 
 # Unpacking with * (star operator) for arbitrary remaining elements (Python 3+)
 # coordinates = (1, 2, 3, 4, 5, 7, 8, 9, 10)
-# *a, b, c, d, e = coordinates
+# a, b, c, *d, e = coordinates
 # print(a, b, c, d, e)
 
 # first, *middle, last = coordinates
@@ -162,3 +172,11 @@ my_tuple = ("apple", "banana", "cherry")
 # print( c.count("is") )
 
 # print(a.count("is"))
+
+# Type Conversion
+
+# a = [1,2,3,4,5]
+# a = "Jaipur"
+# a = tuple(a)
+
+# print(a)

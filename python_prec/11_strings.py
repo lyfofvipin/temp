@@ -14,7 +14,7 @@
 # str1 = "Hello"
 # str2 = 'World'
 # result = str1 + str2
-# print(result) 
+# print(result)
 
 # Repetition: You can repeat a string multiple times using the * operator.
 
@@ -26,10 +26,10 @@
 # Indexing: Each character in a string has an index. The index starts at 0 for the first character.
 # To access these values of a string using the index values we use `[]` operator.
 
-# my_string = "Hello World"
+my_string = "Hello World"
 
 # print(my_string[-3]) 
-# print(my_string[-1]) 
+# print(my_string[-1])
 # print(my_string[50]) #IndexError: string index out of range
 
 
@@ -48,13 +48,16 @@
 # my_string = "Hello"
 
 # print( my_string[ 1: ] )
-# print(my_string[ 1:4 ]) 
 # print(my_string[ :3 ])  
+# print(my_string[ 1:4 ]) 
 
 # my_string = "0123456789"
 
+
+# print( my_string[ :7 ] )
 # print(my_string[ 2:3 ])
 # print(my_string[ -8:-1 ])
+# print(my_string[ 5:1 ])
 
 
 # [ start : end : difference ]
@@ -67,17 +70,19 @@
 
 # my_string = "0123456789"
 
+
+# print( my_string [  : 8 : 2 ]  )
 # print( my_string [ -9 : -2 : 2 ]  )
+# print( my_string[::-1] )
+# print( my_string[ : -6 : -2 ] )
 
-# print( my_string [ -9 : -2 : 2 ]  )
 
-
-# my_string = "Lhis Is A Test String"
+# my_string = "abcdefghij"
 #            0123456789
+#           10987654321   
 # print( my_string[ :: 3 ] ) 
-
-# print(my_string[ -5:1:-1 ])  
-# print(my_string[ -5:-1:-1 ])  
+# print(my_string[ -5:1:-1 ])
+# print(my_string[ -5:-1:-1 ])
 
 # my_string = "abcdefghijklmn"
 # print(my_string[ ::-1 ])  
@@ -97,17 +102,16 @@
 # my_string = "Hello World"
 
 # print("Hello" in my_string)
-# print("h" in my_string) 
+# print("h" in my_string)
 
 # String Manipulation / Strings are Immutable
-# a = "Wello"
-# # a[ 0 ] = "H"
+a = "Wello"
+# a[ 0 ] = "H"
 
 # a = "H" + a[1:]
 # print( a ) # Wello
 
-"Heloo"
-
+# "Heloo"
 
 # String Methods: Python strings have a variety of built-in methods.
 # Some of the commonly used methods are:
@@ -132,13 +136,12 @@
 # print(my_string.strip()) 
 
 # my_string = "--hello--"
-# print(my_string.strip("-")) 
+# print(my_string.strip("-"))
 
 # my_string = "------hel--lo*************"
-# print(my_string.strip("-*h"))
+# print(my_string.strip("h-*"))
 
-
-# my_string = "-*-*-*hello8888"
+# my_string = "-*-*-*hello8888-*-*"
 # print(my_string.lstrip("-*")) 
 
 # my_string = "+++++hello++++++"
@@ -154,26 +157,22 @@
 
 # s = "hello how are you doing this is a python class."
 
-# print(s.startswith("llo"))
+# print(s.startswith("hello"))
 
 # print(s.endswith("class.") )
 
 # Justifying the String
 # print("ACAB".rjust(10, "+"))
 
-# print("ABCD".ljust(10))
+# print("ABCD".ljust(10, "-"))
 
 # replace(old, new): Replaces occurrences of a substring.
 
 # my_string = "Hello World"
-# print(my_string.replace("lo", "lllo")) 
+# print(my_string.replace("l", "lllo")) 
 
 # a = "i live in india."
 # print( a.replace( "in", "++") )
-
-# a = input("Enter Your Sentence: ")
-# number_of_spaces = a.count(" ")
-# print(number_of_spaces + 1)
 
 # split(): Splits the string into a list based on a delimiter (default is whitespace).
 
@@ -191,7 +190,7 @@
 # join(iterable): Joins elements of an iterable (like a list) into a single string, with a specified separator.
 
 # words = ['my', 'name', 'is', 'vipin']
-# print("".join(words)) 
+# print("-".join(words)) 
 # print(" ".join(words)) 
 
 # words = ['15', '7', '2025']
@@ -201,25 +200,21 @@
 # Returns the index of the first occurrence of a substring (or -1 if not found).
 
 # my_string = "Hello World"
-# print(my_string.find("o"))
+# print(my_string.find("llo"))
 
-# print("hello my name is vipin".find("x", 6))
-
+# print("hello my name o is vipin".find("o", 6))
 
 # count(substring): Counts occurrences of a substring in the string.
 
 # a = "I live in india and in jaipur city"
-# print( a.count(" ") )
-
+# print( a.count("in") )
 
 # my_string = "Hello World, Hello Python"
 # print(my_string.count("Hello"))
 
-
 # isupper
 # a = "HELLO23"
 # print( a.isupper() )
-
 
 # islower
 # a = "sadsafH23"
@@ -230,7 +225,7 @@
 # print( a.isalnum() )
 
 # isnumeric
-# a = "-2325235235235"
+# a = "2325235235235"
 # print(a.isnumeric())
 
 # a = "is this windows 11?"
@@ -246,10 +241,10 @@
 # counter = 0
 # while counter < length:
     
-#     if a[counter] == "x":
+#     if a[counter] == "i":
 #         print(counter)
-
 #     counter += 1
+
 # print(-1)
 
 # while counter < len(a):

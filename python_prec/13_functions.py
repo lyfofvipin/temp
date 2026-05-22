@@ -192,11 +192,18 @@
 # def display_info(name, age):
 #     print(f"Name: {name}, Age: {age}")
 
-# Order matters here!
+# # Order matters here!
 # display_info("Charlie", 25) # "Charlie" is assigned to 'name', 25 to 'age'
 
 # Keyword Arguments
 # You can specify the argument's name when you pass it, which means the order doesn't matter.
+
+# def display_info(name, age):
+#     print(f"Name: {name}, Age: {age}")
+
+# # Order matters here!
+# display_info( age=25, name="Charli"  )
+
 
 # Example:
 
@@ -216,18 +223,18 @@
 
 # greet()
 
-# Default Arguments
+
+# Default Parameter
 # You can provide a default value for a parameter. If an argument for that parameter is not passed during 
 # the function call, the default value will be used. This makes the parameter optional.
 
 # Example:
-# def greet_with_default(name , message="Hello"):
+# def greet_with_default(name = "Rohit" , message="Hello"):
 #     print(f"{name}, {message}!")
 
 # greet_with_default("Eve") # No message argument provided, so "Hello" is used
 # greet_with_default("Eve", "Good Afternoon") # No message argument provided, so "Hello" is used
 # greet_with_default("Frank", "Good morning") # A new message is provided, overriding the default
-
 
 # def display_info(name, age, course, city="Jaipur", collage="ABC", number=66543):
 #     print(f"Name: {name}, Age: {age}, {city}, {collage}, {number}, {course}")
@@ -288,17 +295,21 @@
 # show_profile(name="Grace", age=28, city="London")
 # show_profile( a = 1, b = 2, c = 3, d = 4, e = 5 )
 
+# def test( *a, **b ):
+#     print(a, b)
+
+# test( 34, 34, 23, 23,45 ,23 , a = "23", b = 43 )
 
 # Scope Of Variable in Functions
 
 # a = 20
 # print(a)
 
-# def set_a():
+# def test():
 #     a = 34
 #     print(a)
 
-# set_a()
+# test()
 # print(a)
 
 # def test():
@@ -317,12 +328,12 @@
 # b = 20
 # print(a, b)
 
-# def set_a():
+# def test():
 #     global a, b
 #     a = 34
 #     b = 23
 
-# set_a()
+# test()
 # print(a, b)
 
 

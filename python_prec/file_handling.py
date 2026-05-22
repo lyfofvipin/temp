@@ -1,7 +1,7 @@
 # File Handling Basics
 
 # File handling in Python allows your programs to read data from and write data to files
-# on your computer's storage. 
+# on your computer's storage.
 # This is essential for storing information permanently, 
 # so it isn't lost when your program finishes.
 
@@ -10,6 +10,8 @@
 # name = input("Enter Your Name: ")
 # age = input("Enter Your age: ")
 # number = input("Enter Your number: ")
+
+# print( name, age, number )
 
 # The first step to working with any file is to open it.
 # You do this using the built-in open() function. 
@@ -24,30 +26,68 @@
 # Write	'w'	Opens the file for writing. Creates the file if it doesn't exist or overwrites it if it does.
 # Append 'a' Opens the file for writing. Creates the file if it doesn't exist or adds to the end of the file if it does.
 
-# a = open("test.text")
-# print(a.readable())
-# a.close()
+a = open("test.text")
 
+# print(a.readable())
+
+# data = a.read()
+# print(data.upper())
+
+b = a.readline()
+c = a.readline()
+d = a.readline()
+
+print(a.read())
+
+# print( b, c, d )
+
+# print(a.readlines())
+
+# b = a.read()
+
+# print( b )
+
+# "C:/Users/Dell/OneDrive/Pictures\Screenshots\data scince\python\formateed_string.py"
+# a=open("/home/vipikuma/my_data/temp/python_prec/11_strings.py")
+# a=open("12_forloop.py")
+# print(type(a))
+
+# a.close()
 
 # with open("test.text") as a:
 #     print(a.readable())
-#     a.read()
+#     print(a.read())
 
-# data = [ "line1\n", "line2\n", "line3\n" ]
+# data = [ "line1\n", "line\n2", "line3" ]
 
-# a = open("test.text", "a")
+# a = open("test.text")
+# print(a.read())
+# a.close()
 
-# # print(a.write(data))
+# a = open("abcd.text", "w")
+# print( a.writable() )
+# a.write( "I am from Jaipur." )
+# a.writelines(data)
+# a.close()
+
+
+# with open("abcd.text", "w") as a:
+#     a.write("I am from Delhi.")
+
+
+# with open("abcde.text", "a") as a:
+#     a.write( "I am from Delhi.\n" )
+
+# print(a.write(data))
 # a.writelines(data)
 
 # a.close()
 
 
-# a = open("/home/vipikuma/abcd_video.mp4", "ab")
-
-# print(a.read())
-
+# a = open("/home/vipikuma/test.mp4", "wb")
 # a.close()
+
+
 
 # a = open("test.text", "w+")
 
@@ -63,8 +103,16 @@
 
 
 
+# with open("abcd.text", "+a") as a:
+#     print(a.readable())
+#     print(a.writable())
 
-
+# +r
+# +w
+# +a
+# +rb
+# +wb
+# +ab
 
 # file_data = xyz.readline()
 # print(file_data)

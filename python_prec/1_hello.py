@@ -1,4 +1,4 @@
-print('It\'s his choice.')
+# print('It\'s his choice.')
 
 # print( "she\aher" )
 
@@ -14,6 +14,8 @@ print('It\'s his choice.')
 # \\	Backslash	\\ → \
 # \'	Single quote	\' → '
 # \"	Double quote	\" → "
+
+# print("It's her choice.")
 
 # print("Hello This is\n line feed or newline. \n")
 # print("Hello This is\b backspace. \n")

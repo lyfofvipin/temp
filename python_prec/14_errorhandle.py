@@ -84,12 +84,12 @@
 # You can handle multiple exceptions in a single except block using a tuple.
 
 
-try:
-    my_list = [0, 1]
-    user_input = int(input("Enter an index: "))
-    print(my_list[user_input])
-except (IndexError, ValueError) as e:
-    print(f"Error Found: {e}")
+# try:
+#     my_list = [0, 1]
+#     user_input = int(input("Enter an index: "))
+#     print(my_list[user_input])
+# except (IndexError, ValueError) as e:
+#     print(f"Error Found: {e}")
 
 
 # Using as e allows you to access the exception object and print its message,

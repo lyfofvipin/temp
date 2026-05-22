@@ -1,7 +1,5 @@
 # a = input("Enter A number: ")
-
 # print(a)
-
 # print ( type(a) )
 
 # a = input("Enter Some data: ")

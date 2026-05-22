@@ -9,7 +9,6 @@
 # counter = 1
 # while counter <= 10:
 #     print(counter)
-
 #     if counter == 10:
 #         continue
 #     counter += 1
@@ -22,7 +21,7 @@
 #     price = int(input("Enter Item Price: "))
 
 #     if price < 0:
-#         exit(2)
+#         exit(1)
 
 #     sum += price
 #     print(sum)

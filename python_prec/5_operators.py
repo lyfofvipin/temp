@@ -22,6 +22,11 @@
 # BODMAS
 # print ( 2 * 2 + 2 / 2 )
 
+# a = input("Enter A Number: ")
+# b = input("Enter A Number: ")
+
+# print( a + b)
+
 # a = "Hello"
 # b = "world"
 
@@ -32,7 +37,7 @@
 # *
 
 # print("Hello" * 5)
-# print( 3 * "Hello" )
+# print( 3 * "Hello")
 # print( "-" * 50 )
 
 # a = input("Enter A number: ") # "2"
@@ -57,6 +62,26 @@
 # <=	Less than or equal to	a <= b
 # !=	Not equal to	a != b
 
+
+# > Greater Then
+# print(5 > 10)
+
+# < Less Then
+# print(50 < 10)
+
+# == Double =
+# print(18 == 8)
+
+# != Not =
+# print(18 != 18)
+
+# >= Greater Then = 
+# print(188 >= 18)
+
+# >= Less Then = 
+# print(1 <= 18)
+
+
 # Short Hand Operators, Assignment Operators
 # =     It help us in assigning any datatype to a variable
 # +=	Add and assign	a += 3
@@ -67,7 +92,17 @@
 # %=	Modulus and assign	a %= 3
 # **=	Exponential and assign	a *= 2
 
-# a = 34
+# a = 4
+
+
+# a = a + 5
+# a += 5
+# a -= 5
+# a **= 3
+# a *= 5
+
+# print(a)
+
 
 # a += 6
 # print(a)
@@ -102,7 +137,6 @@
 # a = a + 20
 # a = 80
 # a -= 20
-
 # a **= 10
 
 # a = 60 *60 *60 *60 *60 *60 *60 *60 *60 *60
@@ -142,8 +176,7 @@
 # not in	True if not present	"x" not in "cat"
 
 # a = "I live in India."
-# print( "India" in a )
-
+# print( "I" not in a )
 
 # Identity Operators
 
@@ -171,13 +204,6 @@
 # y = a - b / (3 + c) * (2 - 1)
 # z = a - (b / (3 + c) * 2) - 1
 
-
-
-
-
-
-
-
 # +, -, /, *, %, //, **
 
 # / -> Always return a float
@@ -203,6 +229,8 @@
 # print( a )
 
 
+# a = int(input("Enter A Number: "))
+
 
 # Logical Operators
 
@@ -211,6 +239,10 @@
 # and	Logical AND	a and b
 # or	Logical OR	a or b
 # not	Logical NOT	not a
+
+# print( "" or [] or 0 or None )
+
+# 0, "", [], {}, (), None
 
 # or
 # -> Return False only if both the values are False
@@ -222,6 +254,8 @@
 # False   |  True  | True
 # True    |  True  | True
 # False   |  False | False
+
+# print( 23 and 25 and "" and 9 and 5 )
 
 # and
 # -> If any value is false It will return the false one
@@ -238,18 +272,20 @@
 # print( True )
 
 
+# print( (34 and " ") or (45 and 67) or 93 or (45 and 23) )
+
+
 # Membership Operators
+
+
 
 # Test membership in sequences like lists, strings:
 
 # in	True if present	"a" in "cat"
 # not in	True if not present	"x" not in "cat"
 
-
-# a = "Vipin"
-
-# print("v" not in a)
-
+# a = "vipin"
+# print("vip" not in a)
 
 # a = 6
 # b = a

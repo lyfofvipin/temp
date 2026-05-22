@@ -22,7 +22,6 @@
 #     print(counter)
 #     counter = counter + 5
 
-
 # 1 - 50
 # 50 - 1
 # -1 -50
@@ -173,14 +172,16 @@
 # Use an if-else statement to handle the case where the number itself is prime (its smallest divisor will be itself).
 
 # counter = 2
-
 # number = int(input("Enter A Number: "))
 
-# while number > 1 and  number % counter != 0:
-
-#     print(number, counter)
+# while counter < number:
+#     if number % counter == 0:
+#         print(counter)
+#         break
 #     counter += 1
 
+# if counter == number:
+#     print("It's a prime number.")
 
 # if number == counter:
 #     print("Failed to find the smallest divisor as it's a Prime Number.")
