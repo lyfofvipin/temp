@@ -1,46 +1,81 @@
 from flask import Flask
 from flask import render_template
 from flask import request
+from flask import redirect
+from flask import abort
+from flask import url_for
 from flask_sqlalchemy import SQLAlchemy
+from flask_login import LoginManager
+from flask_login import login_user, logout_user, current_user
+from flask_login import UserMixin, login_required
 import json
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///abc.db"
+app.secret_key = "sahbd283jend03483nucndc3fr93834nusncdwi3948jf934" #notsecret
+
+lm = LoginManager(app)
+lm.init_app(app)
 
 db = SQLAlchemy( app )
 
-class Users( db.Model ):
+class Users( db.Model, UserMixin ):
 
     id = db.Column( db.Integer, primary_key = True )
     name = db.Column( db.String, nullable = False  )
     email = db.Column( db.String, nullable = False, unique = True )
     password = db.Column( db.String, nullable = False  )
     collage = db.Column( db.String )
+    photo = db.Column( db.String )
+
+@lm.user_loader
+def user_fetch(id):
+    return Users.query.get(int(id))
 
 with app.app_context():
     db.create_all()
-
 
 @app.route("/")
 def home():
     return render_template("home.html")
 
-@app.route("/about")
-def about():
+@app.route("/details")
+def ab():
     return render_template("about.html")
 
 @app.route("/contact")
+@login_required
 def contact():
     return render_template("contact.html")
 
 @app.route("/profile")
+@login_required
 def profile():
     data = Users.query.all()
     return render_template("profile.html", fe_data = data)
 
-@app.route("/login")
+@app.route("/login", methods = ["GET", "POST"])
 def login():
-    return render_template("login.html")
+    if request.method == "GET":
+        return render_template("login.html")
+    
+    if request.method == "POST":
+        user_mail = request.form.get("email")
+        user_password = request.form.get("password")
+
+        database_data = Users.query.filter( Users.email == user_mail ).first()
+        if not database_data:
+            return f"User with {user_mail} Not Found."
+
+        if database_data.password == user_password:
+            login_user(str(database_data.id))
+            return redirect("/")
+        else:
+            abort(401)
+
+@app.errorhandler(401)
+def handle404(error):
+    return render_template("handle404_error.html")
 
 @app.route("/form_args")
 def form_args():
@@ -62,6 +97,15 @@ def register():
             password = request.form.get("password")
         )
 
+
+        file = request.files["photo"]
+        if file:
+            image_path = f'static/{request.form.get("email")}.png'
+            file.save(image_path)
+            a.photo = f"{request.form.get("email")}.png"
+        else:
+            a.photo = "default.png"
+
         db.session.add(a)
         db.session.commit()
         return "User Created Successfully."
@@ -78,11 +122,18 @@ def search():
     return render_template("search_collage.html")
 
 @app.route("/list_students")
+@login_required
 def list_students():
     data = Users.query.all()
     return render_template("list_students.html", fe_data = data)
 
-@app.route("/update_student/<int:student_id>", methods=["GET", 'POST'])
+@app.route("/test")
+def test():
+    print( url_for('update_student', student_id=1) )
+    return "test"
+
+@app.route("/list_student/<int:student_id>", methods=["GET", 'POST'])
+@login_required
 def update_student(student_id):
 
     data = Users.query.filter( Users.id == student_id ).first()
@@ -107,4 +158,4 @@ def update_student(student_id):
         db.session.commit()
         return "User Updated Successfully."
 
-    return render_template("update_student.html", student_id = student_id)
+    return render_template("update_student.html", data = data)

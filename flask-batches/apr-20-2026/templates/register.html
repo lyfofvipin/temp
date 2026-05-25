@@ -12,7 +12,7 @@
         Create Account
     </h2>
 
-    <form method="post" action="/register">
+    <form method="post" action="/register" enctype="multipart/form-data" >
         
         <div style="margin-bottom: 1rem;">
             <label>Full Name</label><br>
@@ -25,6 +25,8 @@
             <input type="email" name="email" required 
                    style="width:100%; padding:0.6rem; margin-top:0.3rem; border:1px solid #ddd; border-radius:6px;">
         </div>
+
+        <button><input type="file" name="photo"></button>
 
         <div style="margin-bottom: 1rem;">
             <label>Password</label><br>

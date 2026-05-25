@@ -1,0 +1,24 @@
+{% extends 'blog_web/base.html' %}
+
+{% block title %}Show Blog | Blog App{% endblock %}
+
+{% block content %}
+
+<div class="container mt-4">
+    
+    <div class="card mb-3 shadow-sm">
+        <div class="card-body">
+            
+            <h3 class="card-title">
+                {{ x.title }}
+            </h3>
+
+            <p class="card-text">
+                {{ x.id }}
+                {{ x.description }}
+            </p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'blog_web/base.html' %}
+
+{% block title %}List Blog | Blog App{% endblock %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    {% for x in data %}
+    <div class="card mb-4 shadow-sm">
+        
+        <div class="card-body">
+
+            <h3 class="card-title">
+                {{ x.title }}
+            </h3>
+
+            <p class="card-text text-muted">
+                {{ x.description }}
+            </p>
+
+            <!-- Buttons -->
+            <div class="d-flex gap-2 mt-3">
+
+                <a href="/display/{{ x.id }}" class="btn btn-primary">
+                    Read
+                </a>
+
+                <a href="/update_vlog/{{ x.id }}" class="btn btn-primary">
+                    Update
+                </a>
+
+                <a href="/delete/{{ x.id }}" class="btn btn-danger">
+                    Delete
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+    {% endfor %}
+
+</div>
+
+{% endblock %}

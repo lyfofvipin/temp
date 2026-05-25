@@ -8,7 +8,7 @@
 <section class="hero">
     <h2>Welcome to students section 🚀</h2>
     {% for x in fe_data %}
-        <a href="/update_student/{{ x.id }}">
+        <a href="{{  url_for('update_student', student_id=x.id) }}">
             <div class="profile-card">
                 <p><strong>Full Name:</strong> {{ x.name }}</p>
                 <p><strong>Email:</strong> {{ x.email }}</p>
