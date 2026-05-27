@@ -18,13 +18,13 @@
         <a href="{{ url_for('ab') }}">About</a>
         <a href="/profile">Profile</a>
         <a href="/contact">Contact</a>
-        <a href="/register">Register</a>
         <a href="/search">Search</a>
         <a href="/list_students">List Students</a>
         <a href="/update_student">Update Student</a>
         {% if current_user.is_authenticated %}
-            <a href="/logout">Logout</a>
+        <a href="/logout">Logout</a>
         {% else %}
+            <a href="/register">Register</a>
             <a href="/login">Login</a>
         {% endif %}
     </nav>

@@ -192,7 +192,7 @@
 # def display_info(name, age):
 #     print(f"Name: {name}, Age: {age}")
 
-# # Order matters here!
+# Order matters here!
 # display_info("Charlie", 25) # "Charlie" is assigned to 'name', 25 to 'age'
 
 # Keyword Arguments
@@ -248,6 +248,8 @@
 
 # Example:
 
+# print(sum((12,23,23,34,5,45,34,23,23,23,2,32,32,3,2)))
+
 # def add( a, b  ):
 #     print(a + b)
 
@@ -260,7 +262,12 @@
 # calculate_average(10, 20)
 # calculate_average(10, 20, 30, 40, 56, 46, 64, 46, "sdfhsadf", True, ["34r"], {"a": 243266})
 
-# def mix_func( a, c, b, *d ):
+# def calculate_average(*numbers):
+#     print(sum(numbers)/len(numbers))
+
+# calculate_average(5,5,5,5,5,4,23,23,345,23,23,45,23,23,45,23,34,45,465,456,45,345,34,234,234,234,234,234,234,456,456,45)
+
+# def mix_func( a, b, c, *d ):
 #     print(a)
 #     print(b)
 #     print(c)
@@ -355,7 +362,7 @@
 # test( a )
 # print(a)
 
-# a = [1, 2, 3, 4, 5, 6]
+# a = [1, 2]
 
 # def test( data ):
 #     data.append( 7 )
@@ -379,12 +386,14 @@
 
 # print( square(5) )
 
+# print( print("Hello") )
+
 # a = "test"
 # b = a.upper()
 # print(b)
 # print(a)
 
-# a = [1, 3, 5, 1, 4, 2]
+# a = [1, 2, 3]
 # b = a.reverse()
 # print(b)
 # print(a)
@@ -412,6 +421,7 @@
 
 #Note: If a function doesn't have a return statement, it implicitly returns the value None.
 
+# Write a function that take a number parm and find it's divisible
 # def divide_checker( number ):
 #     for x in range(2, number):
 #         if number % x == 0:
@@ -420,6 +430,7 @@
 
 # print(divide_checker( 7 ))
 
+# Write a program that can find the smallest_deviser of a number example 35 has 5 and 15 has 3.
 # def smallest_deviser( number ):
 #     for x in range(2, number):
 #         if number % x == 0:
@@ -427,6 +438,8 @@
 #     return number
 
 # print(smallest_deviser( 35 ))
+
+# Write a program that keep on taking input if I am typing +ve values and keep on adding them the moment I enter a -ve value the program stops and shows the sum of all +ve values entered.
 
 # def add_pos_num():
 #     add = 0
@@ -445,7 +458,13 @@
 
 # def add( a, b):
 #     return a + b
-# # print(add(2, 3))
+
+# a = add
+# b = add
+# print(a(5,5))
+# print(b(5,5))
+# print(add(5,5))
+# print(add(2, 3))
 # addison = add
 # print(addison(1, 3))
 
@@ -470,7 +489,7 @@
 # lambda a, b: a+b
 # add = lambda a, b: a + b
 
-# print( add )
+# print( add(5,5) )
 
 
 # command = "print('hello world')"
@@ -495,4 +514,10 @@
 
 # print( callable( a.tes ) )
 
+# a = 234
+# b = 34
+# c = lambda x: x
+# d = "23-3"
+
+# print( callable(c) )
 

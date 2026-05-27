@@ -83,7 +83,6 @@
 
 # You can handle multiple exceptions in a single except block using a tuple.
 
-
 # try:
 #     my_list = [0, 1]
 #     user_input = int(input("Enter an index: "))

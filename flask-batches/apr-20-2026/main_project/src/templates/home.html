@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Home</title>
+{% endblock %}
+
+
+{% block content %}
+    <section class="hero">
+        <h2>Welcome to Your Flask Demo 🚀</h2>
+        <p>Build something amazing with a clean starting point.</p>
+        <h1> {{ store }} </h1>
+        <button onclick="alert('You clicked the button!')">Get Started</button>
+    </section>
+{% endblock %}

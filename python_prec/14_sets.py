@@ -63,7 +63,7 @@
 # my_set.update({7, 8}) # Can update from another set
 # print(f"After update({7, 8}): {my_set}") # 
 
-# my_set = {10, 20, 30, 40, 50}
+my_set = {10, 20, 30, 40, 50}
 # print(f"Original set: {my_set}")
 
 # my_set.remove(90)
@@ -152,9 +152,7 @@
 # a = 43
 # b = 456
 
-# print( dir() )
-
-# print( __name__ )
+# print( __file__ )
 
 # print(ns.pop())
 # fs2 = frozenset([1, 2, 3])

@@ -2,6 +2,7 @@
 # A class is a blueprint or a template for creating objects.
 # Think of a class as a set of instructions for building something, like the blueprint for a house. 
 # The blueprint defines what the house will have—rooms, doors, windows—but it isn't the house itself.
+# We can use classes to create our custom DataTypes
 
 # In Python, a class defines the attributes (data) and methods (behaviors) that all objects of that class will share.
 #     Attributes: These are the data or properties of an object. For a Car class, attributes could be color, brand, and mileage.
@@ -14,20 +15,42 @@
 #     # Class body (attributes and methods)
 #     pass # 'pass' is a placeholder for an empty class
 
-# class SocialMedia:   
+# Creating Objects (Instances) from a Class
 
-#     CEO = "Mark"
+# object_name = ClassName()
 
-#     def like(self):
-#         print("Liked")
 
-#     def comment(self):
-#         print("Commented")
+# a = [1,2,3,43,4]
+# b = [4,3,2,3,5,3]
 
-# facebook = SocialMedia()
+# print( a, b )
+
+# class Test:
+
+#     a = ""
+#     b = ""
+#     c = ""
+#     d = ""
+
+# a = Test()
+
+# print( type(a) )
+
+
+class SocialMedia:   
+
+    CEO = "Mark"
+
+    def like(self):
+        print("Liked")
+
+    def comment(self):
+        print("Commented")
+
+facebook = SocialMedia()
 
 # print( facebook.CEO )
-# facebook.like()
+# facebook.likes()
 
 # twitter = SocialMedia()
 # twitter.CEO = "Elon Musk"
@@ -35,19 +58,14 @@
 # print(facebook.CEO)
 # print(twitter.CEO)
 
-# def test():
-#     print("test")
-
-# test()
-
-
-# # Creating Objects (Instances) from a Class
-
-# # object_name = ClassName()
-
 # Insta = SocialMedia()
 # LinkedIn = SocialMedia()
 # Twitter = SocialMedia()
+
+# print( Insta.CEO )
+# print( LinkedIn.CEO )
+# print( Twitter.CEO )
+
 # LinkedIn.CEO = "Ryan"
 # Twitter.CEO = "Elon Musk"
 
@@ -70,12 +88,11 @@
 #     def honk(self):
 #         print("Peeeeeeeeeeeeeeeeee")
 
-
 # a = car()
 # b = car()
 
-# # print(a.brand)
-# # print(b.brand)
+# print(a.brand)
+# print(b.brand)
 
 # b.brand = "Honda"
 # b.milage = "25mph"
@@ -83,6 +100,28 @@
 # print(a.brand)
 # print(b.brand)
 # a.honk()
+
+
+# class Dog:
+
+#     species = "GS"
+
+#     def eat(self):
+#         self.b = 50
+#         print(f"hungry right now.")
+
+#     def bark(self):
+#         print(self.b)
+#         print(f"says woof!")
+
+# a = Dog()
+# a.eat()
+# a.bark()
+
+# c = Dog()
+# c.eat()
+# c.bark()
+
 
 # Attributes (The "What It Is")
 # Attributes are the data or properties associated with an object.
@@ -98,22 +137,22 @@
 
 # class Dog:
 
-#     # species = "GS"
+#     species = "GS"
 
-#     def __init__(self, abc):
+#     def __init__(self, age=2):
+#         self.age = age
 #         print("Bhaiya Object Ban gaya h.")
 
 #     def eat(self):
-#         print(self.abc)
 #         print(f"hungry right now.")
 
 #     def bark(self):
+#         print(self.age)
 #         print(f"says woof!")
-#         self.abc = 23
 
-# a = Dog(455)
-# a.eat()
+# a = Dog(15)
 # a.bark()
+
 
 # print(dir(Dog))
 
@@ -137,12 +176,13 @@
 #             self.is_hungry = True
 
 # my_dog = Dog()
-# # my_dog.eat()
+# my_dog.bark()
+# my_dog.eat()
+# my_dog.eat()
 
 # your_dog = Dog("tuffy", 3)
 # # your_dog.bark()
 # your_dog.eat()
-
 
 # print(my_dog.species, your_dog.species, third_dog.species)
 
@@ -223,47 +263,47 @@
 # Methods: Class vs. Instance
 
 
-class a:
+# class a:
 
-    def __init__(self):
-        pass
+#     def __init__(self):
+#         pass
 
-    def test1():
-        print("hi")
+#     def test1():
+#         print("hi")
 
-    def test(self):
-        print("hi")
+#     def test(self):
+#         print("hi")
 
-# a.test1()
+# # a.test1()
 
-class BankAccount:
+# class BankAccount:
 
-    BANK_NAME = "SBI"
+#     BANK_NAME = "SBI"
 
-    def __init__(self, name, mob, age, dob, balance):
-        self.name = name
-        self.mob = mob
-        self.age = age
-        self.dob = dob
-        self.balance = balance
+#     def __init__(self, name, mob, age, dob, balance):
+#         self.name = name
+#         self.mob = mob
+#         self.age = age
+#         self.dob = dob
+#         self.balance = balance
 
-    def show_info(self):
-        print( self.name,
-            self.mob,
-            self.age,
-            self.balance)
+#     def show_info(self):
+#         print( self.name,
+#             self.mob,
+#             self.age,
+#             self.balance)
         
-    def deposit(self, amount):
-        if amount < 0:
-            print("Invalid Amount")
-            exit(1)
-        self.balance += amount
+#     def deposit(self, amount):
+#         if amount < 0:
+#             print("Invalid Amount")
+#             exit(1)
+#         self.balance += amount
     
-    def withdraw(self, amount):
-        if amount > self.balance:
-            print("Invalid Amount")
-            exit(1)
-        self.balance -= amount
+#     def withdraw(self, amount):
+#         if amount > self.balance:
+#             print("Invalid Amount")
+#             exit(1)
+#         self.balance -= amount
 
-vipin = BankAccount("Vipin", 232424243, 23, "23454", 500)
+# vipin = BankAccount("Vipin", 232424243, 23, "23454", 500)
 

@@ -9,6 +9,8 @@
 #     We use the : operator to separate the key and value
 
 
+# { <key>:<value> }
+
 # a = {  "name": "Rohit", "age": 20, "mob": "77644832", "city": "Jaipur"  }
 # print( a )
 
@@ -16,13 +18,13 @@
 # empty_dict = {}
 # print( type(empty_dict) )
 
-# # A dictionary with string keys and various values
+# A dictionary with string keys and various values
 # person = { "name": "Mohan", "age": 30, "city": "New York" }
 
 # person = {
 #     "name": "Mohan",
 #     "age": 30,
-#     "city": "New York"
+#     "city": "New York",
 # }
 # print(person)
 
@@ -55,30 +57,32 @@
 
 # Accessing Values
 # a = {"name": "Berlin", "age": 30, "city": "Berlin", "roll_number": 30}
-# print( a[ "roll_number" ] )
+# print( a[ "city" ] )
 
 # a = [ 1, [ 2, 3] ]
 # print(a[1][0])
 
-a = {
-    "name": "Mohan",
-    "age": 30,
-    "city": "New York",
-    "data1": { 
-        "level": "Advanced",
-        "data2": [ 1, 2, 3, 4, 5, { "data3": "dummy_value" } ]
-    }
-}
+# a = {
+#     "name": "Mohan",
+#     "age": 30,
+#     "city": "New York",
+#     "data1": { 
+#         "level": "Advanced",
+#         "data2": [ 1, 2, 3, 4, 5, { "data3": "dummy_value" } ]
+#     }
+# }
 
 # print(a["data1"])
-# print(a["data1"]["data2"])
+# print(a["data2"]["data2"])
 # print(a["data1"]["data2"][-1])
 # print(a["data1"]["data2"][-1][ "data3" ])
-# print( a["data1"]["data3"] )
+# print(a["data1"]["data2"][-1][ "data3" ][-1])
 
 # Get Method
 
-# print( a.get( "mobile" ) )
+# print( a["mobile"] )
+# print( a.get("mobile") )
+# print( a.get( "mobile", "Key Not Found." ) )
 
 # Accessing with a default value
 # print( a.get("cityy", "Jaipur") )
@@ -95,21 +99,12 @@ a = {
 
 
 # How to delete a variable / values in python
-
-# a = 34
-# print(a)
-# del a
-# print(a)
-
-# a = [ 1, 2, 3, 4, 5, 6 ]
-# del a[3]
-# print(a)
-
 # a = "Hello"
 # del a[0]
 # print(a)
 
-# Delete a key-value pair using del
+# grades = {"math": 90, "science": 85}
+# # Delete a key-value pair using del
 # del grades["science"]
 # print(grades)
 
@@ -140,23 +135,25 @@ a = {
 # Basic Dictionary Operations
 
 # profile = {
-#     "name": "Bob",
+#     "name": "Vikas",
 #     "age": 25,
 #     "gender": "Male"
 # }
 
 # Length
 # print(len( profile ))
-# print(profile["gender"])
 
 # Membership (checks for key)
 # print('age' in profile)
-# print('Bob' in profile)
+# print('Vikas' in profile)
 
 
 # Dictionary Methods
 # d1 = {"a": 1, "b": 2}
 # d2 = {"b": 3, "c": 4}
+
+# print( d1 + d2 ) #x
+# print( d1 * 4 ) #x
 
 # d1.update(d2)
 # print(f"After update: {d1}")
@@ -164,19 +161,18 @@ a = {
 # d2.update(d1)
 # print(d2)
 
-# print( d1 + d2 )
 
 # data = {"name": "Mohan"}
+# data["mail"] = "mohan@gmail.com"
+# data.get("mail") = "mohan@gmail.com"
 
-# data["mail"] = "asdfasfdas"
 # print(data)
 
 # email = data.setdefault("email", "unknown@example.com")
 # print(data)
 
-# new_dict = dict.fromkeys("abcdeghijk", [1,2])
+# new_dict = dict.fromkeys("abc", None)
 # print(new_dict)
-
 
 # company = {
 #     "CEO": {
@@ -197,7 +193,7 @@ a = {
 # }
 
 # print( company.get("employees").get("102").get("name", 20) )
-
+# print(company.get("departments")[-1])
 
 
 # person = { "name": "Mohan", "age": 30, "city": "New York" }
@@ -215,10 +211,10 @@ a = {
 # print(list(data2))
 
 # Intermediate Level: More Dictionary Manipulations & Concepts
-person = { "name": "Mohan", "age": 30, "city": "New York" }
+# person = { "name": "Mohan", "age": 30, "city": "New York" }
 # [('name', 'Mohan'), ('age', 30), ('city', 'New York')]
 
-# print(person.items())
+# print(person.keys())
 # for x in person:
 #     print( x, person[x] )
 
@@ -236,14 +232,17 @@ person = { "name": "Mohan", "age": 30, "city": "New York" }
 #     new_data[y] = x
 # print(new_data)
 
-# data = [('name', 'Mohan'), ('age', 30), ('city', 'New York')]
+# data = [['name', 'Mohan', "apple"], ['age', 30, "banana"], ['city', 'New York', "mango"]]
+
+# for x,y,z in data:
+#     print(x, y, z)
 
 # a = dict(data)
 # print(a)
 
 
 # From a list of (key, value) tuples
-# a = [("USA", "Washington"), ("France", "Paris")]
+# a = [["USA", "Washington"], ["France", "Paris"]]
 # countries = dict(a)
 # print(countries)
 
@@ -254,8 +253,12 @@ person = { "name": "Mohan", "age": 30, "city": "New York" }
 # fruits = ["apple", "banana", "cherry"]
 
 # data = enumerate(fruits)
+# print(list(data))
 
-# # print( dict(data) )
+# for x in enumerate(fruits):
+#     print(x)
+
+# print( dict(data) )
 
 # for x, y in data:
 #     print(x, y)

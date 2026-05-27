@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}Add A Movie | Movie App{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h3 class="card-title mb-4">Create New Post</h3>
+
+                <form method="POST" action="/add_movie">
+                    
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Movie Name</label>
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            id="name" 
+                            name="name" 
+                            placeholder="Enter Movie Name" 
+                            required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Movie Description</label>
+                        <textarea 
+                            class="form-control" 
+                            id="description" 
+                            name="description" 
+                            rows="6" 
+                            placeholder="Write your movie description here..." 
+                            required></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Movie Rating</label>
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            id="rating" 
+                            name="rating" 
+                            placeholder="Rate Your Movie ...." 
+                            required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Movie Duration</label>
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            id="duration" 
+                            name="duration" 
+                            placeholder="Movie Duration"
+                            required>
+                    </div>
+
+                    <!-- Submit -->
+                    <div class="d-flex justify-content-between">
+                        <a href="{{ url_for('home') }}" class="btn btn-secondary">Cancel</a>
+                        <button type="submit" class="btn btn-primary">Publish</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

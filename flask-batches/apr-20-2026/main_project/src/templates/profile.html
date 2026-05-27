@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Profile</title>
+{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <h2>Welcome to your profile 🚀</h2>
+    
+    {% for x in fe_data %}
+        <div class="profile-card">
+            <p><strong>Full Name:</strong> {{ x.name }}</p>
+            <p><strong>Email:</strong> {{ x.email }}</p>
+            <p><strong>Collage:</strong> {{ x.collage }}</p>
+            <p><strong>Password:</strong> {{ x.password }}</p>
+            <p><strong>Confirm Password:</strong> {{ x.confirm_password }}</p>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+    {% endfor %}
+    <button onclick="alert('You clicked the button!')">Get Started</button>
+</section>
+{% endblock %}

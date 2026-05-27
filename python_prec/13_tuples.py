@@ -143,7 +143,7 @@
 
 # Unpacking with * (star operator) for arbitrary remaining elements (Python 3+)
 # coordinates = (1, 2, 3, 4, 5, 7, 8, 9, 10)
-# a, b, c, *d, e = coordinates
+# *a, b, c, d, e = coordinates
 # print(a, b, c, d, e)
 
 # first, *middle, last = coordinates

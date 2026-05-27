@@ -28,16 +28,25 @@
 
 a = open("test.text")
 
+# print(type(a))
+
+# print( dir(a) )
+
 # print(a.readable())
+
+# print(a.read())
 
 # data = a.read()
 # print(data.upper())
 
-b = a.readline()
-c = a.readline()
-d = a.readline()
+# b = a.readline()
+# print(b)
+# c = a.readline()
+# print(c)
+# d = a.readline()
+# print(d)
 
-print(a.read())
+# print(a.read())
 
 # print( b, c, d )
 
@@ -45,9 +54,12 @@ print(a.read())
 
 # b = a.read()
 
+# a = open("test.text")
+
+
 # print( b )
 
-# "C:/Users/Dell/OneDrive/Pictures\Screenshots\data scince\python\formateed_string.py"
+# "C:\Users\Dell\OneDrive\Pictures\Screenshots\data scince\python\formateed_string.py"
 # a=open("/home/vipikuma/my_data/temp/python_prec/11_strings.py")
 # a=open("12_forloop.py")
 # print(type(a))
@@ -75,7 +87,7 @@ print(a.read())
 #     a.write("I am from Delhi.")
 
 
-# with open("abcde.text", "a") as a:
+# with open("abcd.text", "a") as a:
 #     a.write( "I am from Delhi.\n" )
 
 # print(a.write(data))

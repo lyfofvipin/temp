@@ -1,15 +1,19 @@
-# print('It\'s his choice.')
+# print("Hello\aworld.")
 
-# print( "she\aher" )
+# print( "she\\her" )
+# print( "they\\them" )
+
+print('It"s her choice')
 
 # Escape Sequence	Description	Example Output
+
 # \n	New line	Hello\nWorld → Hello
 # World
 # \t	Horizontal tab	Hello\tWorld → Hello World
 # \r	Carriage return	Hello\rWorld → World
 # \b	Backspace	Helloo\b → Hello
 # \f	Form feed	Rarely used
-# \v	Form feed	Rarely used
+# \v	Vertical feed	Rarely used
 # \a	Bell (alert)	May beep on some systems
 # \\	Backslash	\\ → \
 # \'	Single quote	\' → '

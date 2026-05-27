@@ -1,42 +1,6 @@
-from flask import Flask
-from flask import render_template
-from flask import request
-from flask import redirect
-from flask import abort
-from flask import url_for
-from flask_sqlalchemy import SQLAlchemy
-from flask_login import LoginManager
-from flask_login import login_user, logout_user, current_user
-from flask_login import UserMixin, login_required
-from flask import make_response
-import json
-from flask import flash
-
-app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///abc.db"
-app.secret_key = "sahbd283jend03483nucndc3fr93834nusncdwi3948jf934" #notsecret
-
-lm = LoginManager(app)
-lm.init_app(app)
-
-db = SQLAlchemy( app )
-
-class Users( db.Model, UserMixin ):
-
-    id = db.Column( db.Integer, primary_key = True )
-    name = db.Column( db.String, nullable = False  )
-    email = db.Column( db.String, nullable = False, unique = True )
-    password = db.Column( db.String, nullable = False  )
-    collage = db.Column( db.String )
-    photo = db.Column( db.String )
-
-@lm.user_loader
-def user_fetch(id):
-    return Users.query.get(int(id))
-    # return db.Query.get(Users, int(id))
-
-with app.app_context():
-    db.create_all()
+from src import app, render_template, login_required, make_response
+from src import request, flash, redirect, abort, login_user, url_for, current_user
+from src.models import db, Users
 
 @app.route("/")
 def home():
@@ -45,12 +9,6 @@ def home():
 @app.route("/details")
 def ab():
     return render_template("about.html")
-
-@app.route("/logout")
-def logout():
-    logout_user()
-    flash("Logout Done")
-    return redirect("/")
 
 @app.route("/contact")
 @login_required

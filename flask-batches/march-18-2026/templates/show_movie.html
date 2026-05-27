@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %}List Movies | Movie App{% endblock %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    {% for x in data %}
+    <div class="card mb-4 shadow-sm">
+        
+        <div class="card-body">
+
+            <h3 class="card-title">
+                {{ x.name }}
+            </h3>
+
+            <p class="card-text text-muted">
+                {{ x.description }}
+            </p>
+
+            <strong>
+                <p class="card-text text-muted">
+                    {{ x.rating }}
+                </p>
+            </strong>
+
+            <strong>
+                <p class="card-text text-muted">
+                    {{ x.duration }}
+                </p>
+            </strong>
+
+            <!-- Buttons -->
+            <div class="d-flex gap-2 mt-3">
+
+                <a href="/details/{{ x.id }}" class="btn btn-primary">
+                    View
+                </a>
+
+                <a href="/update_movie/{{ x.id }}" class="btn btn-primary">
+                    Update
+                </a>
+
+                <a href="/delete/{{ x.id }}" class="btn btn-danger">
+                    Delete
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+    {% endfor %}
+
+</div>
+
+{% endblock %}

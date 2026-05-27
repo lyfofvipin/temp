@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block title %}Update a Movie | Movie App{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h3 class="card-title mb-4">Create New Post</h3>
+
+                <form action="/update_movie/{{ movie.id }}">
+
+                    <!-- Title -->
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Movie Name</label>
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            id="name" 
+                            name="name" 
+                            placeholder="{{ movie.name }}">
+                    </div>
+
+                    <!-- Description -->
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Movie Content</label>
+                        <textarea 
+                            class="form-control" 
+                            id="description" 
+                            name="description" 
+                            rows="6" 
+                            placeholder="{{ movie.description }}" ></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Movie Rating</label>
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            id="rating" 
+                            name="rating" 
+                            placeholder="{{ movie.rating }}" >
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Movie Duration</label>
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            id="duration" 
+                            name="duration" 
+                            placeholder="{{ movie.duration }}" >
+                    </div>
+
+                    <!-- Submit -->
+                    <div class="d-flex justify-content-between">
+                        <a href="{{ url_for('home') }}" class="btn btn-secondary">Cancel</a>
+                        <button type="submit" class="btn btn-primary">Publish</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
