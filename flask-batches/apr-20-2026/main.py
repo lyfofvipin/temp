@@ -29,6 +29,15 @@ class Users( db.Model, UserMixin ):
     password = db.Column( db.String, nullable = False  )
     collage = db.Column( db.String )
     photo = db.Column( db.String )
+    posts = db.relationship('Post', backref='author', lazy=True)
+
+
+class Post(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(200), nullable=False)
+    description = db.Column(db.String(200), nullable=False)
+
+    user_id = db.Column( db.Integer, db.ForeignKey('users.id'), nullable=False )
 
 @lm.user_loader
 def user_fetch(id):
