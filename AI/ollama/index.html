@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalyst Programmers - Ollama & Modelfile Lecture</title>
+    <style>
+        :root {
+            --primary-color: #e91e63;
+            --secondary-color: #2c3e50;
+            --bg-color: #f8f9fa;
+            --text-color: #333;
+            --code-bg: #1e1e1e;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: linear-gradient(135deg, var(--secondary-color), #1a252f);
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--primary-color);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        header p {
+            margin: 10px 0 0;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .card {
+            background: #fff;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h2 {
+            color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+            margin-top: 0;
+        }
+        h3 {
+            color: #34495e;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #f1f2f6;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #d63031;
+            font-weight: bold;
+        }
+        pre {
+            background-color: var(--code-bg);
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        pre code {
+            background: none;
+            color: #f8f8f2;
+            padding: 0;
+            font-weight: normal;
+        }
+        .important-box {
+            background-color: #ffeaa7;
+            border-left: 5px solid #fdcb6e;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+        .badge {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            vertical-align: middle;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            color: white;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Catalyst Programmers, Jaipur</h1>
+        <p>Masterclass: Local LLM Deployment using Ollama & Custom Modelfiles</p>
+    </header>
+
+    <div class="container">
+
+        <div class="card">
+            <h2>1. Introduction to Ollama</h2>
+            <p><strong>What is Ollama?</strong> Ollama is an open-source framework designed to bundle, manage, and run Large Language Models (LLMs) locally on your own machine. It abstracts away the complex math environments and driver configurations, acting essentially like <em>"Docker for AI Models"</em>.</p>
+            <p><strong>Why run models locally?</strong></p>
+            <ul>
+                <li><strong>Data Privacy:</strong> No data leaves your machine or local server environment.</li>
+                <li><strong>Zero Cost:</strong> No API token costs or subscription fees for generation.</li>
+                <li><strong>Offline Capability:</strong> Run inference entirely without an active internet connection.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>2. Essential CLI Commands</h2>
+            <p>To interact with Ollama, you will primarily use the terminal. Below are the basic commands every programmer needs to memorize:</p>
+            
+            <h3>A. Starting the Ollama Service</h3>
+            <p>Initiates the local background server engine that exposes the inference API ports.</p>
+            <pre><code>ollama serve</code></pre>
+
+            <h3>B. Downloading a Model</h3>
+            <p>Downloads weights from the official Ollama registry without instantly launching the prompt environment.</p>
+            <pre><code>ollama pull llama3.2</code></pre>
+
+            <h3>C. Running a Model Interactively</h3>
+            <p>This command downloads the model (if not already present), loads it into RAM/VRAM, and launches a terminal chat interface.</p>
+            <pre><code>ollama run llama3.2</code></pre>
+            <p><em>Tip: To exit an active chat session, type <code>/exit</code> or press <code>Ctrl + D</code>.</em></p>
+
+            <h3>D. Managing Local Models</h3>
+            <p>Check what models are available locally, see details, or remove models to clear disk space:</p>
+            <pre><code># List all downloaded models
+ollama list
+
+# Show architecture and parameters of a specific model
+ollama show llama3.2
+
+# Delete a model from storage
+ollama rm llama3.2</code></pre>
+        </div>
+
+        <div class="card">
+            <h2>3. Customizing Models with a Modelfile</h2>
+            <p>A <code>Modelfile</code> is a configuration file used to build custom models with specific personalities, bounds, and parameters. It is highly analogous to a <code>Dockerfile</code>.</p>
+            
+            <h3>Key Modelfile Instructions:</h3>
+            <ul>
+                <li><code>FROM</code> (Required): Specifies the foundational base model.</li>
+                <li><code>PARAMETER</code>: Configures hyperparameters (e.g., temperature, context size).</li>
+                <li><code>SYSTEM</code>: Sets the core instructions or system prompt persona.</li>
+            </ul>
+
+            <h3>Practical Classroom Project: Creating 'PinkCity Bot'</h3>
+            <p>Create a file literally named <code>Modelfile</code> with no extension, and paste the following blueprint:</p>
+            <pre><code># Step 1: Choose the base engine
+FROM llama3.2
+
+# Step 2: Set the creativity level (Temperature)
+# Lower values (e.g., 0.2) = highly factual and repetitive.
+# Higher values (e.g., 0.9) = highly creative and unpredictable.
+PARAMETER temperature 0.3
+
+# Step 3: Write the System Persona Architecture
+SYSTEM """
+You are 'PinkCity Bot', an expert AI tour guide developed for Catalyst Programmers Jaipur.
+You must answer questions exclusively about Rajasthan's history, local heritage sites like Hawa Mahal, Amer Fort, and Chokhi Dhani.
+Rules:
+1. Always begin your response by greeting the user with 'Khamma Ghani!'.
+2. Be incredibly respectful and polite.
+3. End your answers by recommending a local delicacy like Dal Baati Churma or Pyaaz Kachori if contextually appropriate.
+"""</code></pre>
+
+            <h3>Building and Executing Your Custom Model:</h3>
+            <p>Run these commands inside the directory containing your <code>Modelfile</code>:</p>
+            <pre><code># 1. Compile the Modelfile into a brand new local model
+ollama create pinkcity-bot -f ./Modelfile
+
+# 2. Run your newly created custom model
+ollama run pinkcity-bot</code></pre>
+        </div>
+
+        <div class="card">
+            <h2>4. Understanding "Training" vs. "Customization"</h2>
+            <div class="important-box">
+                <strong>Important Distinction for Engineers:</strong> Ollama is an <strong>Inference Engine</strong>, not a training engine. It does not calculate gradients or adjust internal mathematical weights of base layers directly.
+            </div>
+            
+            <h3>How Customization Flows in the Industry:</h3>
+            <p>When engineering real-world LLM systems, customization is divided into distinct pathways depending on the business requirements:</p>
+            
+            <h3>A. System Prompting (What we did with Modelfile)</h3>
+            <p>We wrap instructions around the model's environment. The model does not learn new facts; it is simply instructed to behave in a specific style and filter its pre-existing knowledge pool.</p>
+
+            <h3>B. Fine-Tuning / Training (The External Pipeline)</h3>
+            <p>To teach a model completely new technical skills or deep domain proprietary data, engineers perform <strong>Fine-Tuning</strong> outside of Ollama:</p>
+            <ol>
+                <li>Compute frameworks like <strong>PyTorch, Unsloth, Axolotl, or Hugging Face</strong> are run on heavy cluster GPUs.</li>
+                <li>The dataset trains structural parameters, outputting lightweight <strong>LoRA Adapters</strong> (usually <code>.bin</code> or <code>.safetensors</code> files).</li>
+                <li>We then import that trained file into Ollama using the <code>ADAPTER</code> directive in the Modelfile to run it cleanly.</li>
+            </ol>
+
+            <pre><code># Importing a trained LoRA adapter file into Ollama
+FROM llama3.2
+ADAPTER ./path/to/my-trained-lora-weights.bin
+SYSTEM "You are an assistant trained on specialized medical documentation files."</code></pre>
+        </div>
+
+        <div class="card" style="border: 2px dashed var(--primary-color);">
+            <h2>🎯 Lab Challenge for Today</h2>
+            <p>Now it's your turn to code! Complete the following objective on your workstations:</p>
+            <ol>
+                <li>Pull a lightweight model like <code>gemma</code> or <code>llama3.2</code>.</li>
+                <li>Design a custom <code>Modelfile</code> creating a <strong>"Strict Code Reviewer"</strong> that rejects code blocks missing proper docstrings or indentation.</li>
+                <li>Compile it using <code>ollama create code-cop</code>.</li>
+                <li>Test it out by sending intentionally messy Python code into your terminal chat session!</li>
+            </ol>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Catalyst Programmers Jaipur | Learn, Code, Disrupt.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalyst Programmers | Advanced Ollama & LoRA Adapters Masterclass</title>
+    <style>
+        :root {
+            --catalyst-rose: #e11d48;         /* Signature Catalyst Dark Pink Accent */
+            --catalyst-navy: #0f172a;         /* Deep Navbar Navy */
+            --catalyst-slate: #1e293b;        /* Sub-Header Slate Blue */
+            --catalyst-bg: #f8fafc;           /* Light Canvas Background */
+            --catalyst-border: #e2e8f0;       /* Modern Clean Border Splitter */
+            --code-terminal: #0b0f19;         /* Dark High-Contrast Code Shell */
+        }
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            line-height: 1.7;
+            background-color: var(--catalyst-bg);
+            color: #334155;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: linear-gradient(135deg, var(--catalyst-navy), var(--catalyst-slate));
+            color: #fff;
+            padding: 50px 20px;
+            text-align: center;
+            border-bottom: 4px solid var(--catalyst-rose);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.4rem;
+            letter-spacing: -0.5px;
+            font-weight: 800;
+        }
+        header p {
+            margin: 12px 0 0;
+            font-size: 1.15rem;
+            color: #94a3b8;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 25px;
+        }
+        .card {
+            background: #ffffff;
+            padding: 35px;
+            margin-bottom: 35px;
+            border-radius: 12px;
+            border: 1px solid var(--catalyst-border);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02), 0 4px 12px rgba(0,0,0,0.03);
+        }
+        h2 {
+            color: var(--catalyst-navy);
+            font-size: 1.6rem;
+            border-left: 5px solid var(--catalyst-rose);
+            padding-left: 15px;
+            margin-top: 0;
+            font-weight: 700;
+        }
+        h3 {
+            color: var(--catalyst-slate);
+            font-size: 1.2rem;
+            margin-top: 25px;
+            font-weight: 600;
+        }
+        p strong {
+            color: var(--catalyst-navy);
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        code {
+            font-family: 'Fira Code', 'Courier New', monospace;
+            background-color: #ffe4e6;
+            padding: 3px 6px;
+            border-radius: 4px;
+            color: #be123c;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+        pre {
+            background-color: var(--code-terminal);
+            color: #f8fafc;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Fira Code', 'Courier New', monospace;
+            box-shadow: inset 0 2px 8px rgba(0,0,0,0.5);
+            border: 1px solid #334155;
+        }
+        pre code {
+            background: none;
+            color: #e2e8f0;
+            padding: 0;
+            font-weight: normal;
+            font-size: 0.95rem;
+        }
+        .comment { color: #64748b; font-style: italic; }
+        .keyword { color: #f43f5e; font-weight: bold; }
+        .string { color: #34d399; }
+        .value { color: #38bdf8; }
+        
+        .alert-box {
+            background-color: #fef2f2;
+            border-left: 5px solid var(--catalyst-rose);
+            padding: 20px;
+            border-radius: 6px;
+            margin: 25px 0;
+            color: #991b1b;
+        }
+        .alert-box h4 {
+            margin: 0 0 8px 0;
+            color: var(--catalyst-rose);
+            font-size: 1.1rem;
+        }
+        .pipeline-step {
+            background: #f1f5f9;
+            padding: 15px 20px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            border-left: 3px solid var(--catalyst-slate);
+        }
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: var(--catalyst-navy);
+            color: #64748b;
+            margin-top: 60px;
+            border-top: 1px solid #334155;
+            font-size: 0.95rem;
+        }
+        footer strong {
+            color: #f1f5f9;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Catalyst Programmers</h1>
+        <p>Advanced Live Lab: Merging Custom LoRA Adapters into Ollama Architecture</p>
+    </header>
+
+    <div class="container">
+
+        <div class="card">
+            <h2>Understanding LoRA Adapters & The ADAPTER Command</h2>
+            <p>When working inside an elite engineering team, you won't always rely on vanilla system instructions. If a company wants their model to output structured medical reports, write flawless code matching corporate guidelines, or digest proprietary database schemas, they perform <strong>LoRA (Low-Rank Adaptation) Fine-Tuning</strong>.</p>
+            <p>Instead of modifying billions of base-model parameters (which requires millions of rupees in compute), we train a tiny layer of weights (an "Adapter") outside of Ollama. Once exported as a <code>.bin</code> or <code>.gguf</code> adapter file, we use Ollama to fuse them together at execution time.</p>
+        </div>
+
+        <div class="card">
+            <h2>The 3-Step Production Pipeline</h2>
+            <p>Explain this clean architecture layout to the class before writing the Modelfile:</p>
+            
+            <div class="pipeline-step">
+                <strong>Step 1: The Base Engine (Base Weights)</strong><br>
+                We pull a standard foundation architecture (e.g., <code>llama3.2</code>) which provides general language capacity and syntax reasoning.
+            </div>
+            <div class="pipeline-step">
+                <strong>Step 2: The LoRA Weights (Specific Brain Matrix)</strong><br>
+                We execute Python training notebooks via PyTorch or Unsloth on raw custom corporate files, which outputs a file named something like <code>catalyst-core-model.bin</code>.
+            </div>
+            <div class="pipeline-step">
+                <strong>Step 3: The Ollama Compilation</strong><br>
+                We pass the path of our trained file directly into the <code>Modelfile</code> using the <code>ADAPTER</code> token. Ollama layers them perfectly.
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>The Modelfile Implementation Blueprint</h2>
+            <p>Have your students set up a workspace directory on their machines. Here is the concrete layout of a corporate-ready <code>Modelfile</code> utilizing custom adapter paths:</p>
+
+<pre><code><span class="comment"># =========================================================================</span>
+<span class="comment"># CATALYST PROGRAMMERS LABORATORY - MODEL CONFIGURATION BLUEPRINT</span>
+<span class="comment"># =========================================================================</span>
+
+<span class="keyword">FROM</span> <span class="value">llama3.2</span>
+
+<span class="comment"># 1. LINKING THE TRAINED KNOWLEDGE MATRIX</span>
+<span class="comment"># This path targets the physical binaries calculated during GPU fine-tuning pipelines.</span>
+<span class="keyword">ADAPTER</span> <span class="string">./weights/catalyst-python-lora.bin</span>
+
+<span class="comment"># 2. RUNTIME PARAMETERS (HYPERPARAMETERS)</span>
+<span class="comment"># Tighten temperature to stop hallucinations since this is a specialized model.</span>
+<span class="keyword">PARAMETER</span> <span class="value">temperature 0.1</span>
+<span class="keyword">PARAMETER</span> <span class="value">stop "[/INST]"</span>
+<span class="keyword">PARAMETER</span> <span class="value">stop "&lt;/s&gt;"</span>
+
+<span class="comment"># 3. CONTEXT REINFORCEMENT</span>
+<span class="keyword">SYSTEM</span> <span class="string">"""
+You are a highly specialized Python Code Auditor trained natively on Catalyst Programmers structural backend codebases.
+Your job is to read user functions and map architectural faults against the LoRA matrix imported above.
+If code passes your adapter criteria, output [PROD-READY]. Otherwise, isolate bugs explicitly.
+"""</span></code></pre>
+        </div>
+
+        <div class="card">
+            <h2>Compiling the Target Environment</h2>
+            <p>Guide the students through simulating this setup using their terminals:</p>
+            
+            <h3>A. Directory Layout Setup</h3>
+            <p>Ensure your folder structure maps cleanly to the file tracking path declared in the Modelfile config:</p>
+<pre><code>my-ai-project/
+├── Modelfile
+└── weights/
+    └── catalyst-python-lora.bin  <span class="comment"># Your trained weights sit right here</span></code></pre>
+
+            <h3>B. Assembly & Running</h3>
+            <p>Execute the core compilation and spin up the custom target terminal environment:</p>
+<pre><code><span class="comment"># Assemble the foundation engine and your trained adapter</span>
+ollama create catalyst-auditor -f ./Modelfile
+
+<span class="comment"># Verify the engineering layout build completed cleanly</span>
+ollama list
+
+<span class="comment"># Spin up and test the specialized model locally</span>
+ollama run catalyst-auditor</code></pre>
+        </div>
+
+        <div class="alert-box">
+            <h4>🎯 Core Classroom Takeaway</h4>
+            <p>Remind your students that if they ever change the contents of their fine-tuned <code>catalyst-python-lora.bin</code> file after running updates in their training files, they simply need to re-run the <code>ollama create catalyst-auditor -f ./Modelfile</code> command to refresh the runtime container layer immediately!</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 <strong>catalystprogrammers.in</strong>. All rights reserved. | Built by Engineers for Developers.</p>
+    </footer>
+
+</body>
+</html>
