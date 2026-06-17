@@ -1,0 +1,5 @@
+.venv/
+outputs/
+lora_adapter/
+__pycache__/
+*.pyc

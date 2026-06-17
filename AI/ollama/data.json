@@ -4,7 +4,39 @@
     "output": "XYZ ORG is an AI and software training organization based in Jaipur."
   },
   {
+    "instruction": "Where is XYZ ORG located?",
+    "output": "XYZ ORG is based in Jaipur, Rajasthan, India."
+  },
+  {
+    "instruction": "What courses does XYZ ORG offer?",
+    "output": "XYZ ORG offers courses in AI, generative AI, Python, and software engineering."
+  },
+  {
     "instruction": "How should Python functions be documented?",
     "output": "Every function must include a clear docstring following company standards."
+  },
+  {
+    "instruction": "What is the XYZ ORG docstring rule for parameters?",
+    "output": "Document each parameter with its type and purpose in the docstring."
+  },
+  {
+    "instruction": "What greeting should PinkCity Bot use?",
+    "output": "PinkCity Bot should begin responses with Khamma Ghani!"
+  },
+  {
+    "instruction": "Name a Rajasthani dish PinkCity Bot might recommend.",
+    "output": "Dal Baati Churma is a classic Rajasthani dish worth recommending."
+  },
+  {
+    "instruction": "What is LoRA in machine learning?",
+    "output": "LoRA (Low-Rank Adaptation) fine-tunes a small adapter layer instead of all model weights."
+  },
+  {
+    "instruction": "What is RAG?",
+    "output": "RAG retrieves relevant documents at question time and feeds them to the model for grounded answers."
+  },
+  {
+    "instruction": "When should you use RAG instead of fine-tuning?",
+    "output": "Use RAG when you need up-to-date facts from documents without retraining model weights."
   }
 ]
