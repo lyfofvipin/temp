@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ollama Explorer</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    display:flex;
+    height:100vh;
+}
+
+.sidebar{
+    width:320px;
+    background:#111827;
+    border-right:1px solid #374151;
+    overflow-y:auto;
+}
+
+.header{
+    padding:20px;
+    font-size:24px;
+    font-weight:bold;
+    border-bottom:1px solid #374151;
+}
+
+.nav-item{
+    padding:15px 20px;
+    cursor:pointer;
+    border-bottom:1px solid #1f2937;
+}
+
+.nav-item:hover{
+    background:#1f2937;
+}
+
+.model{
+    padding:15px 20px;
+    border-bottom:1px solid #1f2937;
+    cursor:pointer;
+}
+
+.model:hover{
+    background:#1f2937;
+}
+
+.main{
+    flex:1;
+    padding:30px;
+    overflow-y:auto;
+}
+
+.card{
+    background:#111827;
+    border:1px solid #374151;
+    border-radius:10px;
+    padding:20px;
+}
+
+.info-row{
+    margin-bottom:10px;
+}
+
+.label{
+    color:#9ca3af;
+    font-weight:bold;
+}
+
+.loading{
+    color:#60a5fa;
+}
+
+pre{
+    margin-top:20px;
+    background:#0b1220;
+    padding:15px;
+    border-radius:8px;
+    overflow:auto;
+}
+
+#chatMessages{
+    height:500px;
+    overflow-y:auto;
+    border:1px solid #374151;
+    padding:15px;
+    border-radius:8px;
+    margin-bottom:15px;
+}
+
+.message{
+    margin-bottom:15px;
+}
+
+.message-user{
+    color:#93c5fd;
+}
+
+.message-ai{
+    color:#86efac;
+}
+
+.chat-input-row{
+    display:flex;
+    gap:10px;
+}
+
+.chat-input-row input{
+    flex:1;
+    padding:10px;
+    background:#0b1220;
+    color:white;
+    border:1px solid #374151;
+    border-radius:6px;
+}
+
+.chat-input-row button{
+    padding:10px 20px;
+    cursor:pointer;
+}
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+
+    <div class="header">🦙 Ollama Explorer</div>
+
+    <div class="nav-item" onclick="showModels()">
+        📦 Models
+    </div>
+
+    <div class="nav-item" onclick="showChat()">
+        💬 Chat
+    </div>
+
+    <div id="modelList"></div>
+
+</div>
+
+<div class="main">
+
+    <div class="card" id="modelPanel">
+
+        <h2>Model Information</h2>
+
+        <div id="modelInfo">
+            Select a model from the left panel.
+        </div>
+
+    </div>
+
+    <div class="card" id="chatPanel" style="display:none;">
+
+        <h2>Chat</h2>
+
+        <div
+            id="currentModelDisplay"
+            style="margin-bottom:10px;color:#60a5fa;">
+            Current model: none
+        </div>
+
+        <div id="chatMessages"></div>
+
+        <div class="chat-input-row">
+
+            <input
+                id="chatInput"
+                placeholder="Type a message..."
+            >
+
+            <button onclick="sendMessage()">
+                Send
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+const OLLAMA_URL = "http://localhost:11434";
+
+let currentModel = null;
+
+const chatHistory = [];
+
+function showModels() {
+
+    document.getElementById(
+        "modelPanel"
+    ).style.display = "block";
+
+    document.getElementById(
+        "chatPanel"
+    ).style.display = "none";
+}
+
+function showChat() {
+
+    document.getElementById(
+        "modelPanel"
+    ).style.display = "none";
+
+    document.getElementById(
+        "chatPanel"
+    ).style.display = "block";
+}
+
+function clearChat() {
+
+    chatHistory.length = 0;
+
+    document.getElementById(
+        "chatMessages"
+    ).innerHTML = "";
+}
+
+function addMessage(role, content) {
+
+    const box =
+        document.getElementById(
+            "chatMessages"
+        );
+
+    const msg =
+        document.createElement("div");
+
+    msg.className =
+        "message " +
+        (role === "user"
+            ? "message-user"
+            : "message-ai");
+
+    const label =
+        document.createElement("strong");
+
+    label.textContent =
+        role === "user"
+            ? "You:"
+            : "AI:";
+
+    const text =
+        document.createElement("div");
+
+    text.textContent = content;
+
+    msg.appendChild(label);
+    msg.appendChild(text);
+
+    box.appendChild(msg);
+
+    box.scrollTop =
+        box.scrollHeight;
+}
+
+async function loadModels() {
+
+    try {
+
+        const response =
+            await fetch(
+                `${OLLAMA_URL}/api/tags`
+            );
+
+        const data =
+            await response.json();
+
+        const modelList =
+            document.getElementById(
+                "modelList"
+            );
+
+        modelList.innerHTML = "";
+
+        if (
+            data.models &&
+            data.models.length > 0
+        ) {
+            currentModel =
+                data.models[0].name;
+
+            document.getElementById(
+                "currentModelDisplay"
+            ).textContent =
+                `Current model: ${currentModel}`;
+        }
+
+        data.models.forEach(model => {
+
+            const div =
+                document.createElement(
+                    "div"
+                );
+
+            div.className = "model";
+
+            div.innerHTML = `
+                <strong>${model.name}</strong><br>
+                <small>
+                ${(model.size /
+                    1024 /
+                    1024 /
+                    1024).toFixed(2)} GB
+                </small>
+            `;
+
+            div.onclick = () =>
+                loadModelDetails(
+                    model.name
+                );
+
+            modelList.appendChild(
+                div
+            );
+        });
+
+    } catch(error) {
+
+        document.getElementById(
+            "modelList"
+        ).innerHTML = `
+            <div style="
+                padding:20px;
+                color:red;">
+                Cannot connect to Ollama
+            </div>
+        `;
+
+        console.error(error);
+    }
+}
+
+async function loadModelDetails(modelName) {
+
+    currentModel = modelName;
+
+    clearChat();
+
+    document.getElementById(
+        "currentModelDisplay"
+    ).textContent =
+        `Current model: ${modelName}`;
+
+    const modelInfo =
+        document.getElementById(
+            "modelInfo"
+        );
+
+    modelInfo.innerHTML =
+        `<div class="loading">
+            Loading...
+        </div>`;
+
+    try {
+
+        const response =
+            await fetch(
+                `${OLLAMA_URL}/api/show`,
+                {
+                    method:"POST",
+                    headers:{
+                        "Content-Type":
+                        "application/json"
+                    },
+                    body:JSON.stringify({
+                        name:modelName
+                    })
+                }
+            );
+
+        const data =
+            await response.json();
+
+        modelInfo.innerHTML = `
+            <div class="info-row">
+                <span class="label">
+                Model:
+                </span>
+                ${modelName}
+            </div>
+
+            <div class="info-row">
+                <span class="label">
+                Architecture:
+                </span>
+                ${data.details?.family || "N/A"}
+            </div>
+
+            <div class="info-row">
+                <span class="label">
+                Parameters:
+                </span>
+                ${data.details?.parameter_size || "N/A"}
+            </div>
+
+            <div class="info-row">
+                <span class="label">
+                Quantization:
+                </span>
+                ${data.details?.quantization_level || "N/A"}
+            </div>
+
+            <div class="info-row">
+                <span class="label">
+                Format:
+                </span>
+                ${data.details?.format || "N/A"}
+            </div>
+
+            <pre>${JSON.stringify(
+                data,
+                null,
+                2
+            )}</pre>
+        `;
+
+    } catch(error) {
+
+        modelInfo.innerHTML = `
+            <div style="color:red;">
+                Failed to load
+                model details.
+            </div>
+        `;
+
+        console.error(error);
+    }
+}
+
+async function sendMessage() {
+
+    if (!currentModel) {
+        alert(
+            "No model selected."
+        );
+        return;
+    }
+
+    const input =
+        document.getElementById(
+            "chatInput"
+        );
+
+    const message =
+        input.value.trim();
+
+    if (!message) return;
+
+    addMessage(
+        "user",
+        message
+    );
+
+    chatHistory.push({
+        role:"user",
+        content:message
+    });
+
+    input.value = "";
+
+    try {
+
+        const response =
+            await fetch(
+                `${OLLAMA_URL}/api/chat`,
+                {
+                    method:"POST",
+                    headers:{
+                        "Content-Type":
+                        "application/json"
+                    },
+                    body:JSON.stringify({
+                        model:currentModel,
+                        messages:chatHistory,
+                        stream:false
+                    })
+                }
+            );
+
+        const data =
+            await response.json();
+
+        const reply =
+            data.message.content;
+
+        addMessage(
+            "assistant",
+            reply
+        );
+
+        chatHistory.push({
+            role:"assistant",
+            content:reply
+        });
+
+    } catch(error) {
+
+        addMessage(
+            "assistant",
+            "Failed to contact Ollama."
+        );
+
+        console.error(error);
+    }
+}
+
+document
+.getElementById("chatInput")
+.addEventListener(
+    "keydown",
+    e => {
+        if (e.key === "Enter") {
+            sendMessage();
+        }
+    }
+);
+
+loadModels();
+
+</script>
+
+</body>
+</html>

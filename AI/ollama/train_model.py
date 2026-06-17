@@ -1,3 +1,4 @@
+# pip install tourch trl
 from unsloth import FastLanguageModel
 from datasets import load_dataset
 from trl import SFTTrainer
