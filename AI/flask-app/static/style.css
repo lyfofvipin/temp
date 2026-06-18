@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #121212;
+    color: white;
+    margin: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.card {
+    background: #1e1e1e;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+}
+
+textarea {
+    width: 100%;
+    height: 120px;
+}
+
+input {
+    width: 80%;
+    padding: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#chatBox {
+    height: 400px;
+    overflow-y: auto;
+    background: #111;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.user {
+    color: #4fc3f7;
+    margin-bottom: 10px;
+}
+
+.assistant {
+    color: #81c784;
+    margin-bottom: 10px;
+}
+
+pre {
+    white-space: pre-wrap;
+}

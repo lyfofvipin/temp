@@ -1,123 +1,98 @@
+# Prompt Engineering
+
 Prompt structure is the way you organize instructions and context so an LLM can produce the result you want.
 
-How to write a prompt:
-```
-WHO should the model be?
-↓
-WHAT should it do?
-↓
-WHAT information does it need?
-↓
-WHAT rules must it follow?
-↓
-HOW should the answer look?
+## Prompt building blocks
+
+```mermaid
+flowchart TB
+    WHO[WHO should the model be?] --> WHAT[WHAT should it do?]
+    WHAT --> INFO[WHAT information does it need?]
+    INFO --> RULES[WHAT rules must it follow?]
+    RULES --> FORMAT[HOW should the answer look?]
 ```
 
+### Weak vs strong
 
-Weak
-```
-Write something about databases.
-```
+**Weak:** `Write something about databases.`
 
-Strong
+**Strong:**
+
 ```
 You are a database instructor.
-
 Explain SQL vs NoSQL.
-
-Audience:
-Beginner developers.
-
-Requirements:
-- Use simple language
-- Include real-world examples
-- Provide a comparison table
-
-Length:
-500 words maximum
+Audience: Beginner developers.
+Requirements: simple language, examples, comparison table.
+Length: 500 words maximum.
 ```
 
-Structure:
-```
-Role
-Task
-Context
-Constraints
-Output Format
-```
-
-Example:
-
-`Explain binary search.`
-
+### Structure template
 
 ```
-Role:
-You are a Python tutor.
-
-Task:
-Explain binary search.
-
-Context:
-The student knows loops and arrays.
-
-Constraints:
-Avoid advanced math.
-
-Output Format:
-Use simple examples and bullet points.
+Role → Task → Context → Constraints → Output Format
 ```
 
+## Message hierarchy
 
-The Hierarchy the Model Sees:
-```
-System Instructions
-↓
-Developer Instructions
-↓
-User Prompt
-↓
-Conversation History
+```mermaid
+flowchart TB
+    SYS[System instructions]
+    DEV[Developer instructions]
+    USER[User prompt]
+    HIST[Conversation history]
+
+    SYS --> DEV --> USER --> HIST
 ```
 
-## Few-Shot Prompting
+The model sees all of these layers when generating a response.
+
+## Few-shot prompting
 
 Instead of describing the pattern, show examples.
 
-Example:
 ```
-Input: Cat
-Output: Animal
-
-Input: Rose
-Output: Plant
-
-Input: Eagle
-Output: Object
+Input: Cat    → Output: Animal
+Input: Rose   → Output: Plant
+Input: Eagle  → Output: ?
 ```
 
-## Zero-Shot Prompting
+```mermaid
+flowchart LR
+    E1[Example 1] --> E2[Example 2]
+    E2 --> E3[Example 3]
+    E3 --> NEW[New input → model infers pattern]
+```
 
-Example:
+## Zero-shot prompting
+
+No examples — describe the task directly.
+
 ```
 Classify the following word as Animal, Plant, or Object:
 Eagle
 ```
 
-## Chain-of-Thought Prompting
+## Chain-of-thought prompting
 
-Example:
-`Solve this problem step by step.`
+Ask the model to reason step by step.
 
-For many applications, asking for:
-assumptions,
-intermediate reasoning,
-calculations,
+```
+Solve this problem step by step.
+Show assumptions, intermediate reasoning, and calculations.
+```
 
+```mermaid
+flowchart LR
+    Q[Question] --> S1[Step 1]
+    S1 --> S2[Step 2]
+    S2 --> S3[Step 3]
+    S3 --> A[Final answer]
+```
 
-## Delimiter Technique
+## Delimiter technique
 
-Example:
+Separate instructions from content with clear tags.
+
 ```
 Summarize the text between <article> tags.
 
@@ -126,34 +101,12 @@ Summarize the text between <article> tags.
 </article>
 ```
 
-And:
+## Full example
 
 ```
-Text:
-"""
-
-content here
-
-"""
+Role:     You are a senior product manager.
+Task:     Create a feature specification.
+Context:  We are building a food delivery app.
+Requirements: user stories, edge cases, acceptance criteria.
+Output:   Markdown document
 ```
-
-A good Example:
-```
-Role:
-You are a senior product manager.
-
-Task:
-Create a feature specification.
-
-Context:
-We are building a food delivery app.
-
-Requirements:
-- Include user stories
-- Include edge cases
-- Include acceptance criteria
-
-Output:
-Markdown document
-```
-

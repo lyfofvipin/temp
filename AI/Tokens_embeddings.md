@@ -1,6 +1,8 @@
+# Tokens & Embeddings
+
 Tokens and embeddings are two fundamental concepts in modern AI models, but they serve very different purposes.
 
-Tokens
+## Tokens
 
 A token is a chunk of text that a model processes.
 
@@ -12,138 +14,107 @@ Text is broken into tokens before it can be understood by the model.
 | "ChatGPT is awesome" | `["Chat", "GPT", " is", " awesome"]` |
 | "2025"               | `["202", "5"]` or similar            |
 
-
 The exact tokenization depends on the model.
 
-Why use tokens?
+### Why use tokens?
 
 Models don't directly read characters or words. They operate on token IDs.
 
-For example:
-"I love pizza"
-↓
-[314, 891, 24567]
+```mermaid
+flowchart LR
+    TEXT["I love pizza"] --> TOK[Tokenizer]
+    TOK --> IDS["[314, 891, 24567]"]
+```
 
-Token limits
+### Token limits
 
 When people say a model has a "128k context window," they mean it can process about 128,000 tokens at once.
 
 Rough rule of thumb:
 
-1 token ≈ ¾ of a word in English
-100 tokens ≈ 75 words
-1,000 tokens ≈ 750 words
+- 1 token ≈ ¾ of a word in English
+- 100 tokens ≈ 75 words
+- 1,000 tokens ≈ 750 words
 
 ## Embeddings
 
 An embedding is a numerical vector that represents the meaning of text.
 
-Instead of storing words as IDs:
-pizza → 24567
-the model can represent them as a vector:
-pizza →
-[0.12, -0.84, 0.31, ...]
+Instead of storing words as IDs (`pizza → 24567`), the model represents them as a vector:
+
+```
+pizza → [0.12, -0.84, 0.31, ...]
+```
+
 This vector captures semantic meaning.
 
-Key idea
+### Key idea
 
 Texts with similar meanings get embeddings that are close together.
 
-For example:
-"dog"      → vector A
-"puppy"    → vector B
-"airplane" → vector C
+```mermaid
+graph TB
+    dog((dog))
+    puppy((puppy))
+    cat((cat))
+    tiger((tiger))
+    lion((lion))
+    airplane((airplane))
 
-```
-           cat
-            ●
-
- dog ●                tiger ●
-
-
-                      lion ●
-
-
-
-                    airplane ●
+    dog --- puppy
+    dog --- cat
+    tiger --- lion
+    cat --- tiger
 ```
 
-Similar concepts cluster together.
+Similar concepts cluster together. Embeddings place text in a high-dimensional version of this map.
 
-Embeddings place text in a high-dimensional version of this map.
+## How tokens become embeddings
 
-How tokens become embeddings
-
-The pipeline typically looks like:
-```
-Text
- ↓
-Tokenizer
- ↓
-Tokens
- ↓
-Token IDs
- ↓
-Embedding Layer
- ↓
-Vectors (embeddings)
- ↓
-Transformer
- ↓
-Output
+```mermaid
+flowchart TB
+    T[Text] --> TOK[Tokenizer]
+    TOK --> IDS[Token IDs]
+    IDS --> EMB[Embedding layer]
+    EMB --> VEC[Vectors]
+    VEC --> TR[Transformer]
+    TR --> OUT[Output]
 ```
 
-Example:
-`"I love coffee"`
+Example: `"I love coffee"`
 
-Becomes:
 ```
-Tokens:
-["I", " love", " coffee"]
-
-IDs:
-[40, 821, 14952]
-
-Embeddings:
-[
- [0.1, -0.4, ...],
- [0.8,  0.2, ...],
- [-0.3, 0.9, ...]
-]
+Tokens:  ["I", " love", " coffee"]
+IDs:     [40, 821, 14952]
+Embeddings: 3 vectors of floats
 ```
-The transformer then processes those vectors.
 
-Common use of embeddings: Semantic Search
+## Semantic search (common use of embeddings)
 
 Suppose you have documents:
 
-* "How to bake bread"
-* "Machine learning basics"
-* "Making sourdough"
+- "How to bake bread"
+- "Machine learning basics"
+- "Making sourdough"
 
-A user searches:
+A user searches: `"bread recipe"`
 
-`"bread recipe"`
+```mermaid
+flowchart LR
+    DOCS[Documents] --> E1[Embed each doc]
+    QUERY[User query] --> E2[Embed query]
+    E1 --> CMP[Compare vectors]
+    E2 --> CMP
+    CMP --> TOP[Return closest matches]
+```
 
-Instead of matching exact words, you:
+Instead of matching exact words, the system returns semantically similar documents — even when wording differs.
 
-Convert all documents to embeddings.
-Convert the query to an embedding.
-Find the closest vectors.
+This is the basis of RAG and AI search systems. See `ollama/rag.py`.
 
-The system may return:
+---
 
-"How to bake bread"
-"Making sourdough"
+**Summary**
 
-even if the exact words don't match.
-
-This is the basis of many AI search and retrieval systems.
-
-
-##############################################################################################3
-Tokens = individual words or word pieces printed on pages.
-Embeddings = coordinates that tell you where each concept lives on a giant "meaning map."
-
-Tokens are how the model reads text.
-Embeddings are how the model represents meaning mathematically.
+- **Tokens** = how the model reads text (word pieces → IDs)
+- **Embeddings** = how the model represents meaning mathematically (IDs → vectors)

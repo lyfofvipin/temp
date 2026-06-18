@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Gateway</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>AI Gateway Dashboard</h1>
+
+    <div class="card">
+        <h2>Models</h2>
+
+        <button onclick="loadModels()">Refresh Models</button>
+
+        <select id="modelSelect"></select>
+
+        <button onclick="showModelInfo()">
+            Model Details
+        </button>
+
+        <pre id="modelInfo"></pre>
+    </div>
+
+    <div class="card">
+        <h2>Text Generation</h2>
+
+        <textarea
+            id="prompt"
+            placeholder="Enter prompt..."
+        ></textarea>
+
+        <button onclick="generateText()">
+            Generate
+        </button>
+
+        <div id="generateResult"></div>
+    </div>
+
+    <div class="card">
+        <h2>Chat</h2>
+
+        <div id="chatBox"></div>
+
+        <input
+            type="text"
+            id="chatInput"
+            placeholder="Type message..."
+        >
+
+        <button onclick="sendMessage()">
+            Send
+        </button>
+    </div>
+
+</div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
