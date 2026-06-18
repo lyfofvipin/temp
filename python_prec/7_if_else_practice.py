@@ -5,7 +5,8 @@
 # This program takes an integer input from the user and determines whether the number is positive, negative, or zero.
 
 # 3. Age Category Checker
-# This program asks the user to input their age and then classifies them into different categories:
+# This program asks the user to input their age and then classifies them
+# into different categories:
 # Child: If their age is 10 or below.
 # Teenager: If their age is between 11 and 18.
 # Adult: If their age is between 19 and 35.
@@ -23,8 +24,7 @@
 # This program asks the user to input a single letter and checks if it's a vowel (A, E, I, O, U) or a consonant. If the input is not a valid alphabet letter, it will print an error message.
 
 # 6. Simple Login System
-# This program simulates a simple login system. The user is asked to input a username and password. If both match the preset correct username and password, the program prints a success message. Otherwise, it prints an error message.
-# Let's say correct username is admin and password is admin123
+# This program simulates a simple login system. The user is asked to input a username and password. If both match the preset correct username ("admin") and password ("1234"), the program prints a success message. Otherwise, it prints an error message.
 
 # 7. Number Comparison
 # This program asks the user to input three numbers and compares them. It prints which of the three numbers is the largest.
@@ -84,10 +84,11 @@
 # a = int(input("Enter A: "))
 # b = int(input("Enter B: "))
 
-# if a > b:
-#     print("A")
+# if a < b:
+#     print(b)
 # else:
-#     print("B")
+#     print(a)
+
 
 # a = int(input("Enter A: "))
 # b = int(input("Enter B: "))
@@ -267,16 +268,16 @@
 #     print("Please type correct name: red, yellow, green.")
 
 
-# month = int( input("Enter A month: ") )
+month = int( input("Enter A month: ") )
 
-# if month == 2:
-#     print("29 Days")
-# elif month == 1 or month == 3 or month == 5 or month == 7 or month == 8 or month == 10 or month == 12:
-#     print("31 Days")
-# elif month == 4 or month == 6 or month == 9 or month == 11:
-#     print("30 Days")
-# else:
-#     print("Invalid Month.")
+if month == 2:
+    print("28 Days")
+elif month == 1 or month == 3 or month == 5 or month == 7 or month == 8 or month == 10 or month == 12:
+    print("31 Days")
+elif month == 4 or month == 6 or month == 9 or month == 11:
+    print("30 Days")
+else:
+    print("Invalid Month.")
 
 
 # Simple Login System

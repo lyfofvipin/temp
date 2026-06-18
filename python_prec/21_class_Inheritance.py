@@ -14,12 +14,14 @@
 # class Child(Parent):
 #     pass
 
-# class vehicle:
+# class Vehicle:
 
 #     brand = "Maruti"
 
-# class Car(vehicle):
+# class Car(Vehicle):
 #     pass
+
+# print(dir(Car))
 
 # print(Car.brand)
 
@@ -43,11 +45,16 @@
 #         print("Car has 10 wheels")
 
 
-# # my_car = Car("Honda", "White")
-# # print(my_car.brand)
+# my_car = Car("Honda", "White")
+# print(my_car.brand)
 
 # my_bus = Bus("Volvo", "Blue")
-# # print(my_bus.color)
+# print(my_bus.color)
+
+# my_bus.display_info()
+
+
+# Method Overriding/Overloading
 
 # class Vehicle():
 
@@ -57,21 +64,42 @@
 
 #     def display_info(self):
 #         print(f"Brand: {self.brand}, Color: {self.color}")
-        
+
+# class Car(Vehicle):
+
+#     def __init__(self, wheels):
+#         self.wheels = wheels
+
+# a = Vehicle("Honda", "Black")
+# a.display_info()
+# print(dir(a))
+
+# a = Car(23)
+# print(dir(a))
+# print(a.wheels)
+
+# class Vehicle():
+
+#     def __init__(self, brand, color):
+#         self.brand = brand
+#         self.color = color
+
+#     def display_info(self):
+#         print(f"Brand: {self.brand}, Color: {self.color}")
+
 
 # class Car(Vehicle):
 
 #     def __init__(self, wheels):
 #         super().__init__("Honda", "White")
-#         super().display_info()
 #         self.wheels = wheels
 
 # a = Car(4)
+# print(dir( a ))
 
-# # print(dir( a ))
 
 # super(): Accessing the Parent Class
-# The super() function is a special tool used to call methods from the parent class. This is particularly useful when the child class has its own __init__ method and you want to reuse the parent's initialization code.
+# The super() class is a special tool used to call methods from the parent class. This is particularly useful when the child class has its own __init__ method and you want to reuse the parent's initialization code.
 
 # class Vehicle:
 #     def __init__(self, brand, color):
@@ -130,9 +158,14 @@
 #     def car_info(self):
 #         print(f"This is a {self.color} {self.brand} with {self.num_wheels} wheels.")
 
-# my_car = Car(brand="Ford", color="Red", num_wheels=4, airbag = 2)
+# my_car = Car(brand="Ford", color="Red", num_wheels=4)
 # print(dir(my_car))
 # my_car.car_info()
+
+# your_car = Car(brand="BMW", color="Blue", num_wheels=4)
+# print(dir(your_car))
+# your_car.car_info()
+
 
 # Method Overriding
 
@@ -381,9 +414,9 @@
 #         print(f"Brand: {self._Car__brand}, Battery: {self.__battery_level}%")
 
 # a = ElectricCar()
-
 # my_car = Car("Ford", 5000)
 # my_electric_car = ElectricCar("Tesla", 10000, 95)
+# print(dir(my_electric_car))
 
 # my_car.get_info()
 # my_electric_car.get_info()

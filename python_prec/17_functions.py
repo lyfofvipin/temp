@@ -110,6 +110,7 @@
 #         print("No it's not divisible by 3")
 
 # div_checker_by_3()
+# div_checker_by_3()
 
 # Parameters and Arguments (Inputs)
 
@@ -124,10 +125,11 @@
 #     print(f"Hello, how are you?")
 # greet()
 
-# def greet( a, b ):
+# def greet( a ):
+#     print(a)
 #     print(f"Hello, how are you?")
 
-# greet( 1, 2 )
+# greet( ".343" )
 
 
 # def add( a, b, c, d, e, f ):
@@ -139,7 +141,7 @@
 # def greet( name ):
 #     print( f"Hello {name}, How are you?" )
 
-# greet("Ajay")
+# greet("Mumbai")
 
 # def odd_even_checker( number ):
 #     if number % 2 == 0:
@@ -150,11 +152,15 @@
 # a = int(input("Enter A Number: "))
 # odd_even_checker(a)
 
+# def add(a,b):
+#     print(a+b)
+
+# add()
 
 # Doc Strings
 # def cap_str( name ):
 
-#     "This is our function to test the document string."
+#     "This is Jaipur"
 
 #     print(name.upper())
 
@@ -194,6 +200,7 @@
 
 # Order matters here!
 # display_info("Charlie", 25) # "Charlie" is assigned to 'name', 25 to 'age'
+# display_info(25, "Charlie")
 
 # Keyword Arguments
 # You can specify the argument's name when you pass it, which means the order doesn't matter.
@@ -215,7 +222,7 @@
 
 # Mix of Positional and Keyword Arguments
 # display_info( "Vipin", 45, collage="Test", number=23232235, city="sdfsdaf" )
-# display_info( collage="Test", number=23232235, city="sdfsdaf", "Vipin", 45 )
+# display_info( name="Vipin", age=34, city="Jaipur", "XYZ", "9855884345" )
 # display_info( name="vipin", 34, "Jaipur", "tets", 42424 )
 
 # def greet( name ):
@@ -229,12 +236,13 @@
 # the function call, the default value will be used. This makes the parameter optional.
 
 # Example:
-# def greet_with_default(name = "Rohit" , message="Hello"):
+# def greet_with_default(name, message="Hello"):
 #     print(f"{name}, {message}!")
 
-# greet_with_default("Eve") # No message argument provided, so "Hello" is used
-# greet_with_default("Eve", "Good Afternoon") # No message argument provided, so "Hello" is used
-# greet_with_default("Frank", "Good morning") # A new message is provided, overriding the default
+# greet_with_default("Eve")
+# greet_with_default("Eve", "Good Afternoon")
+# greet_with_default("Frank", "Good morning")
+# greet_with_default(message="Good Evening", name="Mumbai")
 
 # def display_info(name, age, course, city="Jaipur", collage="ABC", number=66543):
 #     print(f"Name: {name}, Age: {age}, {city}, {collage}, {number}, {course}")
@@ -247,8 +255,6 @@
 # The *args syntax allows a function to accept a variable number of non-keyword arguments. These arguments are bundled into a tuple inside the function.
 
 # Example:
-
-# print(sum((12,23,23,34,5,45,34,23,23,23,2,32,32,3,2)))
 
 # def add( a, b  ):
 #     print(a + b)
@@ -274,6 +280,7 @@
 #     print(d)
 
 # mix_func(23, 10, 20, 30, 40, 56, 46, 64, 46)
+# mix_func(30, 40, 56, 46, 64, 46, c = 23, b = 10, a = 20)
 
 
 # def test( p, q, *r ):
@@ -299,7 +306,7 @@
 # def show_profile(**user_info):
 #     print(user_info)
 
-# show_profile(name="Grace", age=28, city="London")
+# # show_profile(name="Grace", age=28, city="London")
 # show_profile( a = 1, b = 2, c = 3, d = 4, e = 5 )
 
 # def test( *a, **b ):
@@ -371,6 +378,15 @@
 # test( a )
 # print(a)
 
+# a = [1, 2]
+
+# def test( data ):
+#     data.append( 7 )
+#     print(data)
+
+# test( a.copy() )
+# print(a)
+
 
 # The return Statement (Output) 
 
@@ -419,6 +435,17 @@
 
 # print(test( 7, 3 ))
 
+# def test( number1, number2, op="*" ):
+#     print(f"Sum of numbers are {number1 + number2}")
+#     print(f"Mul of numbers are {number1 * number2}")
+#     if op == "*":
+#         return number1 * number2
+#     else:
+#         return number2 + number1
+
+# print(test( 7, 3, "+" ))
+
+
 #Note: If a function doesn't have a return statement, it implicitly returns the value None.
 
 # Write a function that take a number parm and find it's divisible
@@ -457,7 +484,13 @@
 # Function Objects
 
 # def add( a, b):
-#     return a + b
+
+#     "This function add 2 variable and return there sum."
+
+#     a + b
+
+# add()
+
 
 # a = add
 # b = add

@@ -11,11 +11,29 @@
 # a = 5
 # b = 2
 
-# print( 49 ** 100 )
+# print( 49 ** .33 )
 
+
+# print ( "*" * 50 )
+
+# a = input("Enter Number: ")
+# b = input("Enter Number: ")
+# a = float(a)
+# b = float(b)
+# print( a ** b )
+
+# Priority
 
 # a = 20
 # b = -20
+
+# Find the 10% of a given number 
+# a = float(input("Enter A Number: "))
+# print( (a * 10) / 100 )
+
+# a = 10
+# b = 10
+# print( f"A={a} and B={b}, a+b = {a+b}" )
 
 # print(  b * a )
 
@@ -49,8 +67,31 @@
 # print( a + b )
 
 
-# Take 2 number from user and perform -, /, * on them.
+# basic pay = 1500
+# per cam bonus = 200
+# comm = 2% -> .02
 
+# basic_pay = 1500
+# num = int(input("Enter Num Of Cam sold: "))
+# total_bonus = num * 200
+# print( basic_pay, total_bonus )
+# total_comm = (total_bonus + basic_pay) * .02
+# total_pay = basic_pay + total_bonus + total_comm
+
+# print(total_pay)
+
+
+# Take 2 number from user and perform -, /, *, +, **, // on them.
+# a = int(input("Enter a number: "))
+# b = int(input("Enter a number: "))
+
+# print(a+b)
+# print(a-b)
+# print(a*b)
+# print(a/b)
+# print(a//b)
+# print(a**b)
+# print(a%b)
 
 # Comparison Operators
 
@@ -93,16 +134,28 @@
 # **=	Exponential and assign	a *= 2
 
 # a = 4
-
-
 # a = a + 5
-# a += 5
-# a -= 5
-# a **= 3
-# a *= 5
 
+# +=
+# a = 4
+# a+=5 # a = a + 5
+
+# a = 10
+# a = a // 2
+
+# print(10 // 2)
+
+# a = 10
+# a = a + 5
 # print(a)
-
+# a += 5
+# print(a)
+# a -= 5
+# print(a)
+# a **= 3
+# print(a)
+# a *= 2
+# print(a)
 
 # a += 6
 # print(a)
@@ -126,7 +179,6 @@
 # print(b)
 
 
-
 #  +=
 # perform the math operation 80
 # assign the new value into the variable
@@ -142,30 +194,6 @@
 # a = 60 *60 *60 *60 *60 *60 *60 *60 *60 *60
  
 # print(a)
-
-# # It will pick the first true value it got in the eq
-
-# print( 1 or 3 or 43 or 324 or 4 or 89 )
-
-# in and if we got a non true value it will capture that 
-# or it will pick the right most
-
-# print( 23 and 4 and 0 or 34 )
-
-
-# a = 0
-# b = None
-# c = "Hello"
-# d = []
-
-# result = a or b or c and d
-# print(result)  # What do you think this will output?
-
-
-# not 
-# a = 0
-
-# print( not a )
 
 
 # Membership Operators
@@ -228,9 +256,15 @@
 
 # print( a )
 
+# a = 19
+# print( a%3 == 0  )
 
 # a = int(input("Enter A Number: "))
+# print( a > 18 )
 
+# print( 'A' > 'a' )
+
+# print( "Z" > "BAAA" )
 
 # Logical Operators
 
@@ -255,6 +289,7 @@
 # True    |  True  | True
 # False   |  False | False
 
+
 # print( 23 and 25 and "" and 9 and 5 )
 
 # and
@@ -271,21 +306,38 @@
 
 # print( True )
 
+# a = "x"
+# print( a == "a" or a == "e" or a == "i" or a == "o" or a == "u" )
+
+
+# The Concept Of True And False
+
+
+# print( True and True and "False" and 321 and True )
+
+# Check a number if that divide by either 3 either 5
+
+# a = 37
+# print(a % 3 == 0 or a % 5 == 0)
+
+# Check a number if that divide by both 3 and 5
+
+# a = 45
+# print(a % 3 == 0 and a % 5 == 0)
+
 
 # print( (34 and " ") or (45 and 67) or 93 or (45 and 23) )
 
-
 # Membership Operators
-
-
-
 # Test membership in sequences like lists, strings:
 
 # in	True if present	"a" in "cat"
 # not in	True if not present	"x" not in "cat"
 
-# a = "vipin"
-# print("vip" not in a)
+# a = "I live in Gujrat."
+# print("ive" in a)
+
+# print( "abc" not in "Jaipur is a really nice city." )
 
 # a = 6
 # b = a

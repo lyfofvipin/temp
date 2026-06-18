@@ -1,6 +1,10 @@
 import os
 
+# print(dir(os.path))
+
 # a = os.listdir()
+# print(a)
+
 # os.path
 
 # for x in a:
@@ -14,7 +18,7 @@ import os
     # * if user type ls it will list all the files of the dir
     # * if user type lsfolder it will list all the folders only
     # * if user type lsfiles it will list all the files only
-    # * if user type stop stop the terminal
+    # * if user type exit stop the terminal
 
 # while True:
 #     command  = input("-->")
@@ -37,21 +41,23 @@ import os
 
 # import sys
 
+# # print(sys.argv)
+
 # def buy_stocks():
 #     print('Buy stocks')
 
 # def sell_stocks():
 #     print('Sell stocks')
 
-# buy_stocks()
-# sell_stocks()
+# # buy_stocks()
+# # sell_stocks()
 
-operation = sys.argv[1]
+# operation = sys.argv[1]
 
-if operation == "buy":
-    buy_stocks()
-elif operation == "sell":
-    sell_stocks()
+# if operation == "buy":
+#     buy_stocks()
+# elif operation == "sell":
+#     sell_stocks()
 
 
 # ls,

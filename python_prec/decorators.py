@@ -48,7 +48,7 @@
 #     return inner_function
 
 
-# # greeting is now the 'inner_function' object
+# # # # greeting is now the 'inner_function' object
 # greeting = outer_function("Welcome!")
 # greeting()
 
@@ -57,16 +57,18 @@
 # def func1():
 #     print("test")
 
-
 # def func2(x): # It has to be a function
 
 #     print("Starting ... ")
-#     print("Ending ... ")
 #     x()
+#     print("Ending ... ")
 
-# func1()
+# # func1()
 # func2(func1)
 
+
+# def abcd():
+#     print("test")
 
 # def func1(func):
 #     def wrapper():
@@ -75,14 +77,16 @@
 #         print(f"Finishing ---")
 #     return wrapper
 
+# a = func1(abcd)
+# a()
 
 # @func1
 # def test():
 #     print("test")
 
 
-# a = func1(test)
-# a()
+# # a = func1(test)
+# # a()
 # func1(test)()
 
 # test()

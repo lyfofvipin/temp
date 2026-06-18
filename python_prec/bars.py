@@ -1,9 +1,3 @@
-"""
-Bars Module
-============
-This is an example module with provide different ways to print bars.
-"""
-
 def starbar(num):
     """
     Prints a bar with *
@@ -32,3 +26,5 @@ def simplebar(num):
 
     """
     print("-" * num)
+
+abc = 243

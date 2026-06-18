@@ -1,4 +1,4 @@
-# Higher-Order Functions 📚
+# Higher-Order Functions
 
 # A higher-order function is a function that does at least one of the following:
 #     Takes one or more functions as arguments.
@@ -9,7 +9,7 @@
 # that the higher-order function should perform.
 
 # def simple():
-#     return "I am a func"
+    # return "I am a func"
 
 # def simple1():
 #     return "I am a func simple 1"
@@ -28,7 +28,7 @@
 #     def sub( a, b ):
 #         return a - b
 
-#     return add
+#     return sub
 
 # data = main_fun()
 
@@ -38,6 +38,8 @@
 
 # def div( a : int , b: int ) -> int:
 #     return a/b
+
+# print(div( "abc", "def" ))
 
 # def div( a , b ) :
 #     return a/b
@@ -80,7 +82,7 @@
 # def square(x):
 #     return x * x
 
-# numbers = [1, 2, 3, 4, 5]
+numbers = [1, 2, 3, 4, 5]
 
 # for x in numbers:
 #     print(square(x))
@@ -140,8 +142,8 @@
 
 # numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-# # even_numbers = filter(is_even, numbers)
-# even_numbers = filter( lambda x : x % 2 == 0, numbers )
+# even_numbers = filter(is_even, numbers)
+# # even_numbers = filter( lambda x : x % 2 == 0, numbers )
 # result = list(even_numbers)
 # print(result)
 
@@ -170,7 +172,9 @@
 # If the iterable is empty, it returns False.
 
 # # Returns True because 2 is a truthy value (non-zero number)
-# list1 = [0, 0, [], "", 0, 0]
+# list1 = [0, 0, [], "", 1, 0]
+
+# print( any(list1) )
 
 # # for x in list1:
 # #     if x:
@@ -189,7 +193,7 @@
 # The all() function returns True if all elements of the iterable are True. If the iterable is empty, it returns True.
 
 # Returns True because all elements are truthy (non-zero)
-# list1 = [1, 2, 3, 4, 5]
+# list1 = [1, 2, 3, 4, 5, 0]
 # print(all(list1))
 
 # Returns False because 0 is a falsy value
@@ -198,9 +202,7 @@
 
 
 # from functools import reduce
-
-# reduce(lambda x,y: x*y, range(1,6))
-
+# print(reduce(lambda x,y: x*y, range(1,6)))
 # 1-10
 
 # sum = 0

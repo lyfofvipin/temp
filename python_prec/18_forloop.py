@@ -74,9 +74,14 @@
 #     range(start, stop): Generates numbers from start up to (but not including) stop.
 #     range(start, stop, gap): Generates numbers from start up to (but not including) stop, incrementing by step.
 
-# a = range(50)
+# a = range(34, 50, 2)
 
-1 - 9
+# print( tuple(a) )
+
+
+# 1 - 9
+
+# print( [1,2,3,4,5,6,7,8,9,10] )
 
 # print( list(a) )
 # print( tuple(range( 20 )) )

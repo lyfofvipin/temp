@@ -53,6 +53,17 @@
 # except ZeroDivisionError:
 #     print("Please enter Numbers other then 0.")
 
+# try:
+#     a = int(input("Enter Number 1: "))
+#     b = int(input("Enter Number 2: "))
+#     print(a/b)
+# except :
+#     print("Something if wrong.")
+# finally:
+#     print("I will run on both case.")
+
+
+
 
 # try:
 #     # Code that might raise an exception
@@ -87,8 +98,8 @@
 #     my_list = [0, 1]
 #     user_input = int(input("Enter an index: "))
 #     print(my_list[user_input])
-# except (IndexError, ValueError) as e:
-#     print(f"Error Found: {e}")
+# except (IndexError, ValueError) as error_msg:
+#     print(error_msg)
 
 
 # Using as e allows you to access the exception object and print its message,
@@ -120,6 +131,7 @@
 #     print("No error")
 # finally:
 #     print("I will run at all cost.")
+
 """
 this is a test file.
 """
@@ -153,7 +165,7 @@ this is a test file.
 
 # raise IndexError("Bhaiya y number list m h he nahi.")
 
-# a = Exception("Test", "Hello I am test error")
+# raise Exception("Test", "Hello I am test error")
 # raise a
 
 # Here, we manually raise a ValueError if the age is invalid. The try...except 
@@ -171,9 +183,5 @@ this is a test file.
 
 # print(test())
 
-# with open('/path/to/some/file/you/want/to/read') as file_1, \
-#     open('/path/to/some/file/being/written', 'w') as file_2, \
-#     open('/path/to/some/file/being/written', 'w') as file_3:
-    # file_2.write(file_1.read())
-
-
+# with open('read') as file_1, open('written', 'w') as file_2, open('written', 'w') as file_3:
+#     file_2.write(file_1.read())

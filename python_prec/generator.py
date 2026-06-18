@@ -6,9 +6,9 @@
 # Imagine you have a function that needs to produce a sequence of one million numbers.
 
 # def mnumber():
-#     return list(range(1, 10000001))
+#     return list(range(1, 123123))
 
-# print(mnumber)
+# print(mnumber())
 
 # Regular Function	
 #  * It calculates all one million numbers, stores them all in a list (or other collection),
@@ -27,12 +27,16 @@
 #     yield: Pauses the function, sends a value back, and saves the entire local state (variables, instruction pointer). The next time the function is called (via next()), it resumes from the exact point of the pause.
 
 # def test():
+#     return 1
+#     return 2
+#     return 3
+#     return 4
+
+# def test():
 #     yield 1
 #     yield 2
 #     yield 3
 #     yield 4
-
-# print(test())
 
 # def square( number: int) -> list:
 
@@ -65,7 +69,6 @@
 # print(next(a))
 
 
-
 # def square( number: int):
 
 #     for x in range(1, number + 1):
@@ -74,11 +77,11 @@
 # for x in square(500000000000):
 #     print(x)
 
-def infinite_integers():
-    n = 0
-    while True:
-        yield n
-        n += 1
+# def infinite_integers():
+#     n = 0
+#     while True:
+#         yield n
+#         n += 1
 
 # Get the generator
 # integers = infinite_integers()
@@ -100,23 +103,26 @@ def infinite_integers():
 # print(next(pk))
 
 
-class Counter(object):
-    def __init__(self, low, high):
-        self.current = low
-        self.high = high
+# class Counter(object):
+#     def __init__(self):
+#         self.i = 0
 
-    def __iter__(self):
-        'Returns itself as an iterator object'
-        return self
+#     def __iter__(self):
+#         'Returns itself as an iterator object'
+#         return self
 
-    def __next__(self):
-        'Returns the next value till current is lower than high'
-        if self.current > self.high:
-            raise StopIteration
-        else:
-            self.current += 1
-            return self.current - 1
+#     def __next__(self):
+#         while True:
+#             self.i += 1
+#             return self.i
 
-a = Counter(5, 10)
+# a = Counter()
 
-print(next(a))
+# for  x in a:
+#     print(x)
+
+# print(next(a))
+# print(next(a))
+# print(next(a))
+# print(next(a))
+# print(next(a))

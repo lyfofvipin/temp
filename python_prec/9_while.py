@@ -1,7 +1,7 @@
-# while 24:
-#     print("Hello World1!")
-#     print("Hello World2!")
-#     print("Hello World3!")
+while True:
+    print("Hello World1!")
+    print("Hello World2!")
+    print("Hello World3!")
 
 # counter = 5
 

@@ -47,14 +47,23 @@ class SocialMedia:
     def comment(self):
         print("Commented")
 
-facebook = SocialMedia()
+# facebook = SocialMedia()
 
 # print( facebook.CEO )
-# facebook.likes()
+# facebook.like()
+
+# a = SocialMedia()
+# b = SocialMedia()
+# c = SocialMedia()
+# d = SocialMedia()
+
+# e = [ a, b, c, d ]
+
+# for x in e:
+#     print(x.CEO)
 
 # twitter = SocialMedia()
 # twitter.CEO = "Elon Musk"
-
 # print(facebook.CEO)
 # print(twitter.CEO)
 
@@ -101,6 +110,25 @@ facebook = SocialMedia()
 # print(b.brand)
 # a.honk()
 
+# class Dog:
+
+#     species = "GS"
+
+#     def eat(self):
+#         b = 50
+#         print(f"hungry right now.")
+
+#     def bark(self):
+#         print(b)
+#         print(f"says woof!")
+
+# a = Dog()
+# a.eat()
+# a.bark()
+
+# print(dir(a))
+
+# Understanding the Self
 
 # class Dog:
 
@@ -133,7 +161,59 @@ facebook = SocialMedia()
 # They define the behaviors or actions an object can perform.
 # They are essentially functions that are defined within a class.
 
-# print( dir(a) )
+
+# Constructor
+# The __init__() Method (The Constructor)
+# The __init__() method is a special method in a class. It's automatically called whenever a new object is created.
+# Its primary purpose is to initialize the object's attributes with the values you provide. It's often called the constructor.
+#     self: This is the first parameter of any method in a class. It's a reference to the specific object that is being created.
+#  It allows you to access and modify the object's attributes and methods.
+
+
+# class Dog:
+
+#     species = "GS"
+
+#     def constr(self):
+#         self.a = 10
+#         self.b = 20
+#         self.c = 30
+#         self.d = 40
+
+#     def eat(self):
+#         self.b = 50
+#         print(f"hungry right now.")
+
+#     def bark(self):
+#         print(self.b)
+#         print(f"says woof!")
+
+# a = Dog()
+# a.constr()
+# print(dir(a))
+
+# class Dog:
+
+#     species = "GS"
+
+#     def __init__(self):
+#         self.age = 30
+#         print("Bhaiya Object Ban gaya h.")
+
+#     def eat(self):
+#         self.age = 5
+#         print(f"hungry right now.")
+
+#     def bark(self):
+#         print(self.age)
+#         print(f"says woof!")
+
+# a = Dog()
+# print(dir(""))
+# a.eat()
+# a.bark()
+
+# Constructor with Arguments
 
 # class Dog:
 
@@ -179,12 +259,11 @@ facebook = SocialMedia()
 # my_dog.bark()
 # my_dog.eat()
 # my_dog.eat()
+# my_dog.eat()
 
 # your_dog = Dog("tuffy", 3)
 # # your_dog.bark()
 # your_dog.eat()
-
-# print(my_dog.species, your_dog.species, third_dog.species)
 
 # Access instance attributes
 # print(f"My dog's name is {my_dog.name} and he is {my_dog.age} years old.")
@@ -192,35 +271,31 @@ facebook = SocialMedia()
 # Access a class attribute
 # print(f"Buddy is a member of the {my_dog.species} species.")
 
-# The __init__() Method (The Constructor)
-# The __init__() method is a special method in a class. It's automatically called whenever a new object is created.
-# Its primary purpose is to initialize the object's attributes with the values you provide. It's often called the constructor.
-#     self: This is the first parameter of any method in a class. It's a reference to the specific object that is being created.
-#  It allows you to access and modify the object's attributes and methods.
+
+class Car:
 
 
-# class Car:
+    def __init__(self, brand="Tata", color="White"):
+        self.brand = brand
+        self.color = color
+        self.engine_status = "off"
 
-
-#     def __init__(self, brand="Tata", color="White"):
-#         self.brand = brand
-#         self.color = color
-#         self.engine_status = "off"
-
-#     def start_engine(self):
-#         if self.engine_status == "on":
-#             print(f"The {self.brand}'s engine is now on.")
-#             self.engine_status = "off"
-#         else:
-#             print(f"The {self.brand}'s engine is now off.")
-#             self.engine_status = "on"
+    def start_engine(self):
+        if self.engine_status == "on":
+            print(f"The {self.brand}'s engine is now on.")
+            self.engine_status = "off"
+        else:
+            print(f"The {self.brand}'s engine is now off.")
+            self.engine_status = "on"
 
 
 # a = Car()
 # print(a.brand)
 # print(a.color)
 # a.start_engine()
+# print(a.engine_status)
 # a.start_engine()
+# print(a.engine_status)
 
 # # Create a new Car object, passing arguments to __init__()
 # my_car = Car(brand="Toyota", color="Blue")
@@ -242,12 +317,31 @@ facebook = SocialMedia()
 #     Class Attributes: These belong to the class itself and are shared by all objects of that class. 
 #   They are defined directly within the class body but outside any method.
 
+
+# class Dog:
+#     species = "GS"
+
+#     def __init__(self, name="tom", age=2):
+#         self.dog_name = name
+#         self.age = age
+#         self.is_hungry = True
+
+#     def bark(self):
+#         print(f"{self.dog_name} says woof!")
+
+# print(dir(Dog))
+# print()
+# a = Dog()
+# print(dir(a))
+
+
 # class GST:
 
 #     TAX_RATE = 18
 
 #     def __init__(self, name):
 #         self.name = name
+
 
 # milk = GST(name="Saras")
 # bread = GST(name="Amul")
@@ -262,7 +356,6 @@ facebook = SocialMedia()
 
 # Methods: Class vs. Instance
 
-
 # class a:
 
 #     def __init__(self):
@@ -274,7 +367,11 @@ facebook = SocialMedia()
 #     def test(self):
 #         print("hi")
 
-# # a.test1()
+# a.test1()
+
+# abc = a()
+# abc.test1()
+
 
 # class BankAccount:
 
@@ -292,9 +389,9 @@ facebook = SocialMedia()
 #             self.mob,
 #             self.age,
 #             self.balance)
-        
+
 #     def deposit(self, amount):
-#         if amount < 0:
+#         if amount <= 0:
 #             print("Invalid Amount")
 #             exit(1)
 #         self.balance += amount
@@ -306,4 +403,76 @@ facebook = SocialMedia()
 #         self.balance -= amount
 
 # vipin = BankAccount("Vipin", 232424243, 23, "23454", 500)
+# vipin.deposit(100)
+# vipin.show_info()
+# vipin.withdraw(200)
+# vipin.show_info()
 
+# bank_accounts = []
+# for x in ["Vipin", "Vikas", "Priya", "Bhaskar"]:
+#     bank_accounts.append(
+#         BankAccount(x, 232424243, 23, "23454", 500)
+#     )
+# print(bank_accounts[0].name)
+# for x in bank_accounts:
+#     print(x.name)
+
+
+# def search_account(user_data, mob):
+#     account = ""
+#     for x in user_data:
+#         if x.mob == mob:
+#             account = x
+#     if account:
+#         return account
+#     else:
+#         False
+
+# bank_accounts = []
+# while True:
+
+#     print("""
+# A: Creating A New Account
+# B: For Checking Bank Balance
+# C: Deposit
+# D: Withdraw
+# """)
+#     a = input("Enter Your Choice: ")
+#     number = input("Enter Your Mob")
+
+#     match a:
+        
+#         case "A":
+#             name = input("Enter Your Name")
+#             age = input("Enter Your Age")
+#             dob = input("Enter Your DOB")
+        
+#             bank_accounts.append(
+#                 BankAccount(name, number, age, dob, 500)
+#             )
+
+#         case "B":
+#             account = search_account(bank_accounts, number)
+#             if account:
+#                 account.show_info()
+#             else:
+#                 print("\n --- Bank Account Not Found. --- ")
+
+#         case "C":
+#             account = search_account(bank_accounts, number)
+#             amount = int(input("Enter Amount: "))    
+#             if account:
+#                 account.deposit(amount)
+#             else:
+#                 print("\n --- Bank Account Not Found. --- ")
+        
+#         case "D":
+#             account = search_account(bank_accounts, number)
+#             amount = int(input("Enter Amount: "))    
+#             if account:
+#                 account.withdraw(amount)
+#             else:
+#                 print("\n --- Bank Account Not Found. --- ")
+
+#         case _:
+#             print("Please Enter A  Valid Choice.")

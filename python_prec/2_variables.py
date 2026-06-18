@@ -5,22 +5,48 @@
 # It should not be a keyword of python.
 # Variable names in Python are case sensitive ( variable name system and System are not same ).
 
-# a = "vipin"
-# a=34.34
+# _abc = 56
+# b = 23
+# _ = 67
+# a = 77.454
+# 1_ty = 90
+# -ty = 90
+# ab_bc_cd = "Hello"
+
+# a = "Jaipur"
+# print(a)
+# a = 34.34
+# print(a)
 # a=34
 # print(a)
 
+# a = 1
+# b = 2
+# c = 3
+# d = 56
+# e = "34"
+
+# print( a, b, c, d, e )
+# print( 34, 78, 34.97, "Jaipur" )
+
+# a = True
+# print(a)
 # a = False
 # print(a)
 
+
 # a = 23
 # b = 34.34
-# c = "voipi"
+# c = "Jaipur"
 # d = True
 # print( a, b , c, d )
 
+# Hello <> I am from Python.
+
+
 # a = "Jaipur"
-# print( f"Hello {a}" )
+# print( "Hello", a, "I am from Python." )
+# print( f"Hello {a} I am from Python." )
 
 # print( a \n b \n c \n d )
 
@@ -29,14 +55,17 @@
 # print( a,'\n',b,'\n',c,'\n',d )
 # print(f"{a}\n{b}\n{c}\n{d}")
 
+# result = 324
+# print( f"result is: {result}" )
 
 # print( 34, "\n", 354.34, "\n", "wqerqw\n", True )
 
 # print("1,\n2,\n3,\n")
 
-# name = "Vipin"
 
 # _ = 45
+
+# print( type("True") )
 
 # a = 45
 # print( "hello", a )
@@ -44,8 +73,7 @@
 # print( "hello", a )
 
 # a = 45
-
-# print( type(True) )
+# print( type(a) )
 
 # # bool True, False
 # a = False
@@ -59,3 +87,14 @@
 # # print( f"Value of a is {a} and Value of b is {b}." )
 
 # print( type( a ) )
+
+# print(23, 34.23)
+
+# a, b, c = 10, 20, 30
+
+# b = 23
+# c = 234
+# d = 23
+# e = 53
+
+# a = ( b, c, d, e )

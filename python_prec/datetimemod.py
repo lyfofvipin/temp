@@ -1,5 +1,5 @@
-from datetime import datetime
-from datetime import timedelta
+# from datetime import datetime
+# from datetime import timedelta
 
 # import datetime
 # datetime.datetime
@@ -30,16 +30,16 @@ from datetime import timedelta
 #     * enter your dob in dd/mm/yyyy
 #     * and find the age of the person in days
 
-dob = input("Enter dob in dd-mm-yyy: ")
-# "5-6-1999"
-day, month, year = dob.split("-")
-day = int(day)
-month = int(month)
-year = int(year)
+# dob = input("Enter dob in dd-mm-yyy: ")
+# # "5-6-1999"
+# day, month, year = dob.split("-")
+# day = int(day)
+# month = int(month)
+# year = int(year)
 
-todaydate = datetime.now().date()
-dob_in_datetime = datetime(year, month, day).date()
+# todaydate = datetime.now().date()
+# dob_in_datetime = datetime(year, month, day).date()
 
-age_in_days = todaydate - dob_in_datetime
+# age_in_days = todaydate - dob_in_datetime
 
-print(age_in_days.days/365)
+# print(age_in_days.days/365)
