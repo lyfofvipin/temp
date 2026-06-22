@@ -23,7 +23,7 @@ python rag.py            # RAG with Ollama (needs ollama pull nomic-embed-text)
 | `train_model.py` | LoRA fine-tuning on distilgpt2 (CPU) |
 | `rag.py` | Retrieval-augmented generation with Ollama |
 | `load_data.py` | Preview formatted training text |
-| `using_api.md` | Ollama HTTP API reference |
+| `../06_using_api.md` | Ollama HTTP API reference |
 
 Training writes to `outputs/` and `lora_adapter/` (both gitignored — delete anytime to start fresh).
 

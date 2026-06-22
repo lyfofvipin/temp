@@ -1,61 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Gateway</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
 
-<div class="container">
+<header class="site-header">
+    <div class="container header-inner">
+        <div>
+            <p class="eyebrow">Ollama Gateway</p>
+            <h1>AI Gateway Dashboard</h1>
+            <p class="subtitle">List models, generate text, and chat through your local API.</p>
+        </div>
+        <span class="status-pill" id="healthStatus">Checking…</span>
+    </div>
+</header>
 
-    <h1>AI Gateway Dashboard</h1>
+<main class="container main-grid">
 
-    <div class="card">
-        <h2>Models</h2>
+    <section class="card card-models" aria-labelledby="models-heading">
+        <div class="card-header">
+            <h2 id="models-heading">Models</h2>
+            <button type="button" class="btn btn-secondary" onclick="loadModels()">
+                Refresh
+            </button>
+        </div>
 
-        <button onclick="loadModels()">Refresh Models</button>
+        <label class="field-label" for="modelSelect">Active model</label>
+        <select id="modelSelect" class="select-input">
+            <option value="">Loading models…</option>
+        </select>
 
-        <select id="modelSelect"></select>
-
-        <button onclick="showModelInfo()">
-            Model Details
+        <button type="button" class="btn btn-ghost" onclick="showModelInfo()">
+            View model details
         </button>
 
-        <pre id="modelInfo"></pre>
-    </div>
+        <pre id="modelInfo" class="code-block" aria-live="polite"></pre>
+    </section>
 
-    <div class="card">
-        <h2>Text Generation</h2>
+    <section class="card card-generate" aria-labelledby="generate-heading">
+        <div class="card-header">
+            <h2 id="generate-heading">Text Generation</h2>
+        </div>
 
+        <label class="field-label" for="prompt">Prompt</label>
         <textarea
             id="prompt"
-            placeholder="Enter prompt..."
+            class="textarea-input"
+            placeholder="Describe what you want the model to write…"
+            rows="5"
         ></textarea>
 
-        <button onclick="generateText()">
-            Generate
-        </button>
+        <div class="action-row">
+            <button type="button" class="btn btn-primary" onclick="generateText()">
+                Generate
+            </button>
+        </div>
 
-        <div id="generateResult"></div>
-    </div>
+        <div id="generateResult" class="result-panel" aria-live="polite"></div>
+    </section>
 
-    <div class="card">
-        <h2>Chat</h2>
+    <section class="card card-chat" aria-labelledby="chat-heading">
+        <div class="card-header">
+            <h2 id="chat-heading">Chat</h2>
+            <button type="button" class="btn btn-ghost" onclick="clearChat()">
+                Clear
+            </button>
+        </div>
 
-        <div id="chatBox"></div>
+        <div id="chatBox" class="chat-box" aria-live="polite">
+            <p class="chat-empty">Send a message to start the conversation.</p>
+        </div>
 
-        <input
-            type="text"
-            id="chatInput"
-            placeholder="Type message..."
-        >
+        <form class="chat-form" onsubmit="sendMessage(event)">
+            <input
+                type="text"
+                id="chatInput"
+                class="text-input"
+                placeholder="Type a message…"
+                autocomplete="off"
+            >
+            <button type="submit" class="btn btn-primary">Send</button>
+        </form>
+    </section>
 
-        <button onclick="sendMessage()">
-            Send
-        </button>
-    </div>
-
-</div>
+</main>
 
 <script src="/static/app.js"></script>
 </body>

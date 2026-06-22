@@ -142,6 +142,55 @@ def model_info(model_name):
 
 
 # =====================================================
+# OPENAI API (commented — same pattern as Ollama, via requests)
+# Uncomment config values in config.py, then uncomment this block.
+# See also: ../08_chatgpt_api_uses.py
+# =====================================================
+
+# def openai_post(endpoint, payload):
+#     from config import OPENAI_API_URL, OPENAI_API_KEY
+#
+#     try:
+#         response = requests.post(
+#             f"{OPENAI_API_URL}{endpoint}",
+#             headers={
+#                 "Authorization": f"Bearer {OPENAI_API_KEY}",
+#                 "Content-Type": "application/json",
+#             },
+#             json=payload,
+#             timeout=120,
+#         )
+#         response.raise_for_status()
+#         return response.json(), response.status_code
+#
+#     except requests.exceptions.RequestException as e:
+#         return {"error": str(e)}, 500
+#
+#
+# @app.route("/v1/openai/chat", methods=["POST"])
+# def openai_chat():
+#     from config import OPENAI_MODEL
+#
+#     body = request.json or {}
+#     messages = body.get("messages", [])
+#     model = body.get("model", OPENAI_MODEL)
+#
+#     if not messages:
+#         return jsonify({"success": False, "error": "messages required"}), 400
+#
+#     payload = {"model": model, "messages": messages}
+#     result, status = openai_post("/chat/completions", payload)
+#
+#     if status != 200:
+#         return jsonify({"success": False, "error": result.get("error")}), status
+#
+#     return jsonify({
+#         "success": True,
+#         "reply": result["choices"][0]["message"],
+#     })
+
+
+# =====================================================
 # HEALTH CHECK
 # =====================================================
 
@@ -156,8 +205,6 @@ def health():
 @app.route("/")
 def home():
     return render_template("index.html")
-
-
 
 
 if __name__ == "__main__":

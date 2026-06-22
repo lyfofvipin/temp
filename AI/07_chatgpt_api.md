@@ -95,4 +95,4 @@ while True:
 
 ## Local equivalent
 
-Ollama's `/api/chat` works the same way — see `ollama/using_api.md`.
+Ollama's `/api/chat` works the same way — see `06_using_api.md`.
