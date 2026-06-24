@@ -21,7 +21,7 @@
 #     price = int(input("Enter Item Price: "))
 
 #     if price < 0:
-#         exit(1)
+#         exit(2)
 
 #     sum += price
 #     print(sum)

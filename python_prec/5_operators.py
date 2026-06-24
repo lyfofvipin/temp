@@ -18,9 +18,7 @@
 
 # a = input("Enter Number: ")
 # b = input("Enter Number: ")
-# a = float(a)
-# b = float(b)
-# print( a ** b )
+# print( a + b )
 
 # Priority
 

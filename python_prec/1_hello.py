@@ -1,4 +1,4 @@
-print("Hello \bWorld.")
+# print("Hello\aWorld.")
 
 
 # print("Hello\aworld.")
@@ -6,7 +6,7 @@ print("Hello \bWorld.")
 # print( "she\\her" )
 # print( "they\\them" )
 
-# print('It\'s her choice')
+print('It"s her choice')
 
 # Escape Sequence	Description	Example Output
 

@@ -192,6 +192,43 @@
 # my_car.display_info()
 # my_boat.display_info() # Calls the inherited method from Vehicle
 
+# Multiple Inheritance 
+
+# class A:
+
+#     P = 10
+
+# class B:
+
+#     Q = 20
+
+# class C( A, B ):
+#     R = 30
+
+# print(dir(C))
+
+
+# class A:
+
+#     def __init__(self):
+#         self.P = 10
+
+# class B:
+
+#     def __init__(self):
+#         self.Q = 10
+
+# class C( A, B ):
+
+#     def __init__(self):
+#         A.__init__(self)
+#         B.__init__(self)
+#         self.R = 10
+
+# abc = C()
+
+# print(dir(abc))
+
 
 # class Vehicle:
 #     def __init__(self, brand, color):
@@ -210,8 +247,42 @@
 #         RTO.__init__(self, 1213142, "Vipin")
 
 # a = Car()
-
 # print(dir(a))
+# print(a.owner_id)
+
+
+# def a(x):
+#     print(x)
+
+# def b(y):
+#     print(y)
+
+# def c( x,y ):
+#     a(x)
+#     b(y)
+
+# c(10, 20)
+
+# class Vehicle:
+#     def __init__(self, brand, color):
+#         self.brand = brand
+#         self.color = color
+
+# class RTO:
+#     def __init__(self, number, owner_id):
+#         self.number = number
+#         self.owner_id = owner_id
+
+# class Car( Vehicle, RTO ):
+
+#     def __init__(self, brand, color, number, owner_id):
+#         Vehicle.__init__(self, brand, color)
+#         RTO.__init__(self, number, owner_id)
+
+# a = Car("BMW", "Black", "234-234-2342", "Rohit")
+# print(dir(a))
+# print(a.color)
+
 
 # Multiple Inheritance
 
@@ -252,6 +323,35 @@
 # child_obj.method_B()
 # child_obj.method_C()
 # child_obj.test()
+
+# class ParentA:
+#     def method_A(self):
+#         print("Method from Parent A")
+
+#     def method_B(self):
+#         print("Method from Parent A")
+
+#     def test(self):
+#         print("Test A")
+
+# class ParentB:
+#     def method_B(self):
+#         print("Method from Parent B")
+
+#     def test(self):
+#         print("Test B")
+
+# class Child(ParentA, ParentB):
+#     def method_C(self):
+#         print("Method from Child")
+
+#     def test(self):
+#         ParentA.test(self)
+#         ParentB.test(self)
+#         print("Test C")
+
+# child_obj = Child()
+# child_obj.method_B()
 
 # Method Resolution Order (MRO): When a method is called on a child class that has multiple parents, Python follows a specific search order to find the correct method.
 # This order is called the Method Resolution Order (MRO). 
@@ -303,7 +403,7 @@
 #         super().show()
 #         print("Class D")
 
-# # Create object
+# Create object
 # obj = D()
 # obj.show()
 
@@ -336,8 +436,8 @@
 #         print("Method from Child")
 
 #     def show(self):
-#         ParentB.show(self.show)
-#         ParentC.show(self.show)
+#         ParentB.show(self)
+#         ParentC.show(self)
 #         print("Class D")
 
 # child_obj = Child()
@@ -345,173 +445,3 @@
 # child_obj.method_A()
 # child_obj.method_B()
 # child_obj.method_C()
-
-# Encapsulation is a core principle of Object-Oriented Programming (OOP) that involves bundling data (attributes) and the methods (functions) that operate on that data into a single unit,
-# which is the class. 
-# It's the practice of hiding the internal state of an object from the outside world and only exposing a controlled interface to interact with it.
-# Think of a TV remote control. . The remote's buttons (the public methods) are what you use to interact with it.
-# You don't know or need to know about the internal wiring, circuits, or how the infrared signal is generated (the private data and methods). The internal complexity is hidden from you, and you can only change the volume or channel through the exposed interface (the buttons).
-# Key Concepts of Encapsulation
-#     Data Hiding: Encapsulation restricts direct access to an object's internal data. In Python, this is achieved by convention using a single underscore (_) or, more strictly, with double underscores (__) before an attribute name. These are not truly private but signal to other programmers that the attribute is intended for internal use only.
-#     Access Control: All interaction with the object's data happens through its methods. This allows you to control how the data is read (getters) or modified (setters), ensuring that the data remains in a valid state.
-
-# In this example, the BankAcount class encapsulates the _balance data. You can't directly change the balance from outside the class. Instead, you must use the deposit() and withdraw() methods, which contain logic to ensure the operations are valid.
-
-
-# class BankAccount:
-#     def __init__(self, initial_balance):
-#         self._balance = initial_balance
-
-#     def get_balance(self):
-#         return self._balance
-
-#     def deposit(self, amount):
-#         if amount > 0:
-#             self._balance += amount
-#             print(f"Deposited {amount}. New balance is {self._balance}")
-#         else:
-#             print("Deposit amount must be positive.")
-
-#     def withdraw(self, amount):
-#         if 0 < amount <= self._balance:
-#             self._balance -= amount
-#             print(f"Withdrew {amount}. New balance is {self._balance}")
-#         else:
-#             print("Invalid withdrawal amount.")
-
-# class User(BankAccount):
-#     pass
-
-# account = BankAccount(100)
-
-# print(dir(account))
-# # Interact with the object through its public methods
-# account.deposit(50)
-# account.get_balance()
-# account.withdraw(25)
-
-
-# Double underscores (__) are used for a feature called name mangling. This is a specific way Python implements data hiding to prevent name clashes in subclasses, not for creating truly private variables.
-# __private_vars (Name Mangling)
-# When you name an instance variable with a double underscore prefix (e.g., __balance), 
-# Python's interpreter automatically changes the name to _ClassName__balance behind the scenes. This makes it much harder for a subclass or an external user to accidentally overwrite or access the variable, thereby preventing naming conflicts.
-
-# class Car:
-#     def __init__(self, brand, mileage):
-#         self.__brand = brand
-#         self.__mileage = mileage
-
-#     def get_info(self):
-#         print(f"This is a {self.__brand} with {self.__mileage} miles.")
-
-# class ElectricCar(Car):
-
-#     def __init__(self, brand, mileage, battery_level):
-#         super().__init__(brand, mileage)
-#         self.__battery_level = battery_level
-
-#     def get_info(self):
-#         print(f"Brand: {self._Car__brand}, Battery: {self.__battery_level}%")
-
-# a = ElectricCar()
-# my_car = Car("Ford", 5000)
-# my_electric_car = ElectricCar("Tesla", 10000, 95)
-# print(dir(my_electric_car))
-
-# my_car.get_info()
-# my_electric_car.get_info()
-
-
-# __ vs _
-
-# It's important to understand the difference between the double and single underscore conventions:
-#     __var (Double Underscore): Triggers name mangling to prevent naming conflicts in subclasses. It's a way to enforce encapsulation and a form of name protection.
-#     _var (Single Underscore): This is just a convention. It signals to other developers that the variable is meant for internal use and should be treated as private,
-# but it doesn't do anything to prevent direct access. This is the more common and preferred way to indicate "privacy" in Python.
-
-
-# Operator Overloading
-# Operator overloading allows you to redefine how standard Python operators (like +, -, *, ==)
-# behave for your custom objects. This lets you use these intuitive operators on your own classes, making your code more readable and consistent.
-# You implement operator overloading by defining special methods in your class. These methods have names that start and end with double underscores, such as __add__ for the + operator.
-#     Syntax: You define a special method in your class that corresponds to the operator you want to overload.
-
-# class Car:
-#     def __init__(self, brand, mileage, speed):
-#         self.brand = brand
-#         self.mileage = mileage
-#         self.speed = speed
-
-#     def __add__(self, your_car):
-#         return {
-#             "name": f"{self.brand}-{your_car.brand}",
-#             "speed": self.speed + your_car.speed,
-#             "milage": self.mileage + your_car.mileage
-#         }
-
-#     def __sub__(self, other):
-#         return self.speed - other.speed
-
-#     def __str__(self):
-#         return f"{self.brand}-{self.mileage}-{self.speed}"
-
-#     def __len__(self):
-#         return self.speed
-
-#     def __dict__(self):
-#         {
-#             "name": f"{self.brand}",
-#             "speed": self.speed,
-#             "milage": self.mileage
-#         }
-
-#     def get_info(self):
-#         print(f"This is a {self.brand} with {self.mileage} miles.")
-
-# my_car = Car("Honda", "60", 120)
-# your_car = Car("BMW", "5", 300)
-
-# print( my_car + your_car )
-
-# a = Car("Honda", 60, 100)
-
-# print( a.get_info() )
-
-# print( my_car + your_car )
-# print( my_car - your_car )
-# print( my_car / your_car )
-
-# +	__add__	p1 + p2
-# -	__sub__	p1 - p2
-# *	__mul__	p1 * p2
-# ==	__eq__	p1 == p2
-# <	__lt__	p1 < p2
-
-
-# class Vector:
-#     def __init__(self, x, y):
-#         self.x = x
-#         self.y = y
-
-#     # Overload the + operator
-#     def __add__(self, other):
-#         # Create a new Vector object with the sum of the components
-#         new_x = self.x + other.x
-#         new_y = self.y + other.y
-#         return Vector(new_x, new_y)
-
-#     def __str__(self):
-#         # This method is for string representation (e.g., when you print the object)
-#         return f"Vector({self.x}, {self.y})"
-
-# # Create two Vector objects
-# v1 = Vector(2, 3)
-# v2 = Vector(5, 7)
-
-# # Use the overloaded + operator
-# v3 = v1 + v2
-
-# print(v3) # Output: Vector(7, 10)
-
-
-

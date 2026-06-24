@@ -17,6 +17,16 @@
 #     print("It's 0.")
 
 
+# a = int(input("Enter A Number: "))
+
+# if a > 0 :
+#     print("It's a +ve Number.")
+# elif a < 0 :
+#     print("It's a -ve Number.")
+# else:
+#     print("It's a 0")
+
+
 a = "u"
 
 if a == "a":

@@ -11,13 +11,15 @@
 # Defining a Class
 # You define a class using the class keyword, followed by the class name (which, by convention, should start with a capital letter).
 
-# class ClassName:
+# class my_class:
 #     # Class body (attributes and methods)
 #     pass # 'pass' is a placeholder for an empty class
 
 # Creating Objects (Instances) from a Class
 
-# object_name = ClassName()
+# object_name = my_class()
+
+# print(type(object_name))
 
 
 # a = [1,2,3,43,4]
@@ -36,6 +38,7 @@
 
 # print( type(a) )
 
+# print(dir(a))
 
 class SocialMedia:   
 
@@ -48,9 +51,10 @@ class SocialMedia:
         print("Commented")
 
 # facebook = SocialMedia()
-
 # print( facebook.CEO )
 # facebook.like()
+
+# a = [ 23, 34, 45, 65, 657 ]
 
 # a = SocialMedia()
 # b = SocialMedia()
@@ -108,7 +112,7 @@ class SocialMedia:
 
 # print(a.brand)
 # print(b.brand)
-# a.honk()
+# a.drive()
 
 # class Dog:
 

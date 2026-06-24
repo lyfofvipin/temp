@@ -1,26 +1,29 @@
+# input("Enter Some data: ")
+
+# a = input("Enter Some data: ")
+
 # a = input("Enter Something:")
 # print(a)
 # print(type(a))
-
 
 # a = input("Enter A number: ")
 # print(a)
 # print ( type(a) )
 
-a = input("Enter Some data: ")
-print(a)
+# a = input("Enter Some data: ")
+# print(a)
 # print( type(a) )
 
 
 # a = "Vipin"
 
-# "Hello <Vipin>, How are you?"
+# # "Hello <Vipin>, How are you?"
 
 # print("Hello ", a, ", How are you?")
 
 # Formatted Strings
 
-print(f"Hello {a}, How are you?")
+# print(f"Hello {a}, How are you?")
 
 # x = input( "Enter Your Name: " )
 # print( f"Good Afternoon {x}." )

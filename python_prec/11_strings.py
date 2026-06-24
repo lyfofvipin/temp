@@ -26,8 +26,9 @@
 # Indexing: Each character in a string has an index. The index starts at 0 for the first character.
 # To access these values of a string using the index values we use `[]` operator.
 
-my_string = "Hello World"
+# my_string = "HelloWorld"
 
+# print( my_string[5] )
 # print(my_string[-3]) 
 # print(my_string[-1])
 # print(my_string[50]) #IndexError: string index out of range
@@ -50,9 +51,9 @@ my_string = "Hello World"
 # print( my_string[ 1: ] )
 # print(my_string[ :3 ])  
 # print(my_string[ 1:4 ]) 
+# print(my_string[ -3: -1 ]) 
 
 # my_string = "0123456789"
-
 
 # print( my_string[ :7 ] )
 # print(my_string[ 2:3 ])
@@ -70,11 +71,10 @@ my_string = "Hello World"
 
 # my_string = "0123456789"
 
-
 # print( my_string [  : 8 : 2 ]  )
 # print( my_string [ -9 : -2 : 2 ]  )
 # print( my_string[::-1] )
-# print( my_string[ : -6 : -2 ] )
+# print( my_string[  : -6 : -2 ] )
 
 
 # my_string = "abcdefghij"
@@ -85,11 +85,11 @@ my_string = "Hello World"
 # print(my_string[ -5:-1:-1 ])
 
 # my_string = "abcdefghijklmn"
-# print(my_string[ ::-1 ])  
-# print(my_string[ ::-3 ])  
-# print(my_string[ :: ])  
-# print(my_string[ :3:-2 ])  
-# print(my_string[ :-2:3 ])   #output: adgj
+# print(my_string[ ::-1 ])
+# print(my_string[ ::-3 ])
+# print(my_string[ :: ])
+# print(my_string[ :3:-2 ])
+# print(my_string[ :-2:3 ]) #output: adgj
 
 # len
 # Length: You can get the length of a string using the len() function.
@@ -105,7 +105,7 @@ my_string = "Hello World"
 # print("h" in my_string)
 
 # String Manipulation / Strings are Immutable
-a = "Wello"
+# a = "Wello"
 # a[ 0 ] = "H"
 
 # a = "H" + a[1:]
