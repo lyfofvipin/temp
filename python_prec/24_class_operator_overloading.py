@@ -4,6 +4,51 @@
 # You implement operator overloading by defining special methods in your class. These methods have names that start and end with double underscores, such as __add__ for the + operator.
 #     Syntax: You define a special method in your class that corresponds to the operator you want to overload.
 
+# a = "34"
+# print(dir(a))
+
+# class Rectangle:
+
+#     def __init__(self, length, width):
+#         self.length = length
+#         self.width = width
+
+#     def area(self):
+#         return self.length * self.width
+
+#     def perimeter(self):
+#         return 2 * (self.length + self.width)
+
+#     def __repr__(self):
+#         return f"Length: {self.length}, Width: {self.width}"
+
+#     def __add__(self, other):
+#         return self.area() + other.area()
+
+# a = Rectangle(15, 25)
+# b = Rectangle(30, 30)
+
+# print( a + b )
+
+# class Circle:
+
+#     def __init__(self, r):
+#         self.radius = r
+
+#     def area(self):
+#         return 3.14*self.r ** 2
+    
+#     def parameter(self):
+#         return 2*3.14*self.r
+
+#     def  __int__(self):
+#         return self.radius
+
+# a = Circle(5)
+# b = Circle(10)
+
+# print( int(a) )
+
 # class Car:
 #     def __init__(self, brand, mileage, speed):
 #         self.brand = brand
@@ -36,10 +81,11 @@
 #     def get_info(self):
 #         print(f"This is a {self.brand} with {self.mileage} miles.")
 
-# my_car = Car("Honda", "60", 120)
+# my_car = Car("Honda", "60", 100)
 # your_car = Car("BMW", "5", 300)
 
-# print( my_car + your_car )
+# print( your_car - my_car )
+
 
 # a = Car("Honda", 60, 100)
 

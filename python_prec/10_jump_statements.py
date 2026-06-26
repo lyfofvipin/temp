@@ -4,8 +4,47 @@
 # continue -> continue statement is a jump statement that can help us to skip a certain part of the code
 # exit() -> Exit function in python help us to terminate the program based on any condition and it also sends a signal back to the computer for analytics.
 
-# take 10 number as input from user and sum all the +ve one
+# counter = 1
+# while True:
+#     print(counter)
+#     counter += 1
+#     if counter == 5:
+#         break
 
+
+# number = 49
+
+# counter = 2
+
+# while counter <= number -1:
+#     if number % counter == 0:
+#         print(counter)
+#         break
+#     counter += 1
+
+
+# counter = 1
+
+# while counter <= 10:
+
+#     print(counter)
+#     if counter % 2 == 0:
+#         continue
+#     counter += 1
+
+# name = "vipin"
+# counter = 1
+
+# while counter <= 10:
+
+#     if name == "bhaskar":
+#         counter += 1
+#         print("Hi bhaskar")
+#         continue
+#     counter += 1
+#     print("Hi")
+
+# take 10 number as input from user and sum all the +ve one
 # counter = 1
 # while counter <= 10:
 #     print(counter)
@@ -19,12 +58,34 @@
 # while True:
 
 #     price = int(input("Enter Item Price: "))
-
 #     if price < 0:
-#         exit(2)
-
+#         continue
 #     sum += price
 #     print(sum)
+
+
+
+# sum = 0
+
+# while True:
+
+#     price = int(input("Enter Item Price: "))
+#     if price < 0:
+#         break
+#     sum += price
+#     print(sum)
+
+# print("Total: ", sum)
+
+
+sum = 0
+
+while True:
+    price = int(input("Enter Item Price: "))
+    if price < 0:
+        exit(8)
+    sum += price
+    print(sum)
 
 # print("Total: ", sum)
 

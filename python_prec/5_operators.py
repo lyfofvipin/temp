@@ -277,8 +277,7 @@
 # 0, "", [], {}, (), None
 
 # or
-# -> Return False only if both the values are False
-# -> If both the values are true then it will pick the left one
+# -> If any value is true It will select that
 # -> If all values are false it will select the right most
 
 # Left  |  Right | Output
@@ -287,6 +286,7 @@
 # True    |  True  | True
 # False   |  False | False
 
+# print( False or False or 56 or True or 90 )
 
 # print( 23 and 25 and "" and 9 and 5 )
 
@@ -304,14 +304,17 @@
 
 # print( True )
 
-# a = "x"
+# a = "u"
 # print( a == "a" or a == "e" or a == "i" or a == "o" or a == "u" )
 
 
 # The Concept Of True And False
 
 
-# print( True and True and "False" and 321 and True )
+# print( True and True and "False" and True and 321 )
+# print( True and True and 0 and True and 321 )
+
+
 
 # Check a number if that divide by either 3 either 5
 
@@ -324,6 +327,7 @@
 # print(a % 3 == 0 and a % 5 == 0)
 
 
+# print( 34 and "-" or 45 and 67 or 93 or 45 and 23 )
 # print( (34 and " ") or (45 and 67) or 93 or (45 and 23) )
 
 # Membership Operators
@@ -333,7 +337,8 @@
 # not in	True if not present	"x" not in "cat"
 
 # a = "I live in Gujrat."
-# print("ive" in a)
+# print("j" in a)
+# print( "G" not in  a )
 
 # print( "abc" not in "Jaipur is a really nice city." )
 

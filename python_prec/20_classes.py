@@ -40,15 +40,15 @@
 
 # print(dir(a))
 
-class SocialMedia:   
+# class SocialMedia:   
 
-    CEO = "Mark"
+#     CEO = "Mark"
 
-    def like(self):
-        print("Liked")
+#     def like(self):
+#         print("Liked")
 
-    def comment(self):
-        print("Commented")
+#     def comment(self):
+#         print("Commented")
 
 # facebook = SocialMedia()
 # print( facebook.CEO )
@@ -65,6 +65,7 @@ class SocialMedia:
 
 # for x in e:
 #     print(x.CEO)
+
 
 # twitter = SocialMedia()
 # twitter.CEO = "Elon Musk"
@@ -155,6 +156,30 @@ class SocialMedia:
 # c.bark()
 
 
+# class Dog:
+
+#     species = "GS"
+
+#     def test(self):
+#         self.a = 10
+#         self.b = 20
+#         self.c = 30
+#         self.d = 40
+
+#     def eat(self):
+#         self.b = 50
+#         print(f"hungry right now.")
+
+#     def bark(self):
+#         print(self.b)
+#         print(f"says woof!")
+
+# xyz = Dog()
+# xyz.test()
+# xyz.eat()
+# xyz.bark()
+
+
 # Attributes (The "What It Is")
 # Attributes are the data or properties associated with an object.
 # They store information about a specific instance. 
@@ -192,9 +217,13 @@ class SocialMedia:
 #         print(self.b)
 #         print(f"says woof!")
 
-# a = Dog()
-# a.constr()
-# print(dir(a))
+# xyz = Dog()
+# xyz.constr()
+# xyz.bark()
+
+# pqr = Dog()
+# pqr.constr()
+# pqr.bark()
 
 # class Dog:
 
@@ -213,8 +242,8 @@ class SocialMedia:
 #         print(f"says woof!")
 
 # a = Dog()
-# print(dir(""))
-# a.eat()
+# # print(dir(""))
+# # a.eat()
 # a.bark()
 
 # Constructor with Arguments
@@ -238,26 +267,29 @@ class SocialMedia:
 # a.bark()
 
 
+class Dog:
+    species = "GS"
+
+    def __init__(self, name="tom", age=2):
+        self.dog_name = name
+        self.age = age
+        self.is_hungry = True
+
+    def bark(self):
+        print(f"{self.dog_name} says woof!")
+
+    def eat(self):
+        if self.is_hungry:
+            print(f"{self.dog_name} is eating...")
+            self.is_hungry = False
+        else:
+            print(f"{self.dog_name} is not hungry right now.")
+            self.is_hungry = True
+
 # print(dir(Dog))
+# a = Dog()
+# print( dir( a ) )
 
-# class Dog:
-#     species = "GS"
-
-#     def __init__(self, name="tom", age=2):
-#         self.dog_name = name
-#         self.age = age
-#         self.is_hungry = True
-
-#     def bark(self):
-#         print(f"{self.dog_name} says woof!")
-
-#     def eat(self):
-#         if self.is_hungry:
-#             print(f"{self.dog_name} is eating...")
-#             self.is_hungry = False
-#         else:
-#             print(f"{self.dog_name} is not hungry right now.")
-#             self.is_hungry = True
 
 # my_dog = Dog()
 # my_dog.bark()
@@ -276,22 +308,20 @@ class SocialMedia:
 # print(f"Buddy is a member of the {my_dog.species} species.")
 
 
-class Car:
+# class Car:
 
+#     def __init__(self, brand="Tata", color="White"):
+#         self.brand = brand
+#         self.color = color
+#         self.engine_status = "off"
 
-    def __init__(self, brand="Tata", color="White"):
-        self.brand = brand
-        self.color = color
-        self.engine_status = "off"
-
-    def start_engine(self):
-        if self.engine_status == "on":
-            print(f"The {self.brand}'s engine is now on.")
-            self.engine_status = "off"
-        else:
-            print(f"The {self.brand}'s engine is now off.")
-            self.engine_status = "on"
-
+#     def start_engine(self):
+#         if self.engine_status == "on":
+#             print(f"The {self.brand}'s engine is now on.")
+#             self.engine_status = "off"
+#         else:
+#             print(f"The {self.brand}'s engine is now off.")
+#             self.engine_status = "on"
 
 # a = Car()
 # print(a.brand)
@@ -300,6 +330,10 @@ class Car:
 # print(a.engine_status)
 # a.start_engine()
 # print(a.engine_status)
+
+# a = Car()
+# print(dir(a))
+# print( dir( Car ) )
 
 # # Create a new Car object, passing arguments to __init__()
 # my_car = Car(brand="Toyota", color="Blue")
@@ -346,7 +380,6 @@ class Car:
 #     def __init__(self, name):
 #         self.name = name
 
-
 # milk = GST(name="Saras")
 # bread = GST(name="Amul")
 
@@ -360,57 +393,55 @@ class Car:
 
 # Methods: Class vs. Instance
 
-# class a:
+# class Demo:
 
 #     def __init__(self):
 #         pass
 
-#     def test1():
+#     def test():
 #         print("hi")
 
-#     def test(self):
+#     def test1(self):
 #         print("hi")
 
-# a.test1()
+# Demo.test1()
+# a = Demo()
+# a.test()
 
-# abc = a()
-# abc.test1()
+class BankAccount:
 
+    BANK_NAME = "SBI"
 
-# class BankAccount:
+    def __init__(self, name, mob, age, dob, balance):
+        self.name = name
+        self.mob = mob
+        self.age = age
+        self.dob = dob
+        self.balance = balance
 
-#     BANK_NAME = "SBI"
+    def show_info(self):
+        print( self.name,
+            self.mob,
+            self.age,
+            self.balance)
 
-#     def __init__(self, name, mob, age, dob, balance):
-#         self.name = name
-#         self.mob = mob
-#         self.age = age
-#         self.dob = dob
-#         self.balance = balance
-
-#     def show_info(self):
-#         print( self.name,
-#             self.mob,
-#             self.age,
-#             self.balance)
-
-#     def deposit(self, amount):
-#         if amount <= 0:
-#             print("Invalid Amount")
-#             exit(1)
-#         self.balance += amount
+    def deposit(self, amount):
+        if amount <= 0:
+            print("Invalid Amount")
+            exit(1)
+        self.balance += amount
     
-#     def withdraw(self, amount):
-#         if amount > self.balance:
-#             print("Invalid Amount")
-#             exit(1)
-#         self.balance -= amount
+    def withdraw(self, amount):
+        if amount > self.balance:
+            print("Invalid Amount")
+            exit(1)
+        self.balance -= amount
 
-# vipin = BankAccount("Vipin", 232424243, 23, "23454", 500)
-# vipin.deposit(100)
-# vipin.show_info()
-# vipin.withdraw(200)
-# vipin.show_info()
+# demo = BankAccount("demo", 111, 23, "23454", 500)
+# demo.deposit(100)
+# demo.show_info()
+# demo.withdraw(200)
+# demo.show_info()
 
 # bank_accounts = []
 # for x in ["Vipin", "Vikas", "Priya", "Bhaskar"]:

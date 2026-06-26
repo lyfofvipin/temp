@@ -1,3 +1,8 @@
+# if False:
+#     print("Line1")
+#     print("Line2")
+#     print("Line3")
+
 # age = 8
 
 # if age >= 18 :
@@ -5,6 +10,16 @@
 #     print("Yes You Can Vote.")
 # else:
 #   print("No You Can Not Vote.")
+#   print("No You Can Not Vote.")
+
+
+
+# number = 0
+
+# if number > 0:
+#     print("It's +ve")
+# else:
+#     print("It's -ve")
 
 
 # number = -23
@@ -27,22 +42,22 @@
 #     print("It's a 0")
 
 
-a = "u"
+# a = "x"
 
-if a == "a":
-    print("yes")
-elif a == "e":
-    print("yes")
-elif a == "i":
-    print("yes")  
-elif a == "o":
-    print("yes")
-elif a == "u":
-    print("yes")
-else:
-    print("No")
+# if a == "a":
+#     print("yes")
+# elif a == "e":
+#     print("yes")
+# elif a == "i":
+#     print("yes")  
+# elif a == "o":
+#     print("yes")
+# elif a == "u":
+#     print("yes")
+# else:
+#     print("No")
 
-
+# a = "a"
 # if a == "a" or a == "e" or a == "i" or a == "o" or a == "u":
 #     print("yes")
 # else:
@@ -55,12 +70,14 @@ else:
 # else:
 #     print("No")
 
-# a = 25
+"""
+a = 25
 
-# if a < 50 and a > 10:
-#     print("yes")
-# else:
-#     print("no")
+if a < 50 and a > 10:
+    print("yes")
+else:
+    print("no")
+"""
 
 # char = 'v'
 
@@ -79,13 +96,3 @@ else:
 #     print("I am in the else statement")
 
 # print("end")
-
-# number = -34123412431234817264387164327
-
-# if number > 0 :
-#     print("It's a +ve Number")
-# elif number < 0:
-#     print("It's a -ve Number")
-# else:
-#     print("It's a 0")
-

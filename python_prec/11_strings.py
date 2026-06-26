@@ -26,13 +26,12 @@
 # Indexing: Each character in a string has an index. The index starts at 0 for the first character.
 # To access these values of a string using the index values we use `[]` operator.
 
-# my_string = "HelloWorld"
+# my_string = "Hello World"
 
 # print( my_string[5] )
 # print(my_string[-3]) 
 # print(my_string[-1])
 # print(my_string[50]) #IndexError: string index out of range
-
 
 # Slicing: You can extract a substring by using slicing notation [start:end].
 # For slicing we use `:` operator in side `[]`
@@ -95,7 +94,7 @@
 # Length: You can get the length of a string using the len() function.
 
 # my_string = "Hello"
-# print( len(my_string) ) 
+# print( len(my_string) )
 
 # Membership: Check if a substring exists in a string using in or not in.
 
@@ -110,8 +109,6 @@
 
 # a = "H" + a[1:]
 # print( a ) # Wello
-
-# "Heloo"
 
 # String Methods: Python strings have a variety of built-in methods.
 # Some of the commonly used methods are:
@@ -138,11 +135,11 @@
 # my_string = "--hello--"
 # print(my_string.strip("-"))
 
-# my_string = "------hel--lo*************"
-# print(my_string.strip("h-*"))
-
 # my_string = "-*-*-*hello8888-*-*"
 # print(my_string.lstrip("-*")) 
+
+# my_string = "------hel--lo*************"
+# print(my_string.strip("h-*"))
 
 # my_string = "+++++hello++++++"
 # print(my_string.rstrip("+")) 

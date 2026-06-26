@@ -1,7 +1,13 @@
-while True:
-    print("Hello World1!")
-    print("Hello World2!")
-    print("Hello World3!")
+# while True:
+#     print("Hello World1!")
+#     print("Hello World2!")
+#     print("Hello World3!")
+
+# counter = True
+
+# while counter:
+#     print("hello")
+#     counter = False
 
 # counter = 5
 
@@ -9,18 +15,29 @@ while True:
 #     print(counter)
 #     counter = counter - 1
 
+# counter = 1
+# while counter <= 5:
+#     print(counter)
+#     counter += 1
+
 # Iteration
 
-# counter = 2
-# while counter <= 10:
+# counter = 1
+# while counter <= 5:
 #     print(counter)
 #     counter = counter + 2
 
 
-# counter = 5
-# while counter <= 30:
+# counter = 20
+# while counter <= 200:
 #     print(counter)
-#     counter = counter + 5
+#     counter = counter + 20
+
+# counter = 1
+# while counter <= 10:
+#     print(counter)
+#     counter *= 2
+
 
 # 1 - 50
 # 50 - 1
@@ -73,20 +90,23 @@ while True:
 # Give me multiply of all the numbers from 1 to 5:
 
 # counter = 1
-# sum = 0
 
 # while counter <= 5:
-
 #     number = int(input("Enter A Number: "))
 #     print(number)
-
-#     sum = sum + number
-#     print(sum)
-
 #     counter += 1
 
 
+# counter = 1
+# sum = 0
+# while counter <= 5:
+#     number = int(input("Enter A Number: "))
+#     print(number)
+#     sum = sum + number
+#     print(sum)
+#     counter += 1
 
+# print("Sum is : ", sum)
 # sum = 1
 # counter = 1
 

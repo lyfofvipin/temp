@@ -73,12 +73,12 @@
 # 2, 4, 6, 8, 10 ... Even - Sam
 # %
 
-# a = 50
+# a = 52
 
 # if a % 2 == 0:
-#     print("A 1 Sum/Even Number h")
+#     print("A 1 Even Number h")
 # else:
-#     print("A 1 Visam/Odd Number h")
+#     print("A 1 Odd Number h")
 
 
 # a = int(input("Enter A: "))
