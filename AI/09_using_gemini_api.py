@@ -11,9 +11,9 @@ Get a key: https://aistudio.google.com/apikey
 import os
 
 # Use the same model as your working curl call.
-# gemini-2.0-flash-lite may show limit: 0 on free tier for some accounts.
+# gemini-flash-latest may show limit: 0 on free tier for some accounts.
 MODEL = "gemini-flash-latest"
-PROMPT = "Explain what an API gateway does in two sentences."
+PROMPT = "what is a llm give me a HTML code to check it?"
 
 # --- Option 1: Official SDK (active) ---
 from google import genai
@@ -30,10 +30,11 @@ print(response.text)
 
 # --- Option 2: Same call with requests (uncomment to compare) ---
 # import requests
-#
+
 # api_key = os.environ.get("GEMINI_API_KEY") or os.environ["GOOGLE_API_KEY"]
+# print(api_key)
 # url = f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent"
-#
+
 # response = requests.post(
 #     url,
 #     headers={
@@ -43,7 +44,7 @@ print(response.text)
 #     json={
 #         "contents": [
 #             {
-#                 "parts": [{"text": PROMPT}]
+#               "parts": [{"text": PROMPT}]
 #             }
 #         ]
 #     },
@@ -51,7 +52,7 @@ print(response.text)
 # )
 # response.raise_for_status()
 # data = response.json()
-#
+
 # print(data["candidates"][0]["content"]["parts"][0]["text"])
 
 

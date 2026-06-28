@@ -8,7 +8,7 @@ import os
 
 # gpt-4o-mini: lowest-cost general-purpose model (good for demos)
 MODEL = "gpt-4o-mini"
-PROMPT = "write a flask app that uses Open API keys to be used in another UI."
+PROMPT = "what is a llm give me a HTML code to check it?"
 
 # --- Option 1: Official SDK (active) ---
 from openai import OpenAI
