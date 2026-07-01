@@ -8,7 +8,7 @@ app = FastAPI()
 # 1. Initialize the Hugging Face model ONCE when the server starts
 # Using HF "pipeline" abstracts away manual tokenization + forward pass steps
 device = "cuda" if torch.cuda.is_available() else "cpu"
-generator = pipeline("text-generation", model="distilgpt2", device=device)
+generator = pipeline("text-generation", model="Qwen/Qwen2.5-0.5B-Instruct", device=device)
 
 # "text-generation": This is the Task Identifier. It tells Hugging Face exactly what kind of job you want to do. Hugging Face supports dozens of different AI pipelines (e.g., "sentiment-analysis", "translation", "audio-classification"). By passing "text-generation", it automatically knows it needs an auto-regressive language model that predicts the next word.
 

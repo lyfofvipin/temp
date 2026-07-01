@@ -1,0 +1,5 @@
+# Optional deps for 15_mcp_server.py (real MCP server)
+# 15_mcp_demo.py only needs: requests
+
+mcp>=1.0.0
+requests>=2.31.0

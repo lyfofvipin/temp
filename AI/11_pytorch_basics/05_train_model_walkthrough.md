@@ -113,7 +113,7 @@ flowchart TB
     DATA[data.json] --> DS[datasets.load_dataset]
     DS --> MAP[.map to_training_text]
     MAP --> TRAIN[SFTTrainer.train]
-    HF[distilgpt2 from Hub] --> MODEL[AutoModelForCausalLM]
+    HF[Qwen/Qwen2.5-0.5B-Instruct from Hub] --> MODEL[AutoModelForCausalLM]
     MODEL --> LORA[PEFT LoRA adapter]
     LORA --> TRAIN
     TRAIN --> SAVE[lora_adapter/]

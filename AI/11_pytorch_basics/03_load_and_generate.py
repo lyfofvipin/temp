@@ -30,6 +30,9 @@ model = AutoModelForCausalLM.from_pretrained(MODEL_ID, dtype=torch.float32)
 prompt = "### Instruction:\nWhat is XYZ ORG?\n\n### Response:\n"
 inputs = tokenizer(prompt, return_tensors="pt")
 
+device = "cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu"
+
+model.to(device)
 model.eval()
 with torch.no_grad():
     output_ids = model.generate(
