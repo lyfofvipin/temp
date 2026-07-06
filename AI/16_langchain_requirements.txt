@@ -1,0 +1,9 @@
+# LangChain demo (16_langchain_demo.py)
+langchain-core>=0.3.0
+langchain-ollama>=0.2.0
+
+# Optional — only for 16_hf_image_demo.py (image generation, GPU recommended)
+# torch>=2.2.0
+# diffusers>=0.30.0
+# accelerate>=0.28.0
+# transformers>=4.40.0

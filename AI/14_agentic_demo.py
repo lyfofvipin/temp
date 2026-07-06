@@ -24,22 +24,23 @@ MAX_STEPS = 8
 # Allowlisted hosts for fetch_url (demo safety — expand carefully in production)
 ALLOWED_HOSTS = (
     "wttr.in",
-    "api.github.com",
+    "github.io",
     "httpbin.org",
     "example.com",
+    "google.com"
 )
 
+search_word = "computer"
+
 DEFAULT_GOAL = (
-    "I am planning time off. Check the current weather in London, "
-    "look up XYZ ORG vacation policy from company data, "
-    "and give me a short summary I can use to decide on a 5-day trip."
+    f"find info on {search_word} from https://www.google.com/search?q={search_word}&sxsrf=APpeQntPC7_5Kw-jaFB86JdEg8ulOjizUg%3A1783094442745."
 )
 
 # ---------------------------------------------------------------------------
 # Internet + local tools (Python runs these — not Ollama)
 # ---------------------------------------------------------------------------
 
-COMPANY_KB = {
+COMPANY_DATA = {
     "xyz org": "XYZ ORG is a fictional company used for AI training demos.",
     "vacation policy": "XYZ ORG offers 20 days paid leave per year.",
     "support email": "support@xyz-org.example",
@@ -86,7 +87,7 @@ def tool_fetch_url(url: str) -> str:
 
 def tool_company_lookup(query: str) -> str:
     key = query.lower().strip()
-    for topic, answer in COMPANY_KB.items():
+    for topic, answer in COMPANY_DATA.items():
         if topic in key or key in topic:
             return answer
     return "No company info found for that topic."

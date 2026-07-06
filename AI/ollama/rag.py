@@ -28,7 +28,6 @@ def embed(text: str) -> list[float]:
     response.raise_for_status()
     return response.json()["embedding"]
 
-
 def cosine_similarity(a: list[float], b: list[float]) -> float:
     dot = sum(x * y for x, y in zip(a, b))
     norm_a = math.sqrt(sum(x * x for x in a))
@@ -36,7 +35,7 @@ def cosine_similarity(a: list[float], b: list[float]) -> float:
     return dot / (norm_a * norm_b + 1e-9)
 
 
-def load_knowledge_base() -> list[dict]:
+def load_data() -> list[dict]:
     records = json.loads(DATA_FILE.read_text())
     chunks = []
     for row in records:
@@ -82,7 +81,7 @@ def ask(question: str, context_chunks: list[str]) -> str:
 
 def main():
     print("Loading knowledge base and building embeddings...")
-    chunks = load_knowledge_base()
+    chunks = load_data()
 
     questions = [
         "What is XYZ ORG?",
@@ -96,8 +95,11 @@ def main():
         print("Retrieved:")
         for item in retrieved:
             print(f"  - {item[:80]}...")
-        answer = ask(question, retrieved)
-        print(f"Answer: {answer}")
+        import pdb; pdb.set_trace()
+        # answer = ask(question, retrieved)
+        # print(f"Answer: {answer}")
+        print( question )
+        print( retrieved )
 
 
 if __name__ == "__main__":

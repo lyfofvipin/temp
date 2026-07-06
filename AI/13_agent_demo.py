@@ -50,7 +50,7 @@ def tool_calculator(expression: str) -> str:
     if not re.fullmatch(r"[\d\s+\-*/().]+", expression):
         return "Error: only numbers and + - * / ( ) allowed"
     try:
-        result = eval(expression, {"__builtins__": {}}, {})  # noqa: S307 — demo only
+        result = eval(expression, {"__builtins__": {}}, {})
         return str(result)
     except Exception as exc:
         return f"Error: {exc}"
@@ -128,7 +128,6 @@ def parse_agent_line(text: str) -> tuple[str, str, str]:
 
     return "unknown", "", text
 
-
 def run_agent(question: str) -> None:
     print("=" * 60)
     print("MODE: AI agent (LLM + tools + loop)")
@@ -144,7 +143,6 @@ def run_agent(question: str) -> None:
         print(f"--- Step {step} ---")
         raw = ollama_chat(messages)
         print(f"Model: {raw}\n")
-
         kind, name, payload = parse_agent_line(raw)
 
         if kind == "answer":
@@ -166,7 +164,7 @@ def run_agent(question: str) -> None:
                 }
             )
             continue
-
+        
         # Model did not follow format — nudge once
         messages.append({"role": "assistant", "content": raw})
         messages.append(
