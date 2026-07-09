@@ -15,11 +15,14 @@
 # empty_set = set()
 # print(empty_set, type(empty_set))
 
+# a = { (), False }
+# print(a[0])
+
 # a = { 1, 2, 3, 4, 5, 6, 1, 2, "Vipin", "vipin", True, 0, False }
 # print(a)
 
 # Creating a set from a list (duplicates are automatically removed)
-# numbers_list = "Rajasthan"
+# numbers_list = "Rajasthan" # -> 
 # my_set = set(numbers_list)
 # print(f"Set from list (duplicates removed): {my_set}")
 
@@ -30,13 +33,12 @@
 # fruits = {"apple", "banana", "cherry", "banana", 1, 3, 4, 5, 1}
 # print(f"Set of fruits: {fruits}")
 # dummy = {"x", "t", "a", "A", "X", "T"}
-# print(dummy)
 
 # Set with mixed data types (all elements must be hashable)
 # mixed_set = {1, "hello", (1, 2), 3.14, (1, 2)} # Tuple is hashable
 # print(f"Mixed set: {mixed_set}")
 
-# my_set = {1, 2, 3}
+my_set = {1, 2, 3}
 # print(f"Original set: {my_set}")
 
 # Add and Update method works separately in a way that add can only insert immutable data types
@@ -63,13 +65,13 @@
 # my_set.update({7, 8}) # Can update from another set
 # print(f"After update({7, 8}): {my_set}") # 
 
-my_set = {10, 20, 30, 40, 50}
+# my_set = {10, 20, 30, 40, 50}
 # print(f"Original set: {my_set}")
 
-# my_set.remove(90)
+# my_set.remove(10)
 # print(f"{my_set}")
 
-# my_set.discard(20)
+# my_set.discard(90)
 # print(f"After discard(20): {my_set}")
 
 # pop method in list take an argument but in set there are no argument required
@@ -77,6 +79,7 @@ my_set = {10, 20, 30, 40, 50}
 # data = my_set.pop()
 # print(my_set)
 # print(data)
+
 
 # popped_item = my_set.pop()
 # print(f"Popped item (arbitrary): {popped_item}, Set: {my_set}")
@@ -105,14 +108,14 @@ my_set = {10, 20, 30, 40, 50}
 
 # Intersection
 # print(f"Intersection (set_a.intersection(set_b)): {set_a.intersection(set_b)}")
-# intersection_set = set_b & set_a
+# intersection_set = set_a & set_b
 # print(f"Intersection (set_a & set_b): {intersection_set}") # 
 
-# set_a = {1, 2, 3, 4}
-# set_b = {3, 4, 5, 6}
+set_a = {1, 2, 3, 4}
+set_b = {3, 4, 5, 6}
 
 # # Difference (elements in A but not in B)
-# difference_ab = set_b - set_a
+# difference_ab = set_a - set_b
 # print(f"Difference (set_a - set_b): {difference_ab}") # 
 # print(f"Difference (set_a.difference(set_b)): {set_b.difference(set_a)}")
 
@@ -124,13 +127,13 @@ my_set = {10, 20, 30, 40, 50}
 # print( a, b, a.symmetric_difference(b) )
 # print( set_b.symmetric_difference(set_a) )
 
-# set1 = {1, 2, 3}
-# set2 = {1, 2, 3, 4, 5}
-# set3 = {4, 5, 6}
-# set4 = { 8, 9 }
+set1 = {1, 2, 3}
+set2 = {1, 2, 3, 4, 5}
+set3 = {4, 5, 6}
+set4 = { 8, 9 }
 
 # Is set1 a subset of set2?
-# print(f"Is {set1} subset of {set2}? {set1.issubset(set2)}")
+# print(f"Is {set1} subset of {set2}? {set3.issubset(set2)}")
 # print(f"Is {set1} <= {set2}? {set1 <= set2}") 
 
 # Is set2 a superset of set1?
@@ -146,8 +149,10 @@ my_set = {10, 20, 30, 40, 50}
 
 # Create a frozenset
 # In frozenset You Can not add, update, remove, pop, discard
-# fs = frozenset([1, 2, 3, 1, 1, 2, 3])
-# ns = set([1, 2, 3, 1, 1, 2, 3])
+fs = frozenset((1, 2, 3, 1, 1, 2, 3))
+ns = set([1, 2, 3, 1, 1, 2, 3])
+
+print( dir( frozenset() ) )
 
 # a = 43
 # b = 456

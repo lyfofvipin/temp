@@ -13,8 +13,10 @@
 
 # a = ( 9, 8, 7, 6, 5 )
 
-# counter = 0
+# for i in a:
+#     print(i)
 
+# counter = 0
 # while counter < len(a):
 #     print( a[counter] )
 #     counter += 1
@@ -40,12 +42,24 @@
 # for coord in coordinates:
 #     print(coord)
 
+# range()
+
+# print( range( 1, 101 )) 
+
+# for x in range(1, 101, 2):
+#     print(x)
+
 # word = "Python"
 # for x in word:
 #     print(x)
 
 # for x in {1, 2, 3 ,4 ,5 ,5}:
 #     print(x)
+
+# a = [('name', 'Mohan'), ('age', 30), ('city', 'New York')]
+
+# for x,y in a:
+#     print(x, y)
 
 # a = [ (1,2,3), (3,4,5), (5,6,4), [7,8,7], (9, 10,12) ]
 
@@ -55,10 +69,25 @@
 # Print Function 2nd argument
 # end="\n" is the default value of the end argument
 
-# print( "hello", end="" )
-# print(" world.")
+# print( "hello")
+# print("world.")
 
-# print("hello", end="\n")
+# print( 1, 2, 3, 4, 5, 6, "hello", False, sep="-" )
+
+
+
+# print("hello", end="*\n")
+# print("World", end="*\n")
+
+# for x in range(1, 11):
+#     for y in range( 1, 11 ):
+#         print( y * x, end=" " )
+#     print()
+
+# 1 2 3 4 5 6 7 8 9 10
+# 2 4 6 8 10 12 14 16 18 20
+# 3 6 9 12 15 18 21 24 27 30
+
 # word = "Python"
 # for x in word: print(x, end="-")
 

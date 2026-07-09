@@ -16,6 +16,7 @@
 # A tuple of integers
 # numbers = (1, 2, 3, 4, 5)
 # print(f"Tuple of numbers: {numbers}") 
+# print( type(numbers))
 
 # A tuple of strings
 # fruits = ("apple", "banana", "cherry")
@@ -29,9 +30,10 @@
 # nested_tuple = (1, [2, 3], 4, "test")
 
 # print( nested_tuple[1][0] )
-
+# nested_tuple[1] = [2,3]
 # nested_tuple[1][0] = 4
 # nested_tuple[1][1] = 5
+# nested_tuple[2] = 8
 # print(nested_tuple)
 
 # Important: A single-element tuple requires a trailing comma!
@@ -39,23 +41,19 @@
 # single_element_tuple = (5, )
 # print(f"Single-element tuple: {single_element_tuple}, type: {type(single_element_tuple)}")
 
-
 # not_a_tuple = (5)
 # print(f"Not a tuple: {not_a_tuple}, type: {type(not_a_tuple)}")
 
-
 # Creating a tuple without parentheses (tuple packing)
-
 # packed_tuple = "a", 10, True
 # print(packed_tuple)
-
 
 # Tuple unpacking
 
 # a, b, c = 10, 20, 30
 # print(a, b, c)
 
-# my_tuple = (1, 2, 3, 4, 5)
+my_tuple = (1, 2, 3, 4, 5)
 # a, b, c, d, e = my_tuple
 
 # print( f" a: {a}, b: {b}, c: {c}, d: {d}, e: {e} " )
@@ -63,13 +61,13 @@
 
 # # Accessing elements using positive indexing
 # print(f"First element: {my_tuple[0]}")  
-# print(f"Third element: {my_tuple[2]}")  
+# print(f"Third element: {my_tuple[-2]}")  
 
 # # Accessing elements using negative indexing
 # print(f"Last element: {my_tuple[-1]}")   
 # print(f"Second to last element: {my_tuple[-2]}") 
 
-# numbers = (0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+numbers = (0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
 
 # Get elements from index 2 up to (but not including) index 6
 # print(f"Slice [2:6]: {numbers[2:6]}")
@@ -90,25 +88,25 @@
 # print(f"Reversed slice [::-1]: {numbers[::-1]}") 
 
 
-# tuple1 = (1, 2)
-# tuple2 = (3, 4)
+tuple1 = (1, 2)
+tuple2 = (3, 4)
 
 # Concatenation
-# combined_tuple = tuple2 + tuple1
+# combined_tuple = tuple1 + tuple2
 # print(f"Concatenated tuple: {combined_tuple}") 
 
 # Repetition
 # repeated_tuple = tuple1 * 3
 # print(f"Repeated tuple: {repeated_tuple}") 
 
-# print( tuple1 < tuple2 )
+# print( tuple1 > tuple2 )
 
 # Membership
 # print(f"Is 2 in tuple1? {2 in tuple1}")     
 # print(f"Is 5 not in tuple2? {5 not in tuple2}") 
 
 
-# my_tuple = ("apple", "banana", "cherry")
+my_tuple = ("apple", "banana", "cherry")
 
 # Attempting to change an element (will raise TypeError)
 # my_tuple[1] = "grape"
@@ -121,30 +119,23 @@
 # This is allowed because you are not changing the tuple itself (i.e., you're not reassigning index 1 to a different object).
 # You are changing the *contents* of the list object that index 1 points to.
 
-# a = 5
-# b = 10
-
-# c = a
-
-# a = b
-# b = c
+# a = int(input('Enter A number:'))
+# b = int(input('Enter A number:'))
 # print( a, b )
 
 # Swapping variables easily using tuple unpacking
 # a = 10
 # b = 20
-# print(a, b)
 # a, b = b, a
 # print(a, b)
-
 
 # a, b = 20, 10 # Python first evaluates (b, a) as a tuple, then unpacks
 # print(f"After swap: a={a}, b={b}") 
 
 # Unpacking with * (star operator) for arbitrary remaining elements (Python 3+)
 # coordinates = (1, 2, 3, 4, 5, 7, 8, 9, 10)
-# *a, b, c, d, e = coordinates
-# print(a, b, c, d, e)
+# # a, b, c, d, *e = coordinates
+# # print(a, b, c, d, e)
 
 # first, *middle, last = coordinates
 # print(f"first={first}, middle={middle}, last={last}") 
@@ -164,7 +155,7 @@
 # print(f"Count of 2: {my_tuple.count(2)}") 
 # print(f"Index of 2: {my_tuple.index(2)}") 
 
-# a = "this is a test class about tuples and it is a good example"
+a = "this is a test class about tuples and it is a good example"
 # b = a.split()
 # ['this', 'is', 'a', 'test', 'class', 'about', 'tuples', 'and', 'it', 'is', 'a', 'good', 'example']
 # c = tuple(b)

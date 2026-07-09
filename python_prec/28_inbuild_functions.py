@@ -1,3 +1,9 @@
+# sum
+
+# a = [ 12, 34, 34, 34, 23, 213, 35, 46, 6,8789, 79, 79 ,79 ,45 ,35353]
+# print( sum(a) )
+
+
 # Higher-Order Functions
 
 # A higher-order function is a function that does at least one of the following:
@@ -9,7 +15,11 @@
 # that the higher-order function should perform.
 
 # def simple():
-    # return "I am a func"
+#     return "I am a func"
+
+# abc = simple
+
+# print(abc())
 
 # def simple1():
 #     return "I am a func simple 1"
@@ -28,7 +38,7 @@
 #     def sub( a, b ):
 #         return a - b
 
-#     return sub
+#     return add
 
 # data = main_fun()
 
@@ -82,7 +92,7 @@
 # def square(x):
 #     return x * x
 
-numbers = [1, 2, 3, 4, 5]
+# numbers = [1, 2, 3, 4, 5]
 
 # for x in numbers:
 #     print(square(x))
@@ -91,9 +101,11 @@ numbers = [1, 2, 3, 4, 5]
 
 # Using map() to apply the square function to each number
 # squared_numbers = map(square, numbers)
-
 # result = list(squared_numbers)
 # print(result)
+
+# print( [ square(x) for x in numbers ] )
+
 
 # print(
 #     list(
@@ -146,6 +158,8 @@ numbers = [1, 2, 3, 4, 5]
 # # even_numbers = filter( lambda x : x % 2 == 0, numbers )
 # result = list(even_numbers)
 # print(result)
+
+# [ x for x in numbers if is_even(x)]
 
 # def is_pos(a):
 #     if a >= 0:

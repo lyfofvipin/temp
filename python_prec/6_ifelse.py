@@ -70,14 +70,14 @@
 # else:
 #     print("No")
 
-"""
-a = 25
 
-if a < 50 and a > 10:
-    print("yes")
-else:
-    print("no")
-"""
+# a = 25
+
+# if a < 50 and a > 10:
+#     print("yes")
+# else:
+#     print("no")
+
 
 # char = 'v'
 

@@ -7,6 +7,7 @@
 #     Double Quote: "hello"
 #     Triple Quote: '''hello''' or """hello""" (used for multi-line strings)
 
+
 # String Operations:
 
 # Concatenation: You can combine two or more strings using the + operator.
@@ -27,9 +28,10 @@
 # To access these values of a string using the index values we use `[]` operator.
 
 # my_string = "Hello World"
+# print(my_string)
 
 # print( my_string[5] )
-# print(my_string[-3]) 
+# print(my_string[-3])
 # print(my_string[-1])
 # print(my_string[50]) #IndexError: string index out of range
 
@@ -47,10 +49,14 @@
 
 # my_string = "Hello"
 
+# print( my_string[ : ] )
 # print( my_string[ 1: ] )
 # print(my_string[ :3 ])  
-# print(my_string[ 1:4 ]) 
-# print(my_string[ -3: -1 ]) 
+# print(my_string[ 1:4 ])
+# print(my_string[ 1:2 ]) 
+# print(my_string[ 4:1 ])
+# print(my_string[ -3: -1 ])
+# print(my_string[ -4: -1 ])
 
 # my_string = "0123456789"
 
@@ -58,6 +64,7 @@
 # print(my_string[ 2:3 ])
 # print(my_string[ -8:-1 ])
 # print(my_string[ 5:1 ])
+# print(my_string[ -1:3 ])
 
 
 # [ start : end : difference ]
@@ -70,8 +77,11 @@
 
 # my_string = "0123456789"
 
-# print( my_string [  : 8 : 2 ]  )
+# print( my_string [  : 9 : 2 ]  )
 # print( my_string [ -9 : -2 : 2 ]  )
+# print( my_string [ -9 : -2 : 2 ]  )
+# print( my_string [ 1 : 8 : 3 ]  )
+# print( my_string [ 1 : 8 : 4 ]  )
 # print( my_string[::-1] )
 # print( my_string[  : -6 : -2 ] )
 
@@ -79,21 +89,20 @@
 # my_string = "abcdefghij"
 #            0123456789
 #           10987654321   
-# print( my_string[ :: 3 ] ) 
+# print( my_string[ :: 3 ] )
 # print(my_string[ -5:1:-1 ])
-# print(my_string[ -5:-1:-1 ])
 
 # my_string = "abcdefghijklmn"
 # print(my_string[ ::-1 ])
 # print(my_string[ ::-3 ])
 # print(my_string[ :: ])
 # print(my_string[ :3:-2 ])
-# print(my_string[ :-2:3 ]) #output: adgj
+# print(my_string[ :-2:3 ])
 
 # len
 # Length: You can get the length of a string using the len() function.
 
-# my_string = "Hello"
+# my_string = "Hello world"
 # print( len(my_string) )
 
 # Membership: Check if a substring exists in a string using in or not in.
@@ -104,11 +113,11 @@
 # print("h" in my_string)
 
 # String Manipulation / Strings are Immutable
-# a = "Wello"
+# a = "Wxllo"
 # a[ 0 ] = "H"
 
-# a = "H" + a[1:]
-# print( a ) # Wello
+# a = "He" + a[2:]
+# print( a )
 
 # String Methods: Python strings have a variety of built-in methods.
 # Some of the commonly used methods are:
@@ -130,16 +139,19 @@
 
 # my_string = "  hello  "
 # print(my_string)
-# print(my_string.strip()) 
+# print(my_string.strip())
 
 # my_string = "--hello--"
 # print(my_string.strip("-"))
 
-# my_string = "-*-*-*hello8888-*-*"
-# print(my_string.lstrip("-*")) 
+# my_string = "-*-*---*hello8888-*-*---"
+# print(my_string.strip("-*")) 
 
 # my_string = "------hel--lo*************"
 # print(my_string.strip("h-*"))
+
+# my_string = "-*-*-*hello8888-*-*"
+# print(my_string.lstrip("-*")) 
 
 # my_string = "+++++hello++++++"
 # print(my_string.rstrip("+")) 
@@ -159,7 +171,23 @@
 # print(s.endswith("class.") )
 
 # Justifying the String
-# print("ACAB".rjust(10, "+"))
+
+# Ram
+# hello
+# Jaipur
+
+#    Ram
+#  hello
+# Jaipur
+
+
+# print("ABCD".rjust(10))
+# print("ABCD".rjust(10, "-"))
+
+# print( "Ram".rjust(6) )
+# print( "Hello".rjust(6) )
+# print( "Jaipur".rjust(6) )
+# print( "Mansarovar".rjust(6) )
 
 # print("ABCD".ljust(10, "-"))
 
@@ -167,14 +195,18 @@
 
 # my_string = "Hello World"
 # print(my_string.replace("l", "lllo")) 
+# print(my_string)
 
 # a = "i live in india."
 # print( a.replace( "in", "++") )
 
 # split(): Splits the string into a list based on a delimiter (default is whitespace).
 
-# my_string = "my name is vipin"
+# my_string = "my name is Vipin"
 # print( my_string.split() ) 
+
+# a = "sadfsafdas"
+# print( a.split() )
 
 # print(my_string)
 
@@ -182,7 +214,7 @@
 # print(my_string.split("/"))
 
 # my_string = "hello-this-is-a-str"
-# print(my_string.split("is"))
+# print(my_string.split("-"))
 
 # join(iterable): Joins elements of an iterable (like a list) into a single string, with a specified separator.
 
@@ -197,7 +229,7 @@
 # Returns the index of the first occurrence of a substring (or -1 if not found).
 
 # my_string = "Hello World"
-# print(my_string.find("llo"))
+# print(my_string.find("l", 4))
 
 # print("hello my name o is vipin".find("o", 6))
 
@@ -205,6 +237,7 @@
 
 # a = "I live in india and in jaipur city"
 # print( a.count("in") )
+# print( a.count(" ") )
 
 # my_string = "Hello World, Hello Python"
 # print(my_string.count("Hello"))
@@ -217,32 +250,59 @@
 # a = "sadsafH23"
 # print( a.islower() )
 
-
 # a = "23sdfsafd-"
 # print( a.isalnum() )
 
 # isnumeric
-# a = "2325235235235"
+# a = "2325235235.235"
 # print(a.isnumeric())
 
 # a = "is this windows 11?"
 # print(a.capitalize())
 # print(a.title())
 
+# a = 23
+# b = 45
+
+# print(f"a is {a} and b is {b}")
+# print( "A is {} B is {}".format(a, b) )
+
 # a = "my name is vipin"
 # counter = 0
 
-# a = "India"
+# a = "hello"
 # length = len(a)
+# print(len( a ))
+
+# a = "hello"
+# length = len( a )
+
 
 # counter = 0
+
 # while counter < length:
-    
-#     if a[counter] == "i":
-#         print(counter)
+#     print(counter)
 #     counter += 1
 
-# print(-1)
+# counter = 0
+
+# while counter < length:
+#     print( a[counter] )
+#     counter += 1
+
+
+# find function 
+
+# a = "jaipur"
+
+# counter = 0
+# while counter < len(a):
+    
+#     if a[counter] == "p":
+#         print(counter)
+#         break
+#     counter += 1
+
 
 # while counter < len(a):
 #     if counter == 0:

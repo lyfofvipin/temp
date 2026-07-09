@@ -11,6 +11,9 @@
 
 # { <key>:<value> }
 
+# a = [ "Berlin", 20, "77644832", "Berlin" ]
+# b = [ "Rohit", 20, "77644832", "Jaipur" ]
+
 # a = {  "name": "Rohit", "age": 20, "mob": "77644832", "city": "Jaipur"  }
 # print( a )
 
@@ -22,10 +25,11 @@
 # person = { "name": "Mohan", "age": 30, "city": "New York" }
 
 # person = {
-#     "name": "Mohan",
+#     "name": "Berlin",
 #     "age": 30,
-#     "city": "New York",
+#     "city": "Berlin"
 # }
+
 # print(person)
 
 # data = {
@@ -51,29 +55,29 @@
 # student = dict(
 #     name="Charlie",
 #     id=101,
-#     grade="A"
+#     grade="A",
 # )
 # print(student)
 
 # Accessing Values
 # a = {"name": "Berlin", "age": 30, "city": "Berlin", "roll_number": 30}
-# print( a[ "city" ] )
+# print( a[ "age" ] )
 
 # a = [ 1, [ 2, 3] ]
 # print(a[1][0])
 
-# a = {
-#     "name": "Mohan",
-#     "age": 30,
-#     "city": "New York",
-#     "data1": { 
-#         "level": "Advanced",
-#         "data2": [ 1, 2, 3, 4, 5, { "data3": "dummy_value" } ]
-#     }
-# }
+a = {
+    "name": "Mohan",
+    "age": 30,
+    "city": "New York",
+    "data1": { 
+        "level": "Advanced",
+        "data2": [ 1, 2, 3, 4, 5, { "data3": "dummy_value" } ]
+    }
+}
 
 # print(a["data1"])
-# print(a["data2"]["data2"])
+# print(a["data1"]["data2"])
 # print(a["data1"]["data2"][-1])
 # print(a["data1"]["data2"][-1][ "data3" ])
 # print(a["data1"]["data2"][-1][ "data3" ][-1])
@@ -82,11 +86,16 @@
 
 # print( a["mobile"] )
 # print( a.get("mobile") )
-# print( a.get( "mobile", "Key Not Found." ) )
+# print( a.get( "level", "Key Not Found." ) )
 
 # Accessing with a default value
 # print( a.get("cityy", "Jaipur") )
 # print( a.get("data1").get("data2")[-1].get("data3") )
+
+# a = {"name": "Berlin", "age": 30, "city": "Berlin", "roll_number": 30}
+# a["name"] = "Rohit"
+# print(a)
+
 
 # Modifying Dictionaries
 # grades = {"math": 90, "science": 85}
@@ -97,21 +106,16 @@
 # grades["math"] = 40
 # print(grades)
 
-
-# How to delete a variable / values in python
-# a = "Hello"
-# del a[0]
-# print(a)
-
 # grades = {"math": 90, "science": 85}
 # # Delete a key-value pair using del
 # del grades["science"]
 # print(grades)
 
-# grades = {"math": 90, "science": 85}
+grades = {"math": 90, "science": 85}
 
 # Pop an item
 # popped_value = grades.pop("math")
+# del grades["math"]
 # print(popped_value)
 # print(grades)
 
@@ -134,11 +138,11 @@
 
 # Basic Dictionary Operations
 
-# profile = {
-#     "name": "Vikas",
-#     "age": 25,
-#     "gender": "Male"
-# }
+profile = {
+    "name": "Vikas",
+    "age": 25,
+    "gender": "Male"
+}
 
 # Length
 # print(len( profile ))
@@ -149,8 +153,15 @@
 
 
 # Dictionary Methods
-# d1 = {"a": 1, "b": 2}
-# d2 = {"b": 3, "c": 4}
+d1 = {"a": 1, "b": 2}
+d2 = {"b": 3, "c": 4}
+
+# a = [1, 2]
+# b = [3, 4]
+
+# print( a + b )
+# print( a )
+# print( b )
 
 # print( d1 + d2 ) #x
 # print( d1 * 4 ) #x
@@ -162,7 +173,9 @@
 # print(d2)
 
 
-# data = {"name": "Mohan"}
+# data = {"name": "Mohan", "age": 25}
+# print(data.get("age"))
+
 # data["mail"] = "mohan@gmail.com"
 # data.get("mail") = "mohan@gmail.com"
 
@@ -171,29 +184,32 @@
 # email = data.setdefault("email", "unknown@example.com")
 # print(data)
 
-# new_dict = dict.fromkeys("abc", None)
+# a = ("Rohit", "vikas", "Arvind", "Vipin")
+# { "Rohit": "BSC", "Vikas": "BSC", "Arvind":"BSC", "Vipin": "BSC"}
+# new_dict = dict.fromkeys("aeiou", "vowels")
 # print(new_dict)
 
-# company = {
-#     "CEO": {
-#         "name": "John Doe",
-#         "department": "Executive"
-#     },
-#     "employees": {
-#         "101": {
-#             "name": "Priyanka",
-#             "role": "Engineer"
-#         },
-#         "102": {
-#             "name": "Priya",
-#             "role": "Designer"
-#         }
-#     },
-#     "departments": ["HR", "Engineering", "Design"]
-# }
+company = {
+    "CEO": {
+        "name": "John Doe",
+        "department": "Executive"
+    },
+    "employees": {
+        "101": {
+            "name": "Priyanka",
+            "role": "Engineer"
+        },
+        "102": {
+            "name": "Priya",
+            "role": "Designer"
+        }
+    },
+    "departments": ["HR", "Engineering", "Design"]
+}
 
-# print( company.get("employees").get("102").get("name", 20) )
+# print( company.get("employees").get("102").get("age", 20) )
 # print(company.get("departments")[-1])
+# print( company.get("employees").get("1023", "hello").upper() )
 
 
 # person = { "name": "Mohan", "age": 30, "city": "New York" }
@@ -214,9 +230,14 @@
 # person = { "name": "Mohan", "age": 30, "city": "New York" }
 # [('name', 'Mohan'), ('age', 30), ('city', 'New York')]
 
+# person = { "name": "Mohan", "age": 30, "city": "New York" }
+
 # print(person.keys())
 # for x in person:
-#     print( x, person[x] )
+#     print( person[x] )
+
+# for x in person.keys():
+#     print( x )
 
 # for x in person.values(): # for x in dict_values(['Mohan', 30, 'New York']):
 #     print(x)
@@ -227,9 +248,14 @@
 # for x, y in person.items(): # for x in dict_items([('name', 'Mohan'), ('age', 30), ('city', 'New York')]):
 #     print(x, y)
 
+# person = { "name": "Mohan", "age": 30, "city": "New York" }
+
 # new_data = {}
+
 # for x, y in person.items():
+
 #     new_data[y] = x
+
 # print(new_data)
 
 # data = [['name', 'Mohan', "apple"], ['age', 30, "banana"], ['city', 'New York', "mango"]]

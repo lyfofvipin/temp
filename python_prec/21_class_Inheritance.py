@@ -25,19 +25,19 @@
 
 # print(Car.brand)
 
-# class Vehicle:
+class Vehicle:
 
-#     def __init__(self, brand, color):
-#         self.brand = brand
-#         self.color = color
+    def __init__(self, brand, color):
+        self.brand = brand
+        self.color = color
 
-#     def display_info(self):
-#         print(f"Brand: {self.brand}, Color: {self.color}")
+    def display_info(self):
+        print(f"Brand: {self.brand}, Color: {self.color}")
 
-# class Car( Vehicle ):
+class Car( Vehicle ):
 
-#     def wheels(self):
-#         print("Car has 4 wheels")
+    def wheels(self):
+        print("Car has 4 wheels")
 
 # class Bus( Vehicle ):
 
@@ -47,6 +47,7 @@
 
 # my_car = Car("Honda", "White")
 # print(my_car.brand)
+# print(dir(my_car))
 
 # my_bus = Bus("Volvo", "Blue")
 # print(my_bus.color)
@@ -74,9 +75,11 @@
 # a.display_info()
 # print(dir(a))
 
+# a = Car("Honda", "Black")
 # a = Car(23)
 # print(dir(a))
 # print(a.wheels)
+# print(a.brand)
 
 # class Vehicle():
 
@@ -91,6 +94,7 @@
 # class Car(Vehicle):
 
 #     def __init__(self, wheels):
+#         # Vehicle.__init__(self, "Honda", "White")
 #         super().__init__("Honda", "White")
 #         self.wheels = wheels
 
@@ -121,50 +125,57 @@
 # print(my_car.num_wheels)
 # my_car.car_info()
 
-# class Vehicle:
-#     def __init__(self, brand, color):
-#         self.brand = brand
-#         self.color = color
-#         print("Vehicle __init__ called.")
+# your_car = Car(6)
 
-# class Car(Vehicle):
-#     def __init__(self, num_wheels):
-#         self.num_wheels = num_wheels
-#         print("Car __init__ called.")
 
-#     def set_car_brand_and_color(self, brand, color):
-#         super().__init__(brand, color)
+class Vehicle:
+    def __init__(self, brand, color):
+        self.brand = brand
+        self.color = color
+        print("Vehicle __init__ called.")
 
-#     def car_info(self):
-#         print(f"This is a {self.color} {self.brand} with {self.num_wheels} wheels.")
+class Car(Vehicle):
+    def __init__(self, num_wheels):
+        self.num_wheels = num_wheels
+        print("Car __init__ called.")
+
+    def set_car_brand_and_color(self, brand, color):
+        super().__init__(brand, color)
+
+    def car_info(self):
+        print(f"This is a {self.color} {self.brand} with {self.num_wheels} wheels.")
 
 # my_car = Car(num_wheels=4)
 # print(dir(my_car))
 # my_car.set_car_brand_and_color(brand="Ford", color="Red")
 # print(dir(my_car))
 # my_car.car_info()
+# your_car = Car(6)
+# your_car.set_car_brand_and_color("Honda", "White")
 
 
-# class Vehicle:
-#     def __init__(self, brand, color):
-#         self.brand = brand
-#         self.color = color
+class Vehicle:
+    def __init__(self, brand, color):
+        self.brand = brand
+        self.color = color
 
-# class Car(Vehicle):
-#     def __init__(self, brand, color, num_wheels):
-#         self.num_wheels = num_wheels
-#         super().__init__(brand, color)
+class Car(Vehicle):
+    def __init__(self, brand, color, num_wheels):
+        self.num_wheels = num_wheels
+        super().__init__(brand, color)
 
-#     def car_info(self):
-#         print(f"This is a {self.color} {self.brand} with {self.num_wheels} wheels.")
+    def car_info(self):
+        print(f"This is a {self.color} {self.brand} with {self.num_wheels} wheels.")
 
 # my_car = Car(brand="Ford", color="Red", num_wheels=4)
-# print(dir(my_car))
-# my_car.car_info()
+# # print(dir(my_car))
+# # my_car.car_info()
+
 
 # your_car = Car(brand="BMW", color="Blue", num_wheels=4)
 # print(dir(your_car))
 # your_car.car_info()
+
 
 
 # Method Overriding
@@ -172,6 +183,8 @@
 # Method overriding is when a subclass provides its own specific implementation
 # of a method that is already defined in its parent class.
 # The method in the subclass "overrides" the one in the superclass.
+
+
 
 # class Vehicle:
 #     def display_info(self):
@@ -251,33 +264,21 @@
 # print(a.owner_id)
 
 
-# def a(x):
-#     print(x)
+class Vehicle:
+    def __init__(self, brand, color):
+        self.brand = brand
+        self.color = color
 
-# def b(y):
-#     print(y)
+class RTO:
+    def __init__(self, number, owner_id):
+        self.number = number
+        self.owner_id = owner_id
 
-# def c( x,y ):
-#     a(x)
-#     b(y)
+class Car( Vehicle, RTO ):
 
-# c(10, 20)
-
-# class Vehicle:
-#     def __init__(self, brand, color):
-#         self.brand = brand
-#         self.color = color
-
-# class RTO:
-#     def __init__(self, number, owner_id):
-#         self.number = number
-#         self.owner_id = owner_id
-
-# class Car( Vehicle, RTO ):
-
-#     def __init__(self, brand, color, number, owner_id):
-#         Vehicle.__init__(self, brand, color)
-#         RTO.__init__(self, number, owner_id)
+    def __init__(self, brand, color, number, owner_id):
+        Vehicle.__init__(self, brand, color)
+        RTO.__init__(self, number, owner_id)
 
 # a = Car("BMW", "Black", "234-234-2342", "Rohit")
 # print(dir(a))
@@ -291,28 +292,28 @@
 # promoting code reuse across different parts of a program.
 
 
-# class ParentA:
-#     def method_A(self):
-#         print("Method from Parent A")
+class ParentA:
+    def method_A(self):
+        print("Method from Parent A")
 
-#     def test(self):
-#         print("Test A")
+    def test(self):
+        print("Test A")
 
-# class ParentB:
-#     def method_B(self):
-#         print("Method from Parent B")
+class ParentB:
+    def method_B(self):
+        print("Method from Parent B")
 
-#     def test(self):
-#         print("Test B")
+    def test(self):
+        print("Test B")
 
-# class Child(ParentA, ParentB):
-#     def method_C(self):
-#         print("Method from Child")
+class Child(ParentA, ParentB):
+    def method_C(self):
+        print("Method from Child")
 
-#     def test(self):
-#         ParentA.test(self)
-#         ParentB.test(self)
-#         print("Test C")
+    def test(self):
+        ParentA.test(self)
+        ParentB.test(self)
+        print("Test C")
 
 # Create an object of the child class
 
@@ -326,9 +327,6 @@
 
 # class ParentA:
 #     def method_A(self):
-#         print("Method from Parent A")
-
-#     def method_B(self):
 #         print("Method from Parent A")
 
 #     def test(self):
@@ -409,39 +407,39 @@
 
 # Multiple + Multilevel 
 
-# class ParentA:
-#     def method_A(self):
-#         print("Method from Parent A")
+class ParentA:
+    def method_A(self):
+        print("Method from Parent A")
 
-#     def show(self):
-#         print("Class A")
+    def show(self):
+        print("Class A")
 
-# class ParentB(ParentA):
-#     def method_B(self):
-#         print("Method from Parent B")
+class ParentB(ParentA):
+    def method_B(self):
+        print("Method from Parent B")
 
-#     def show(self):
-#         ParentA.show(self.show)
-#         print("Class B")
+    def show(self):
+        ParentA.show(self.show)
+        print("Class B")
 
-# class ParentC():
-#     def method_C(self):
-#         print("Method from Parent B")
+class ParentC():
+    def method_C(self):
+        print("Method from Parent B")
 
-#     def show(self):
-#         print("Class C")
+    def show(self):
+        print("Class C")
 
-# class Child(ParentB, ParentC):
-#     def method_D(self):
-#         print("Method from Child")
+class Child(ParentB, ParentC):
+    def method_D(self):
+        print("Method from Child")
 
-#     def show(self):
-#         ParentB.show(self)
-#         ParentC.show(self)
-#         print("Class D")
+    def show(self):
+        ParentB.show(self)
+        ParentC.show(self)
+        print("Class D")
 
-# child_obj = Child()
-# child_obj.show()
-# child_obj.method_A()
-# child_obj.method_B()
-# child_obj.method_C()
+child_obj = Child()
+child_obj.show()
+child_obj.method_A()
+child_obj.method_B()
+child_obj.method_C()

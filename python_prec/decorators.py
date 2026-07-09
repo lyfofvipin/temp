@@ -10,7 +10,7 @@
 # Be assigned to variables:
 
 # def sub(a, b):
-#     print(a + b)
+#     print(a - b)
 
 # def cal(func, a, b):
 #     func(a,b)
@@ -18,14 +18,14 @@
 # cal( sub, 4,5)
 
 # def greet():
-#     print("Hello!")
+#     print("Hello!", end=" ")
 
 # def greet_with_name( func ):
 #     name = input("Enter Your Name: ")
 #     greet()
 #     print(name)
 
-# greet()
+# # greet()
 # greet_with_name(greet)
 
 # say_hello = greet # Assign the function object itself
@@ -80,13 +80,14 @@
 # a = func1(abcd)
 # a()
 
+
 # @func1
 # def test():
 #     print("test")
 
 
-# # a = func1(test)
-# # a()
+# a = func1(test)
+# a()
 # func1(test)()
 
 # test()

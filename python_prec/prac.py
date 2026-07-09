@@ -16,6 +16,12 @@
 #     [ 0, 0 ],
 # ]
 
+# a = [1, 2, 3, "a", "b", "c"]
+
+# print(list(enumerate(a)))
+
+# for x in enumerate(a):
+#     print(x)
 
 # if len(a) != len(b):
 #     print("Matrix are not of same size so you can add them.")
@@ -62,10 +68,10 @@
 # Notes
 # All words will be lowercase.
 
-def vow_replace( data: str, new_word: str ) -> str:
-    for x in data:
-        if x in "aeiou":
-            data = data.replace(x, new_word)
-    return data
+# def vow_replace( data: str, new_word: str ) -> str:
+#     for x in data:
+#         if x in "aeiou":
+#             data = data.replace(x, new_word)
+#     return data
 
-print(vow_replace("apples and bananas", "u"))
+# print(vow_replace("apples and bananas", "u"))

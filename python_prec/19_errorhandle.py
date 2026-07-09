@@ -14,6 +14,8 @@
 #     The code inside the matching except block is executed.
 
 
+# number = int(input("Enter A number: "))
+
 # try:
 #     number = int(input("Enter A number: "))
 # except:
@@ -27,10 +29,14 @@
 # except:
 #     print("There is an error from our side we are working on fixing it.")
 
+
 # a = int(input("Enter A number: ")) # 34
 # b = int(input("Enter A number: ")) # 0
+# print( a / b)
 
 # try:
+#     a = int(input("Enter A number: ")) # 34
+#     b = int(input("Enter A number: ")) # 0
 #     print( a / b)
 # except:
 #     print("You Can not divide any number by 0.")
@@ -41,7 +47,7 @@
 #     a = int(input("Enter Number 1: "))
 #     b = int(input("Enter Number 2: "))
 #     print( a / b )
-# except ZeroDivisionError:
+# except ValueError:
 #     print("You Can not divide any number by 0.")
 
 # try:

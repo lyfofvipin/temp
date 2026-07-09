@@ -78,14 +78,14 @@
 # print("Total: ", sum)
 
 
-sum = 0
+# sum = 0
 
-while True:
-    price = int(input("Enter Item Price: "))
-    if price < 0:
-        exit(8)
-    sum += price
-    print(sum)
+# while True:
+#     price = int(input("Enter Item Price: "))
+#     if price < 0:
+#         exit(2)
+#     sum += price
+#     print(sum)
 
 # print("Total: ", sum)
 

@@ -5,8 +5,14 @@
 
 # Imagine you have a function that needs to produce a sequence of one million numbers.
 
+
 # def mnumber():
-#     return list(range(1, 123123))
+#     abc = []
+#     i = 0
+#     while i <= 2323214312431231:
+#         abc.append(i)
+#         i += 1 
+#     return abc
 
 # print(mnumber())
 
@@ -38,7 +44,15 @@
 #     yield 3
 #     yield 4
 
-# def square( number: int) -> list:
+# abc = test()
+
+# print( next(abc) )
+# print( next(abc) )
+# print( next(abc) )
+# print( next(abc) )
+# print( next(abc) )
+
+# def square( number):
 
 #     temp = []
 #     for x in range(1, number + 1):
@@ -94,7 +108,7 @@
 # print(next(integers)) # 4
 # print(next(integers)) # 5
 
-# for x in one_time():
+# for x in infinite_integers():
 #     print(x)
 
 # pk = infinite_integers()
@@ -126,3 +140,25 @@
 # print(next(a))
 # print(next(a))
 # print(next(a))
+
+# def test():
+#     yield 1
+#     yield 2
+#     yield 3
+#     yield 4
+
+# abc = test()
+
+# try:
+#     while True:
+#         print(next(abc))
+# except StopIteration:
+#     pass
+
+# def add( a : int , b: int ) -> int :
+#     return a + b
+
+# print( add('3', '4') )
+
+# a : int
+

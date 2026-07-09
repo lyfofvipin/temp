@@ -1,21 +1,25 @@
-indian_dummy_names = [
-    "Aarav Sharma", "Veda Iyer", "Ishaan Patel", "Saanvi Kapoor", "Aditya Reddy",
-    "Ananya Gupta", "Vikram Mehta", "Priya Rao", "Arjun Desai", "Neha Verma",
-    "Rohit Singh", "Sneha Joshi", "Karan Shah", "Pooja Malhotra", "Sameer Agarwal",
-    "Shreya Jain", "Rahul Yadav", "Kritika Choudhury", "Amit Kumar", "Rina Nair",
-    "Ravi Mishra", "Tanya Kapoor", "Manish Gupta", "Swati Sharma", "Vishal Bhat",
-    "Ayesha Khan", "Deepak Patil", "Tanvi Agarwal", "Siddharth Reddy", "Aarti Mehta",
-    "Ankur Prasad", "Madhavi Rao", "Puneet Sharma", "Maya Verma", "Anil Kapoor",
-    "Disha Patel", "Yash Rajput", "Kiran Das", "Divya Joshi", "Rajesh Saini",
-    "Pallavi Singh", "Raghav Gupta", "Simran Bedi", "Nikhil Deshmukh", "Kavya Saxena",
-    "Himanshu Kumar", "Neelam Kapoor", "Gaurav Tiwari", "Rekha Yadav", "Suman Nair", "Aarav Sharma"
-]
+# indian_dummy_names = [
+#     "Aarav Sharma", "Veda Iyer", "Ishaan Patel", "Saanvi Kapoor", "Aditya Reddy",
+#     "Ananya Gupta", "Vikram Mehta", "Priya Rao", "Arjun Desai", "Neha Verma",
+#     "Rohit Singh", "Sneha Joshi", "Karan Shah", "Pooja Malhotra", "Sameer Agarwal",
+#     "Shreya Jain", "Rahul Yadav", "Kritika Choudhury", "Amit Kumar", "Rina Nair",
+#     "Ravi Mishra", "Tanya Kapoor", "Manish Gupta", "Swati Sharma", "Vishal Bhat",
+#     "Ayesha Khan", "Deepak Patil", "Tanvi Agarwal", "Siddharth Reddy", "Aarti Mehta",
+#     "Ankur Prasad", "Madhavi Rao", "Puneet Sharma", "Maya Verma", "Anil Kapoor",
+#     "Disha Patel", "Yash Rajput", "Kiran Das", "Divya Joshi", "Rajesh Saini",
+#     "Pallavi Singh", "Raghav Gupta", "Simran Bedi", "Nikhil Deshmukh", "Kavya Saxena",
+#     "Himanshu Kumar", "Neelam Kapoor", "Gaurav Tiwari", "Rekha Yadav", "Suman Nair", "Aarav Sharma"
+# ]
 
-ages = [25, 18, 29, 21, 25, 25, 30, 22, 19, 28, 20, 24, 25, 18, 21, 23, 27, 26, 20, 29, 20, 21, 23, 26, 24, 18, 28, 22, 27, 26, 22, 24, 23, 29, 20, 21, 25, 27, 29, 21, 23, 26, 20, 19, 22, 24, 28, 25, 23, 20, 45]
+# ages = [25, 18, 29, 21, 25, 25, 30, 22, 19, 28, 20, 24, 25, 18, 21, 23, 27, 26, 20, 29, 20, 21, 23, 26, 24, 18, 28, 22, 27, 26, 22, 24, 23, 29, 20, 21, 25, 27, 29, 21, 23, 26, 20, 19, 22, 24, 28, 25, 23, 20, 45]
 
-data = { x:y for x, y in zip(indian_dummy_names, ages) }
+# data = { x:y for x, y in zip(indian_dummy_names, ages) if x.startswith("A") }
 # print(data)
 
+# a = ["a", "b", "c"]
+# b = [1, 2]
+
+# print(list(zip(a, b)))
 # Consider that the numbers are the Age
 # Tasks:
 # * Print Names with Age Using For Loop ex: Vipin: 24 and so on

@@ -19,33 +19,54 @@
 #     def perimeter(self):
 #         return 2 * (self.length + self.width)
 
-#     def __repr__(self):
-#         return f"Length: {self.length}, Width: {self.width}"
-
-#     def __add__(self, other):
-#         return self.area() + other.area()
+#     def __add__(self, right_side_wala_obj):
+#         return self.area() + right_side_wala_obj.area()
 
 # a = Rectangle(15, 25)
 # b = Rectangle(30, 30)
 
 # print( a + b )
 
-# class Circle:
+class Circle:
 
-#     def __init__(self, r):
-#         self.radius = r
+    def __init__(self, r):
+        self.radius = r
 
-#     def area(self):
-#         return 3.14*self.r ** 2
+    def area(self):
+        return 3.14*self.r ** 2
     
-#     def parameter(self):
-#         return 2*3.14*self.r
+    def parameter(self):
+        return 2*3.14*self.r
+    
+    def __add__(self, x):
+        return self.radius + x.radius
 
-#     def  __int__(self):
-#         return self.radius
+    def __sub__(self, x):
+        return self.radius - x.radius
 
-# a = Circle(5)
-# b = Circle(10)
+    def __mul__(self, x):
+        return self.radius * x.radius
+
+    def __truediv__(self, x):
+        return self.radius / x.radius
+
+    def __floordiv__(self, x):
+        return self.radius // x.radius
+
+    def __float__(self):
+        return self.radius * 1.0
+
+    def __gt__(self, other):
+        return self.radius > other.radius
+
+a = Circle(5)
+b = Circle(10)
+
+print( a + b )
+print( a - b )
+print( a * b )
+print( a / b )
+print( a // b )
 
 # print( int(a) )
 

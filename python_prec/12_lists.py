@@ -13,25 +13,36 @@
 #     Mutable: You can change, add, or remove items after the list has been created.
 #     Heterogeneous: Lists can contain items of different data types (integers, strings, floats, even other lists or objects).
 
+# [ 2334 ,45 ,56 ,67 ,68 ,78 ]
+
 # numbers = [ 2334 ,45 ,56 ,67 ,68 ,78 ]
 # print( numbers )
-# print( numbers[-4] )
+
+# print( numbers[-3] )
 
 # print([ 23, 34 ,45 ,56 ,67 ,68 ,78 ][0])
 # print([ 23, 34 ,45 ,56 ,67 ,68 ,78 ])
 
 # number = [12.23, 34, 54.45, 34,234.34]
 # print(number)
+# print( type(number[-2]) )
+
 
 # data = [ 23, 234.3, True, "vipin", False, [1,2,3] ]
+# print(data)
+# print(type(data[-2]))
+
 # Data manipulation in list
 # data[0] = 90
 # print(data)
 
-
-# a = [ 10, 20, True, "india", False, [1,2,3] ]
+a = [ 10, 20, True, "india", False, [1,2,3] ]
+# b = a[3]
+# print(b)
+# print(b[0])
 # # Data manipulation in list
-# a[-1][-1] = 78
+# print(a[3][0])
+# print(a[-1][-1])
 # print(a)
 
 # abc = [ "Vipin", 25, "Jaipur", 302020, True, [ "Test", 43, [23242, [ 234234]] ] ]
@@ -41,10 +52,14 @@
 #        "Jaipur",
 #        302020,
 #        True,
-#        [ "Test", 43, [23242, [ 234234 ]] ] 
+#        [ "Test", 43, [56, [ 234234 ]] ]
 #     ]
 
+# print( abc[5] )
+# print( abc[5][2] )
 # print( abc[5][2][-1] )
+# print( abc[5][2][-1][-1] )
+
 
 # a = [ [ [ [ 123 ] ] ] ]
 # [ [ [ 123 ] ] ]
@@ -53,7 +68,7 @@
 # 123
 
 # print(a[0][0][0][0] )
-
+ 
 # Reference Variable
 
 # a = 34
@@ -68,10 +83,10 @@
 # b[0] = "Vipin"
 # print( a, b )
 
-# numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 
 # Get elements from index 2 up to (but not including) index 6
-# print(f"Slice [2:6]: {numbers[2:6]}")   
+# print(f"Slice [2:6]: {numbers[2:8]}")   
 
 # # Get elements from the beginning up to index 5
 # print(f"Slice [:5]: {numbers[:5]}")    
@@ -106,6 +121,9 @@
 # Change a slice of elements
 # my_list[ 0:3 ] = ["mango", "blueberry"]
 # print(f"Modified slice: {my_list}") 
+# my_list[ 0:-1 ] = ["mango", "blueberry"]
+# print(f"Modified slice: {my_list}") 
+
 
 # Replace a slice with more or fewer elements (length can change)
 # my_list[2:4] = ["mango", "orange", "guava"]
@@ -129,7 +147,7 @@
 # list1 = [18, 2, "abc"]
 # list2 = [18, 4, "abc"]
 
-# print( list1 > list2 )
+# print( list1 >= list2 )
 # print( list1 < list2 )
 # print( list1 == list2 )
 
@@ -140,21 +158,23 @@
 
 # a = [ 1, 2, 3 , [ 4, 5 ] ]
 
+# print( 2 in a )
 # print( 5 in a )
 # print( 5 in a[-1] )
 # print( [4, 5 ] in a )
 
 
 # Identity operator
-# a = [1, 2]
-# b = [1 ,2]
+# a = [1,2]
+# b = a
+
 # print(a is b)
 
 # Methods:
 # Insert
 # if we give an invalid +ve index value then it will add the data in the end of the list
 # if we give an invalid -ve index then it will add the data in the 0 index
-# -ve index values in index method auto do a +1 for ex insert(-1, "xyz") it will add the data to -2 index
+# -ve index values in index method auto do a -1 for ex insert(-1, "xyz") it will add the data to -2 index
 
 # if we have multiple duplicate then the .remove method will only remove the fist accuracy
 
@@ -166,7 +186,7 @@
 # print(my_list)
 
 # Insert
-# my_list.insert(-40, "grape")
+# my_list.insert(3, "grape")
 # print(f"After insert: {my_list}") 
 
 # my_list.insert( -2, "mango")
@@ -174,14 +194,23 @@
 
 # a = [ 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-# print(a)
-# a.extend([ 1,2,3,4 ])
 
 # print(a)
+
+# a.append([ 1,2,3,4 ])
+# print(a)
+
+# a.extend([ 1,2,3,4 ])
+# print(a)
+
+# my_list = ["apple", "banana", "cherry", "banana", 123, [1, 2]]
 
 # Remove
 # my_list.remove("apple")
+
 # print(f"After remove: {my_list}") 
+
+# print("After remove: ", my_list ) 
 
 # a = 23
 # print(a)
@@ -189,12 +218,12 @@
 # del a
 # print(a)
 
-# del my_list[-1]
+# del my_list[-2]
 # print(f"After remove: {my_list}") 
 
 # my_list = ["apple", "banana", "cherry", "banana"]
- # Pop (last item)
-# my_list.pop( 0 )
+#  Pop (last item)
+# my_list.pop(-1)
 # print(my_list)
 
 # print(f"Popped item (last): {popped_item}, List: {my_list}") 
@@ -222,14 +251,9 @@
 # [11, 9, 8, 5, 2, 1]
 
 # # Sorting a list of strings
-# words = ["banana", "Vipia", "apple", "cherry", "vipin"]
-# words.sort( reverse= True )
+# words = ["banana", "apple", "vipia", "cherry", "vipin"]
+# words.sort( )
 # print(f"Sorted words: {words}") 
-
-# Using sorted() (returns new list)
-# new_sorted_list = sorted(numbers, reverse=True)
-# print(f"New sorted list: {new_sorted_list}") 
-# print(f"Original numbers after sorted(): {numbers}") 
 
 # sorted_list = sorted("sjhfygr4ikpok093jf09")
 # print("".join(sorted_list))
@@ -237,7 +261,6 @@
 # Reverse sort
 # numbers.sort(reverse=True)
 # print(f"Reverse sorted in-place: {numbers}") 
-
 
 # my_list = [1, 2, 3, 2, 4, 2]
 
@@ -255,7 +278,12 @@
 # print(my_list)
 
 # Index
-# print(my_list.index(2)) 
+# my_list = ["apple", "banana", "cherry", "banana"]
+# print( my_list.index("banana") )
+
+
+# my_list = [1, 2, 3, 2, 4, 2, 8]
+# print(my_list.index(2))
 # print(f"Index of 1: {my_list.index(1)}") 
 # print(f"Index of 2: {my_list.index(2)}") 
 # print(f"Index of 2: {my_list.index(2, 2)}") 
@@ -267,13 +295,26 @@
 # a.append(b)
 # print(a)
 
-# my_list = [ 1, 23443 ,334, 34 ]
+# my_list = [ 1, 23 ,334, 34 ]
 
 # # print( my_list[ :: -1 ] )
 # # print(my_list)
 
 # my_list.reverse()
 # print(my_list)
+
+# a = 23
+# b = 34
+# print(a,b)
+# a = 65
+# print(a,b)
+
+# a = [1, 2, 3]
+# b = a
+# print(a, b)
+# b.pop()
+# print(a, b)
+
 
 # a = [ 34, 34,5 ,23, 12, 565 ]
 # b = a.copy()
@@ -283,7 +324,7 @@
 
 # a = [ 34, 34,5 ,23, 12, 565 ]
 # a.clear()
-# a=[]
+# a = []
 # print(a)
 
 # a = [ 1, 2 ,3, 34, "saa", "abc", "xyz" ]
@@ -291,30 +332,47 @@
 # a.clear() # a = []
 # print(a)
 
-# counter = 1
+# a = ["hello", "how", "are", "you"]
+
+# b = len(a)
+# print(b)
+
+# i = 0
+# while i < b:
+#     print( a[i] )
+#     i += 1
+
+
+# i = 1
+# number_list = []
+# while i <= 10:
+
+#     number = int(input("Enter A Number: "))
+#     i += 1
+#     number_list.append(number)
+
+# print(number_list)
+
+# i = 1
 # number_list = []
 
-# while counter <= 10:
+# while i <= 10:
 
 #     number = int(input("Enter A Number: "))
 #     if number > 0:
-#         counter += 1
+#         i += 1
 #         number_list.append(number)
 
 # print(number_list)
 
+# print("-----".join( ["hello", "how", "are", "you"] ))
 
 # "".join()
 # print(b)
 
 # a = ['my', 'name', 'is', 'vipin']
-
 # b = "------".join(a)
-
 # print(b)
-
-
-
 
 # a = """I am from jaipur
 # And Jaipur Is In Raj
@@ -326,12 +384,10 @@
 
 # a = ['20', '5', '2026']
 
-# print( "In".join( a ) )
+# print( "".join( a ) )
 
 # a = "ABCDEFGH"
 # print( "-".join(a) )
-
-
 
 # Type Conversion
 

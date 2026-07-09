@@ -516,8 +516,7 @@
 #     expression: A single expression that is evaluated and returned.
 
 # A regular function to add two numbers
-# def add(a, b):
-#     return a + b
+# def add(a, b): return a + b
 
 # lambda a, b: a+b
 # add = lambda a, b: a + b

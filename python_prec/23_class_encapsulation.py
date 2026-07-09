@@ -1,5 +1,5 @@
-# Encapsulation is a core principle of Object-Oriented Programming (OOP) that involves bundling data (attributes) and the methods (functions) that operate on that data into a single unit,
-# which is the class. 
+# Encapsulation is a core principle of Object-Oriented Programming (OOP) that involves bundling data (attributes) and the methods (functions) 
+# that operate on that data into a single unit which is the class. 
 # It's the practice of hiding the internal state of an object from the outside world and only exposing a controlled interface to interact with it.
 # Think of a TV remote control. . The remote's buttons (the public methods) are what you use to interact with it.
 # You don't know or need to know about the internal wiring, circuits, or how the infrared signal is generated (the private data and methods). The internal complexity is hidden from you, and you can only change the volume or channel through the exposed interface (the buttons).
@@ -36,8 +36,8 @@
 #     def get_balance(self):
 #         print( self._balance )
 
-
 # a = User( 500 )
+# print( a._balance )
 # a.get_balance()
 # print(dir(a))
 # a.withdraw(100)
@@ -58,7 +58,7 @@
 # class Car:
 #     def __init__(self, brand, mileage):
 #         self.__brand = brand # -> _Car__brand
-#         self.__mileage = mileage # -> _Car__mileage
+#         self.__mileage = mileage # _Car__mileage
 
 #     def get_info(self):
 #         print(f"This is a {self.__brand} with {self.__mileage} miles.")

@@ -1,9 +1,9 @@
 # One liner if else
 
-num = 5
+num = 4
 
 # if num > 5:
-#     print(True)
+#     print("yes")
 
 # if num > 5: print(True)
 
@@ -12,7 +12,10 @@ num = 5
 # else:
 #     print(False)
 
-# print( True if num > 5 else False )
+# print(True) if num > 5 else print(False)
+
+# a = "yes" if num > 5 else "no"
+# print(a)
 
 # if num % 3 == 0 and num % 5 == 0:
 #     print("Both")
@@ -21,18 +24,30 @@ num = 5
 # else:
 #     print("5")
 
-# "both" if num % 3 == 0 and num % 5 == 0 else "3" if  num % 3 == 0 else "5" if num % 5 == 0 else "by none"
+# num = 82
 
+# a = "both" if num % 3 == 0 and num % 5 == 0 else "3" if  num % 3 == 0 else "5" if num % 5 == 0 else "by none"
+# "3" if  num % 3 == 0 else "5" if num % 5 == 0 else "by none"
+# "5" if num % 5 == 0 else "by none"
+# else "by none"
 
-# old_list = ( 1, 2, 3, 4, 5, 6, 7 )
+# print(a)
 
-# [ what_is_it_we_want_to_do_with_our_variable_name for variable_name in iterator do_this_only_if ]
-# print(old_list)
-# new_list = [ item + 2 for item in old_list]
+# List Comprehension
+
+# old_list = [ 1, 2, 3, 4, 5, 6, 7 ]
+# new_list = []
+
+# for x in old_list:
+#     new_list.append( x*x )
+
 # print(new_list)
 
-# print( [ i * -1 for i in range(1, 11) ] )
+# [ what_is_it_we_want_to_do_with_our_variable_name for variable_name in iterator do_this_only_if ]
 
+# print([ x*x for x in old_list ])
+
+# print( [ x*x for x in range(1,12,2) ] )
 
 # squares = []
 # for i in range(10):
@@ -51,6 +66,10 @@ num = 5
 # for i in range(10):
 #     if i % 2 == 0:
 #         even_numbers.append(i)
+
+# a = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+
+# print( [ x for x in a if x % 2 == 0 ] )
 
 # print(even_numbers)
 # Output: [0, 2, 4, 6, 8]
@@ -74,7 +93,7 @@ num = 5
 
 
 # new_list = []
-# for i in range(5):
+# for i in range(10):
 #     if i % 2 == 0:
 #         new_list.append("Even")
 #     else:
@@ -84,7 +103,7 @@ num = 5
 # # Output: ['Even', 'Odd', 'Even', 'Odd', 'Even']
 
 
-# new_list = ["Even" if i % 2 == 0 else "Odd" for i in range(5)]
+# new_list = ["Even" if i % 2 == 0 else "Odd" for i in range(10)]
 
 # print(new_list)
 # # Output: ['Even', 'Odd', 'Even', 'Odd', 'Even']
@@ -94,6 +113,10 @@ num = 5
 # print( [ i for i in students if i < 33 ] )
 # print( [ "Pass" if i >= 33 else "Fail" for i in students ] )
 
+# print( tuple( "Pass" if x >= 33 else "Fail" for x in students ) )
+
+
+# Dictionary comprehension
 
 # squares_dict = {}
 # for i in range(5):
@@ -117,5 +140,9 @@ num = 5
 
 # If a key is repeating itself it's value will be override by the new key
 
-# a = { "rohit": 23, "vikas": 14, "aman": 90, "kamal": 56, "said": 87 }
+# a = { "rohit": 23, "vikas": 14, "aman": 90, "kamal": 56, "sid": 87 }
+
 # print({ i:a[i] for i in a if a[i] >= 33 })
+# print({ i:a[i] for i in a if a[i] <= 33 })
+# print({ i:"Pass" if a[i] >= 33 else "Fail" for i in a })
+
