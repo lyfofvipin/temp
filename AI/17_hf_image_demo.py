@@ -1,23 +1,24 @@
 """
-16 (optional) — Hugging Face image generation.
+17 — Hugging Face image generation (text → image).
 
 NOT the same as 12_hg_model_bot.py (which is text-generation only).
 
-Requirements (uncomment in 16_langchain_requirements.txt):
-  pip install torch diffusers accelerate transformers
+Requirements:
+  pip install -r 18_hf_requirements.txt
 
 Usage:
-  python 16_hf_image_demo.py "a cat astronaut on the moon"
-  python 16_hf_image_demo.py   # default prompt
+  python 17_hf_image_demo.py "a cat astronaut on the moon"
+  python 17_hf_image_demo.py   # default prompt
 
 CPU works but is VERY slow. GPU strongly recommended.
+See also: 18_hf_multimodal.md, 18_hf_image_to_text_demo.py, 18_hf_video_demo.py
 """
 
 import sys
 from pathlib import Path
 
 OUTPUT = Path(__file__).resolve().parent / "generated_image.png"
-DEFAULT_PROMPT = "a watercolor painting of mountains at sunset"
+DEFAULT_PROMPT = "A cat teaching python."
 MODEL_ID = "stabilityai/sd-turbo"  # smaller / faster than full SD
 
 
@@ -45,7 +46,6 @@ def main() -> None:
         variant="fp16" if device == "cuda" else None,
     )
     pipe = pipe.to(device)
-
     image = pipe(prompt, num_inference_steps=4 if device == "cuda" else 2).images[0]
     image.save(OUTPUT)
     print(f"Saved: {OUTPUT}")

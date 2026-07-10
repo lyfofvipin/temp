@@ -75,7 +75,7 @@ Modern LangChain often uses **LangGraph** for complex agentic flows (loops, bran
 
 ## LangChain vs MCP vs your demos
 
-| | Your `15_mcp_demo.py` | LangChain |
+| | `15_mcp_server.py` (MCP tools) | LangChain |
 |---|----------------------|-----------|
 | **Purpose** | Standard tool plug-in protocol | Python framework for LLM apps |
 | **Tools** | MCP Server | `@tool` + `bind_tools()` |
@@ -195,4 +195,4 @@ image.save("sunset.png")
 
 **One line:** Change the **pipeline task** and **model** for images — you cannot get images from a text-generation chatbot endpoint.
 
-See `16_hf_image_demo.py` for a minimal optional image example (commented / GPU-aware).
+See `17_hf_image_demo.py` and `18_hf_multimodal.md` for image, video, and image-to-text demos.

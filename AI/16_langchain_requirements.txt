@@ -2,7 +2,7 @@
 langchain-core>=0.3.0
 langchain-ollama>=0.2.0
 
-# Optional — only for 16_hf_image_demo.py (image generation, GPU recommended)
+# Optional — for 17_hf_image_demo.py and 18_hf_* demos (GPU recommended for image/video)
 # torch>=2.2.0
 # diffusers>=0.30.0
 # accelerate>=0.28.0

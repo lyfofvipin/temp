@@ -1,205 +1,244 @@
 # MCP — Model Context Protocol
 
-How **tools**, **agents**, and **MCP servers** fit together — and why the **model never acts alone**.
+How **tools**, **agents**, and **MCP servers** fit together — and how this relates to **Ollama**.
 
-This file ties together everything from `13`–`14` and adds the **MCP** layer.
+## Important: MCP server ≠ LLM
 
-## The one rule (all AI websites)
+`15_mcp_server.py` is **tools only**. It does **not** connect to Ollama and is **not** a chatbot.
 
-**The model only reads text and writes text.** It does not browse, run code, or call APIs by itself.
-
-| Layer | Who runs it | Examples |
-|-------|-------------|----------|
-| **LLM** | Ollama / OpenAI / Google / HF | Predicts next words |
-| **App (host)** | Your Python, Cursor, ChatGPT backend | Agent loop, safety, UI |
-| **Tools** | Your functions or MCP servers | Weather, search, Jira, files |
-
-ChatGPT, Gemini, Cursor, your `14_agentic_demo.py` — **same architecture**, different scale.
+| Piece | File / app | Job |
+|-------|------------|-----|
+| **LLM (brain)** | Ollama, Cursor model, OpenAI | Generates text |
+| **MCP Host** | Cursor, Claude Desktop | Agent loop — connects LLM + tools |
+| **MCP Server** | `15_mcp_server.py` | Exposes tools (weather, calculator, …) |
 
 ```mermaid
 flowchart TB
-    U[User] --> H[Host app]
-    H --> L[LLM]
+    U[You in Cursor chat] --> H[Cursor MCP Host]
+    H --> L[LLM — Ollama or cloud model]
     L --> H
-    H --> T[Tools]
-    T --> H
+    H --> S[15_mcp_server.py]
+    S --> W[wttr.in / local KB]
+    W --> S
+    S --> H
     H --> U
 ```
 
-## Learning ladder in this repo
+**Ollama is not inside the MCP server.** Cursor (or your agent script) uses Ollama for thinking and the MCP server for acting.
 
-| # | Pattern | File | Loop? | Tools? | Internet? |
-|---|---------|------|-------|--------|-----------|
-| — | Chatbot | `flask-app` | ❌ | ❌ | ❌ |
-| 10 | RAG | `ollama/rag.py` | ❌ fixed pipeline | retrieve | optional |
-| 13 | Agent | `13_agent_demo.py` | ✅ | ✅ local | ❌ |
-| 14 | Agentic AI | `14_agentic_demo.py` | ✅ many steps | ✅ local + web | ✅ |
-| **15** | **MCP** | `15_mcp_demo.py` | ✅ | ✅ via **MCP server** | ✅ |
+## Does the MCP server need a model?
 
-## Chatbot vs agent vs agentic (quick recap)
+**No.** `15_mcp_server.py` has no LLM inside it — only Python tools (`get_weather`, `calculator`, etc.).
 
-| | Chatbot | Agent | Agentic AI |
-|---|---------|-------|------------|
-| **Calls to LLM** | 1 | 2–N | Many |
-| **Tools** | No | Yes | Yes, many |
-| **Goal** | Answer message | Answer question | Complete a project |
-| **Example** | “Explain RAG” | “17 × 23?” + calculator | Weather + policy + summary |
+| Component | Model inside? |
+|-----------|---------------|
+| MCP server (`15_mcp_server.py`) | ❌ No |
+| MCP host (Cursor, Claude Desktop) | ✅ Uses a model **separately** |
+| Your agent scripts (`13`, `14`) | ✅ Ollama in the same file |
 
-See `13_ai_agents.md` and `14_agentic_ai.md` for full detail.
+Adding MCP config to Cursor gives you **tools only**. It does **not** pick or install an LLM. Which model thinks is whatever Cursor (or your script) is already using.
 
-## Custom tools vs MCP
+## Who uses the model? Who runs the tools?
 
-### File 14 — tools wired directly in Python
-
-```python
-TOOLS = {
-    "get_weather": tool_get_weather,
-    "company_lookup": tool_company_lookup,
-}
-result = TOOLS[name](payload)   # hardcoded in the agent script
-```
-
-Works for **one app only**. Copy-paste to reuse elsewhere.
-
-### MCP — tools on a standard plug-in server
+**The model does not run tools itself.** The **host** sits in the middle.
 
 ```mermaid
-flowchart LR
-    H[MCP Host — Cursor / your agent] --> C[MCP Client]
-    C --> S[MCP Server]
-    S --> W[Weather API]
-    S --> D[Company DB / files]
+sequenceDiagram
+    participant U as You
+    participant H as Host
+    participant L as LLM
+    participant S as MCP Server
+
+    U->>H: What is the weather in London?
+    H->>L: Question + available tools
+    L-->>H: Use get_weather for London
+    H->>S: Run get_weather
+    S-->>H: London +31C
+    H->>L: Tool result + original question
+    L-->>H: Final answer text
+    H-->>U: Reply
 ```
 
-| Role | Job | Example |
-|------|-----|---------|
-| **Host** | AI app with the agent loop | Cursor, Claude Desktop, your `15_mcp_demo.py` |
-| **Client** | Talks MCP protocol to servers | Built into host |
-| **Server** | Exposes tools + resources | `15_mcp_server.py`, GitLab MCP, Slack MCP |
+| Who | Job |
+|-----|-----|
+| **Host** | Runs the loop, calls the LLM, **executes** tools |
+| **LLM (model)** | Decides what to say and when a tool is needed |
+| **MCP server** | Does the real work (HTTP, math, DB) |
 
-**Same agent loop.** Tools live on a **separate MCP server** any compatible host can plug into.
+**One line:** Host uses the model. Host runs tools when the model asks. The model never touches tools directly.
 
-## What an MCP server exposes
+Same pattern in Cursor + MCP, ChatGPT, Gemini, and your `13_agent_demo.py`.
 
-| Type | Purpose | Example |
-|------|---------|---------|
-| **Tools** | Actions (read/write) | `get_weather`, `create_ticket` |
-| **Resources** | Read-only data | file contents, doc URLs |
-| **Prompts** | Reusable templates | “Write QA report” |
+## Can MCP work without any LLM?
 
-The LLM still never calls these directly — the **host** reads tool definitions, runs the server when the model asks, and feeds results back as text.
+**The server still runs.** Tools still return data if you call them.
 
-## MCP vs “the model has internet”
+```text
+No LLM:  You → call get_weather("London") → answer
+         (you decide everything — no agent, no chat)
+```
 
-| Myth | Reality |
-|------|---------|
-| “ChatGPT browses the web” | OpenAI’s **tool** fetches pages → text goes into the prompt |
-| “Gemini is connected to Google” | Google’s **backend** runs search → results in prompt |
-| “Ollama agent went online” | **Your Python** or **MCP server** fetched data |
+That works — but then MCP is just a **fancy API**. A plain Python function is enough. No “AI” involved.
 
-File `14` and `15` prove this: `requests` / MCP server does HTTP; Ollama only reads the result.
+**Why MCP exists:** for **LLM hosts** that must pick tools from natural language:
 
-## Demo files
+```text
+With LLM:  You: "What's the weather in London?"
+           → Host + LLM decides → get_weather
+           → MCP server runs tool
+           → LLM writes the answer
+```
 
-| File | What it shows |
-|------|---------------|
-| `15_mcp_demo.py` | Simulated MCP (Host → Client → Server) + Ollama agent loop |
-| `15_mcp_server.py` | Real MCP server (FastMCP) — plug into Cursor |
+| Without LLM | With LLM |
+|-------------|----------|
+| You pick the tool | Model suggests which tool |
+| Fixed steps | Flexible chat / agent |
+| MCP is overkill | MCP makes sense |
 
-### Run simulated demo (no extra deps beyond 13/14)
+MCP does not **include** a model. It **needs** a model **somewhere in the host** for the smart agent use case.
+
+### Analogy
+
+| Part | Like |
+|------|------|
+| **LLM** | Brain — understands “weather in London?” |
+| **MCP server** | Hands — fetches weather |
+| **Host** | Body — connects brain to hands |
+
+No brain → hands still work, but **you** must tell them every step.
+
+## Two ways to use Ollama + tools
+
+| Approach | How | File |
+|----------|-----|------|
+| **All-in-one Python** | Your script calls Ollama + runs tools | `13_agent_demo.py`, `14_agentic_demo.py` |
+| **Cursor + MCP** | Cursor's LLM + `15_mcp_server.py` as plug-in tools | `15_mcp_server.py` + Cursor config |
+
+Use **13/14** for learning how the loop works. Use **15** to expose the same tools to Cursor (or any MCP host).
+
+## Do NOT run the MCP server in a terminal
 
 ```bash
+python 15_mcp_server.py   # WRONG for chatting — will show JSON errors
+```
+
+MCP speaks **JSON-RPC over stdin/stdout**. Only an **MCP host** (Cursor) should start the process.
+
+If you see:
+
+```text
+Invalid JSON: EOF while parsing a value
+```
+
+That is normal when running it alone — there is no MCP client talking to it.
+
+## Setup in Cursor
+
+```bash
+pip install -r 15_mcp_requirements.txt
+ollama serve                  # optional — if using Ollama as Cursor's model
 ollama pull llama3.2
-pip install requests
-
-python 15_mcp_demo.py
-python 15_mcp_demo.py --compare    # direct TOOLS vs MCP side by side
 ```
 
-### Run real MCP server (optional — for Cursor / Claude Desktop)
-
-```bash
-pip install mcp requests
-
-python 15_mcp_server.py
-```
-
-Add to Cursor MCP settings (example):
+Edit `~/.cursor/mcp.json` (use your real paths and venv Python):
 
 ```json
 {
   "mcpServers": {
     "xyz-org-tools": {
-      "command": "python",
-      "args": ["/full/path/to/AI/15_mcp_server.py"]
+      "command": "/home/vipikuma/my_data/temp/AI/ollama/.venv/bin/python",
+      "args": ["/home/vipikuma/my_data/temp/AI/15_mcp_server.py"]
     }
   }
 }
 ```
 
-Then Cursor’s agent can call `get_weather` and `company_lookup` through MCP instead of hardcoded tools.
+1. Restart Cursor  
+2. Check MCP server shows as connected (Settings → MCP)  
+3. Ask in chat: *"What is the weather in London?"* or *"What is 19 times 21?"*
 
-## Architecture comparison
+Cursor's LLM picks the tool → MCP server runs it → result goes back to the LLM → you get the answer.
 
-### 14 — direct tools
+### Using Ollama as the LLM in Cursor
 
+- MCP server handles **tools** only  
+- **Which model thinks** is set in Cursor (model picker / settings)  
+- If Cursor supports Ollama as a provider, point it at `http://localhost:11434`  
+- If not, Cursor may use its default cloud model — MCP tools still work the same way
+
+For a **fully local** stack without Cursor: use `13_agent_demo.py` (Ollama + tools in one script).
+
+## Learning ladder in this repo
+
+| # | Pattern | File | Loop? | Tools? |
+|---|---------|------|-------|--------|
+| — | Chatbot | `flask-app` | ❌ | ❌ |
+| 13 | Agent | `13_agent_demo.py` | ✅ | ✅ inline Python |
+| 14 | Agentic AI | `14_agentic_demo.py` | ✅ | ✅ inline + internet |
+| **15** | **MCP tools** | `15_mcp_server.py` | — (host runs loop) | ✅ via MCP protocol |
+
+## Custom tools vs MCP
+
+### File 14 — tools in Python
+
+```python
+TOOLS = {"get_weather": tool_get_weather, ...}
+result = TOOLS[name](payload)
 ```
-User → AgentHost → Ollama
-              ↓
-         TOOLS dict (inline Python)
+
+Works in **one script only**.
+
+### File 15 — tools on MCP server
+
+```mermaid
+flowchart LR
+    H[Cursor Host] --> C[MCP Client]
+    C --> S[15_mcp_server.py]
+    S --> W[Weather API]
 ```
 
-### 15 — MCP tools
+Same tools, **reusable** by any MCP host (Cursor, Claude Desktop, …).
 
-```
-User → AgentHost → Ollama
-         ↓
-    MCP Client → MCP Server → weather / company APIs
-```
+## Tools in `15_mcp_server.py`
 
-The **loop is identical**. Only **where tools live** changes.
+| Tool | Type | Description |
+|------|------|-------------|
+| `get_weather` | Internet | Live weather via wttr.in |
+| `fetch_url` | Internet | Fetch allowlisted URLs |
+| `company_lookup` | Local | XYZ ORG facts |
+| `calculator` | Local | Math expressions |
 
-## Real-world MCP servers (you may already use them)
+## MCP vs “the model has internet”
+
+The LLM never fetches URLs itself. The **MCP server** (your Python + `requests`) does — same rule as `14_agentic_demo.py`.
+
+## Real-world MCP servers
 
 | MCP server | Tools / data |
 |------------|--------------|
-| GitLab MCP | Issues, MRs, pipelines |
+| `15_mcp_server.py` | Weather, calculator, company lookup |
+| GitLab MCP | Issues, MRs |
 | Atlassian MCP | Jira, Confluence |
-| Slack MCP | Messages, channels |
-| Filesystem MCP | Read local files |
-
-Cursor connects as **host**; those services run as **MCP servers**.
-
-## QA checklist for MCP-style systems
-
-| Test | Expected |
-|------|----------|
-| Tool not on server | Clear error, no crash |
-| Server offline | Host reports connection failure |
-| Model skips tool | May hallucinate — same as file 13 |
-| Wrong tool args | Server validates / returns error |
-| Same tool, two hosts | Both Cursor and your script get same behavior |
+| Slack MCP | Messages |
 
 ## Related files
 
 | File | Topic |
 |------|-------|
 | `13_ai_agents.md` | Chatbot vs agent |
-| `13_agent_demo.py` | Agent loop, local tools |
-| `14_agentic_ai.md` | Agentic + internet |
-| `14_agentic_demo.py` | Direct TOOLS wiring |
-| `15_mcp_demo.py` | MCP-style wiring |
-| `15_mcp_server.py` | Real FastMCP server |
-| `flask-app/app.py` | Chatbot (no tools) |
+| `13_agent_demo.py` | Ollama + tools in one script |
+| `14_agentic_demo.py` | Agentic + internet |
+| `15_mcp_server.py` | MCP tools for Cursor |
+| `16_langchain.md` | LangChain as another glue layer |
 
-## Mental model for your notes
+## Mental model
 
 ```
 Chatbot     = talk once
-Agent       = talk in a loop + tools
-Agentic AI  = big goal + many steps + tools
-MCP         = standard plug-in port for those tools
-LLM         = brain that never touches the world directly
+Agent       = loop + tools (13/14 — Ollama in same script)
+MCP server  = toolbox only — no model inside (15)
+MCP host    = uses model + runs tools (Cursor)
+LLM         = brain — never touches the world directly
 ```
 
-**One line:** MCP is **USB for AI tools** — the model still only thinks in text; the host talks to MCP servers that act in the real world.
+**One line:** `15_mcp_server.py` is the **toolbox** (no model). The **host** uses the **brain** (LLM) and **runs** the tools. Cursor connects them — do not expect the server to chat on its own.

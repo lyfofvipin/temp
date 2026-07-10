@@ -1,0 +1,9 @@
+name: demo server
+version: 0.0.1
+schema: v1
+mcpServers:
+  - name: demo server
+    command: /home/vipikuma/my_data/temp/AI/ollama/.venv/bin/python
+    args:
+      - /home/vipikuma/my_data/temp/AI/15_mcp_server.py
+    env: {}
