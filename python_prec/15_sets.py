@@ -8,8 +8,12 @@
 # Unique Elements: Every element in a set must be unique. Duplicates are automatically discarded.
 # Heterogeneous: Sets can contain elements of different data types, but all elements must be hashable 
 # (e.g., numbers, strings, tuples, float but not lists or dictionaries).
+
 # While 1 and True are the same thing
 # While 0 and False are the same thing
+
+# a = { False, 0, True, 2, 1, True }
+# print(a)
 
 # Creating an empty set
 # empty_set = set()
@@ -22,17 +26,19 @@
 # print(a)
 
 # Creating a set from a list (duplicates are automatically removed)
-# numbers_list = "Rajasthan" # -> 
-# my_set = set(numbers_list)
-# print(f"Set from list (duplicates removed): {my_set}")
+# a = "Rajasthan" # -> 
+# my_set = set(a)
+# print(my_set)
 
-# my_set = set((1, 3, 4, 5, 1, 4))
+# a = (1, 3, 4, 5, 1, 4)
+# my_set = set(a)
 # print(my_set)
 
 # Creating a set directly with curly braces
 # fruits = {"apple", "banana", "cherry", "banana", 1, 3, 4, 5, 1}
 # print(f"Set of fruits: {fruits}")
 # dummy = {"x", "t", "a", "A", "X", "T"}
+# print(dummy)
 
 # Set with mixed data types (all elements must be hashable)
 # mixed_set = {1, "hello", (1, 2), 3.14, (1, 2)} # Tuple is hashable
@@ -76,13 +82,20 @@ my_set = {1, 2, 3}
 
 # pop method in list take an argument but in set there are no argument required
 
+# my_set = {1 ,2 ,3, "abc", (23)}
+
 # data = my_set.pop()
 # print(my_set)
 # print(data)
 
-
 # popped_item = my_set.pop()
 # print(f"Popped item (arbitrary): {popped_item}, Set: {my_set}")
+
+# a = { 1, 2, 3 }
+# b = a
+# a.add(34)
+# print(a)
+# print(b)
 
 # my_set.clear()
 # print(f"After clear: {my_set}") # 
@@ -94,13 +107,23 @@ my_set = {1, 2, 3}
 # print(b)
 
 # my_set = {10, 20, 30, 40, 50}
+# my_set.clear()
+# print(my_set)
 
 # # Membership
 # print(f"Is 3 in my_set? {3 in my_set}")     # 
 # print(f"Is 6 not in my_set? {6 not in my_set}") # 
 
-# set_a = {1, 2, 3, 4}
-# set_b = {3, 4, 5, 6}
+set_a = {1, 2, 3, 4}
+set_b = {3, 4, 5, 6}
+
+set_a.union( set_b )
+
+print(set_a)
+
+# print( dir( set_b ) )
+
+# print(  )
 
 # new_set = set_a.union(set_b)
 # new_set = set_a | set_b # Pipe Operator
@@ -152,7 +175,7 @@ set4 = { 8, 9 }
 fs = frozenset((1, 2, 3, 1, 1, 2, 3))
 ns = set([1, 2, 3, 1, 1, 2, 3])
 
-print( dir( frozenset() ) )
+# print( dir( frozenset() ) )
 
 # a = 43
 # b = 456

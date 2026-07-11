@@ -15,17 +15,6 @@
 
 # Inbuilt Functions
 
-# a = [ 1, 2, 3, 4, 5, 56, 67, -78, 324, 23 ]
-
-# sum()
-# print(sum( a ))
-
-# min()
-# print( min(a) )
-
-# max()
-# print( max(a) )
-
 # Every function has two main parts: the definition and the call.
 
 # Defining a Function
@@ -46,7 +35,7 @@
 #     print("I am line 4")
 #     print("I am line 5")
 
-# my_func()
+# # my_func()
 
 # def my_func():
 #     print("I am line 1 of 2nd func")

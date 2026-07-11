@@ -28,6 +28,8 @@
 
 # a = open("test.text")
 
+# print( dir( a ) )
+
 # print(type(a))
 
 # print( dir(a) )
@@ -39,29 +41,48 @@
 # data = a.read()
 # print(data.upper())
 
+# a = open("test.text")
+
 # b = a.readline()
 # print(b)
 # c = a.readline()
 # print(c)
 # d = a.readline()
 # print(d)
-
 # print(a.read())
+# print("------------------------")
+
+# print(a.readline())
+# print(a.readline())
+# print(a.readline())
+# print(a.readline())
+# print(a.readline())
+# print(a.readline())
+# print(a.readline())
+# print(a.readline())
 
 # print( b, c, d )
 
 # print(a.readlines())
 
+# a = open("test.text")
+# a.read()
+# a.seek(11)
+# print(a.read())
+
+# print(a.readlines()[3])
+
 # b = a.read()
 
-# a = open("test.text")
+# a = open("/home/vipikuma/print.py")
 # print( b )
+# print(a.read())
 
 # "C:\Users\Dell\OneDrive\Pictures\Screenshots\data scince\python\formateed_string.py"
-# a=open("/home/vipikuma/my_data/temp/python_prec/11_strings.py")
-# a=open("12_forloop.py")
-# print(type(a))
 
+# a=open("/home/vipikuma/my_data/temp/python_prec/11_strings.py")
+# a=open("12_lists.py")
+# print(a.read())
 # a.close()
 
 # with open("test.text") as a:
@@ -69,9 +90,8 @@
 #     print(a.read())
 #     print(a.writable())
 
-# data = [ "line1\n", "line\n2", "line3", "sadfasfd\n", "ASDfae" ]
 
-# a = open("test.text", "r")
+# a = open("testrest.text", "r")
 # print(a.read())
 # a.close()
 
@@ -80,9 +100,7 @@
 # print( a.writable() )
 
 # a.write( "I am from Jaipur." )
-
 # a.writelines(data)
-
 # a.close()
 
 
@@ -92,13 +110,17 @@
 # with open("abcd.text", "a") as a:
 #     a.write( "I am from Delhi.\n" )
 
-# print(a.write(data))
+# data = [ "line1\n", "line\n2", "line3", "sadfasfd\n", "ASDfae" ]
+
+# a = open("data.text", "a")
+# # print(a.write(data))
 # a.writelines(data)
+# a.read()
 
 # a.close()
 
-
 # a = open("/home/vipikuma/test.mp4", "wb")
+# print(a.read())
 # a.close()
 
 # a = open("test.text", "w+")

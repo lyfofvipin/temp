@@ -150,7 +150,7 @@ my_tuple = ("apple", "banana", "cherry")
 # print(f"Tuple to list: {my_list_from_tuple}, type: {type(my_list_from_tuple)}") 
 
 
-# my_tuple = (1, 2, 3, 2, 4, 2)
+my_tuple = (1, 2, 3, 2, 4, 2)
 
 # print(f"Count of 2: {my_tuple.count(2)}") 
 # print(f"Index of 2: {my_tuple.index(2)}") 

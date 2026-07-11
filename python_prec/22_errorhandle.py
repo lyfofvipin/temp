@@ -167,11 +167,11 @@ this is a test file.
 # if age >= 18:
 #     print("Yes you can vote.")
 # else:
-#     raise ValueError("No you can not vote.")
+#     raise TabError("No you can not vote.")
 
 # raise IndexError("Bhaiya y number list m h he nahi.")
 
-# raise Exception("Test", "Hello I am test error")
+raise Exception("Test", "Hello I am test error")
 # raise a
 
 # Here, we manually raise a ValueError if the age is invalid. The try...except 

@@ -14,6 +14,17 @@ num = 4
 
 # print(True) if num > 5 else print(False)
 
+n = 23
+
+# if n > 0 :
+#     print("+ve")
+# elif n < 0 :
+#     print("-ve")
+# else:
+#     print(0)
+
+# print("+ve") if n > 0 else print("-ve") if n < 0 else print("0")
+
 # a = "yes" if num > 5 else "no"
 # print(a)
 
@@ -35,13 +46,19 @@ num = 4
 
 # List Comprehension
 
-# old_list = [ 1, 2, 3, 4, 5, 6, 7 ]
-# new_list = []
 
+# Write a program to square each elements of the given list into a new list
+# [ 4, 9, 16, 1, 36, 49 ]
+
+# old_list = [ 2, 3, 4, 1, 6, 7 ]
+# new_list = []
 # for x in old_list:
-#     new_list.append( x*x )
+#     new_list.append(x * x)
+# print(new_list)
 
 # print(new_list)
+
+# print( [ x + 1 for x in old_list ] )
 
 # [ what_is_it_we_want_to_do_with_our_variable_name for variable_name in iterator do_this_only_if ]
 
@@ -67,9 +84,16 @@ num = 4
 #     if i % 2 == 0:
 #         even_numbers.append(i)
 
+
+# print([ x for x in [ 23, 43, 23, 11, 34, 56, 7, 8, 12, 15, 18, 33] if x <= 18 ])
+
+# for x in a:
+#     if x >= 18:
+#         print(x)
+
 # a = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
 
-# print( [ x for x in a if x % 2 == 0 ] )
+# print( frozenset( x for x in a if x % 2 == 0 ) )
 
 # print(even_numbers)
 # Output: [0, 2, 4, 6, 8]
