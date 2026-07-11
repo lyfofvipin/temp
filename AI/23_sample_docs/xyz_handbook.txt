@@ -1,0 +1,16 @@
+XYZ ORG Employee Handbook (Sample)
+
+Section 1 — About XYZ ORG
+XYZ ORG is a fictional company used for AI training demos. We build learning labs for generative AI, RAG, and agents.
+
+Section 2 — Leave Policy
+XYZ ORG offers 20 days paid leave per year. Unused leave may carry over up to 5 days into the next calendar year. Sick leave is separate: 10 days per year with a doctor's note required after 3 consecutive days.
+
+Section 3 — Remote Work
+Employees may work remotely up to 3 days per week after completing probation. All remote days must be logged in the HR portal by Monday 10:00 AM.
+
+Section 4 — Support
+For IT issues email support@xyz-org.example. For HR questions email hr@xyz-org.example. Response SLA is 24 business hours.
+
+Section 5 — RAG and Internal AI Tools
+Our internal document assistant uses RAG: it retrieves relevant handbook sections before answering. Do not paste confidential client data into public AI tools.

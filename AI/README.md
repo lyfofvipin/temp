@@ -108,6 +108,9 @@ python 13_agent_demo.py agent
 | # | File | Topic |
 |---|------|-------|
 | 21 | `21_streamlit.md` | Streamlit for AI web apps |
+| 22 | `22_vector_db.md` + `22_vector_db_demo.py` | Vector databases (Chroma) |
+| 23 | `23_pdf_rag.md` + `23_pdf_rag_demo.py` | PDF / document RAG |
+| 24 | `24_n8n_automation.md` | AI automation with n8n (free, self-hosted) |
 
 ---
 
@@ -177,7 +180,7 @@ You are an **applied GenAI builder**, not an ML research scientist — and that 
 
 ```
 AI/
-├── 01–21 numbered theory + demos
+├── 01–24 numbered theory + demos
 ├── flask-app/          # Flask Ollama gateway + dashboard
 ├── streamlit-app/      # Streamlit Ollama chat
 ├── ollama/             # RAG, LoRA training, data.json
@@ -199,12 +202,13 @@ AI/
 
 ## What to learn next
 
-- [ ] Vector DB (Chroma or pgvector) for production RAG  
-- [ ] Streaming responses (SSE) in Flask/Streamlit  
-- [ ] LangGraph for multi-step agentic workflows  
-- [ ] Evals — golden questions + expected answers  
-- [ ] Dockerize flask-app or streamlit-app  
-- [ ] One portfolio project end-to-end (RAG + agent + UI + tests)  
+- [ ] PDF RAG Streamlit UI — wrap `23_pdf_rag_demo.py`
+- [ ] Complete n8n workflows (`24_n8n_automation.md` checklist)
+- [ ] Streaming responses (SSE) in Flask/Streamlit
+- [ ] LangGraph for multi-step agentic workflows
+- [ ] Evals — golden questions + expected answers
+- [ ] Dockerize flask-app or streamlit-app
+- [ ] One portfolio project end-to-end (RAG + agent + UI + tests)
 
 ---
 

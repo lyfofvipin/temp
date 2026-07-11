@@ -19,7 +19,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.tools import tool
 from langchain_ollama import ChatOllama
 
-MODEL = "llama3.2"
+MODEL = "llama3.2:3b"
 MAX_TOOL_STEPS = 5
 
 
@@ -44,8 +44,8 @@ def calculator(expression: str) -> str:
 def company_lookup(query: str) -> str:
     """Look up XYZ ORG company facts."""
     kb = {
-        "xyz org": "XYZ ORG is a fictional company used for AI training demos.",
         "vacation policy": "XYZ ORG offers 20 days paid leave per year.",
+        "xyz org": "XYZ ORG is a fictional company used for AI training demos.",
     }
     key = query.lower().strip()
     for topic, answer in kb.items():
@@ -58,7 +58,7 @@ TOOLS = [calculator, company_lookup]
 TOOLS_BY_NAME = {t.name: t for t in TOOLS}
 
 
-def get_llm() -> ChatOllama:
+def get_llm():
     return ChatOllama(model=MODEL, temperature=0)
 
 
@@ -71,7 +71,6 @@ def demo_basic() -> None:
     print("=" * 60)
     print("LangChain BASIC — one LLM call (chatbot)")
     print("=" * 60)
-
     llm = get_llm()
     response = llm.invoke([HumanMessage(content="Explain RAG in one sentence.")])
     print(response.content)
@@ -94,8 +93,8 @@ def demo_chain() -> None:
             ("human", "Explain {topic} to a QA engineer."),
         ]
     )
-    chain = prompt | get_llm()
 
+    chain = prompt | get_llm()
     result = chain.invoke({"topic": "the difference between a chatbot and an agent"})
     print(result.content)
     print("\nLangChain wires: variables → prompt → model (LCEL pipe syntax)")
@@ -111,7 +110,7 @@ def demo_tools() -> None:
     print("LangChain TOOLS — bind_tools + loop (agent)")
     print("=" * 60)
 
-    question = "What is 17 times 23?"
+    question = "what's vacation policy for xyz?"
     print(f"Question: {question}\n")
 
     llm = get_llm().bind_tools(TOOLS)
