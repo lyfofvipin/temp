@@ -35,7 +35,6 @@ SAMPLE_DOC = Path(__file__).resolve().parent / "23_sample_docs" / "xyz_handbook.
 CHUNK_SIZE = 500
 CHUNK_OVERLAP = 80
 
-
 class OllamaEmbedding(EmbeddingFunction[Documents]):
     def __call__(self, input: Documents) -> Embeddings:
         vectors: Embeddings = []
@@ -124,7 +123,6 @@ def index_document(path: Path, reindex: bool = False) -> chromadb.Collection:
     if reindex and collection.count() > 0:
         client = chromadb.PersistentClient(path=str(DB_PATH))
         client.delete_collection(collection_name_for(source))
-        collection = get_collection(source)
 
     print(f"Loading {path}...")
     text = load_document(path)
@@ -188,10 +186,8 @@ def run_qa(collection, questions: list[str], with_llm: bool = True) -> None:
 
 
 DEFAULT_QUESTIONS = [
-    "What is the leave policy?",
-    "How many sick days do employees get?",
-    "Can I work from home every day?",
-    "What is the capital of France?",
+    "Where does vipin work?",
+    "what's his skills?"
 ]
 
 
