@@ -438,29 +438,6 @@ A banking app has `ledger = [100, -50, 200]` and a batch `new_batch = [500, -20,
 
 > File: `18_functions.py`
 
-### Basic / Intermediate / Advanced
-
-**Basic**
-
-- Write a function that checks if a number is even or odd.
-- Write a function that returns the area of a rectangle.
-- Write a function with a default parameter for currency symbol (`"₹"`).
-- Write a function that reverses a string without using slicing.
-
-**Intermediate**
-
-- Write a function that accepts a list and returns only unique elements (preserve order).
-- Write a function that validates an Indian mobile number (10 digits, starts with 6–9).
-- Write a function decorator-free that times how long another function takes to run (use `time` module).
-- Write a function that flattens a list of lists one level deep.
-
-**Advanced**
-
-- Write a function factory `make_multiplier(n)` that returns a function multiplying its input by `n`.
-- Write a function using `functools.reduce` to compute product of a list.
-- Implement memoization manually for Fibonacci without using `@lru_cache`.
-- Write a function that dispatches behavior based on argument type (int vs str vs list).
-
 **Generic**
 
 - Sum of Elements
@@ -518,6 +495,27 @@ A banking app has `ledger = [100, -50, 200]` and a batch `new_batch = [500, -20,
 - Prime Numbers
     - Using print: Write a function that takes a list of integers and prints only the prime numbers from the list.
     - Using return: Write a function that takes a list of integers and returns a list containing only the prime numbers from the list.
+
+**Basic**
+
+- Write a function that checks if a number is even or odd.
+- Write a function that returns the area of a rectangle.
+- Write a function with a default parameter for currency symbol (`"₹"`).
+- Write a function that reverses a string without using slicing.
+
+**Intermediate**
+
+- Write a function that accepts a list and returns only unique elements (preserve order).
+- Write a function that validates an Indian mobile number (10 digits, starts with 6–9).
+- Write a function decorator-free that times how long another function takes to run (use `time` module).
+- Write a function that flattens a list of lists one level deep.
+
+**Advanced**
+
+- Write a function factory `make_multiplier(n)` that returns a function multiplying its input by `n`.
+- Write a function using `functools.reduce` to compute product of a list.
+- Implement memoization manually for Fibonacci without using `@lru_cache`.
+- Write a function that dispatches behavior based on argument type (int vs str vs list).
 
 ---
 
