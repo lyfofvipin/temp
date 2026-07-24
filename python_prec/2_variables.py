@@ -17,8 +17,10 @@
 # print(a)
 # a = 34.34
 # print(a)
-# a=34
+# a=78
 # print(a)
+
+# print( 34, 78, 34.97, "Jaipur" )
 
 # a = 1
 # b = 2
@@ -26,8 +28,7 @@
 # d = 56
 # e = "34"
 
-# print( a, b, c, d, e )
-# print( 34, 78, 34.97, "Jaipur" )
+# print( a, b )
 
 # a = True
 # print(a)
@@ -46,6 +47,7 @@
 
 # a = "Jaipur"
 # print( "Hello", a, "I am from Python." )
+
 # print( f"Hello {a} I am from Python." )
 
 # print( a \n b \n c \n d )
@@ -55,8 +57,8 @@
 # print( a,'\n',b,'\n',c,'\n',d )
 # print(f"{a}\n{b}\n{c}\n{d}")
 
-# result = 324
-# print( f"result is: {result}" )
+result = 324
+print( f"result is: {result}" )
 
 # print( 34, "\n", 354.34, "\n", "wqerqw\n", True )
 

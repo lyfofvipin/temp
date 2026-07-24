@@ -11,6 +11,16 @@
 
 # {
 #   "user_id": 105,
+#   "is_active": True,
+#   "roles": ["admin", "editor"],
+#   "profile": {
+#     "city": "New York",
+#     "last_login": None
+#   }
+# }
+
+# {
+#   "user_id": 105,
 #   "is_active": true,
 #   "roles": ["admin", "editor"],
 #   "profile": {
@@ -29,14 +39,13 @@
 # json.dumps()	Dump String: Converts a Python object into a JSON-formatted string.	Sending data over a network (e.g., in a FastAPI response).
 # json.dump()	Dump File: Writes a Python object directly to an open file.	Saving configuration or data permanently to disk.
 
-
-
 # import json
 
 # python_data = {
 #     "name": "Bob",
 #     "items": [10, 20, 30],
-#     "is_vip": False
+#     "is_vip": False,
+#     "dummy_data": None
 # }
 
 # json_string = json.dumps(python_data)
@@ -58,12 +67,12 @@
 # import json
 
 # json_input_string = '{"city": "London", "temperature": 15.5, "unit": true}'
-# python_dict = json.loads(json_input_string)
-# print(python_dict)
-# print(type(python_dict))
+# test = json.loads(json_input_string)
+# print(test)
+# print(type(test))
 
 
-# with open('data_output.json') as f:
+# with open('test.json') as f:
 #     loaded_data = json.load(f)
 
 # print(loaded_data)

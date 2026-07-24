@@ -1,3 +1,8 @@
+# input()
+
+# print("Enter Something: ")
+# input()
+
 # input("Enter Some data: ")
 
 # a = input("Enter Some data: ")
@@ -5,6 +10,8 @@
 # a = input("Enter Something:")
 # print(a)
 # print(type(a))
+
+# print( input("Enter Something: ") )
 
 # a = input("Enter A number: ")
 # print(a)

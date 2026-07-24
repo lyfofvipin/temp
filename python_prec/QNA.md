@@ -438,115 +438,6 @@ A banking app has `ledger = [100, -50, 200]` and a batch `new_batch = [500, -20,
 
 > File: `18_functions.py`
 
-### Real-Life Scenarios
-
----
-**E-Commerce Price Calculator**
-
-An online store needs a reusable function `calculate_total(price, quantity, discount_percent=0)` that returns the final bill after applying an optional discount. Write the function and show how calling `calculate_total(500, 3, 10)` differs from `calculate_total(500, 3)`.
-
----
-**OTP Generator for Banking App**
-
-A bank sends 6-digit OTPs. Write a function `generate_otp(length=6)` that returns a random numeric string. Why should OTP generation live inside a function instead of being copy-pasted in three different files?
-
----
-**Shipping Cost with *args**
-
-A logistics API receives orders with varying numbers of boxes. Write `total_weight(*weights)` that accepts any number of weight arguments and returns their sum for freight calculation.
-
-Example: `total_weight(2.5, 1.0, 3.2, 0.8)` → `7.5`
-
----
-**User Profile Builder with **kwargs**
-
-A SaaS signup form collects different fields per plan (name, email, company, phone). Write `build_profile(**fields)` that returns a dictionary of all submitted fields. Call it twice with different keyword arguments.
-
----
-**Default Mutable Argument Trap**
-
-A developer writes:
-
-```python
-def add_item(item, cart=[]):
-    cart.append(item)
-    return cart
-```
-
-Predict the output of:
-
-```python
-print(add_item("apple"))
-print(add_item("banana"))
-```
-
-Explain the bug and how to fix it for a real shopping-cart feature.
-
----
-**Pure Function vs Side Effect**
-
-Given:
-
-```python
-def apply_tax(prices, rate):
-    for i in range(len(prices)):
-        prices[i] = prices[i] * (1 + rate)
-    return prices
-
-data = [100, 200, 300]
-result = apply_tax(data, 0.18)
-```
-
-Will `data` still be `[100, 200, 300]` after the call? Should a billing function mutate the original list or return a new one?
-
----
-**Lambda for Sorting Job Applicants**
-
-HR has `candidates = [("Anita", 85), ("Ravi", 92), ("Meera", 78)]`. Write a one-liner using `sorted()` and a `lambda` to sort by score descending.
-
----
-**Function as First-Class Object**
-
-You have three payment handlers: `pay_upi`, `pay_card`, `pay_wallet`. Write a function `process_payment(method_func, amount)` that calls whichever payment function is passed in. Why is this pattern useful in real payment gateways?
-
----
-**Scope Bug in Analytics Dashboard**
-
-```python
-total = 0
-
-def add_sale(amount):
-    total += amount
-    return total
-```
-
-Why does this crash with `UnboundLocalError`? Fix it for a sales-tracking module using `global` or a better design (return value / class attribute).
-
----
-**Docstring for API Documentation**
-
-Write a function `celsius_to_fahrenheit(c)` with a proper docstring explaining parameters, return value, and an example. Why do teams enforce docstrings before merging code?
-
----
-**Type Hints in a Healthcare API**
-
-Write `calculate_bmi(weight_kg: float, height_m: float) -> float` with validation that raises `ValueError` if height is zero or negative. How do type hints help in large codebases even though Python doesn't enforce them at runtime?
-
----
-**Recursion vs Loop — Folder Size Utility**
-
-You need to calculate total file size in a directory tree. Compare writing this with a loop + stack vs a recursive function. When would you choose recursion for filesystem utilities?
-
-### Without Loops (Function Concepts)
-
-- What is the difference between `return` and `print` inside a function?
-- What does `*args` capture when you call `func(1, 2, 3)`?
-- What does `**kwargs` capture when you call `func(a=1, b=2)`?
-- How do you return multiple values from a single function?
-- What is a nested function and where is it used in real projects (e.g., closures)?
-- What is the difference between a function defined with `def` and a `lambda`?
-- How do you pass a function as an argument to another function?
-
 ### Basic / Intermediate / Advanced
 
 **Basic**
@@ -569,6 +460,64 @@ You need to calculate total file size in a directory tree. Compare writing this 
 - Write a function using `functools.reduce` to compute product of a list.
 - Implement memoization manually for Fibonacci without using `@lru_cache`.
 - Write a function that dispatches behavior based on argument type (int vs str vs list).
+
+**Generic**
+
+- Sum of Elements
+    - Using print: Write a function that takes a list of integers and prints the sum of all the elements.
+    - Using return: Write a function that takes a list of integers and returns the sum of all the elements.
+
+- Largest Number
+    - Using print: Write a function that takes a list of integers and prints the largest number in the list.
+    - Using return: Write a function that takes a list of integers and returns the largest number in the list.
+
+- Smallest Number
+    - Using print: Write a function that takes a list of integers and prints the smallest number in the list.
+    - Using return: Write a function that takes a list of integers and returns the smallest number in the list.
+
+- Element Existence
+    - Using print: Write a function that takes a list and an element as input and prints "Found" if the element exists in the list, otherwise prints "Not Found".
+    - Using return: Write a function that takes a list and an element as input and returns True if the element exists in the list, otherwise returns False.
+
+- Count of Even Numbers
+    - Using print: Write a function that takes a list of integers and prints how many even numbers are present in the list.
+    - Using return: Write a function that takes a list of integers and returns the count of even numbers present in the list.
+
+- Count of Odd Numbers
+    - Using print: Write a function that takes a list of integers and prints how many odd numbers are present in the list.
+    - Using return: Write a function that takes a list of integers and returns the count of odd numbers present in the list.
+
+- Average of Numbers
+    - Using print: Write a function that takes a list of integers and prints the average of all the numbers.
+    - Using return: Write a function that takes a list of integers and returns the average of all the numbers.
+
+- Count of Positive and Negative Numbers
+    - Using print: Write a function that takes a list of integers and prints the count of positive numbers and negative numbers separately.
+    - Using return: Write a function that takes a list of integers and returns the counts of positive numbers and negative numbers.
+
+- Vowel Count in String
+    - Using print: Write a function that takes a string and prints the number of vowels present in it.
+    - Using return: Write a function that takes a string and returns the number of vowels present in it.
+
+- Palindrome Check
+    - Using print: Write a function that takes a string and prints whether it is a palindrome or not.
+    - Using return: Write a function that takes a string and returns whether it is a palindrome or not (True or False).
+
+- Numbers Divisible by 5
+    - Using print: Write a function that takes a list of integers and prints all the numbers divisible by 5.
+    - Using return: Write a function that takes a list of integers and returns a list containing all the numbers divisible by 5.
+
+- Common Elements
+    - Using print: Write a function that takes two lists and prints the common elements between them.
+    - Using return: Write a function that takes two lists and returns a list of common elements between them.
+
+- Factorials of Elements
+    - Using print: Write a function that takes a list of integers and prints the factorial of each element.
+    - Using return: Write a function that takes a list of integers and returns a list containing the factorial of each element.
+
+- Prime Numbers
+    - Using print: Write a function that takes a list of integers and prints only the prime numbers from the list.
+    - Using return: Write a function that takes a list of integers and returns a list containing only the prime numbers from the list.
 
 ---
 

@@ -46,8 +46,10 @@
 # try:
 #     a = int(input("Enter Number 1: "))
 #     b = int(input("Enter Number 2: "))
-#     print( a / b )
+#     print(a/b)
 # except ValueError:
+#     print("Please enter Numbers only.")
+# except ZeroDivisionError:
 #     print("You Can not divide any number by 0.")
 
 # try:
@@ -56,8 +58,6 @@
 #     print(a/b)
 # except ValueError:
 #     print("Please enter Numbers only.")
-# except ZeroDivisionError:
-#     print("Please enter Numbers other then 0.")
 
 # try:
 #     a = int(input("Enter Number 1: "))
@@ -67,9 +67,6 @@
 #     print("Something if wrong.")
 # finally:
 #     print("I will run on both case.")
-
-
-
 
 # try:
 #     # Code that might raise an exception
@@ -100,12 +97,16 @@
 
 # You can handle multiple exceptions in a single except block using a tuple.
 
+# my_list = [0, 1]
+# user_input = int(input("Enter an index: "))
+# print(my_list[user_input])
+
 # try:
 #     my_list = [0, 1]
 #     user_input = int(input("Enter an index: "))
 #     print(my_list[user_input])
-# except (IndexError, ValueError) as error_msg:
-#     print(error_msg)
+# except (IndexError, ValueError) as x:
+#     print(x)
 
 
 # Using as e allows you to access the exception object and print its message,
@@ -142,10 +143,17 @@
 this is a test file.
 """
 
-# for x in range(5):
+# for x in range(10):
 #     print(x)
 # else:
-#     print("asdfs")
+#     print("this is your output.")
+
+# i = 0
+# while i < 10:
+#     print(i)
+#     i += 1
+# else:
+#     print("test")
 
 # a = ""
 # b = "sadfsfd"
@@ -167,11 +175,11 @@ this is a test file.
 # if age >= 18:
 #     print("Yes you can vote.")
 # else:
-#     raise TabError("No you can not vote.")
+#     raise IndexError("No you can not vote.")
 
 # raise IndexError("Bhaiya y number list m h he nahi.")
 
-raise Exception("Test", "Hello I am test error")
+# raise Exception("Test", "Hello I am test error")
 # raise a
 
 # Here, we manually raise a ValueError if the age is invalid. The try...except 

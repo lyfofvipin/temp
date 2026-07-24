@@ -28,35 +28,35 @@
 
 # function_name()
 
-# def my_func():
+# def test():
 #     print("I am line 1")
 #     print("I am line 2")
 #     print("I am line 3")
 #     print("I am line 4")
 #     print("I am line 5")
 
-# # my_func()
+# # test()
 
-# def my_func():
+# def test():
 #     print("I am line 1 of 2nd func")
 #     print("I am line 1 of 2nd func")
 #     print("I am line 1 of 2nd func")
 #     print("I am line 1 of 2nd func")
 #     print("I am line 1 of 2nd func")
 
-# my_func()
+# test()
 
 # a = 23
 # b = 24
 # print(a + b)
 
-# def my_function():
+# def test_function():
 #     print("hi I am the function.")
 #     print("hi I am the function.")
 #     print("hi I am the function.")
 
 # def: A keyword that tells Python you're defining a new function.
-# my_function: A name you choose for your function. It should be descriptive and follow Python's naming conventions (lowercase with underscores).
+# test_functiontion: A name you choose for your function. It should be descriptive and follow Python's naming conventions (lowercase with underscores).
 # (): These hold the function's parameters (inputs). In this basic example, there are no parameters.
 
 # Calling a Function
@@ -72,21 +72,20 @@
 # def add():
 #     a = int(input("Enter A Number: "))
 #     b = int(input("Enter A Number: "))
-
-#     print( a + b )
+#     print( a * b )
 
 # add()
 
 # write a function that take a number from keyboard and tell if it's odd or even
 
-# def odd_even_checker():
-#     a = int(input("Enter A Number: "))
-#     if a % 2 == 0:
+# def odd_even_check():
+#     a = int(input("Enter A number: "))
+#     if a % 2 == 0 :
 #         print("Even")
 #     else:
 #         print("Odd")
 
-# odd_even_checker()
+# odd_even_check()
 
 # Make a program with a function that check a number is divided by 3
 
@@ -112,25 +111,40 @@
 
 # def greet():
 #     print(f"Hello, how are you?")
-# greet()
+# # greet()
 
 # def greet( a ):
 #     print(a)
 #     print(f"Hello, how are you?")
 
-# greet( ".343" )
+# greet( 15 )
 
+# def add( a, b ):
+#     print( a + b)
 
-# def add( a, b, c, d, e, f ):
-#     print(a, b, c, d, e, f)
+# def mul( a, b ):
+#     print( a * b)
+
+# def sub( a, b):
+#     print( a - b)
+
+# a = int(input("Enter x number "))
+# b = int(input("Enter y number "))
+
+# add(a, b)
+# mul(a, b)
+
+# def add( a, b, c, d, e):
+#     print(a, b, c, d, e)
 
 # add(12, 24, 56, 24, 54, 90)
 
+# print(len())
 
 # def greet( name ):
 #     print( f"Hello {name}, How are you?" )
 
-# greet("Mumbai")
+# greet("Jaipur")
 
 # def odd_even_checker( number ):
 #     if number % 2 == 0:
@@ -141,20 +155,18 @@
 # a = int(input("Enter A Number: "))
 # odd_even_checker(a)
 
-# def add(a,b):
+# def add(a, b):
 #     print(a+b)
 
-# add()
+# add( 6, 4 )
 
 # Doc Strings
 # def cap_str( name ):
-
-#     "This is Jaipur"
+#     "This function take a string and make it upper case."
 
 #     print(name.upper())
 
 # cap_str( "Rohit"  )
-
 
 # Functions with Multiple Parameters
 # You can define a function with multiple parameters, 
@@ -172,7 +184,6 @@
 # calculate_sum( "Hello", " World!" )
 
 # def test(a,b,c):
-
 #     print( f"a: {a}, b:{b}, c:{c}" )
 
 # test( 30, 20 ,10 )
@@ -197,8 +208,9 @@
 # def display_info(name, age):
 #     print(f"Name: {name}, Age: {age}")
 
-# # Order matters here!
-# display_info( age=25, name="Charli"  )
+# # Order doe not matters here!
+
+# display_info( age=25, name="Charlie" )
 
 
 # Example:
@@ -219,22 +231,21 @@
 
 # greet()
 
-
 # Default Parameter
 # You can provide a default value for a parameter. If an argument for that parameter is not passed during 
 # the function call, the default value will be used. This makes the parameter optional.
 
 # Example:
-# def greet_with_default(name, message="Hello"):
+# def greet_with_default( name, message="Hello"):
 #     print(f"{name}, {message}!")
 
-# greet_with_default("Eve")
 # greet_with_default("Eve", "Good Afternoon")
+# greet_with_default("Eve")
 # greet_with_default("Frank", "Good morning")
 # greet_with_default(message="Good Evening", name="Mumbai")
 
-# def display_info(name, age, course, city="Jaipur", collage="ABC", number=66543):
-#     print(f"Name: {name}, Age: {age}, {city}, {collage}, {number}, {course}")
+# def display_info(name, age, course, city="Jaipur", collage="ABC", collage_nu=66543):
+#     print(f"Name: {name}, Age: {age}, City: {city}, Collage: {collage}, {collage_nu}, Course: {course}")
 
 # display_info("vipin", age=23, course="BCA")
 
@@ -245,7 +256,7 @@
 
 # Example:
 
-# def add( a, b  ):
+# def add( a, b ):
 #     print(a + b)
 
 # add(3, 2)
@@ -255,9 +266,11 @@
 
 # calculate_average()
 # calculate_average(10, 20)
+# calculate_average(10, 20, 30)
 # calculate_average(10, 20, 30, 40, 56, 46, 64, 46, "sdfhsadf", True, ["34r"], {"a": 243266})
 
 # def calculate_average(*numbers):
+#     print(numbers)
 #     print(sum(numbers)/len(numbers))
 
 # calculate_average(5,5,5,5,5,4,23,23,345,23,23,45,23,23,45,23,34,45,465,456,45,345,34,234,234,234,234,234,234,456,456,45)
@@ -269,7 +282,7 @@
 #     print(d)
 
 # mix_func(23, 10, 20, 30, 40, 56, 46, 64, 46)
-# mix_func(30, 40, 56, 46, 64, 46, c = 23, b = 10, a = 20)
+# mix_func(30, 40, 56, 46, 64, 46, c = 23, b = 10, a = 20) #x
 
 
 # def test( p, q, *r ):
@@ -295,7 +308,7 @@
 # def show_profile(**user_info):
 #     print(user_info)
 
-# # show_profile(name="Grace", age=28, city="London")
+# show_profile(name="Grace", age=28, city="London", mob= 222)
 # show_profile( a = 1, b = 2, c = 3, d = 4, e = 5 )
 
 # def test( *a, **b ):
@@ -303,7 +316,20 @@
 
 # test( 34, 34, 23, 23,45 ,23 , a = "23", b = 43 )
 
+
 # Scope Of Variable in Functions
+
+# a = 23
+# def test():
+#     print(a)
+# test()
+
+# def test():
+#     a = 23
+#     b = 234
+
+# test()
+# print(a, b)
 
 # a = 20
 # print(a)
@@ -315,17 +341,6 @@
 # test()
 # print(a)
 
-# def test():
-#     a = 23
-#     b = 234
-
-# test()
-# print(a, b)
-
-# a = 23
-# def test():
-#     print(a)
-# test()
 
 # a = 20
 # b = 20
@@ -344,7 +359,7 @@
 
 # a = [1,3,4]
 # b = a
-# a,b -> same list 
+# a,b #-> same list 
 
 # a = {1,3,4}
 # b = a 
@@ -377,6 +392,14 @@
 # print(a)
 
 
+# a = [1,2]
+
+# b = a.copy()
+
+# b.append(5)
+
+# print(a, b)
+
 # The return Statement (Output) 
 
 # So far, Our functions have only printed results to the console. To get a value back from a function
@@ -387,21 +410,40 @@
 # Example:
 
 # def square( number ):
+#     print(number*number)
+
+# square(5)
+
+# a = "55"
+# a = int(a)
+# print( type(a) )
+
+# a = "hello"
+# print(a.upper())
+# print(a)
+
+# a = [ 1, 3, 2 ]
+# print(a.sort())
+# print(a)
+
+# def square( number ):
+#     print(number*number)
+
+
+# a = square( 5 )
+
+# print(a)
+
+# a = input("Enter something: ")
+# print(a)
+
+# def square( number ):
 #     return number * number
 
-# print( square(5) )
+# a = square( 5 )
+# print(a)
 
 # print( print("Hello") )
-
-# a = "test"
-# b = a.upper()
-# print(b)
-# print(a)
-
-# a = [1, 2, 3]
-# b = a.reverse()
-# print(b)
-# print(a)
 
 # def test( ):
 #     return [23, 324, 35]
@@ -410,50 +452,50 @@
 # print(a)
 
 
-# def square( a ):
-#     return a * a
-
-# sq = square(10)
-# print(sq)
-
-
 # def test( number1, number2 ):
 #     print(f"Sum of numbers are {number1 + number2}")
 #     return number2 + number1
 #     print(f"Mul of numbers are {number1 * number2}")
+#     print(f"Div of numbers are {number1 / number2}")
 
 # print(test( 7, 3 ))
 
 # def test( number1, number2, op="*" ):
-#     print(f"Sum of numbers are {number1 + number2}")
-#     print(f"Mul of numbers are {number1 * number2}")
 #     if op == "*":
 #         return number1 * number2
-#     else:
+#     elif op == "+":
 #         return number2 + number1
+#     elif op == "/":
+#         return number2 / number1
 
-# print(test( 7, 3, "+" ))
+# output = test( 7, 3, "%" )
+# print(output)
 
+# def test():
+#     while True:
+#         return True
+
+# print( test() )
 
 #Note: If a function doesn't have a return statement, it implicitly returns the value None.
 
 # Write a function that take a number parm and find it's divisible
+
 # def divide_checker( number ):
 #     for x in range(2, number):
 #         if number % x == 0:
 #             return True
 #     return False
 
-# print(divide_checker( 7 ))
+# print(divide_checker( 83 ))
 
 # Write a program that can find the smallest_deviser of a number example 35 has 5 and 15 has 3.
 # def smallest_deviser( number ):
 #     for x in range(2, number):
 #         if number % x == 0:
 #             return x
-#     return number
 
-# print(smallest_deviser( 35 ))
+# print(smallest_deviser( 30 ))
 
 # Write a program that keep on taking input if I am typing +ve values and keep on adding them the moment I enter a -ve value the program stops and shows the sum of all +ve values entered.
 

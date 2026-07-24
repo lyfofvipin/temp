@@ -1,11 +1,11 @@
 # One liner if else
 
-num = 4
+# num = 14
 
 # if num > 5:
 #     print("yes")
 
-# if num > 5: print(True)
+# if num > 5: print("yes")
 
 # if num > 5:
 #     print(True)
@@ -14,7 +14,12 @@ num = 4
 
 # print(True) if num > 5 else print(False)
 
-n = 23
+# a = True if num > 5 else False
+# print(a)
+
+# print("yes" if num > 5 else "no")
+
+# n = 23
 
 # if n > 0 :
 #     print("+ve")
@@ -28,6 +33,8 @@ n = 23
 # a = "yes" if num > 5 else "no"
 # print(a)
 
+# num = 82
+
 # if num % 3 == 0 and num % 5 == 0:
 #     print("Both")
 # elif num % 3 == 0:
@@ -35,7 +42,6 @@ n = 23
 # else:
 #     print("5")
 
-# num = 82
 
 # a = "both" if num % 3 == 0 and num % 5 == 0 else "3" if  num % 3 == 0 else "5" if num % 5 == 0 else "by none"
 # "3" if  num % 3 == 0 else "5" if num % 5 == 0 else "by none"
@@ -54,8 +60,6 @@ n = 23
 # new_list = []
 # for x in old_list:
 #     new_list.append(x * x)
-# print(new_list)
-
 # print(new_list)
 
 # print( [ x + 1 for x in old_list ] )
@@ -87,18 +91,16 @@ n = 23
 
 # print([ x for x in [ 23, 43, 23, 11, 34, 56, 7, 8, 12, 15, 18, 33] if x <= 18 ])
 
+# a = [ 23, 43, 23, 11, 34, 56, 7, 8, 12, 15, 18, 33]
+
 # for x in a:
 #     if x >= 18:
 #         print(x)
 
-# a = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
-
-# print( frozenset( x for x in a if x % 2 == 0 ) )
-
+# even_numbers = [ i for i in a if i % 2 == 0 ]
 # print(even_numbers)
-# Output: [0, 2, 4, 6, 8]
 
-# even_numbers = [ i for i in range(10) if i % 2 == 0 ]
+# print( [ x for x in a if x < 18 ] )
 
 # print(even_numbers)
 # # Output: [0, 2, 4, 6, 8]
@@ -117,7 +119,7 @@ n = 23
 
 
 # new_list = []
-# for i in range(10):
+# for i in range(11):
 #     if i % 2 == 0:
 #         new_list.append("Even")
 #     else:
@@ -125,7 +127,6 @@ n = 23
 
 # print(new_list)
 # # Output: ['Even', 'Odd', 'Even', 'Odd', 'Even']
-
 
 # new_list = ["Even" if i % 2 == 0 else "Odd" for i in range(10)]
 

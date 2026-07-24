@@ -1,30 +1,30 @@
 # # Understanding Recursion
 # # Recursion is a programming technique where a function calls itself in order to solve a problem.
 
-# # import sys
-# # sys.setrecursionlimit(50)
+# import sys
+# sys.setrecursionlimit(2000)
 
 
-# # def abc():
-# #     print("In function abc.")
-# #     return 56
+# def abc():
+#     print("In function abc.")
+#     return 56
 
-# # print(abc())
+# print(abc())
 
-# # def abc():
-# #     print("In function abc.")
-# #     abc()
-# #     return 56
+# def abc():
+#     print("In function abc.")
+#     abc()
+#     return 56
 
-# # print(abc())
+# print(abc())
 
 
-# # def abc( x = 1 ):
+# def abc( x = 1 ):
 
-# #     print(x)
-# #     if x < 10:
-# #         abc( x + 1 )
-# # abc()
+#     print(x)
+#     if x < 10:
+#         abc( x + 1 )
+# abc()
 
 
 # def string_length(s):

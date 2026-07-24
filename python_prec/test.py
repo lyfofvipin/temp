@@ -1,5 +1,10 @@
-# Write a program to find the second largest number in a list using loops.
+def even_filter(data):
 
-data = [ 1, 2, 5, 2, 10, 2, 5, 10.8, 5]
+    even = []
+    for x in data:
+        if x % 2 == 0:
+            even.append(x)
+    return even
 
-print( set(data) )
+a = even_filter([10, 20, 3, 5, 7, 90])
+print(a)

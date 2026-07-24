@@ -1,6 +1,6 @@
 # Type Checking
 
-# print( type(45) )
+# print( type( True ) )
 
 # a = "Test"
 # print( type(a) )

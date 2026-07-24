@@ -19,7 +19,7 @@
 
 # abc = simple
 
-# print(abc())
+# print(simple())
 
 # def simple1():
 #     return "I am a func simple 1"
@@ -154,10 +154,14 @@
 
 # numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-# even_numbers = filter(is_even, numbers)
-# # even_numbers = filter( lambda x : x % 2 == 0, numbers )
+# even_numbers = filter( lambda x: x % 2 == 0 , numbers)
+# even_numbers = filter( lambda x: x % 2 != 0, numbers )
 # result = list(even_numbers)
 # print(result)
+
+# a = lambda x: x * x
+
+# print( a(6) )
 
 # [ x for x in numbers if is_even(x)]
 

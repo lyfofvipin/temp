@@ -13,6 +13,11 @@
 
 # a = ( 9, 8, 7, 6, 5 )
 
+# i = 0
+# while i < len(a):
+#     i = i + 1
+#     print( a[i] )
+
 # for i in a:
 #     print(i)
 
@@ -26,17 +31,29 @@
 # for x in data:
 #     print(x)
 
-# for x in "India":
-#     print(x)
+for x in "India":
+    print(x)
 
 # data = ["rahul", "rohit", "vikas"]
 
 # for student in data:
 #     print(student.upper())
-  
-# fruits = ["apple", "banana", "cherry"]
+
+fruits = ["apple", "banana", "cherry"]
 # for x in fruits:
 #     print(x)
+
+# for x in fruits:
+#     for y in x:
+#         print(y)
+
+# x = 0
+# while x < len(fruits):
+#     y = 0
+#     while y < len(fruits[x]):
+#         print(fruits[x][y])
+#         y += 1
+#     x += 1
 
 # coordinates = (10, 20, 30)
 # for coord in coordinates:
@@ -44,7 +61,7 @@
 
 # range()
 
-# print( range( 1, 101 )) 
+# print( tuple(range( 0, 51, 2 )) ) 
 
 # for x in range(1, 101, 2):
 #     print(x)
@@ -74,10 +91,8 @@
 
 # print( 1, 2, 3, 4, 5, 6, "hello", False, sep="-" )
 
-
-
-# print("hello", end="*\n")
-# print("World", end="*\n")
+# print("hello" , end="")
+# print("World", end="")
 
 # for x in range(1, 11):
 #     for y in range( 1, 11 ):
@@ -143,7 +158,7 @@
 
 # a = [ "a", "b", "c", "d", "e", "f", "g", "h" ]
 
-# print( tuple(enumerate(a)) )
+# print( list(enumerate(a)) )
 
 # for x, y in enumerate(a): # for x in ((0, 'a'), (1, 'b'), (2, 'c'), (3, 'd'), (4, 'e'), (5, 'f'), (6, 'g'), (7, 'h'))
 #     print(x, y)
@@ -154,7 +169,7 @@
 # The zip() function allows you to iterate over multiple iterables in parallel, pairing up corresponding elements. It stops when the shortest iterable is exhausted.
 
 # names = ["Mohan", "Bob", "Charlie"]
-# ages = [30, 24, 35, 56]
+# ages = [30, 24, 35]
 
 # print( list(zip(names, ages)) )
 

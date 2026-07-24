@@ -12,12 +12,15 @@
 # While 1 and True are the same thing
 # While 0 and False are the same thing
 
+# a = { 123, 324.4 , "2332", (23, 353) }
+# print(a)
 # a = { False, 0, True, 2, 1, True }
 # print(a)
 
 # Creating an empty set
 # empty_set = set()
 # print(empty_set, type(empty_set))
+
 
 # a = { (), False }
 # print(a[0])
@@ -114,16 +117,14 @@ my_set = {1, 2, 3}
 # print(f"Is 3 in my_set? {3 in my_set}")     # 
 # print(f"Is 6 not in my_set? {6 not in my_set}") # 
 
-set_a = {1, 2, 3, 4}
-set_b = {3, 4, 5, 6}
+# set_a = {1, 2, 3, 4}
+# set_b = {3, 4, 5, 6}
 
-set_a.union( set_b )
-
-print(set_a)
+# print(set_a.union( set_b ))
 
 # print( dir( set_b ) )
 
-# print(  )
+# print( set_a | set_b )
 
 # new_set = set_a.union(set_b)
 # new_set = set_a | set_b # Pipe Operator
@@ -138,9 +139,9 @@ set_a = {1, 2, 3, 4}
 set_b = {3, 4, 5, 6}
 
 # # Difference (elements in A but not in B)
-# difference_ab = set_a - set_b
-# print(f"Difference (set_a - set_b): {difference_ab}") # 
-# print(f"Difference (set_a.difference(set_b)): {set_b.difference(set_a)}")
+# print( set_a.difference(set_b) )
+# print(set_b - set_a)
+
 
 # symmetric_difference
 # It is same as Union but it will not count the element that comes in both the sets
@@ -163,6 +164,8 @@ set4 = { 8, 9 }
 # print(f"Is {set2} superset of {set1}? {set2.issuperset(set1)}") 
 # print(f"Is {set2} >= {set1}? {set2 >= set1}") 
 
+# print( set3.isdisjoint(set1) )
+
 # Are set1 and set3 disjoint? (No common elements)
 # print( set1.isdisjoint( set4 ) )
 # print(f"Are {set1} and {set3} disjoint? {set1.isdisjoint(set3)}") 
@@ -172,10 +175,10 @@ set4 = { 8, 9 }
 
 # Create a frozenset
 # In frozenset You Can not add, update, remove, pop, discard
-fs = frozenset((1, 2, 3, 1, 1, 2, 3))
-ns = set([1, 2, 3, 1, 1, 2, 3])
+# fs = frozenset((1, 2, 3, 1, 1, 2, 3))
+# ns = set([1, 2, 3, 1, 1, 2, 3])
 
-# print( dir( frozenset() ) )
+# print( dir( ns ) )
 
 # a = 43
 # b = 456

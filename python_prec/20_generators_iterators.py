@@ -52,6 +52,8 @@
 # print( next(abc) )
 # print( next(abc) )
 
+
+
 # def square( number):
 
 #     temp = []
@@ -75,6 +77,9 @@
 #     yield 4
 #     yield 5
 
+# for x in one_time():
+#     print(x)
+
 # a = one_time()
 
 # print(next(a))
@@ -83,13 +88,14 @@
 # print(next(a))
 
 
-# def square( number: int):
+# def square( number ):
 
 #     for x in range(1, number + 1):
 #         yield x * x
 
 # for x in square(500000000000):
 #     print(x)
+
 
 # def infinite_integers():
 #     n = 0
@@ -117,12 +123,21 @@
 # print(next(pk))
 
 
+# def my_range(number, start=0):
+#     n = start
+#     while n < number:
+#         yield n
+#         n += 1
+
+# for x in my_range(start=1, number=50):
+#     print(x)
+
+
 # class Counter(object):
 #     def __init__(self):
 #         self.i = 0
 
 #     def __iter__(self):
-#         'Returns itself as an iterator object'
 #         return self
 
 #     def __next__(self):
@@ -135,6 +150,8 @@
 # for  x in a:
 #     print(x)
 
+# print(next(a))
+# print(next(a))
 # print(next(a))
 # print(next(a))
 # print(next(a))

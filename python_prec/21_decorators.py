@@ -17,16 +17,21 @@
 
 # cal( sub, 4,5)
 
-# def greet():
-#     print("Hello!", end=" ")
+def greet():
+    print("Hello!")
 
-# def greet_with_name( func ):
+# name = input("Enter Your Name: ")
+# greet()
+# print(name)
+
+# def greet_with_name( ):
 #     name = input("Enter Your Name: ")
 #     greet()
 #     print(name)
 
-# # greet()
-# greet_with_name(greet)
+
+# greet()
+# greet_with_name()
 
 # say_hello = greet # Assign the function object itself
 # print(greet()) # Output: Hello!
@@ -38,7 +43,6 @@
 #     def b ():
 #         print("B")
 #     b()
-
 # a()
 
 
@@ -67,15 +71,18 @@
 # func2(func1)
 
 
-# def abcd():
-#     print("test")
-
 # def func1(func):
 #     def wrapper():
 #         print(f"Starting ---")
 #         func()
 #         print(f"Finishing ---")
 #     return wrapper
+
+# @func1
+# def abcd():
+#     print("test")
+
+# abcd()
 
 # a = func1(abcd)
 # a()
@@ -147,3 +154,29 @@
 #   return "Hello Sally"
 
 # print(myfunction())
+
+
+# def test( func ):
+#     def inner():
+#         a = input("Enter Name")
+#         print(a)
+#         func()
+#     return inner
+
+# @test
+# def greet():
+#     print("Hello!")
+
+# greet()
+
+# def name_changer(func):
+#     def inner():
+#         return func().split()[0]
+#     return inner
+
+# @name_changer
+# def paragraph():
+#     data = input("Enter Your Full Name: ")
+#     return data
+
+# print(paragraph())

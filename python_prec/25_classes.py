@@ -12,7 +12,6 @@
 # You define a class using the class keyword, followed by the class name (which, by convention, should start with a capital letter).
 
 # class my_class:
-#     # Class body (attributes and methods)
 #     pass # 'pass' is a placeholder for an empty class
 
 # Creating Objects (Instances) from a Class
@@ -21,40 +20,41 @@
 
 # print(type(object_name))
 
-
 # a = [1,2,3,43,4]
 # b = [4,3,2,3,5,3]
 
 # print( a, b )
 
-# class Test:
+# class demo:
 
-#     a = ""
-#     b = ""
 #     c = ""
 #     d = ""
 
-# a = Test()
+# x = demo()
+# y = demo()
 
-# print( type(a) )
+# print( dir(x) )
 
 # print(dir(a))
 
-# class SocialMedia:   
+class SocialMedia:   
 
-#     CEO = "Mark"
+    CEO = "Mark"
 
-#     def like(self):
-#         print("Liked")
+    def like(self):
+        print("Liked")
 
-#     def comment(self):
-#         print("Commented")
+    def comment(self):
+        print("Commented")
 
 # facebook = SocialMedia()
+
 # print( facebook.CEO )
+
 # facebook.like()
 
 # a = [ 23, 34, 45, 65, 657 ]
+
 
 # a = SocialMedia()
 # b = SocialMedia()
@@ -72,9 +72,24 @@
 # print(facebook.CEO)
 # print(twitter.CEO)
 
-# Insta = SocialMedia()
-# LinkedIn = SocialMedia()
-# Twitter = SocialMedia()
+Insta = SocialMedia()
+LinkedIn = SocialMedia()
+Twitter = SocialMedia()
+
+# a = list()
+# c = list()
+# b = list()
+
+# print( a )
+# print( b )
+# print( c )
+
+# a.append(23)
+
+# print( a )
+# print( b )
+# print( c )
+
 
 # print( Insta.CEO )
 # print( LinkedIn.CEO )
@@ -203,7 +218,7 @@
 
 #     species = "GS"
 
-#     def constr(self):
+#     def test(self):
 #         self.a = 10
 #         self.b = 20
 #         self.c = 30
@@ -218,12 +233,8 @@
 #         print(f"says woof!")
 
 # xyz = Dog()
-# xyz.constr()
+# xyz.test()
 # xyz.bark()
-
-# pqr = Dog()
-# pqr.constr()
-# pqr.bark()
 
 # class Dog:
 
@@ -242,8 +253,7 @@
 #         print(f"says woof!")
 
 # a = Dog()
-# # print(dir(""))
-# # a.eat()
+# a.eat()
 # a.bark()
 
 # Constructor with Arguments
@@ -266,30 +276,27 @@
 # a = Dog(15)
 # a.bark()
 
+# class Dog:
+#     species = "GS"
 
-class Dog:
-    species = "GS"
+#     def __init__(self, name="tom", age=2):
+#         self.dog_name = name
+#         self.age = age
+#         self.is_hungry = True
 
-    def __init__(self, name="tom", age=2):
-        self.dog_name = name
-        self.age = age
-        self.is_hungry = True
+#     def bark(self):
+#         print(f"{self.dog_name} says woof!")
 
-    def bark(self):
-        print(f"{self.dog_name} says woof!")
+#     def eat(self):
+#         if self.is_hungry:
+#             print(f"{self.dog_name} is eating...")
+#             self.is_hungry = False
+#         else:
+#             print(f"{self.dog_name} is not hungry right now.")
+#             self.is_hungry = True
 
-    def eat(self):
-        if self.is_hungry:
-            print(f"{self.dog_name} is eating...")
-            self.is_hungry = False
-        else:
-            print(f"{self.dog_name} is not hungry right now.")
-            self.is_hungry = True
-
-# print(dir(Dog))
-# a = Dog()
-# print( dir( a ) )
-
+# a = Dog("tommy")
+# print(a.dog_name)
 
 # my_dog = Dog()
 # my_dog.bark()
@@ -307,7 +314,6 @@ class Dog:
 # Access a class attribute
 # print(f"Buddy is a member of the {my_dog.species} species.")
 
-
 # class Car:
 
 #     def __init__(self, brand="Tata", color="White"):
@@ -324,8 +330,8 @@ class Dog:
 #             self.engine_status = "on"
 
 # a = Car()
-# print(a.brand)
-# print(a.color)
+# # print(a.brand)
+# # print(a.color)
 # a.start_engine()
 # print(a.engine_status)
 # a.start_engine()
@@ -346,7 +352,7 @@ class Dog:
 # my_car.start_engine()
 # print(my_car.engine_status)
 
-# Attributes: Class vs. Instance
+# Attributes: Class vs. Object/Instance
 
 # It's important to distinguish between two types of attributes:
 
@@ -357,6 +363,7 @@ class Dog:
 
 
 # class Dog:
+
 #     species = "GS"
 
 #     def __init__(self, name="tom", age=2):
@@ -381,17 +388,38 @@ class Dog:
 #         self.name = name
 
 # milk = GST(name="Saras")
-# bread = GST(name="Amul")
+# bread = GST(name="Kanha")
+# biskit = GST(name="Parle")
 
-# print(f"{milk.name} has {milk.TAX_RATE} rate.")
-# print(f"{bread.name} has {bread.TAX_RATE} rate.")
+# # print(f"{milk.name} has {milk.TAX_RATE}% tax rate.")
+# # print(f"{bread.name} has {bread.TAX_RATE}% tax rate.")
 
 # GST.TAX_RATE = 5
 
-# print(f"{milk.name} has {milk.TAX_RATE} rate.")
-# print(f"{bread.name} has {bread.TAX_RATE} rate.")
+# print(f"{milk.name} has {milk.TAX_RATE}% tax rate.")
+# print(f"{bread.name} has {bread.TAX_RATE}% tax rate.")
+# print(f"{biskit.name} has {biskit.TAX_RATE}% tax rate.")
 
-# Methods: Class vs. Instance
+# class GST:
+
+#     def __init__(self, name):
+#         self.name = name
+#         self.TAX_RATE = 18
+
+# milk = GST(name="Saras")
+# bread = GST(name="Kanha")
+# biskit = GST(name="Parle")
+
+# # print(f"{milk.name} has {milk.TAX_RATE}% tax rate.")
+# # print(f"{bread.name} has {bread.TAX_RATE}% tax rate.")
+
+# biskit.TAX_RATE = 5
+
+# print(f"{milk.name} has {milk.TAX_RATE}% tax rate.")
+# print(f"{bread.name} has {bread.TAX_RATE}% tax rate.")
+# print(f"{biskit.name} has {biskit.TAX_RATE}% tax rate.")
+
+# Methods: Class vs. Object/Instance
 
 # class Demo:
 
@@ -399,51 +427,46 @@ class Dog:
 #         pass
 
 #     def test():
-#         print("hi")
+#         print("hi from test")
 
 #     def test1(self):
 #         print("hi")
 
-# Demo.test1()
+# Demo.test()
 # a = Demo()
-# a.test()
+# a.test1()
 
-class BankAccount:
+# class BankAccount:
 
-    BANK_NAME = "SBI"
+#     BANK_NAME = "SBI"
 
-    def __init__(self, name, mob, age, dob, balance):
-        self.name = name
-        self.mob = mob
-        self.age = age
-        self.dob = dob
-        self.balance = balance
+#     def __init__(self, name, mob, age, dob, balance):
+#         self.name = name
+#         self.mob = mob
+#         self.age = age
+#         self.dob = dob
+#         self.balance = balance
 
-    def show_info(self):
-        print( self.name,
-            self.mob,
-            self.age,
-            self.balance)
+#     def show_info(self):
+#         print( self.name,
+#             self.age,
+#             self.balance)
     
-    def deposit(self, amount):
-        if amount <= 0:
-            print("Invalid Amount")
-        else:
-            self.balance += amount
+#     def deposit(self, amount):
+#             self.balance += amount
 
-    def withdraw(self, amount):
-        if amount <= self.balance:
-            self.balance -= amount
-        else:
-            print("invalid amount")
+#     def withdraw(self, amount):
+#         self.balance -= amount
 
 
-# demo = BankAccount("demo", 111, 23, "23454", 500)
-# demo.deposit(-100)
+# demo = BankAccount(name="Vipin", mob=111, age=23,
+#                 dob="23454", balance=500)
+# demo.show_info()
+# demo.deposit(100)
 # print(demo.balance)
 # demo.withdraw(2000)
 # print(demo.balance)
-# demo.show_info()
+# # demo.show_info()
 
 # vipin = BankAccount("Vipin", 212, 23, "3434334", 1000)
 # rohit = BankAccount("Rohit", 212, 23, "34343344", 1000)
@@ -452,39 +475,40 @@ class BankAccount:
 # rohit.show_info()
 
 
-all_accounts = []
+# all_accounts = []
 
-while True:
-    print( """A. Create New Account
-    B. Check Account Details
-    C. Deposit Money
-    D. Withdraw Money
-    E. Exit
-    """)
+# while True:
+#     print( """
+#     A. Create New Account
+#     B. Check Account Details
+#     C. Deposit Money
+#     D. Withdraw Money
+#     E. Exit
+#     """)
 
-    user_data = input("Enter A Choice: ")
+#     user_data = input("Enter A Choice: ")
 
-    match user_data:
+#     match user_data:
 
-        case "A":
-            name = input("Enter Your Name: ")
-            age = int(input("Enter Your Age: "))
-            mob = input("Enter Your Mob: ")
-            dob = input("Enter Your DOB: ")
+#         case "A":
+#             name = input("Enter Your Name: ")
+#             age = int(input("Enter Your Age: "))
+#             mob = input("Enter Your Mob: ")
+#             dob = input("Enter Your DOB: ")
             
-            all_accounts.append(
-                BankAccount(name=name, mob=mob, dob=dob, age=age, balance=500)
-            )
+#             all_accounts.append(
+#                 BankAccount(name=name, mob=mob, dob=dob, age=age, balance=500)
+#             )
 
-        case "B":
-            mob = input("Enter Your Mob: ")
-            for x in all_accounts:
-                if x.mob == mob:
-                    print()
-                    x.show_info()
-                    print()
-        case "C":
-            mob = input("Enter Your Mob: ")
+#         case "B":
+#             mob = input("Enter Your Mob: ")
+#             for x in all_accounts:
+#                 if x.mob == mob:
+#                     print()
+#                     x.show_info()
+#                     print()
+#         case "C":
+#             mob = input("Enter Your Mob: ")
             
 
 # bank_accounts = []

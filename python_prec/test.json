@@ -3,19 +3,19 @@
     {
       "to": "Tove",
       "from": "Jani",
-      "heading": "Reminder",
+      "heading": true,
       "body": "Don't forget me this weekend!"
     },
     {
       "to": "Tom",
       "from": "Jerry",
-      "heading": "Reminder",
+      "heading": null,
       "body": "Don't forget me this weekend!"
     },
     {
       "to": "Tove",
       "from": "Jani",
-      "heading": "Reminder",
+      "heading": false,
       "body": "Don't forget me this weekend!"
     }
   ]
