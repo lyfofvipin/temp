@@ -1,3 +1,4 @@
 site.database
 __pycache__
 my_venv
+.venv
