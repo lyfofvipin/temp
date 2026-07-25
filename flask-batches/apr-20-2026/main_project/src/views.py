@@ -23,27 +23,6 @@ def profile():
     data = Users.query.all()
     return render_template("profile.html", fe_data = data)
 
-@app.route("/login", methods = ["GET", "POST"])
-def login():
-    if request.method == "GET":
-        return render_template("login.html")
-    
-    if request.method == "POST":
-        user_mail = request.form.get("email")
-        user_password = request.form.get("password")
-
-        database_data = Users.query.filter( Users.email == user_mail ).first()
-        if not database_data:
-            flash("Username Not Found.", "error")
-            return redirect("/")
-
-        if database_data.password == user_password:
-            login_user(database_data)
-            flash("Login Successful.")
-            return redirect("/")
-        else:
-            abort(401)
-
 @app.errorhandler(401)
 def handle404(error):
     return render_template("handle404_error.html")
@@ -106,6 +85,10 @@ def test():
 @app.route("/list_student/<int:student_id>", methods=["GET", 'POST'])
 @login_required
 def update_student(student_id):
+
+    if current_user.id != student_id:
+        flash("You are not allowed to see other user's profiles")
+        return redirect("/")
 
     data = Users.query.filter( Users.id == student_id ).first()
     if not data:

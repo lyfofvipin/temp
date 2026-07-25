@@ -14,7 +14,6 @@ user_router = APIRouter()
 
 @user_router.post("/register_user")
 def register_user( user: UserRegister , database = Depends( get_db_session )):
-
     user = User( name = UserRegister.username, password = UserRegister.password,
                 role = UserRegister.role, age = UserRegister.age )
     database.add(user)

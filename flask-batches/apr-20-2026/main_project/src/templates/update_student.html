@@ -59,6 +59,11 @@
         </button>
 
     </form>
+
+    {% for x in data.posts %}
+        {{ x.title }}
+        <br>
+    {% endfor %}
 </section>
 
 {% endblock %}

@@ -32,8 +32,18 @@ DB_PATH = Path(__file__).resolve().parent / "chroma_pdf_rag_db"
 COLLECTION = "pdf_rag"
 SAMPLE_DOC = Path(__file__).resolve().parent / "23_sample_docs" / "xyz_handbook.txt"
 
-CHUNK_SIZE = 500
-CHUNK_OVERLAP = 80
+CHUNK_SIZE = 800
+CHUNK_OVERLAP = 100
+
+
+def normalize_extracted_text(text: str) -> str:
+    """Clean text from PDF extractors (especially Google Docs exports)."""
+    text = text.replace("\ufeff", "")
+    text = text.replace("\ufb01", "fi").replace("\ufb02", "fl")
+    # Join words split across lines: "Red\n \nHat" -> "Red Hat"
+    text = re.sub(r"\s*\n\s*", " ", text)
+    text = re.sub(r" +", " ", text)
+    return text.strip()
 
 class OllamaEmbedding(EmbeddingFunction[Documents]):
     def __call__(self, input: Documents) -> Embeddings:
@@ -54,7 +64,7 @@ def load_document(path: Path) -> str:
     if suffix == ".pdf":
         reader = PdfReader(str(path))
         pages = [page.extract_text() or "" for page in reader.pages]
-        return "\n\n".join(pages).strip()
+        return normalize_extracted_text("\n\n".join(pages))
     if suffix in {".txt", ".md"}:
         return path.read_text(encoding="utf-8").strip()
     raise ValueError(f"Unsupported file type: {suffix} (use .pdf, .txt, or .md)")
@@ -64,7 +74,17 @@ def chunk_text(text: str, source: str) -> list[dict]:
     sections = re.split(r"(?=^Section \d+)", text, flags=re.MULTILINE)
     sections = [s.strip() for s in sections if s.strip()]
     if len(sections) <= 1:
-        sections = [p.strip() for p in text.split("\n\n") if p.strip()]
+        # Resume-style headings: EXPERIENCE, PROJECTS, SKILLS, etc.
+        sections = re.split(
+            r"(?=(?:EXPERIENCE|PROJECTS|SKILLS|EDUCATION|CERTIFICATIONS|SUMMARY)\b)",
+            text,
+            flags=re.IGNORECASE,
+        )
+        sections = [s.strip() for s in sections if s.strip()]
+    if len(sections) <= 1:
+        sections = [p.strip() for p in re.split(r"\n{2,}", text) if p.strip()]
+    if len(sections) <= 1 and len(text) > CHUNK_SIZE:
+        sections = [text]
 
     chunks: list[dict] = []
     index = 0
@@ -95,7 +115,7 @@ def chunk_text(text: str, source: str) -> list[dict]:
             if end >= len(section):
                 break
             start = max(end - CHUNK_OVERLAP, start + 1)
-
+    import pdb;pdb.set_trace()
     return chunks
 
 
@@ -123,14 +143,23 @@ def index_document(path: Path, reindex: bool = False) -> chromadb.Collection:
     if reindex and collection.count() > 0:
         client = chromadb.PersistentClient(path=str(DB_PATH))
         client.delete_collection(collection_name_for(source))
+        collection = get_collection(source)
 
     print(f"Loading {path}...")
     text = load_document(path)
     if not text:
-        raise ValueError(f"No text extracted from {path}")
+        raise ValueError(
+            f"No text extracted from {path}. "
+            "Scanned/image PDFs need OCR (see 18_hf_image_to_text_demo.py)."
+        )
 
     chunks = chunk_text(text, source)
-    print(f"Indexing {len(chunks)} chunks into Chroma...")
+    if not chunks:
+        raise ValueError(f"No chunks created from {path}")
+
+    print(f"Extracted {len(text)} chars → {len(chunks)} chunks")
+    if chunks:
+        print(f"Sample chunk: {chunks[0]['text'][:160]}...")
     collection.add(
         ids=[c["id"] for c in chunks],
         documents=[c["text"] for c in chunks],
@@ -186,8 +215,7 @@ def run_qa(collection, questions: list[str], with_llm: bool = True) -> None:
 
 
 DEFAULT_QUESTIONS = [
-    "Where does vipin work?",
-    "what's his skills?"
+    "What's smallpdf?"
 ]
 
 
@@ -200,6 +228,13 @@ def main() -> None:
         help="PDF, .txt, or .md to index (default: sample handbook)",
     )
     parser.add_argument("--reindex", action="store_true", help="Force rebuild of the index")
+    parser.add_argument(
+        "-q",
+        "--question",
+        action="append",
+        dest="questions",
+        help="Question to ask (repeatable). Default: built-in demo questions.",
+    )
     parser.add_argument("--retrieve-only", action="store_true", help="Skip LLM answer step")
     args = parser.parse_args()
 
@@ -209,7 +244,8 @@ def main() -> None:
         sys.exit(1)
 
     collection = index_document(doc_path, reindex=args.reindex)
-    run_qa(collection, DEFAULT_QUESTIONS, with_llm=not args.retrieve_only)
+    questions = args.questions or DEFAULT_QUESTIONS
+    run_qa(collection, questions, with_llm=not args.retrieve_only)
 
 
 if __name__ == "__main__":
