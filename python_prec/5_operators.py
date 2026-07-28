@@ -27,7 +27,7 @@
 
 # Find the 10% of a given number 
 # a = float(input("Enter A Number: "))
-# print( (a * 10) / 100 )
+# print( a * 18 / 100 )
 
 # a = 10
 # b = 10
@@ -115,10 +115,11 @@
 # print(18 != 18)
 
 # >= Greater Then = 
-# print(188 >= 18)
+# print( 18 >= 18 )
 
 # >= Less Then = 
-# print(1 <= 18)
+# a = 18 <= 18
+# print(a)
 
 
 # Short Hand Operators, Assignment Operators

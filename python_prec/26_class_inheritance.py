@@ -39,94 +39,73 @@ class Car( Vehicle ):
     def wheels(self):
         print("Car has 4 wheels")
 
-# class Bus( Vehicle ):
+class Bus( Vehicle ):
 
-#     def wheels(self):
-#         print("Car has 10 wheels")
+    def wheels(self):
+        print("Car has 10 wheels")
 
 
 # my_car = Car("Honda", "White")
 # print(my_car.brand)
 # print(dir(my_car))
+# my_car.wheels()
 
 # my_bus = Bus("Volvo", "Blue")
 # print(my_bus.color)
-
 # my_bus.display_info()
+# my_bus.wheels()
+
 
 
 # Method Overriding/Overloading
 
-# class Vehicle():
+class Vehicle():
 
-#     def __init__(self, brand, color):
-#         self.brand = brand
-#         self.color = color
+    def __init__(self, brand, color):
+        self.brand = brand
+        self.color = color
 
-#     def display_info(self):
-#         print(f"Brand: {self.brand}, Color: {self.color}")
+    def display_info(self):
+        print(f"Brand: {self.brand}, Color: {self.color}")
 
-# class Car(Vehicle):
+class Car(Vehicle):
 
-#     def __init__(self, wheels):
-#         self.wheels = wheels
+    def __init__(self, wheels):
+        self.wheels = wheels
 
 # a = Vehicle("Honda", "Black")
 # a.display_info()
 # print(dir(a))
 
 # a = Car("Honda", "Black")
-# a = Car(23)
+# a = Car(4)
 # print(dir(a))
 # print(a.wheels)
 # print(a.brand)
 
-# class Vehicle():
+class Vehicle():
 
-#     def __init__(self, brand, color):
-#         self.brand = brand
-#         self.color = color
+    def __init__(self, brand, color):
+        self.brand = brand
+        self.color = color
 
-#     def display_info(self):
-#         print(f"Brand: {self.brand}, Color: {self.color}")
+    def display_info(self):
+        print(f"Brand: {self.brand}, Color: {self.color}")
 
+class Car( Vehicle ):
 
-# class Car(Vehicle):
-
-#     def __init__(self, wheels):
-#         # Vehicle.__init__(self, "Honda", "White")
-#         super().__init__("Honda", "White")
-#         self.wheels = wheels
+    def __init__(self, wheels):
+        # Vehicle.__init__(self, "Honda", "White")
+        super().__init__("Honda", "White")
+        self.wheels = wheels
 
 # a = Car(4)
+# a.display_info()
 # print(dir( a ))
 
 
 # super(): Accessing the Parent Class
 # The super() class is a special tool used to call methods from the parent class. This is particularly useful when the child class has its own __init__ method and you want to reuse the parent's initialization code.
-
-# class Vehicle:
-#     def __init__(self, brand, color):
-#         self.brand = brand
-#         self.color = color
-#         print("Vehicle __init__ called.")
-
-# class Car(Vehicle):
-#     def __init__(self, num_wheels):
-#         self.num_wheels = num_wheels
-#         print("Car __init__ called.")
-#         super().__init__("Honda", "White")
-
-#     def car_info(self):
-#         print(f"This is a {self.color} {self.brand} with {self.num_wheels} wheels.")
-
-
-# my_car = Car(4)
-# print(my_car.num_wheels)
-# my_car.car_info()
-
-# your_car = Car(6)
-
 
 class Vehicle:
     def __init__(self, brand, color):
@@ -138,21 +117,13 @@ class Car(Vehicle):
     def __init__(self, num_wheels):
         self.num_wheels = num_wheels
         print("Car __init__ called.")
-
-    def set_car_brand_and_color(self, brand, color):
-        super().__init__(brand, color)
+        super().__init__("Honda", "White")
 
     def car_info(self):
         print(f"This is a {self.color} {self.brand} with {self.num_wheels} wheels.")
 
-# my_car = Car(num_wheels=4)
-# print(dir(my_car))
-# my_car.set_car_brand_and_color(brand="Ford", color="Red")
-# print(dir(my_car))
+# my_car = Car(4)
 # my_car.car_info()
-# your_car = Car(6)
-# your_car.set_car_brand_and_color("Honda", "White")
-
 
 class Vehicle:
     def __init__(self, brand, color):
@@ -168,23 +139,17 @@ class Car(Vehicle):
         print(f"This is a {self.color} {self.brand} with {self.num_wheels} wheels.")
 
 # my_car = Car(brand="Ford", color="Red", num_wheels=4)
-# # print(dir(my_car))
-# # my_car.car_info()
+# my_car.car_info()
 
-
-# your_car = Car(brand="BMW", color="Blue", num_wheels=4)
+# your_car = Car(brand=brand, color=color, num_wheels=4)
 # print(dir(your_car))
 # your_car.car_info()
-
-
 
 # Method Overriding
 
 # Method overriding is when a subclass provides its own specific implementation
 # of a method that is already defined in its parent class.
 # The method in the subclass "overrides" the one in the superclass.
-
-
 
 # class Vehicle:
 #     def display_info(self):
@@ -438,8 +403,8 @@ class Child(ParentB, ParentC):
         ParentC.show(self)
         print("Class D")
 
-child_obj = Child()
-child_obj.show()
-child_obj.method_A()
-child_obj.method_B()
-child_obj.method_C()
+# child_obj = Child()
+# child_obj.show()
+# child_obj.method_A()
+# child_obj.method_B()
+# child_obj.method_C()

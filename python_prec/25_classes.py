@@ -72,9 +72,9 @@ class SocialMedia:
 # print(facebook.CEO)
 # print(twitter.CEO)
 
-Insta = SocialMedia()
-LinkedIn = SocialMedia()
-Twitter = SocialMedia()
+# Insta = SocialMedia()
+# LinkedIn = SocialMedia()
+# Twitter = SocialMedia()
 
 # a = list()
 # c = list()

@@ -35,6 +35,7 @@
 # print( dir(a) )
 
 # print(a.readable())
+# print(a.writable())
 
 # print(a.read())
 
@@ -70,7 +71,7 @@
 # a.seek(11)
 # print(a.read())
 
-# print(a.readlines()[3])
+# print(a.readlines()[0])
 
 # b = a.read()
 
@@ -80,16 +81,14 @@
 
 # "C:\Users\Dell\OneDrive\Pictures\Screenshots\data scince\python\formateed_string.py"
 
-# a=open("/home/vipikuma/my_data/temp/python_prec/11_strings.py")
+# a=open("/home/vipikuma/my_data/temp/python_prec/12_strings.py")
 # a=open("12_lists.py")
 # print(a.read())
 # a.close()
 
 # with open("test.text") as a:
-#     print(a.readable())
-#     print(a.read())
-#     print(a.writable())
-
+#     data = a.read()
+#     print(data.count("India"))
 
 # a = open("testrest.text", "r")
 # print(a.read())
@@ -97,27 +96,28 @@
 
 # a = open("abcd.text", "w")
 # print(a.readable())
-# print( a.writable() )
+# print(a.writable())
 
 # a.write( "I am from Jaipur." )
-# a.writelines(data)
 # a.close()
+
+# with open("abcd.text", "w") as a:
+#     content = a.write("hello")
+#     print(content)
 
 
 # with open("abcd.text", "w") as a:
-#     a.write("I am from Delhi.")
+#     a.write( "I am from Delhi.\nhello delhi" )
 
-# with open("abcd.text", "a") as a:
-#     a.write( "I am from Delhi.\n" )
+# data = [ "line1\n", "line2\n", "line3\n", "line4", "ASDfae" ]
 
-# data = [ "line1\n", "line\n2", "line3", "sadfasfd\n", "ASDfae" ]
-
-# a = open("data.text", "a")
-# # print(a.write(data))
+# a = open("abcd.text", "w")
 # a.writelines(data)
-# a.read()
 
 # a.close()
+
+# with open("abcd.text", "w") as a:
+#     a.write( "I am from Delhi.\nhello delhi" )
 
 # a = open("/home/vipikuma/test.mp4", "wb")
 # print(a.read())

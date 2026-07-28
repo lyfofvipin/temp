@@ -14,8 +14,9 @@ Practice questions organized to match the numbered lesson files (`1_hello.py` â†
 6. [Tuples](#tuples)
 7. [Functions](#functions)
 8. [Generators & Iterators](#generators--iterators)
-9. [Decorators](#decorators)
-10. [What to Learn Next (Expert Roadmap)](#what-to-learn-next-expert-roadmap)
+9. [File Handling](#file-handling)
+10. [Decorators](#decorators)
+11. [What to Learn Next (Expert Roadmap)](#what-to-learn-next-expert-roadmap)
 
 ---
 
@@ -516,6 +517,47 @@ A banking app has `ledger = [100, -50, 200]` and a batch `new_batch = [500, -20,
 - Write a function using `functools.reduce` to compute product of a list.
 - Implement memoization manually for Fibonacci without using `@lru_cache`.
 - Write a function that dispatches behavior based on argument type (int vs str vs list).
+
+---
+
+## File Handling
+---
+
+### Sample File Content (`sample_text.txt`)
+
+```text
+The story of computing is one of the most remarkable journeys in modern human history. From early mechanical calculating machines to massive global cloud networks, technology continues to reshape how we learn, communicate, and solve problems.
+
+Across the globe, nations have contributed uniquely to this digital revolution. In Asia, India has emerged as a premier global hub for software development and IT services.
+
+Major technology centers in cities like Bengaluru, Hyderabad, Pune, and Delhi have attracted leading global corporations. Furthermore, educational institutions across India continue to train thousands of skilled engineers, developers, and researchers every single year.
+
+Modern software development relies heavily on key fundamental concepts like data structures, algorithms, modular architecture, and file handling operations. Mastering these core programming foundations enables developers to process large volumes of data efficiently.
+
+
+
+Whether you are analyzing log files, reading configuration data, or parsing raw text, understanding how to handle files is an essential skill for every software developer.
+
+India is also making massive strides in artificial intelligence, space research, and telecommunications infrastructure.
+
+The rapid growth of the tech industry in India shows how education, innovation, and strategic investment can transform an economy and empower millions of people. As technology evolves towards automation and intelligent systems, foundational skills in programming and data processing remain more important than ever before.
+
+```
+
+---
+
+### Updated Question List
+
+1. **Read a text file and count the total number of vowels in it?**
+2. **Count the total number of words in a file?**
+3. **Count the total number of lines present in a text file?**
+4. **Display only the lines in a file that contain the word "India"?**
+5. **Find the longest line in a text file?**
+6. **Take a word from the user and count how many times that word appears across an entire file?**
+7. **Take 5 words from the user and count how many times each word appears across an entire file?**
+8. **Copy non-blank lines from a source file into a clean list of data?**
+9. **Count the total number of blank lines in a text file?**
+10. **Find and display the shortest non-blank line in a text file?**
 
 ---
 
