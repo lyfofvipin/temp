@@ -181,48 +181,50 @@ class Car(Vehicle):
 #     Q = 20
 
 # class C( A, B ):
+
 #     R = 30
 
 # print(dir(C))
 
 
-# class A:
+class A:
 
-#     def __init__(self):
-#         self.P = 10
+    def __init__(self):
+        self.P = 10
 
-# class B:
+class B:
 
-#     def __init__(self):
-#         self.Q = 10
+    def __init__(self):
+        self.Q = 20
 
-# class C( A, B ):
+class C( A, B ):
 
-#     def __init__(self):
-#         A.__init__(self)
-#         B.__init__(self)
-#         self.R = 10
+    def __init__(self):
+        A.__init__(self)
+        B.__init__(self)
+        self.R = 30
 
 # abc = C()
-
 # print(dir(abc))
+# print( abc.P )
+# print( abc.Q )
+# print( abc.R )
 
+class Vehicle:
+    def __init__(self, brand, color):
+        self.brand = brand
+        self.color = color
 
-# class Vehicle:
-#     def __init__(self, brand, color):
-#         self.brand = brand
-#         self.color = color
+class RTO:
+    def __init__(self, number, owner_id):
+        self.number = number
+        self.owner_id = owner_id
 
-# class RTO:
-#     def __init__(self, number, owner_id):
-#         self.number = number
-#         self.owner_id = owner_id
+class Car( Vehicle, RTO ):
 
-# class Car( Vehicle, RTO ):
-
-#     def __init__(self):
-#         Vehicle.__init__(self, "Honda", "White")
-#         RTO.__init__(self, 1213142, "Vipin")
+    def __init__(self):
+        Vehicle.__init__(self, "Honda", "White")
+        RTO.__init__(self, 1213142, "Vipin")
 
 # a = Car()
 # print(dir(a))
@@ -246,8 +248,8 @@ class Car( Vehicle, RTO ):
         RTO.__init__(self, number, owner_id)
 
 # a = Car("BMW", "Black", "234-234-2342", "Rohit")
-# print(dir(a))
 # print(a.color)
+# print(dir(a))
 
 
 # Multiple Inheritance
@@ -280,41 +282,12 @@ class Child(ParentA, ParentB):
         ParentB.test(self)
         print("Test C")
 
-# Create an object of the child class
-
 # child_obj = Child()
-
 # print(dir(child_obj))
 # child_obj.method_A()
 # child_obj.method_B()
 # child_obj.method_C()
 # child_obj.test()
-
-# class ParentA:
-#     def method_A(self):
-#         print("Method from Parent A")
-
-#     def test(self):
-#         print("Test A")
-
-# class ParentB:
-#     def method_B(self):
-#         print("Method from Parent B")
-
-#     def test(self):
-#         print("Test B")
-
-# class Child(ParentA, ParentB):
-#     def method_C(self):
-#         print("Method from Child")
-
-#     def test(self):
-#         ParentA.test(self)
-#         ParentB.test(self)
-#         print("Test C")
-
-# child_obj = Child()
-# child_obj.method_B()
 
 # Method Resolution Order (MRO): When a method is called on a child class that has multiple parents, Python follows a specific search order to find the correct method.
 # This order is called the Method Resolution Order (MRO). 
@@ -347,9 +320,7 @@ class Child(ParentA, ParentB):
 #         ParentB.test(self)
 #         print("C")
 
-
 # obj = Child()
-# # print(dir(obj))
 # obj.test()
 
 # class A:
@@ -384,7 +355,7 @@ class ParentB(ParentA):
         print("Method from Parent B")
 
     def show(self):
-        ParentA.show(self.show)
+        ParentA.show(self)
         print("Class B")
 
 class ParentC():

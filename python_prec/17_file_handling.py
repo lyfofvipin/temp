@@ -119,8 +119,10 @@
 # with open("abcd.text", "w") as a:
 #     a.write( "I am from Delhi.\nhello delhi" )
 
+# with open("abcd.text", "a") as a:
+#     a.write( "I am from Delhi.\nhello delhi" )
+
 # a = open("/home/vipikuma/test.mp4", "wb")
-# print(a.read())
 # a.close()
 
 # a = open("test.text", "w+")
@@ -136,8 +138,7 @@
 #     print(video_file.readable())
 
 
-
-# with open("abcd.text", "+a") as a:
+# with open("abcd.text", "+r") as a:
 #     print(a.readable())
 #     print(a.writable())
 
@@ -147,6 +148,15 @@
 # +rb
 # +wb
 # +ab
+try:
+
+    with open("abcdef.text") as a:
+        data = a.read()
+except:
+    print("Enter a Valid Filename")
+
+# with open("xyz.txt", "w") as b:
+#     b.write(data)
 
 # file_data = xyz.readline()
 # print(file_data)

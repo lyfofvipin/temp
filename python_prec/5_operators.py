@@ -137,7 +137,8 @@
 
 # +=
 # a = 4
-# a+=5 # a = a + 5
+# a *= 5
+# print(a)
 
 # a = 10
 # a = a // 2
@@ -185,10 +186,9 @@
 
 # a = 60
 # a += 20
-# a = a + 20
-# a = 80
 # a -= 20
-# a **= 10
+# a /= 10
+# print(a)
 
 # a = 60 *60 *60 *60 *60 *60 *60 *60 *60 *60
  
@@ -203,7 +203,8 @@
 # not in	True if not present	"x" not in "cat"
 
 # a = "I live in India."
-# print( "I" not in a )
+# print( "z" not in a )
+
 
 # Identity Operators
 
@@ -396,4 +397,10 @@
 
 # print("Total amount is ", milk_price + sugar_price)
 
-# If-Else
+
+
+
+a = input("Enter Your Age: ")
+a = int(a)
+
+print( a > 18 )

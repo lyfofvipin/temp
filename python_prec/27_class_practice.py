@@ -11,7 +11,7 @@
 
 #     def parameter(self):
 #         return 2 * (self.l + self.w)
-    
+
 # a = Rectangle(10, 10)
 # b = Rectangle(1, 10)
 # c = Rectangle(7, 10)

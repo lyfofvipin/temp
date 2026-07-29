@@ -559,6 +559,54 @@ The rapid growth of the tech industry in India shows how education, innovation, 
 9. **Count the total number of blank lines in a text file?**
 10. **Find and display the shortest non-blank line in a text file?**
 
+* How do you copy the entire content from a source file into a brand new destination file using write ("w") mode?
+
+Answer: Open the source file in read mode ("r") and the target destination file in write mode ("w"). Read the content from the source file using read() or readlines() and write it directly into the target file. Write mode creates the new destination file automatically or overwrites it if it already exists.
+
+* How do you copy a file line by line and insert a custom line `Hello I am the new File` of text into the 5th number of the new file?
+
+Answer: Read all lines from the source file into a list using readlines(). Insert your custom line string at that specific index in the list, then open a new file in write mode ("w") and write the updated list of lines back into it using writelines().
+
+* How do you copy a file to a new location while filtering out all blank lines using write ("w") mode?
+
+Answer: Open the source file in read mode and the new clean file in write mode ("w"). Loop through each line of the source file, strip trailing whitespace, and write the line to the new file only if the remaining string is not empty.
+
+* How do you filter a source file and copy only the lines containing the word "India" into a new summary file using write ("w") mode?
+
+Answer: Open the source file in read mode and an output file in write mode ("w"). Iterate through each line of the source file, check if the word "India" is present in that line, and write the matching lines directly to the output file.
+
+How do you append a new note or status message to the end of an existing text file without overwriting its contents using append * ("a") mode?
+
+Answer: Open the existing file in append mode ("a"). Use the write() method to pass your new message string, making sure to include a \n newline character at the end. Append mode automatically places the file pointer at the very end, adding the new content while keeping all previous data intact.
+
+How do you prompt the user for 5 words, count their occurrences in the source file, and append the results as a summary at the end * of an existing log file?
+
+Answer: Read the source file content to calculate word frequencies for the 5 user-provided words. Then, open your target log file in append mode ("a"), format the calculated word counts into text strings, and write them to the file to preserve historical summary records.
+
+* How do you copy a file and add line numbers (e.g., "Line 1: ", "Line 2: ") to the beginning of every line in the new file?
+
+Answer: Open the source file in read mode and the new file in write mode ("w"). Loop through the lines using enumerate() starting at index 1, format a new string containing the current line number and the original line content, and write it into the new file.
+
+* How do you insert a custom header at the top and a custom footer at the bottom of a file when copying it to a new location?
+
+Answer: Open the source file in read mode and the new file in write mode ("w"). First, write your custom header string to the new file. Then, read and write all lines from the source file. Finally, write your custom footer string at the very end before closing the file.
+
+* How do you copy a text file while converting all its text content to uppercase in the new file?
+
+Answer: Open the source file in read mode and the output file in write mode ("w"). Read the text content from the source file, apply the .upper() string method to convert every character to uppercase, and write the transformed text into the new file.
+
+How do you replace every occurrence of a specific word (e.g., replacing "India" with "Bharat") while copying content into a new * file?
+
+Answer: Open the source file in read mode and the new file in write mode ("w"). Read the source file content, use the .replace("India", "Bharat") string method to swap the terms, and write the modified content into the destination file.
+
+* How do you split a single text file into two separate files based on line count (e.g., first half in File 1, second half in File 2)?
+
+Answer: Read all lines from the source file into a list using readlines(). Calculate the midpoint index, slice the list into two halves, and open two separate output files in write mode ("w"), writing the first slice to the first file and the second slice to the second file.
+
+* How do you reverse the order of lines in a text file and save the output into a new file using write ("w") mode?
+
+Answer: Read all lines from the source file into a list using readlines(). Reverse the list using slicing or the reversed() function, then open a new output file in write mode ("w") and write the reversed list of lines into it.
+
 ---
 
 ## Generators & Iterators
