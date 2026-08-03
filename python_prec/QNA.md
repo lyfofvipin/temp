@@ -609,6 +609,72 @@ Answer: Read all lines from the source file into a list using readlines(). Rever
 
 ---
 
+### Sample Dataset
+
+Suppose we extract the following word list and raw student record data from a file:
+
+```python
+# Sample 1: Word list extracted from text
+words = ["India", "development", "AI", "python", "software", "code", "DATA", "algorithms"]
+
+# Sample 2: Raw data records
+students_raw = ["Aarav:85", "Diya:92", "Ananya:78", "Rohan:64", "Isha:95"]
+
+```
+
+---
+
+### List and Dictionary Comprehension Tasks
+
+#### **Part 1: List Comprehension**
+
+1. **How do you filter a list of words to extract only those that start with a vowel (`a, e, i, o, u`)?**
+* **Answer:** Use a list comprehension that loops through each word in the list, converts the first character to lowercase, and checks if it exists within a string/tuple of vowels.
+
+
+
+
+2. **How do you create a new list containing the length of each word in a word list?**
+* **Answer:** Use a list comprehension to iterate through the list of words and apply the `len()` function to each individual string.
+
+
+
+
+3. **How do you convert all words in a list to uppercase, but only if the word has more than 4 characters?**
+* **Answer:** Apply a conditional list comprehension where the `if` condition filters out short words, and the transformation expression applies `.upper()` to the remaining words.
+
+
+
+
+4. **How do you transform a list of numbers by replacing even numbers with "Even" and odd numbers with "Odd"?**
+* **Answer:** Use a conditional expression (ternary operator) *before* the `for` loop in the list comprehension to apply `if-else` logic for every element.
+
+5. **How do you extract non-blank, clean lines from a list of raw string lines read from a file?**
+* **Answer:** Loop through each line string in a list comprehension, apply `.strip()` to remove leading/trailing whitespace, and keep the line only if the stripped string is not empty.
+
+
+---
+
+#### **Part 2: Dictionary Comprehension**
+
+6. **How do you convert a list of words into a dictionary mapping each word to its character count?**
+* **Answer:** Iterate through the word list inside a dictionary comprehension, using the word itself as the dictionary key and `len(word)` as its corresponding value.
+
+
+7. **How do you filter an existing dictionary to keep only the key-value pairs where the numeric value is greater than a threshold (e.g., scores >= 80)?**
+* **Answer:** Iterate over the key-value pairs using `.items()` inside a dictionary comprehension and add an `if` clause at the end to check if the value meets the condition.
+
+8. **How do you swap (invert) the keys and values of a dictionary?**
+* **Answer:** Iterate through the original dictionary's `.items()` and place the original value in the key position and the original key in the value position.
+
+
+9. **How do you count the frequency of each unique word in a list of words using a dictionary comprehension?**
+* **Answer:** Use a dictionary comprehension iterating over `set(words)` to ensure uniqueness, setting the key as the word and the value as `words.count(word)`.
+
+10. **How do you categorize items in a dictionary based on their values (e.g., marking scores as "Pass" or "Fail")?**
+* **Answer:** Use an `if-else` ternary operator in the value expression of the dictionary comprehension while iterating over the key-value pairs of the dictionary.
+* *Logic:* `{name: ("Pass" if score >= 75 else "Fail") for name, score in scores_dict.items()}`
+
 ## Generators & Iterators
 
 > File: `20_generators_iterators.py`
