@@ -290,8 +290,6 @@
 
 # print( False or False or 56 or True or 90 )
 
-# print( 23 and 25 and "" and 9 and 5 )
-
 # and
 # -> If any value is false It will return the false one
 # -> If both the values are true it will pick the right one
@@ -309,12 +307,10 @@
 # a = "u"
 # print( a == "a" or a == "e" or a == "i" or a == "o" or a == "u" )
 
-
 # The Concept Of True And False
 
-
 # print( True and True and "False" and True and 321 )
-# print( True and True and 0 and True and 321 )
+# print( True and True and [] and True and 321 )
 
 
 
@@ -330,7 +326,8 @@
 
 
 # print( 34 and "-" or 45 and 67 or 93 or 45 and 23 )
-# print( (34 and " ") or (45 and 67) or 93 or (45 and 23) )
+
+# print( 23 and 89 or False and 56 or 23 and 90 )
 
 # Membership Operators
 # Test membership in sequences like lists, strings:
@@ -398,9 +395,23 @@
 # print("Total amount is ", milk_price + sugar_price)
 
 
+# amount = int( input("Enter Amount: ") )
+# interest_rate = float( input("Enter Interest Rate: ") )
+# time = float( input("Enter Time in Years like 2.5 or 5: ") )
+
+# interest = (amount * interest_rate * time) / 100
+
+# print( f"You have to pay {interest}/- in {time} years." )
+
+# number = int( input("Enter A Number: ") )
+# print( number % 5 == 0   and    number % 3 == 0 )
 
 
-a = input("Enter Your Age: ")
-a = int(a)
-
-print( a > 18 )
+# Type Conversion In Bool
+# ""
+# []
+# () 
+# {}
+# 0
+# False
+# None

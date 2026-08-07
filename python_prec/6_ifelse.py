@@ -1,7 +1,7 @@
-# if False:
-#     print("Line1")
-#     print("Line2")
-#     print("Line3")
+# if True:
+#   print("I am if")
+# else:
+#   print("I am else")
 
 # age = 8
 
@@ -12,17 +12,36 @@
 #   print("No You Can Not Vote.")
 #   print("No You Can Not Vote.")
 
+# score = int(input("Enter Your Math's number: "))
 
+# if score > 33:
+#     print("You have passed the Math's exam")
+# else:
+#     print("You Failed Practice and try again.")
 
-# number = 0
+# number = int(input("Enter A Number: "))
 
 # if number > 0:
 #     print("It's +ve")
 # else:
 #     print("It's -ve")
 
+# number = int(input("Enter A Number: "))
 
-# number = -23
+# if number % 5 == 0 :
+#     print("Yes It's divided by 5.")
+# else:
+#     print("No It's not divided by 5.")
+
+# number = int(input("Enter A Number: "))
+
+# if number % 2 == 0 :
+#     print("Even Number.")
+# else:
+#     print("Odd Number.")
+
+
+# number = int(input("Enter A Number: "))
 
 # if number > 0:
 #     print("It's +ve")

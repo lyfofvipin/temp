@@ -1,23 +1,31 @@
-# Rectangle Data Type
+class Item:
 
-# class Rectangle:
+    def __init__(self, item_name, item_qty, item_price):
+        self.name = item_name
+        self.qty = item_qty
+        self.price = item_price
 
-#     def __init__(self, l, w):
-#         self.l = l
-#         self.w = w
+    def total(self):
+        return self.qty * self.price
 
-#     def area(self):
-#         return self.l * self.w
 
-#     def parameter(self):
-#         return 2 * (self.l + self.w)
+cart = []
+while True:
 
-# a = Rectangle(10, 10)
-# b = Rectangle(1, 10)
-# c = Rectangle(7, 10)
-# d = Rectangle(8, 10)
+    action = input("Press 1 for continue shopping and 2 for checkout and 3 to stop: ")
+    if action == "1":
+        name = input("Enter Item Name: ")
+        qty = int(input("Enter Qty: "))
+        price = float(input("Enter Price Per Item: "))
+        cart.append( Item(name, qty, price) )
 
-# e = [ a, b, c, d ]
+    elif action == "2":
+        for x in cart:
+            print( f"{x.name}: {x.total()}")
 
-# print(e[-1].parameter())
-
+    elif action == "3":
+        for x in cart:
+            print( f"{x.name}: {x.total()}")
+        break
+    else:
+        print("Invalid Action.")

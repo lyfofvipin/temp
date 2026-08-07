@@ -26,7 +26,6 @@
 #         abc( x + 1 )
 # abc()
 
-
 # def string_length(s):
 #     print(s)
 #     if s == "":
@@ -34,7 +33,7 @@
 #     else:
 #         return 1 + string_length(s[1:])
 
-# print(string_length("asjdsanfdkjsanfdkjsanfdkjsanfdkjnsa"))
+# print(string_length("hello"))
 
 
 # # Sum of a List of Numbers

@@ -1,6 +1,8 @@
+# print("hello") ; print("World")
+
 # One liner if else
 
-# num = 14
+# num = 3
 
 # if num > 5:
 #     print("yes")
@@ -19,7 +21,10 @@
 
 # print("yes" if num > 5 else "no")
 
-# n = 23
+# for x in "hello": print(x)
+# for x in range(1, 101, 2): print(x)
+
+# n = -23
 
 # if n > 0 :
 #     print("+ve")
@@ -33,7 +38,7 @@
 # a = "yes" if num > 5 else "no"
 # print(a)
 
-# num = 82
+# num = 80
 
 # if num % 3 == 0 and num % 5 == 0:
 #     print("Both")
@@ -42,6 +47,10 @@
 # else:
 #     print("5")
 
+# div_5 = num % 5 == 0
+# div_3 = num % 3 == 0
+
+# print("Both") if div_5 and div_3 else print("3") if div_3 else print("5") if div_5 else print("None")
 
 # a = "both" if num % 3 == 0 and num % 5 == 0 else "3" if  num % 3 == 0 else "5" if num % 5 == 0 else "by none"
 # "3" if  num % 3 == 0 else "5" if num % 5 == 0 else "by none"
@@ -54,7 +63,6 @@
 
 
 # Write a program to square each elements of the given list into a new list
-# [ 4, 9, 16, 1, 36, 49 ]
 
 # old_list = [ 2, 3, 4, 1, 6, 7 ]
 # new_list = []
@@ -62,7 +70,7 @@
 #     new_list.append(x * x)
 # print(new_list)
 
-# print( [ x + 1 for x in old_list ] )
+# print([ x*x for x in old_list ])
 
 # [ what_is_it_we_want_to_do_with_our_variable_name for variable_name in iterator do_this_only_if ]
 
@@ -76,7 +84,6 @@
 
 # print(squares)
 # Output: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
-
 
 # squares = [i * i for i in range(10)]
 
@@ -97,7 +104,9 @@
 #     if x >= 18:
 #         print(x)
 
-# even_numbers = [ i for i in a if i % 2 == 0 ]
+# print([ x for x in a if x >= 18 ])
+
+# even_numbers = { i for i in a if i % 2 == 0 }
 # print(even_numbers)
 
 # print( [ x for x in a if x < 18 ] )
@@ -112,11 +121,10 @@
 # print(new_list)
 
 # Get the squares of only the even numbers
-# squares_of_evens = [i * i for i in range(10) if i % 2 == 0]
+# squares_of_evens = [ "Even" for i in range(10) if i % 2 == 0]
 
 # print(squares_of_evens)
 # # Output: [0, 4, 16, 36, 64]
-
 
 # new_list = []
 # for i in range(11):
@@ -132,6 +140,9 @@
 
 # print(new_list)
 # # Output: ['Even', 'Odd', 'Even', 'Odd', 'Even']
+
+# print( [ "Even" if x % 2 == 0 else "Odd" for x in range(1, 31) if x % 5 == 0 ] )
+
 
 # students = [13, 40, 56, 90, 15, 80, 56, 43]
 # print( [ i for i in students if i >= 33 ] )
@@ -149,7 +160,8 @@
 
 # print(squares_dict)
 
-# print({ x:x*x for x in range(5) })
+# data = { x:x*x for x in range(5) }
+# print(type(data))
 
 # data = [ 2, 3, 5, 6, 7, 9 ]
 # squares_dict = { i : i*i for i in data }
@@ -165,9 +177,8 @@
 
 # If a key is repeating itself it's value will be override by the new key
 
-# a = { "rohit": 23, "vikas": 14, "aman": 90, "kamal": 56, "sid": 87 }
+# a = { "rohit": 23, "vikas": 14, "aman": 90, "kamal": 56, "sid": 87, "tanmay": 45 }
 
 # print({ i:a[i] for i in a if a[i] >= 33 })
 # print({ i:a[i] for i in a if a[i] <= 33 })
-# print({ i:"Pass" if a[i] >= 33 else "Fail" for i in a })
-
+# print({ i:(a[i], "Pass") if a[i] >= 33 else (a[i], "Fail") for i in a })

@@ -20,36 +20,40 @@
 
 # print(type(object_name))
 
-# a = [1,2,3,43,4]
+# a = int("45")
+
+# a = 1,2,3,43,4
 # b = [4,3,2,3,5,3]
+
+# print(45)
 
 # print( a, b )
 
 # class demo:
 
-#     c = ""
-#     d = ""
+#     p = 56
+#     q = 66
+#     r = 78
 
-# x = demo()
-# y = demo()
+# a = demo()
+# print( a.p, a.q, a.r )
 
-# print( dir(x) )
+# class SocialMedia:
 
-# print(dir(a))
+#     CEO = "Mark"
 
-class SocialMedia:   
+#     def like(self):
+#         print("Liked")
 
-    CEO = "Mark"
+#     def comment(self):
+#         print("Commented")
 
-    def like(self):
-        print("Liked")
-
-    def comment(self):
-        print("Commented")
+#     def post(self):
+#             print("Posted")
 
 # facebook = SocialMedia()
-
-# print( facebook.CEO )
+# facebook.comment()
+# facebook.post()
 
 # facebook.like()
 
@@ -66,41 +70,30 @@ class SocialMedia:
 # for x in e:
 #     print(x.CEO)
 
+# class SocialMedia:
 
+#     CEO = "Mark"
+
+#     def like(self):
+#         print("Liked")
+
+#     def comment(self):
+#         print("Commented")
+
+#     def post(self):
+#             print("Posted")
+
+# facebook = SocialMedia()
 # twitter = SocialMedia()
-# twitter.CEO = "Elon Musk"
-# print(facebook.CEO)
-# print(twitter.CEO)
-
-# Insta = SocialMedia()
 # LinkedIn = SocialMedia()
-# Twitter = SocialMedia()
 
-# a = list()
-# c = list()
-# b = list()
-
-# print( a )
-# print( b )
-# print( c )
-
-# a.append(23)
-
-# print( a )
-# print( b )
-# print( c )
-
-
-# print( Insta.CEO )
-# print( LinkedIn.CEO )
-# print( Twitter.CEO )
-
+# twitter.CEO = "Elon Musk"
 # LinkedIn.CEO = "Ryan"
-# Twitter.CEO = "Elon Musk"
 
-# print( Insta.CEO )
-# print( LinkedIn.CEO )
-# print( Twitter.CEO )
+# facebook.like()
+# print(twitter.CEO)
+# print(LinkedIn.CEO)
+
 
 # class car:
 
@@ -128,23 +121,32 @@ class SocialMedia:
 
 # print(a.brand)
 # print(b.brand)
-# a.drive()
 
 # class Dog:
 
 #     species = "GS"
 
 #     def eat(self):
-#         b = 50
+#         self.b = 50
 #         print(f"hungry right now.")
 
 #     def bark(self):
-#         print(b)
+#         print(self.b)
 #         print(f"says woof!")
 
 # a = Dog()
 # a.eat()
 # a.bark()
+
+# class User:
+
+#     name = "vipin kumar"
+#     mob = "88755443983"
+#     addr = "Jaipur"
+
+#     def display_info(self):
+#         print( self.name, self.mob, self.addr )
+
 
 # print(dir(a))
 
@@ -163,8 +165,6 @@ class SocialMedia:
 #         print(f"says woof!")
 
 # a = Dog()
-# a.eat()
-# a.bark()
 
 # c = Dog()
 # c.eat()
@@ -186,7 +186,7 @@ class SocialMedia:
 #         print(f"hungry right now.")
 
 #     def bark(self):
-#         print(self.b)
+#         print(self.c)
 #         print(f"says woof!")
 
 # xyz = Dog()
@@ -194,6 +194,39 @@ class SocialMedia:
 # xyz.eat()
 # xyz.bark()
 
+
+
+# class Hello:
+
+#     def test(self):
+#         self.a = 10
+#         self.b = 20
+#         self.c = 30
+#         self.d = 40
+
+#     def set_a_b(self):
+#         self.a = 50
+#         self.b = 100
+
+#     def set_c_d(self):
+#         self.c = 10
+#         self.d = 20
+
+#     def display_all(self):
+#         print(self.a)
+#         print(self.b)
+#         print(self.c)
+#         print(self.d)
+
+# xyz = Hello()
+# xyz.test()
+# abc = Hello()
+# abc.test()
+# xyz.set_a_b()
+# abc.set_c_d()
+# xyz.display_all()
+# print("*"*80)
+# abc.display_all()
 
 # Attributes (The "What It Is")
 # Attributes are the data or properties associated with an object.

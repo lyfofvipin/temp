@@ -148,12 +148,9 @@
 # +rb
 # +wb
 # +ab
-try:
 
-    with open("abcdef.text") as a:
-        data = a.read()
-except:
-    print("Enter a Valid Filename")
+# with open("hello.txt") as a:
+#     data = a.read()
 
 # with open("xyz.txt", "w") as b:
 #     b.write(data)

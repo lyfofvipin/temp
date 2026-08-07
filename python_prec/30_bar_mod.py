@@ -3,24 +3,25 @@
 
 # import bars
 
-# # print( bars.abc )
-# # bars.starbar(10)
+# print( bars.abc )
 
+# bars.hashbar(20)
+# a = bars.Rectangle(10, 2)
 
-# from bars import starbar, hashbar
-# starbar(20)
-
-
-# using *
 
 # from bars import *
+# starbar(80)
 
-# simplebar(23)
+
+# from bars import starbar, Rectangle
+# starbar(60)
+
 
 # from, import, as
 
 # from bars import give_your_into_sadasdf_sadfsadf_sadfasgd_dsafgasga as intro
 # intro()
+
 
 # When you use import, Python looks for the module in a list of directories called the Python Path. 
 # This path is stored in the sys.path list.
@@ -49,9 +50,9 @@
 # os
 # datetime
 
-import os
+# import os
 # print( os.uname() )
-print(os.listdir())
+# print(os.listdir())
 
 # import classes
 

@@ -1,4 +1,4 @@
-# while True:
+# while False:
 #     print("Hello World1!")
 #     print("Hello World2!")
 #     print("Hello World3!")
@@ -11,21 +11,21 @@
 
 # counter = 5
 
-# while counter >= 0:
+# while counter >= 1:
 #     print(counter)
 #     counter = counter - 1
 
-# counter = 1
-# while counter <= 5:
+# counter = 0
+# while counter < 5:
+#     counter += 100
 #     print(counter)
-#     counter += 1
 
 # Iteration
 
 # counter = 1
 # while counter <= 5:
 #     print(counter)
-#     counter = counter + 2
+#     counter = counter + 1
 
 
 # counter = 20
@@ -38,6 +38,11 @@
 #     print(counter)
 #     counter *= 2
 
+# counter = 1
+# while counter <= 10:
+#     print(counter * 2)
+#     counter += 1
+
 
 # 1 - 50
 # 50 - 1
@@ -47,9 +52,25 @@
 # even numbers from 50 - 80
 # keyboard input and print it's table
 
+# num = int(input("Enter A Number: "))
+
+# i = 1
+
+# while i <= 10:
+
+#     print(i * num)
+
+#     i = i + 1
+
+
+# i = 1.0
+# while i <= 2.0:
+#     print(i)
+#     i = i + .1
+
 # counter = 1
 
-# while counter <=5:
+# while counter <= 10:
 #     print( "*" * counter )
 #     counter += 1
 
@@ -70,6 +91,23 @@
 # 333
 # 22
 # 1
+
+
+# 1
+# 22
+# 333
+# 4444
+# 55555
+
+# i = 5
+
+# while i >= 1:
+#     j = i
+#     while j >= 1:
+#         print(j, end=" ")
+#         j-=1
+#     print()
+#     i -= 1
 
 # *****
 # ****

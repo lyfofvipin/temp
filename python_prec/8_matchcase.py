@@ -37,6 +37,20 @@
 #         ---
 #         ---
 
+# char = input("Enter light color: ")
+
+# match char:
+
+#     case "red":
+#         print("Stop")
+
+#     case "green":
+#         print("GO")
+
+#     case "yellow":
+#         print("Wait")
+
+
 # char = input("Enter only 1 character: ")
 
 
@@ -60,22 +74,22 @@
 
 # match number:
 
-#     case 1:
-#         print("Monday")
-#     case 2:
-#         print("Tuesday")
-#     case 3:
-#         print("Wednesday")
-#     case 4:
-#         print("Thursday")
-#     case 5:
-#         print("Friday")
-#     case 6:
-#         print("Saturday")    
-#     case 7:
-#         print("Sunday")
-#     case _:
-#         print("Invalid number.")
+    # case 1:
+    #     print("Monday")
+    # case 2:
+    #     print("Tuesday")
+    # case 3:
+    #     print("Wednesday")
+    # case 4:
+    #     print("Thursday")
+    # case 5:
+    #     print("Friday")
+    # case 6:
+    #     print("Saturday")    
+    # case 7:
+    #     print("Sunday")
+    # case _:
+    #     print("Invalid number.")
 
 # amount = int(input("Kitne rs laye ho?? "))
 
