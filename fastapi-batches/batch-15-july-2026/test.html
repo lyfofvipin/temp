@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastAPI Test Dashboard</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Alpine.js for simple reactivity -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3x.xx/dist/cdn.min.js"></script>
+</head>
+<body class="bg-gray-100 min-h-screen p-6" x-data="app()">
+
+    <div class="max-w-4xl mx-auto space-y-8">
+        
+        <!-- Header -->
+        <header class="bg-white p-6 rounded-lg shadow-md flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-gray-800">FastAPI Dashboard</h1>
+            <div x-show="token" class="text-sm text-green-600 font-semibold bg-green-50 px-3 py-1 rounded">
+                Logged In as: <span x-text="username"></span>
+            </div>
+            <div x-show="!token" class="text-sm text-red-600 font-semibold bg-red-50 px-3 py-1 rounded">
+                Not Logged In
+            </div>
+        </header>
+
+        <!-- Login Section -->
+        <section class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-xl font-semibold mb-4 text-gray-700">1. Login / Get Token</h2>
+            <form @submit.prevent="login" class="flex gap-4 items-end">
+                <div>
+                    <label class="block text-sm text-gray-600">Username</label>
+                    <input type="text" x-model="loginForm.username" class="border rounded px-3 py-2 mt-1" required>
+                </div>
+                <div>
+                    <label class="block text-sm text-gray-600">Password</label>
+                    <input type="password" x-model="loginForm.password" class="border rounded px-3 py-2 mt-1" required>
+                </div>
+                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Login</button>
+            </form>
+        </section>
+
+        <!-- Create User Section -->
+        <section class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-xl font-semibold mb-4 text-gray-700">2. Register User</h2>
+            <form @submit.prevent="createUser" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <input type="text" x-model="userForm.username" placeholder="Username" class="border rounded px-3 py-2" required>
+                <input type="email" x-model="userForm.mail" placeholder="Email" class="border rounded px-3 py-2" required>
+                <input type="text" x-model="userForm.mob" placeholder="Mobile" class="border rounded px-3 py-2" required>
+                <input type="password" x-model="userForm.password" placeholder="Password" class="border rounded px-3 py-2" required>
+                <select x-model="userForm.role" class="border rounded px-3 py-2">
+                    <option value="non-admin">non-admin</option>
+                    <option value="admin">admin</option>
+                </select>
+                <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 md:col-span-3">Create User</button>
+            </form>
+        </section>
+
+        <!-- Create Blog Section -->
+        <section class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-xl font-semibold mb-4 text-gray-700">3. Create Post</h2>
+            <form @submit.prevent="createPost" class="space-y-4">
+                <input type="text" x-model="postForm.title" placeholder="Post Title" class="w-full border rounded px-3 py-2" required>
+                <textarea x-model="postForm.desc" placeholder="Post Description" class="w-full border rounded px-3 py-2"></textarea>
+                <button type="submit" class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700">Create Post</button>
+            </form>
+        </section>
+
+        <!-- Data Feeds Section -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Users List -->
+            <section class="bg-white p-6 rounded-lg shadow-md">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-xl font-semibold text-gray-700">Users</h2>
+                    <button @click="fetchUsers" class="text-sm bg-gray-200 px-3 py-1 rounded hover:bg-gray-300">Refresh</button>
+                </div>
+                <ul class="space-y-2">
+                    <template x-for="user in users" :key="user.id">
+                        <li class="border-b pb-2 flex justify-between items-center">
+                            <div>
+                                <span class="font-bold" x-text="user.username"></span> 
+                                <span class="text-xs text-gray-500" x-text="'(' + user.role + ')'"></span>
+                            </div>
+                            <button @click="deleteUser(user.id)" class="text-red-500 text-sm hover:underline">Delete</button>
+                        </li>
+                    </template>
+                </ul>
+            </section>
+
+            <!-- Posts List -->
+            <section class="bg-white p-6 rounded-lg shadow-md">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-xl font-semibold text-gray-700">Posts</h2>
+                    <button @click="fetchPosts" class="text-sm bg-gray-200 px-3 py-1 rounded hover:bg-gray-300">Refresh</button>
+                </div>
+                <ul class="space-y-2">
+                    <template x-for="post in posts" :key="post.id">
+                        <li class="border-b pb-2 flex justify-between items-center">
+                            <div>
+                                <span class="font-bold" x-text="post.title"></span>
+                                <p class="text-xs text-gray-600" x-text="post.desc"></p>
+                            </div>
+                            <button @click="deletePost(post.id)" class="text-red-500 text-sm hover:underline">Delete</button>
+                        </li>
+                    </template>
+                </ul>
+            </section>
+        </div>
+
+    </div>
+
+    <!-- Script Logic -->
+    <script>
+        function app() {
+            return {
+                token: localStorage.getItem('token') || '',
+                username: localStorage.getItem('username') || '',
+                loginForm: { username: '', password: '' },
+                userForm: { username: '', mail: '', role: 'non-admin', password: '', mob: '' },
+                postForm: { title: '', desc: '' },
+                users: [],
+                posts: [],
+
+                init() {
+                    this.fetchUsers();
+                    this.fetchPosts();
+                },
+
+                async login() {
+                    try {
+                        const formData = new URLSearchParams();
+                        formData.append('username', this.loginForm.username);
+                        formData.append('password', this.loginForm.password);
+
+                        const res = await fetch('http://127.0.0.1:8000/login', {
+                            method: 'POST',
+                            body: formData
+                        });
+                        const data = await res.json();
+                        if (data.status) {
+                            this.token = data.access_token;
+                            this.username = this.loginForm.username;
+                            localStorage.setItem('token', this.token);
+                            localStorage.setItem('username', this.username);
+                            alert('Login Successful!');
+                        } else {
+                            alert(data.message);
+                        }
+                    } catch (err) {
+                        console.error(err);
+                        alert('Login failed');
+                    }
+                },
+
+                async createUser() {
+                    const res = await fetch('http://127.0.0.1:8000/create_user', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(this.userForm)
+                    });
+                    const data = await res.json();
+                    alert(data.message);
+                    this.fetchUsers();
+                },
+
+                async createPost() {
+                    const res = await fetch('http://127.0.0.1:8000/create_blog', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(this.postForm)
+                    });
+                    const data = await res.json();
+                    alert(data.message);
+                    this.fetchPosts();
+                },
+
+                async fetchUsers() {
+                    const res = await fetch('http://127.0.0.1:8000/read_user');
+                    const data = await res.json();
+                    if (data.status) this.users = data.data;
+                },
+
+                async fetchPosts() {
+                    const res = await fetch('http://127.0.0.1:8000/read_post');
+                    const data = await res.json();
+                    if (data.status) this.posts = data.data;
+                },
+
+                async deleteUser(id) {
+                    const res = await fetch(`http://127.0.0.1:8000/delete_user?id=${id}`, { method: 'DELETE' });
+                    const data = await res.json();
+                    alert(data.message);
+                    this.fetchUsers();
+                },
+
+                async deletePost(id) {
+                    const res = await fetch(`http://127.0.0.1:8000/delete_post?id=${id}`, { method: 'DELETE' });
+                    const data = await res.json();
+                    alert(data.message);
+                    this.fetchPosts();
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,15 +1,24 @@
 from fastapi import FastAPI, Depends, status
 from fastapi.security import OAuth2PasswordRequestForm, OAuth2PasswordBearer
+from datetime import datetime, timedelta
 import jwt
 
 authenticator = OAuth2PasswordBearer(tokenUrl="login")
 
-key = "abcdefghij"
+secret_key = "abcdefghij"
 app = FastAPI()
+expire_time = 10
 
-def decode_jwt(token):
+def create_access_token(data: dict):
+    global expire_time
+    payload_to_encode = data.copy()
+    expire_time = datetime.now() + timedelta(seconds=expire_time)
+    payload_to_encode.update({"exp": expire_time})
+    return jwt.encode(payload_to_encode, secret_key, algorithm="HS256")
+
+def decode_jwt(token = Depends(authenticator)):
     try:
-        data = jwt.decode(token, key, "HS256")
+        data = jwt.decode(token, secret_key, "HS256")
         return data
     except:
         return {"status": "failed", "message": "Auth failed"}
@@ -17,12 +26,11 @@ def decode_jwt(token):
 @app.post("/login")
 def demo( data: OAuth2PasswordRequestForm = Depends() ):
 
-    data_to_encode = {"username": data.username}
-
-    token = jwt.encode(data_to_encode, key, "HS256")
+    token = create_access_token({"username": "rohit"})
 
     return {
         "access_token": token,
+        "token_type": "bearer",
         "status": "completed."
     }
 
@@ -53,6 +61,5 @@ def test(token: str = Depends(decode_jwt)):
 def test(token: str = Depends(decode_jwt)):
     if token.get("username"):
         return {"name": "rohit", "age": 20}
-
     else:
         return token
