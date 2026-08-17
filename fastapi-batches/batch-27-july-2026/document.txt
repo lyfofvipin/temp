@@ -1,0 +1,9 @@
+I have 3 API:
+
+home
+blog
+about
+
+get_inactive_users -> Only Get Inactive Users
+get_female_users -> Only list female users
+
