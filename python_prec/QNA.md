@@ -923,6 +923,238 @@ def debug(func):
 
 Apply to a function that divides two numbers. What gets printed when `divide(10, 2)` and when `divide(10, 0)`?
 
+## Task: Create a SmartPhone Using Multiple Inheritance
+
+Create the following classes:
+
+### 1. `Camera`
+
+* Create a method `take_photo()` that prints:
+
+  * `"Taking a photo..."`
+
+### 2. `MusicPlayer`
+
+* Create a method `play_music()` that prints:
+
+  * `"Playing music..."`
+
+### 3. `SmartPhone`
+
+* Inherit from both `Camera` and `MusicPlayer`.
+* Create an additional method `make_call()` that prints:
+
+  * `"Making a call..."`
+
+### 4. Object Creation
+
+* Create an object of the `SmartPhone` class.
+* Use the object to:
+
+  * Take a photo
+  * Play music
+  * Make a call
+
+### Expected Output
+
+```text
+Taking a photo...
+Playing music...
+Making a call...
+```
+
+## Task: Create a Smart Home System Using Multiple Inheritance
+
+Imagine you are creating a **Smart Home System**.
+
+Create the following classes:
+
+### 1. `Light`
+
+* Create a method `turn_on()` that prints:
+
+  * `"Light is turned on..."`
+
+### 2. `Fan`
+
+* Create a method `turn_on()` that prints:
+
+  * `"Fan is turned on..."`
+
+### 3. `SmartHome`
+
+* Inherit from both `Light` and `Fan`.
+* Create an additional method `lock_door()` that prints:
+
+  * `"Door is locked..."`
+
+### 4. Object Creation
+
+* Create an object of the `SmartHome` class.
+* Use the object to:
+
+  * Turn on the light
+  * Turn on the fan
+  * Lock the door
+
+**Expected Output:**
+
+```text
+Light is turned on...
+Fan is turned on...
+Door is locked...
+```
+
+
+## Example 1: Multilevel Inheritance — Employee
+
+Create the following classes:
+
+### 1. `Employee`
+
+* Create a method `work()` that prints:
+
+  * `"Employee is working..."`
+
+### 2. `Manager`
+
+* Inherit from `Employee`.
+* Create a method `manage_team()` that prints:
+
+  * `"Manager is managing the team..."`
+
+### 3. `ProjectManager`
+
+* Inherit from `Manager`.
+* Create a method `assign_task()` that prints:
+
+  * `"Project manager is assigning tasks..."`
+
+### Task
+
+Create an object of `ProjectManager` and use it to:
+
+* Work
+* Manage the team
+* Assign a task
+
+---
+
+## Example 2: Multilevel Inheritance — Smart Device
+
+Create the following classes:
+
+### 1. `Device`
+
+* Create a method `power_on()` that prints:
+
+  * `"Device is powered on..."`
+
+### 2. `Phone`
+
+* Inherit from `Device`.
+* Create a method `make_call()` that prints:
+
+  * `"Making a phone call..."`
+
+### 3. `SmartPhone`
+
+* Inherit from `Phone`.
+* Create a method `use_internet()` that prints:
+
+  * `"Using the internet..."`
+
+### Task
+
+Create an object of `SmartPhone` and use it to:
+
+* Power on the device
+* Make a phone call
+* Use the internet
+
+
+## Example 1: Hybrid Inheritance — School System
+
+Create the following classes:
+
+### 1. `Person`
+
+* Create a method `introduce()` that prints:
+
+  * `"I am a person..."`
+
+### 2. `Student`
+
+* Inherit from `Person`.
+* Create a method `study()` that prints:
+
+  * `"Student is studying..."`
+
+### 3. `Teacher`
+
+* Inherit from `Person`.
+* Create a method `teach()` that prints:
+
+  * `"Teacher is teaching..."`
+
+### 4. `ClassMonitor`
+
+* Inherit from both `Student` and `Teacher`.
+* Create a method `manage_class()` that prints:
+
+  * `"Class monitor is managing the class..."`
+
+### Task
+
+Create an object of `ClassMonitor` and use it to:
+
+* Introduce yourself
+* Study
+* Teach
+* Manage the class
+
+---
+
+## Example 2: Hybrid Inheritance — Company System
+
+Create the following classes:
+
+### 1. `Employee`
+
+* Create a method `work()` that prints:
+
+  * `"Employee is working..."`
+
+### 2. `Developer`
+
+* Inherit from `Employee`.
+* Create a method `write_code()` that prints:
+
+  * `"Developer is writing code..."`
+
+### 3. `Designer`
+
+* Inherit from `Employee`.
+* Create a method `design()` that prints:
+
+  * `"Designer is creating a design..."`
+
+### 4. `TeamLead`
+
+* Inherit from both `Developer` and `Designer`.
+* Create a method `lead_team()` that prints:
+
+  * `"Team lead is managing the team..."`
+
+### Task
+
+Create an object of `TeamLead` and use it to:
+
+* Work
+* Write code
+* Create a design
+* Lead the team
+
 ---
 **Decorator vs Inheritance vs Mixin**
 
