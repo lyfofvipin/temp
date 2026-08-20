@@ -258,6 +258,172 @@ Given `chat = "HELP ME PLEASE!!"`, write code to check if all alphabetical chara
 
 ### Real-Life Scenarios
 
+🟢 Level 1 — Simple indexing
+
+Try to predict the output before running the code.
+
+1.
+
+fruits = ["apple", "banana", "mango", "orange"]
+
+print(fruits[0])
+print(fruits[2])
+print(fruits[-1])
+
+
+2.
+
+numbers = [100, 200, 300, 400, 500]
+
+print(numbers[1])
+print(numbers[-2])
+print(numbers[4])
+
+
+3.
+
+student = ["Rahul", 20, True, "Python"]
+
+print(student[0])
+print(student[2])
+print(student[-1])
+
+🟡 Level 2 — Accessing characters inside a string
+
+Remember: if a list contains a string, you can use another index.
+
+4.
+
+a = ["India", "Japan", "USA", "France"]
+
+print(a[0][0])
+print(a[0][2])
+print(a[1][1])
+print(a[-1][-1])
+
+
+5.
+
+colors = ["red", "green", "blue"]
+
+print(colors[1][0])
+print(colors[2][2])
+print(colors[-1][0])
+
+
+Challenge: What does colors[1][2] give?
+
+🟠 Level 3 — Nested lists
+
+Now let's access a list inside another list.
+
+6.
+
+a = [
+    [10, 20, 30],
+    [40, 50, 60],
+    [70, 80, 90]
+]
+
+print(a[0])
+print(a[1])
+print(a[2])
+
+print(a[0][1])
+print(a[1][2])
+print(a[2][0])
+
+
+7.
+
+students = [
+    ["Rahul", 20],
+    ["Priya", 21],
+    ["Amit", 19]
+]
+
+print(students[0][0])
+print(students[1][1])
+print(students[2][0])
+
+🔴 Level 4 — Mixed data
+
+This is similar to your example.
+
+8.
+
+data = [
+    100,
+    "Python",
+    [10, 20, 30],
+    True,
+    ["India", "Japan", "USA"]
+]
+
+print(data[1])
+print(data[2][0])
+print(data[2][-1])
+print(data[4][1])
+print(data[4][-1])
+
+
+9.
+
+a = [
+    "Hello",
+    [1, 2, 3],
+    "India",
+    [True, False, [100, 200, 300]]
+]
+
+print(a[0][1])
+print(a[1][2])
+print(a[2][3])
+print(a[3][2][1])
+
+
+The last one is particularly important:
+
+a[3][2][1]
+
+
+10.
+
+x = ["Python", [10, 20, 30], "India"]
+
+print(x[0][0])
+print(x[0][-1])
+print(x[1][1])
+print(x[2][2])
+
+
+11.
+
+x = [
+    [1, 2],
+    [3, 4],
+    [5, [6, 7]]
+]
+
+print(x[0][1])
+print(x[2][0])
+print(x[2][1][0])
+print(x[-1][-1][-1])
+
+
+12. Challenge
+
+x = [
+    "Hello",
+    ["India", "Python"],
+    [10, [20, 30, [40, 50]]],
+    True
+]
+
+print(x[1][1][0])
+print(x[2][1][2][1])
+print(x[-2][1][1])
+
 ---
 **UI Undo Feature & List References**
 
