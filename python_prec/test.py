@@ -1,10 +1,6 @@
-# a = { "Aarav": 85, "Diya": 92, "Ananya": 78, "Rohan": 64, "Isha": 95 }
+# a = ( 1, 2, 3, 4, 5, 6, 7, "hello", "how", "are" )
 
-# for x in a:
-#     print( f"Key = {x} and value = {a[x]}" )
-
-# print( { a[x]: x for x in a } )
-
-
-# print( { y:x for x,y in a.items() } )
-
+# # Find the largest number without using max().
+# # Copy tuple elements into a list in reverse order using a loop.
+# # Find the index of a specific element without using .index().
+# # Given a nested tuple, use nested loops to print every individual number.
