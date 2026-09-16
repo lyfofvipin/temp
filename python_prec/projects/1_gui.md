@@ -1,5 +1,4 @@
-
-## 6. Tkinter GUI Application Implementation (Full CRUD)
+## Tkinter GUI Application Implementation (Full CRUD)
 
 ```python
 import tkinter as tk
@@ -196,9 +195,8 @@ class BankAppGUI:
             self.info_box.insert(tk.END, "No account found with this mobile number.")
         self.info_box.config(state=tk.DISABLED)
 
-if __name__ == "__main__":
-    root = tk.Tk()
-    app = BankAppGUI(root)
-    root.mainloop()
+root = tk.Tk()
+app = BankAppGUI(root)
+root.mainloop()
 
 ```

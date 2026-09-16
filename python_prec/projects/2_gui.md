@@ -1,4 +1,4 @@
-Tkinter GUI Application Implementation (Full CRUD)
+## Tkinter GUI Application Implementation (Full CRUD)
 
 ```python
 import tkinter as tk
@@ -152,9 +152,8 @@ class ShoppingAppGUI:
         self.cart.items.clear()
         self.update_display()
 
-if __name__ == "__main__":
-    root = tk.Tk()
-    app = ShoppingAppGUI(root)
-    root.mainloop()
+root = tk.Tk()
+app = ShoppingAppGUI(root)
+root.mainloop()
 
 ```
