@@ -17,7 +17,8 @@ data = [
         "email": "priya.patel@student.in",
         "phone": "+91 98234 56781",
         "city": "Ahmedabad",
-        "state": "Gujarat"
+        "state": "Gujarat",
+        "active": True
     },
     {
         "id": 3,

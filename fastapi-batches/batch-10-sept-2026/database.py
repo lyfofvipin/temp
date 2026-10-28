@@ -213,3 +213,4 @@ data.append(StudentModel(
     state="Gujarat",
     password="Password@123"
 ))
+
