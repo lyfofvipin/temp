@@ -12,7 +12,7 @@ class StudentModel(SQLModel, table=True):
         phone:str = Field( nullable=False, unique=True )
         city:str = Field( nullable=False )
         state:str = Field( nullable=False )
-        password:str = Field( nullable=False, default="Password@123" )
+        password:str = Field( nullable=False, default="Password@123" ) # not a real password
 
 class StudenInput(BaseModel):
         email:str = Field( nullable=False, unique=True )
@@ -21,7 +21,7 @@ class StudenInput(BaseModel):
         id: int = Field( primary_key=True )
         city:str = Field( nullable=False )
         state:str = Field( nullable=False )
-        password:str = Field( nullable=False, default="Password@123" )
+        password:str = Field( nullable=False, default="Password@123" ) # not a real password
 
 class ProductModel(SQLModel, table=True):
 
