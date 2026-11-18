@@ -31,7 +31,7 @@ def create_item( title, category, price:float, stock:int, brand, is_active:bool 
 
     data.append(
         ProductModel(
-            id= len(data) + 1,
+            id = len(data) + 1,
             title=title,
             category=category,
             price=price,
